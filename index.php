@@ -51,17 +51,26 @@ wp_head();
 </head>
 <body <?php body_class(); ?>>
 
-<header id="header">
-	<div class="inner">
-		<form class="clearfix" action="<?php echo esc_url(home_url('/')); ?>" method="get" onsubmit="<?php echo $search_onsubmit; ?>">
-			<input type="text" name="s" value="" placeholder="<?php _e('Search', 'capsule'); ?>" />
-			<input type="submit" name="search_submit" value="<?php _e('Search', 'capsule'); ?>" />
-			<a href="<?php echo esc_url(admin_url('post-new.php')); ?>" class="post-new-link"><?php _e('New', 'capsule'); ?></a>
-		</form>
-	</div>
-</header>
+<nav class="mainNav">
+		<a href="index.php" class="logo"> </a>
+		<a href="index.php">Home</a>
+		<a href="index.php">New Post</a>
+		<a href="index.php">Bookmarks</a>
+		<a href="index.php">Projects</a>
+		<a href="index.php">Search</a>
+		<a href="index.php">Settings</a>
+</nav>
 
 <div id="wrap">
+	<header id="header">
+		<div class="inner">
+			<h1>All Posts</h1>
+			<form class="clearfix" action="<?php echo esc_url(home_url('/')); ?>" method="get" onsubmit="<?php echo $search_onsubmit; ?>">
+				<input type="text" name="s" value="" placeholder="<?php _e('Search projects, code, tags, etc...', 'capsule'); ?>" />
+				<input type="submit" name="search_submit" value="<?php _e('Search', 'capsule'); ?>" />
+			</form>
+		</div>
+	</header>
 	<div class="body">
 <?php
 
@@ -73,9 +82,7 @@ if (is_search() || is_archive()) {
 if (have_posts()) {
 	while (have_posts()) {
 		the_post();
-		$ymd = get_the_time('Ymd', $post);
-		$sticky_class = is_sticky() ? "date-title-sticky" : "";
-		the_date('F j, Y', '<h2 class="date-title date-'.$ymd.' '.$sticky_class.'">', '</h2>');
+		
 		if (is_singular()) {
 			include('views/content.php');
 		}
@@ -106,3 +113,7 @@ wp_footer();
 
 </body>
 </html>
+
+<!-- $ymd = get_the_time('Ymd', $post);
+$sticky_class = is_sticky() ? "date-title-sticky" : "";
+the_date('F j, Y', '<h2 class="date-title date-'.$ymd.' '.$sticky_class.'">', '</h2>'); -->

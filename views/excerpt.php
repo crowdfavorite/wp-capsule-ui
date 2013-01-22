@@ -4,6 +4,13 @@
 		<?php edit_post_link(__('Edit', 'capsule'), '', ''); ?>
 		<a href="#" class="post-stick-link"><span><?php _e('Sticky', 'capsule'); ?></span></a>
 	</header>
+	<div class="leftCol">
+		<ul>
+			<li><h2 class="day">31</h2></li>
+			<li><h3 class="month">Dec</h3></li>
+			<li><h4 class="year">2012</h4></li>
+		</ul>
+	</div>	
 	<div class="meta">
 		<h3><?php _e('Projects', 'capsule'); ?></h3>
 		<?php echo capsule_term_list(get_the_ID(), 'projects'); ?>

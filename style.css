@@ -39,7 +39,7 @@ small { font-size: 85%; }
 sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
 sup { top: -0.5em; }
 sub { bottom: -0.25em; }
-ul, ol { margin: 1em 0; padding: 0 0 0 40px; }
+ul, ol { margin: 1em 0; padding: 0; }
 dd { margin: 0 0 0 40px; }
 nav ul, nav ol { list-style: none; list-style-image: none; margin: 0; padding: 0; }
 img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; }
@@ -50,7 +50,7 @@ form { margin: 0; }
 fieldset { border: 0; margin: 0; padding: 0; }
 label { cursor: pointer; }
 legend { border: 0; *margin-left: -7px; padding: 0; }
-button, input, select, textarea { font-size: 100%; margin: 0; vertical-align: baseline; *vertical-align: middle; }
+button, input, select, textarea { font-size: 100%; vertical-align: baseline; *vertical-align: middle; }
 button, input { line-height: normal; *overflow: visible; }
 table button, table input { *overflow: auto; }
 button, input[type="button"], input[type="reset"], input[type="submit"] { cursor: pointer; -webkit-appearance: button; }
@@ -68,32 +68,86 @@ td { vertical-align: top; }
 a:hover {
 	text-decoration: underline;
 }
+/* Type */
+@font-face {
+    font-family: 'SourceSansProSemibold';
+    src: url('/wp-content/themes/tasty-beverage/font/source-sans-pro/SourceSansPro-Semibold-webfont.eot');
+    src: url('/wp-content/themes/tasty-beverage/font/source-sans-pro/SourceSansPro-Semibold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/wp-content/themes/tasty-beverage/font/source-sans-pro/SourceSansPro-Semibold-webfont.woff') format('woff'),
+         url('/wp-content/themes/tasty-beverage/font/source-sans-pro/SourceSansPro-Semibold-webfont.ttf') format('truetype'),
+         url('/wp-content/themes/tasty-beverage/font/source-sans-pro/SourceSansPro-Semibold-webfont.svg#SourceSansProSemibold') format('svg');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SourceSansProRegular';
+    src: url('/wp-content/themes/tasty-beverage/font/source-sans-pro/SourceSansPro-Regular-webfont.eot');
+    src: url('/wp-content/themes/tasty-beverage/font/source-sans-pro/SourceSansPro-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/wp-content/themes/tasty-beverage/font/source-sans-pro/SourceSansPro-Regular-webfont.woff') format('woff'),
+         url('/wp-content/themes/tasty-beverage/font/source-sans-pro/SourceSansPro-Regular-webfont.ttf') format('truetype'),
+         url('/wp-content/themes/tasty-beverage/font/source-sans-pro/SourceSansPro-Regular-webfont.svg#SourceSansProRegular') format('svg');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SourceSansProBold';
+    src: url('/wp-content/themes/tasty-beverage/font/source-sans-pro/SourceSansPro-Bold-webfont.eot');
+    src: url('/wp-content/themes/tasty-beverage/font/source-sans-pro/SourceSansPro-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/wp-content/themes/tasty-beverage/font/source-sans-pro/SourceSansPro-Bold-webfont.woff') format('woff'),
+         url('/wp-content/themes/tasty-beverage/font/source-sans-pro/SourceSansPro-Bold-webfont.ttf') format('truetype'),
+         url('/wp-content/themes/tasty-beverage/font/source-sans-pro/SourceSansPro-Bold-webfont.svg#SourceSansProBold') format('svg');
+    font-weight: 700;
+    font-style: normal;
+
+}
+h1 {
+	font-size: 32px;
+	font-family: 'SourceSansProSemibold', Helvetica;
+	text-shadow: 1px 1px #fff;
+}
+nav a {
+	font-size: 1.125em;
+	font-family: 'SourceSansProRegular', Helvetica;
+	color: white;
+	text-shadow: 1px 1px #111;
+}
 
 /* Layout */
 
 body {
-	background: #eee;
-	color: #333;
+	background-image: url('img/bg_tile.png');
+	color: #000;
 	font-family: sans-serif;
 	font-size: 13px;
+	margin-top: 30px;
 	margin: 0;
 	padding: 0;
+	height: 100%;
+}
+.mainNav {
+	width: 138px;
+	padding-bottom: 10000px;
+	background: #222;
+	position: relative;
+	overflow:hidden;
+	float: left;
 }
 #wrap {
-	margin: 0 auto;
-	max-width: 900px;
-	min-width: 600px;
-	padding: 0 20px;
+	max-width: 100%;
+	padding: 0 23px;
+	position: absolute;
+	left: 140px;
 }
 #header {
-	background: #888;
-	margin: 0 0 20px;
+	margin: 0;
 }
 #footer {
-	color: #999;
+	color: #9d9da1;
 	font-size: 11px;
-	padding: 100px 0 20px;
+	padding: 25px 0 25px;
 	text-align: center;
+	background-color: #222;
+	clear: both;
 }
 .page-title {
 	color: #666;
@@ -112,23 +166,50 @@ body {
 	float: right;
 }
 
+/* Nav */
+.mainNav a {
+	display: inline-block;
+	float: left;
+	width: 118px;
+	height: 55px;
+	padding: 0 0 0 20px;
+	line-height: 55px;
+}
+.mainNav a:hover {
+	background-color: #333;
+	text-decoration: none;
+}
+.logo {
+	margin-bottom: 45px;
+	background-image: url('/wp-content/themes/tasty-beverage/img/logo.png');
+}
 /* Header */
 
 #header .inner {
-	margin: 0 auto;
-	max-width: 900px;
-	min-width: 600px;
-	padding: 10px 10px;
+	width: 100%;
+	padding: 14px 0 0 0;
+	height: 50px;
+	border-bottom: 1px solid #adadad;
+}
+#header h1 {
+	float: left;
+	line-height: 0em;
 }
 #header form {
 	display: block;
+	float: right;
 }
 #header form input {
-	background: #777;
-	border: 1px solid #bbb;
-	color: #ccc;
-	padding: 5px;
-	width: 250px;
+	background: #fff;
+	border: 1px solid #ababab;
+	font-family: 'SourceSansProRegular';
+	color: #999;
+	height: 29px;
+	width: 258px;
+	-webkit-box-shadow: inset 0 2px 5px #ddd;
+	box-shadow: inner 0 2px 5px #ddd;
+	padding-left: 30px;
+	background: #fff url('img/search.png') no-repeat 8px 50%;
 }
 #header form input:focus {
 	background: #fff;
@@ -169,16 +250,46 @@ body {
 }
 
 /* Footer */
-
 #footer a,
 #footer a:visited {
-	color: #777;
+	color: #fff;
+	font-size: 14px;
+	font-family: 'SourceSansProSemibold';
+}
+
+/* Content - Left Column */
+.leftCol {
+	float: left;
+	margin-right:  20px;
+	margin-top: 5px;
+	text-shadow: 2px 2px #fff;
+}
+.leftCol ul {
+	list-style-type: none;
+	text-align: center;
+	line-height: 0px;
+}
+.day {
+	font-size: 30px;
+	font-family: 'SourceSansProBold';
+}
+.month {
+	font-size: 18px;
+	font-family: 'SourceSansProSemiBold';
+	margin-top: -6px;
+	text-transform: uppercase;
+}
+.year {
+	font-size: 14px;
+	font-family: 'SourceSansProSemiBold';
+	margin-top: -4px;
 }
 
 /* Posts */
 
 .date-title {
 	color: #999;
+	width: 50px;
 	font-size: 12px;
 	font-weight: normal;
 	margin: 0;
@@ -187,11 +298,9 @@ body {
 }
 
 article {
-	background: #fff;
-	clear: both;
-	font-size: 14px;
-	line-height: 150%;
-	margin: 0 0 20px;
+	font-family: 'SourceSansProRegular';
+	font-size: 15px;
+	margin: 0;
 	padding: 0;
 	position: relative;
 	width: 100%;
@@ -206,10 +315,8 @@ article .spinner span {
 }
 article.content,
 article.edit {
-	border: 1px solid #ccc;
-	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
-	border-radius: 5px;
+	margin-top: 30px;
 }
 article.edit {
 	border: 1px solid #eee;
@@ -225,18 +332,15 @@ article.unstyled {
 }
 article.content header,
 article.edit header {
-	background: #999;
-	-webkit-border-top-left-radius: 5px;
-	-webkit-border-top-right-radius: 5px;
-	-moz-border-radius-topleft: 5px;
-	-moz-border-radius-topright: 5px;
-	border-top-left-radius: 5px;
-	border-top-right-radius: 5px;
+	background: #fff;
 	color: #fff;
 	padding: 7px 10px 6px;
-}
-article.edit header {
-	background: #666;
+	width: 31px;
+	height: 144px;
+	position: absolute;
+	right: 175px;
+	border: 1px solid #adadad;
+	margin-top: 40px;
 }
 article header a,
 article header a:visited {
@@ -343,46 +447,55 @@ article.deleted a.post-undelete-link:visited {
 /* Content */
 
 article .content {
-	-webkit-border-bottom-left-radius: 4px;
-	-webkit-border-bottom-right-radius: 4px;
+	background: #fff;
+	border: 1px solid #adadad;
 	-moz-border-radius-bottomleft: 4px;
-	-moz-border-radius-bottomright: 4px;
-	border-bottom-left-radius: 4px;
-	border-bottom-right-radius: 4px;
 	overflow: auto;
-	padding: 10px;
+	padding: 0px 51px 25px 25px;
 }
 article.excerpt .content {
-	max-height: 100px;
+	max-height: 200px;
+	min-height: 200px;
+	max-width: 850px;
 	overflow: hidden;
 }
 article.content .meta {
-	background: #f8f8f8;
-	border-bottom: 1px solid #ddd;
-	padding: 7px 10px 6px;
+	float: right;
+	padding: 0 20px;
+	width: 140px;
+	min-height: 190px;
+	line-height: 0px;
+	margin-top: 3px;
 }
 article.content .meta h3 {
-	color: #666;
+	color: #222;
 	display: inline-block;
-	font-size: 11px;
-	font-weight: normal;
+	font-size: 14px;
+	font-weight: bold;
 	margin: 0;
 	text-transform: uppercase;
+	font-family: 'SourceSansProBold';
 	width: 75px;
-}
-article.content .meta h3:after {
-	content: ':';
+	text-shadow: 1px 1px #fff;
+	padding-top: 20px;
 }
 article.content .meta ul,
 article.content .meta li {
-	display: inline;
+	display: block;
+	line-height: 0px;
 }
-article.content .meta li {
-	padding-right: 5px;
+.excerpt header {
+	display: none;
+}
+.excerpt:hover header {
+	display: block;
 }
 article .meta a,
 article .meta a:visited {
-	color: #666;
+	color: #222;
+	font-family: 'SourceSansProRegular';
+	font-size: 16px;
+	line-height: 0px;
 	text-decoration: none;
 }
 article .ace-editor {
