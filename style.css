@@ -180,6 +180,14 @@ body {
 }
 .pagination .nav-previous {
 	float: right;
+	margin-right: 180px;
+	margin-top: 25px;
+}
+.pagination a {
+	color: #222;
+	font-family: 'SourceSansProRegular', Helvetica;
+	font-size: 20px;
+	text-shadow: 1px 1px #fff;
 }
 
 /* Nav */
@@ -198,6 +206,13 @@ body {
 .logo {
 	margin-bottom: 45px;
 	background-image: url('/wp-content/themes/tasty-beverage/img/logo.png');
+}
+.meta-nav {
+	display: none;
+}
+.nav-previous a {
+	background: transparent url('img/arrow-right.png') no-repeat 100% 0%;
+	padding-right: 20px;
 }
 /* Header */
 
@@ -387,13 +402,13 @@ article header a.post-delete-link {
 	text-color: transparent;
 }
 article header a.post-edit-link {
-	background: transparent url(img/edit.png) no-repeat center center;
+	background: transparent url('img/edit.png') no-repeat center center;
 }
 article header a.post-stick-link {
-	background: transparent url(img/star.png) no-repeat center center;
+	background: transparent url('img/star.png') no-repeat center center;
 }
 article header a.post-delete-link {
-	background: transparent url(img/delete.png) no-repeat center center;
+	background: transparent url('img/delete.png') no-repeat center center;
 }
 article header a.post-edit-link span,
 article header a.post-stick-link span,

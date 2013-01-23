@@ -1,8 +1,7 @@
 <article id="post-content-<?php the_ID(); ?>" data-post-id="<?php the_ID(); ?>" <?php post_class('content clearfix excerpt' . (is_sticky() ? ' sticky' : '')); ?>>
 	<header>
 		<!-- <a href="<?php the_permalink(); ?>" class="post-link"><?php the_time(); ?></a> -->
-		<!-- <?php edit_post_link(__('Edit', 'capsule'), '', ''); ?> -->
-		<a href="#" <?php edit_post_link(__('', 'capsule'), '', ''); ?></a>
+	 	<?php edit_post_link(__('', 'capsule'), '', ''); ?>
 		<a href="#" class="post-stick-link"><span><?php _e('Sticky', 'capsule'); ?></span></a>
 		<a href="#" class="post-delete-link"><span><?php _e('Sticky', 'capsule'); ?></span></a>
 	</header>
