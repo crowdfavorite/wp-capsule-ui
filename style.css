@@ -452,6 +452,7 @@ article.sticky .content {
 	background-image: url('img/sticky.png');
 	background-repeat: no-repeat;
 	background-position: 100% 0%;
+	resize: vertical;
 }
 article.excerpt .content {
 	max-height: 200px;
@@ -479,6 +480,7 @@ article.content .meta h3 {
 	width: 75px;
 	text-shadow: 1px 1px #fff;
 	padding-top: 20px;
+	margin-bottom: -8px;
 }
 article.content .meta ul,
 article.content .meta li {
@@ -496,7 +498,7 @@ article .meta a:visited {
 	color: #222;
 	font-family: 'SourceSansProRegular';
 	font-size: 16px;
-	line-height: 0px;
+	line-height: 20px;
 	text-decoration: none;
 }
 article .ace-editor {
@@ -592,6 +594,7 @@ html[xmlns] .clearfix {
 /* Utility */
 
 .none {
+	padding-top: 10px;
 	color: #999;
 }
 .transparent {
