@@ -360,29 +360,23 @@ article header a.post-stick-link {
 	padding-right: 2px;
 	height: 100%;
 }
-article header a.post-edit-link {
-	background: transparent url(img/edit.png) no-repeat center center;
+article header a.post-edit-link,
+article header a.post-stick-link,
+article header a.post-delete-link {
 	padding: 8px;
 	margin: 0px;
 	width: 15px;
 	height: 16px;
 	text-color: transparent;
+}
+article header a.post-edit-link {
+	background: transparent url(img/edit.png) no-repeat center center;
 }
 article header a.post-stick-link {
 	background: transparent url(img/star.png) no-repeat center center;
-	padding: 8px;
-	margin: 0px;
-	width: 15px;
-	height: 16px;
-	text-color: transparent;
 }
 article header a.post-delete-link {
 	background: transparent url(img/delete.png) no-repeat center center;
-	padding: 8px;
-	margin: 0px;
-	width: 15px;
-	height: 16px;
-	text-color: transparent;
 }
 article header a.post-edit-link span,
 article header a.post-stick-link span,
@@ -464,6 +458,7 @@ article.excerpt .content {
 	min-height: 200px;
 	max-width: 850px;
 	overflow: hidden;
+	resize: vertical;
 }
 article.content .meta {
 	float: right;
