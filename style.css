@@ -150,10 +150,12 @@ body {
 	clear: both;
 }
 .page-title {
-	color: #666;
+	color: #222;
 	font-weight: normal;
 	margin: 0;
-	padding: 10px;
+	padding: 10px 0px;
+	font-family: 'SourceSansProSemiBold';
+	text-shadow: 1px 1px #fff;
 }
 .page-title em {
 	font-style: normal;
@@ -200,7 +202,6 @@ body {
 	float: right;
 }
 #header form input {
-	background: #fff;
 	border: 1px solid #ababab;
 	font-family: 'SourceSansProRegular';
 	color: #999;
@@ -210,10 +211,6 @@ body {
 	box-shadow: inner 0 2px 5px #ddd;
 	padding-left: 30px;
 	background: #fff url('img/search.png') no-repeat 8px 50%;
-}
-#header form input:focus {
-	background: #fff;
-	color: #000;
 }
 #header form input[type="submit"] {
 	display: none;
@@ -344,7 +341,7 @@ article.edit header {
 }
 article header a,
 article header a:visited {
-	color: #fff;
+	color: #ccc;
 }
 article header a:hover {
 	text-decoration: underline;
@@ -363,9 +360,8 @@ article header a.post-stick-link {
 	padding-right: 2px;
 	height: 100%;
 }
-
 article header a.post-stick-link {
-	padding: 2px;
+	padding: 9px;
 	margin: 0px;
 	width: 15px;
 	height: 16px;
@@ -376,9 +372,6 @@ article header a.post-stick-link span {
 }
 
 article header a.post-stick-link:hover {
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	border-radius: 5px;
 	text-decoration: none;
 	background-color: #ccc;
 }
@@ -386,7 +379,7 @@ article header a.post-stick-link:hover {
 article header a.post-stick-link {
 	filter: alpha(opacity=25);
 	opacity: 0.25;
-	background: transparent url(img/anchor.png) no-repeat center center;
+	background: transparent url(img/star.png) no-repeat center center;
 	vertical-align: middle;
 }
 
@@ -448,6 +441,9 @@ article.deleted a.post-undelete-link:visited {
 
 article .content {
 	background: #fff;
+	background-image: url('img/sticky.png');
+	background-repeat: no-repeat;
+	background-position: 100% 0%;
 	border: 1px solid #adadad;
 	-moz-border-radius-bottomleft: 4px;
 	overflow: auto;

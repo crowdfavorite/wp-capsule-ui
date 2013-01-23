@@ -55,16 +55,14 @@ wp_head();
 		<a href="index.php" class="logo"> </a>
 		<a href="index.php">Home</a>
 		<a href="index.php">New Post</a>
-		<a href="index.php">Bookmarks</a>
 		<a href="index.php">Projects</a>
 		<a href="index.php">Search</a>
 		<a href="index.php">Settings</a>
 </nav>
-
 <div id="wrap">
 	<header id="header">
 		<div class="inner">
-			<h1>All Posts</h1>
+			<h1>All Posts</h1> 
 			<form class="clearfix" action="<?php echo esc_url(home_url('/')); ?>" method="get" onsubmit="<?php echo $search_onsubmit; ?>">
 				<input type="text" name="s" value="" placeholder="<?php _e('Search projects, code, tags, etc...', 'capsule'); ?>" />
 				<input type="submit" name="search_submit" value="<?php _e('Search', 'capsule'); ?>" />
