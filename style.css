@@ -441,13 +441,15 @@ article.deleted a.post-undelete-link:visited {
 
 article .content {
 	background: #fff;
-	background-image: url('img/sticky.png');
-	background-repeat: no-repeat;
-	background-position: 100% 0%;
 	border: 1px solid #adadad;
 	-moz-border-radius-bottomleft: 4px;
 	overflow: auto;
 	padding: 0px 51px 25px 25px;
+}
+article.sticky .content {
+	background-image: url('img/sticky.png');
+	background-repeat: no-repeat;
+	background-position: 100% 0%;
 }
 article.excerpt .content {
 	max-height: 200px;
