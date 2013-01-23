@@ -2,7 +2,7 @@
 	<header>
 		<!-- <a href="<?php the_permalink(); ?>" class="post-link"><?php the_time(); ?></a> -->
 		<!-- <?php edit_post_link(__('Edit', 'capsule'), '', ''); ?> -->
-		<a href="#" class="post-edit-link"><span><?php _e('Sticky', 'capsule'); ?></span></a>
+		<a href="#" <?php edit_post_link(__('', 'capsule'), '', ''); ?></a>
 		<a href="#" class="post-stick-link"><span><?php _e('Sticky', 'capsule'); ?></span></a>
 		<a href="#" class="post-delete-link"><span><?php _e('Sticky', 'capsule'); ?></span></a>
 	</header>
@@ -23,5 +23,9 @@
 		<h3><?php _e('Code', 'capsule'); ?></h3>
 		<?php echo capsule_term_list(get_the_ID(), 'code'); ?>
 	</div>
-	<div class="content"><?php the_content(); ?></div>
+	<div class="content">
+		<?php the_content(); ?>
+		<div class="resizer"></div>
+		
+	</div>
 </article>
