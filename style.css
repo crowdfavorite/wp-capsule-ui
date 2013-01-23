@@ -479,6 +479,7 @@ article .content {
 	-moz-border-radius-bottomleft: 4px;
 	overflow: auto;
 	padding: 0px 25px 25px 25px;
+	min-height: 200px;
 }
 article.sticky .content {
 	background-image: url('img/sticky.png');
