@@ -177,7 +177,7 @@ body {
 }
 .pagination .nav-previous {
 	float: right;
-	margin-right: 180px;
+	margin-right: 128px;
 	margin-top: 25px;
 }
 .pagination a {
@@ -344,10 +344,6 @@ article.edit {
 	margin-top: 30px;
 }
 article.edit {
-	border: 1px solid #eee;
-	-moz-box-shadow: 0 1px 3px 1px #999;
-	-webkit-box-shadow: 0 1px 3px 1px #999;
-	box-shadow: 0 1px 3px 1px #999;
 }
 article.unstyled {
 	border: 0;
@@ -473,9 +469,15 @@ article.deleted a.post-undelete-link:visited {
 article .content {
 	background: #fff;
 	border: 1px solid #adadad;
-	-moz-border-radius-bottomleft: 4px;
 	overflow: auto;
 	padding: 0px 25px 25px 25px;
+	min-height: 200px;
+}
+article.edit .content {
+	background: #fff;
+	border: 1px solid #adadad;
+	overflow: auto;
+	padding: 0px;
 	min-height: 200px;
 }
 article.sticky .content {
@@ -489,6 +491,7 @@ article.excerpt .content {
 	min-height: 200px;
 	overflow: hidden;
 }
+article.edit .meta,
 article.content .meta {
 	float: right;
 	padding: 0 20px;
@@ -496,6 +499,7 @@ article.content .meta {
 	line-height: 0px;
 	margin-top: 3px;
 }
+article.edit .meta h3, 
 article.content .meta h3 {
 	color: #222;
 	display: inline-block;
@@ -509,6 +513,8 @@ article.content .meta h3 {
 	padding-top: 20px;
 	margin-bottom: -8px;
 }
+article.edit .meta ul,
+article.edit .meta li,
 article.content .meta ul,
 article.content .meta li {
 	display: block;

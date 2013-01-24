@@ -1,12 +1,29 @@
-<article id="post-edit-<?php echo $post->ID; ?>" data-post-id="<?php echo $post->ID; ?>" <?php post_class('edit clearfix'.(is_sticky($post->ID) ? ' sticky' : ''), $post->ID); ?>>
+<article id="post-edit-<?php the_ID(); ?>" data-post-id="<?php the_ID(); ?>" <?php post_class('edit clearfix' . (is_sticky() ? ' sticky' : '')); ?>>
 	<header>
-		<a href="<?php echo get_permalink($post->ID); ?>" class="post-link"><?php echo get_the_time('', $post); ?></a>
-		<span class="post-dirty">&#9733;</span>
-		<span class="post-last-saved">&nbsp;</span>
-		<a href="#" class="post-close-link"><?php _e('Close', 'capsule'); ?></a>
-		<a href="#" class="post-save-link"><?php _e('Save', 'capsule'); ?></a>
+		<!-- <a href="<?php the_permalink(); ?>" class="post-link"><?php the_time(); ?></a> -->
+	 	<?php edit_post_link(__('', 'capsule'), '', ''); ?>
 		<a href="#" class="post-stick-link"><span><?php _e('Sticky', 'capsule'); ?></span></a>
-		<img src="<?php echo esc_url(admin_url('images/wpspin_dark.gif')); ?>" class="save-indicator" />
+		<a href="#" class="post-delete-link"><span><?php _e('Sticky', 'capsule'); ?></span></a>
 	</header>
-	<div id="ace-editor-<?php echo $post->ID; ?>" class="ace-editor"></div>
+	<div class="leftCol">
+		<ul>
+			<li><h2 class="day">31</h2></li>
+			<li><h3 class="month">Dec</h3></li>
+			<li><h4 class="year">2012</h4></li>
+		</ul>
+	</div>	
+	<div class="meta">
+		<h3><?php _e('Projects', 'capsule'); ?></h3>
+		<?php echo capsule_term_list(get_the_ID(), 'projects'); ?>
+		<br>
+		<h3><?php _e('Tags', 'capsule'); ?></h3>
+		<?php echo capsule_term_list(get_the_ID(), 'post_tag'); ?>
+		<br>
+		<h3><?php _e('Code', 'capsule'); ?></h3>
+		<?php echo capsule_term_list(get_the_ID(), 'code'); ?>
+	</div>
+	<div class="content">
+		<div id="ace-editor-<?php echo $post->ID; ?>" class="ace-editor"></div>
+		
+	</div>
 </article>
