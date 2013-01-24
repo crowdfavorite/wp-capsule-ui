@@ -180,6 +180,11 @@ body {
 	margin-right: 128px;
 	margin-top: 25px;
 }
+.nav-next {
+	float: left;
+	margin-left: 52px;
+	margin-top: 25px;
+}
 .pagination a {
 	color: #222;
 	font-family: 'SourceSansProRegular', Helvetica;
@@ -208,8 +213,12 @@ body {
 	display: none;
 }
 .nav-previous a {
-	background: transparent url('img/arrow-right.png') no-repeat 100% 0%;
+	background: transparent url('img/arrow-right.png') no-repeat 100% 25%;
 	padding-right: 20px;
+}
+.nav-next a {
+	background: transparent url('img/arrow-left.png') no-repeat 0% 25%;
+	padding-left: 20px;
 }
 /* Header */
 
