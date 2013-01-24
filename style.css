@@ -418,7 +418,7 @@ article header a.post-delete-link {
 	text-color: transparent;
 }
 article header a.post-close-link {
-	background: transparent url('img/close.png') no-repeat center center;
+	background: transparent url('img/close-static.png') no-repeat center center;
 }
 article header a.post-edit-link {
 	background: transparent url('img/edit.png') no-repeat center center;
@@ -435,14 +435,15 @@ article header a.post-stick-link span,
 article header a.post-delete-link span {
 	display: none;
 }
-article header a.post-close-link:hover,
 article header a.post-edit-link:hover,
 article header a.post-stick-link:hover,
 article header a.post-delete-link:hover {
 	text-decoration: none;
 	background-color: #eee;
 }
-
+article header a.post-close-link:hover {
+	background: transparent url('img/close-hover.png') no-repeat center center;
+}
 article img.save-indicator {
 	visibility: hidden;
 	float: right;
