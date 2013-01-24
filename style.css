@@ -70,54 +70,54 @@ a:hover {
 }
 /* Type */
 @font-face {
-    font-family: 'SourceSansProSemibold';
+	font-family: 'SourceSansProSemibold';
+    font-style: normal;
+    font-weight: 700;
     src: url('/wp-content/themes/tasty-beverage/font/source-sans-pro/SourceSansPro-Semibold-webfont.eot');
     src: url('/wp-content/themes/tasty-beverage/font/source-sans-pro/SourceSansPro-Semibold-webfont.eot?#iefix') format('embedded-opentype'),
          url('/wp-content/themes/tasty-beverage/font/source-sans-pro/SourceSansPro-Semibold-webfont.woff') format('woff'),
          url('/wp-content/themes/tasty-beverage/font/source-sans-pro/SourceSansPro-Semibold-webfont.ttf') format('truetype'),
          url('/wp-content/themes/tasty-beverage/font/source-sans-pro/SourceSansPro-Semibold-webfont.svg#SourceSansProSemibold') format('svg');
-    font-weight: 700;
-    font-style: normal;
 }
 @font-face {
-    font-family: 'SourceSansProRegular';
+	font-family: 'SourceSansProRegular';
+    font-style: normal;
+    font-weight: 700;
     src: url('/wp-content/themes/tasty-beverage/font/source-sans-pro/SourceSansPro-Regular-webfont.eot');
     src: url('/wp-content/themes/tasty-beverage/font/source-sans-pro/SourceSansPro-Regular-webfont.eot?#iefix') format('embedded-opentype'),
          url('/wp-content/themes/tasty-beverage/font/source-sans-pro/SourceSansPro-Regular-webfont.woff') format('woff'),
          url('/wp-content/themes/tasty-beverage/font/source-sans-pro/SourceSansPro-Regular-webfont.ttf') format('truetype'),
          url('/wp-content/themes/tasty-beverage/font/source-sans-pro/SourceSansPro-Regular-webfont.svg#SourceSansProRegular') format('svg');
-    font-weight: 700;
-    font-style: normal;
 }
 @font-face {
-    font-family: 'SourceSansProBold';
+	font-family: 'SourceSansProBold';
+    font-style: normal;
+	font-weight: 700;
     src: url('/wp-content/themes/tasty-beverage/font/source-sans-pro/SourceSansPro-Bold-webfont.eot');
     src: url('/wp-content/themes/tasty-beverage/font/source-sans-pro/SourceSansPro-Bold-webfont.eot?#iefix') format('embedded-opentype'),
          url('/wp-content/themes/tasty-beverage/font/source-sans-pro/SourceSansPro-Bold-webfont.woff') format('woff'),
          url('/wp-content/themes/tasty-beverage/font/source-sans-pro/SourceSansPro-Bold-webfont.ttf') format('truetype'),
          url('/wp-content/themes/tasty-beverage/font/source-sans-pro/SourceSansPro-Bold-webfont.svg#SourceSansProBold') format('svg');
-    font-weight: 700;
-    font-style: normal;
 }
 @font-face {
-    font-family: 'SourceCodeProRegular';
+	font-family: 'SourceCodeProRegular';
+	font-style: normal;
+	font-weight: normal;
     src: url('/wp-content/themes/tasty-beverage/font/source-code-pro/SourceCodePro-Regular-webfont.eot');
     src: url('/wp-content/themes/tasty-beverage/font/source-code-pro/SourceCodePro-Regular-webfont.eot?#iefix') format('embedded-opentype'),
          url('/wp-content/themes/tasty-beverage/font/source-code-pro/SourceCodePro-Regular-webfont.woff') format('woff'),
          url('/wp-content/themes/tasty-beverage/font/source-code-pro/SourceCodePro-Regular-webfont.ttf') format('truetype'),
          url('/wp-content/themes/tasty-beverage/font/source-code-pro/SourceCodePro-Regular-webfont.svg#SourceCodeProRegular') format('svg');
-    font-weight: normal;
-    font-style: normal;
 }
 h1 {
-	font-size: 32px;
 	font-family: 'SourceSansProSemibold', Helvetica;
-	text-shadow: 1px 1px #fff;
+	font-size: 32px;
+	text-shadow: 1px 1px #fff;		
 }
 nav a {
-	font-size: 1.125em;
-	font-family: 'SourceSansProRegular', Helvetica;
 	color: white;
+	font-family: 'SourceSansProRegular', Helvetica;	
+	font-size: 1.125em;
 	text-shadow: 1px 1px #111;
 }
 code {
@@ -133,12 +133,12 @@ body {
 	color: #000;
 	font-family: sans-serif;
 	font-size: 13px;
-	width: 100%;
 	margin-top: 30px;
 	margin: 0;
 	padding: 0;
 	height: 100%;
-	height: 100%;
+	min-height: 100%;
+	width: 100%;	
 }
 .mainNav {
 	width: 138px;
@@ -159,6 +159,9 @@ body {
 	text-align: center;
 	background-color: #222;
 	clear: both;
+	position: relative;
+	width: 100%;
+	bottom: 0px;
 }
 .page-title {
 	color: #222;
@@ -360,8 +363,7 @@ article.unstyled {
 	-webkit-box-shadow: none;
 	box-shadow: none;
 }
-article.content header,
-article.edit header {
+article.content header {
 	background: #fff;
 	color: #fff;
 	width: 31px;
@@ -373,6 +375,16 @@ article.edit header {
 	box-shadow: 0px 1px #eee;
 	z-index: 1;
 }
+article.edit header {
+	background: #141414;
+	width: 31px;
+	height: 31px;
+	position: absolute;
+	right: 126px;
+	margin-top: 1px;
+	z-index: 1;
+}
+
 article header a,
 article header a:visited {
 	color: #ccc;
@@ -384,6 +396,7 @@ article header a.post-link {
 	display: inline-block;
 	width: 100px;
 }
+article header a.post-close-link,
 article header a.post-edit-link,
 article header a.post-save-link,
 article header a.post-delete-link,
@@ -394,6 +407,7 @@ article header a.post-stick-link {
 	padding-right: 2px;
 	height: 100%;
 }
+article header a.post-close-link,
 article header a.post-edit-link,
 article header a.post-stick-link,
 article header a.post-delete-link {
@@ -402,6 +416,9 @@ article header a.post-delete-link {
 	width: 15px;
 	height: 16px;
 	text-color: transparent;
+}
+article header a.post-close-link {
+	background: transparent url('img/close.png') no-repeat center center;
 }
 article header a.post-edit-link {
 	background: transparent url('img/edit.png') no-repeat center center;
@@ -412,11 +429,13 @@ article header a.post-stick-link {
 article header a.post-delete-link {
 	background: transparent url('img/delete.png') no-repeat center center;
 }
+article header a.post-close-link span,
 article header a.post-edit-link span,
 article header a.post-stick-link span,
 article header a.post-delete-link span {
 	display: none;
 }
+article header a.post-close-link:hover,
 article header a.post-edit-link:hover,
 article header a.post-stick-link:hover,
 article header a.post-delete-link:hover {
@@ -529,9 +548,12 @@ article.content .meta li {
 	display: block;
 	line-height: 0px;
 }
+
+.content header,
 .excerpt header {
 	display: none;
 }
+.content:hover header,
 .excerpt:hover header {
 	display: block;
 }
