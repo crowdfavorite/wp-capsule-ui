@@ -14,5 +14,7 @@
 		<h3><?php _e('Code', 'capsule'); ?></h3>
 		<?php echo capsule_term_list(get_the_ID(), 'code'); ?>
 	</div>
-	<div class="content"><?php the_content(); ?></div>
+	<div class="content">
+		<?php the_content(); ?>
+	</div>
 </article>

@@ -21,6 +21,5 @@
 	</div>
 	<div class="content">
 		<div id="ace-editor-<?php echo $post->ID; ?>" class="ace-editor"></div>
-		
 	</div>
 </article>

@@ -121,9 +121,9 @@ nav a {
 	text-shadow: 1px 1px #111;
 }
 code {
-	font-size: 13px;
-	font-family: 'SourceCodeProRegular', Helvetica;
 	color: #222;
+	font-family: 'SourceCodeProRegular', Helvetica;
+	font-size: 13px;
 }
 
 /* Layout */
@@ -133,17 +133,17 @@ body {
 	color: #000;
 	font-family: sans-serif;
 	font-size: 13px;
+	height: 100%;
 	margin-top: 30px;
 	margin: 0;
-	padding: 0;
-	height: 100%;
 	min-height: 100%;
+	padding: 0;
 	width: 100%;	
 }
 .mainNav {
-	width: 138px;
 	background: #222;
 	float: left;
+	width: 138px;
 }
 #wrap {
 	max-width: 100%;
@@ -153,22 +153,22 @@ body {
 	margin: 0;
 }
 #footer {
+	background-color: #222;
+	bottom: 0px;
+	clear: both;
 	color: #9d9da1;
 	font-size: 11px;
 	padding: 7px 0px;
-	text-align: center;
-	background-color: #222;
-	clear: both;
 	position: fixed;
+	text-align: center;
 	width: 100%;
-	bottom: 0px;
 }
 .page-title {
 	color: #222;
+	font-family: 'SourceSansProSemiBold';
 	font-weight: normal;
 	margin: 0;
 	padding: 10px 0px;
-	font-family: 'SourceSansProSemiBold';
 	text-shadow: 1px 1px #fff;
 }
 .page-title em {
@@ -199,18 +199,18 @@ body {
 .mainNav a {
 	display: inline-block;
 	float: left;
-	width: 118px;
 	height: 55px;
-	padding: 0 0 0 20px;
-	line-height: 55px;
+	line-height: 55px;	
+	padding: 0 0 0 20px;	
+	width: 118px;
 }
 .mainNav a:hover {
 	background-color: #333;
 	text-decoration: none;
 }
 .logo {
-	margin-bottom: 45px;
 	background-image: url('/wp-content/themes/tasty-beverage/img/logo.png');
+	margin-bottom: 45px;
 }
 .meta-nav {
 	display: none;
@@ -226,10 +226,10 @@ body {
 /* Header */
 
 #header .inner {
-	width: 100%;
-	padding: 14px 0 0 0;
-	height: 50px;
 	border-bottom: 1px solid #adadad;
+	height: 50px;		
+	padding: 14px 0 0 0;
+	width: 100%;
 }
 #header h1 {
 	float: left;
@@ -240,15 +240,16 @@ body {
 	float: right;
 }
 #header form input {
+	background: #fff url('img/search.png') no-repeat 8px 50%;
 	border: 1px solid #ababab;
+	color: #999;	
 	font-family: 'SourceSansProRegular';
-	color: #999;
 	height: 29px;
+	padding-left: 30px;
 	width: 258px;
 	-webkit-box-shadow: inset 0 2px 5px #ddd;
 	box-shadow: inner 0 2px 5px #ddd;
-	padding-left: 30px;
-	background: #fff url('img/search.png') no-repeat 8px 50%;
+	
 }
 #header form input[type="submit"] {
 	display: none;
@@ -264,9 +265,6 @@ body {
 	background: linear-gradient(top, #999 0%,#666 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#999999', endColorstr='#666666',GradientType=0 ); /* IE6-9 */
 	border: 1px solid #aaa;
-	-webkit-border-radius: 4px;
-	-moz-border-radius: 4px;
-	border-radius: 4px;
 	color: #fff;
 	display: inline-block;
 	float: right;
@@ -288,8 +286,8 @@ body {
 #footer a,
 #footer a:visited {
 	color: #fff;
-	font-size: 14px;
 	font-family: 'SourceSansProSemibold';
+	font-size: 14px;
 }
 
 /* Content - Left Column */
@@ -301,22 +299,22 @@ body {
 }
 .leftCol ul {
 	list-style-type: none;
-	text-align: center;
 	line-height: 0px;
+	text-align: center;
 }
 .day {
-	font-size: 30px;
 	font-family: 'SourceSansProBold';
+	font-size: 30px;
 }
 .month {
-	font-size: 18px;
 	font-family: 'SourceSansProSemiBold';
+	font-size: 18px;
 	margin-top: -6px;
 	text-transform: uppercase;
 }
 .year {
-	font-size: 14px;
 	font-family: 'SourceSansProSemiBold';
+	font-size: 14px;
 	margin-top: -4px;
 }
 
@@ -324,12 +322,12 @@ body {
 
 .date-title {
 	color: #999;
-	width: 50px;
 	font-size: 12px;
 	font-weight: normal;
 	margin: 0;
 	padding: 10px;
 	text-transform: uppercase;
+	width: 50px;
 }
 
 article {
@@ -365,23 +363,23 @@ article.unstyled {
 }
 article.content header {
 	background: #fff;
+	border: 1px solid #adadad;
+	box-shadow: 0px 1px #eee;
 	color: #fff;
-	width: 31px;
 	height: 96px;
+	margin-top: 40px;
 	position: absolute;
 	right: 120px;
-	border: 1px solid #adadad;
-	margin-top: 40px;
-	box-shadow: 0px 1px #eee;
+	width: 31px;
 	z-index: 1;
 }
 article.edit header {
 	background: #141414;
-	width: 31px;
 	height: 31px;
+	margin-top: 1px;
 	position: absolute;
 	right: 126px;
-	margin-top: 1px;
+	width: 31px;
 	z-index: 1;
 }
 
@@ -397,25 +395,25 @@ article header a.post-link {
 	width: 100px;
 }
 article header a.post-close-link,
+article header a.post-delete-link,
 article header a.post-edit-link,
 article header a.post-save-link,
-article header a.post-delete-link,
 article header a.post-stick-link {
 	float: right;
+	height: 100%;
 	margin-left: 5px;
 	padding-left: 2px;
 	padding-right: 2px;
-	height: 100%;
 }
 article header a.post-close-link,
+article header a.post-delete-link,
 article header a.post-edit-link,
-article header a.post-stick-link,
-article header a.post-delete-link {
-	padding: 8px;
-	margin: 0px;
-	width: 15px;
+article header a.post-stick-link {
+	color: transparent;
 	height: 16px;
-	text-color: transparent;
+	margin: 0px;
+	padding: 8px;
+	width: 15px;
 }
 article header a.post-close-link {
 	background: transparent url('img/close-static.png') no-repeat center center;
@@ -438,16 +436,16 @@ article header a.post-delete-link span {
 article header a.post-edit-link:hover,
 article header a.post-stick-link:hover,
 article header a.post-delete-link:hover {
-	text-decoration: none;
 	background-color: #eee;
+	text-decoration: none;
 }
 article header a.post-close-link:hover {
 	background: transparent url('img/close-hover.png') no-repeat center center;
 }
 article img.save-indicator {
-	visibility: hidden;
 	float: right;
 	margin: 2px 10px 0 0;
+	visibility: hidden;
 }
 article.saving img.save-indicator {
 	visibility: visible;
@@ -470,22 +468,22 @@ article.dirty header .post-dirty {
 /* Deleted */
 
 article.deleted .content {
-	margin-top: 30px;
 	background: transparent;
-	color: #666;
 	border: none;
+	color: #666;
+	margin-top: 22px;
 }
 article.deleted {
 	height: 40px;
 	margin-bottom: 10px;
 }
 article.deleted span.msg {
-	display: inline-block;
-	text-align: center;
 	color: #222;
-	margin-left: 24px;
+	display: inline-block;
 	font-family: 'SourceSansProRegular', Helvetica;
 	font-size: 16px;
+	margin-left: 24px;
+	text-align: center;
 	text-shadow: 1px 1px #fff;
 }
 article.deleted a.post-undelete-link,
@@ -493,9 +491,9 @@ article.deleted a.post-undelete-link:visited {
 	background: #222;
 	color: #fff;
 	display: inline-block;
-	padding: 7px 13px 5px;
-	margin-left: 12px;
 	font-size: 14px;
+	margin-left: 12px;
+	padding: 7px 13px 5px;
 }
 
 /* Content */
@@ -503,16 +501,16 @@ article.deleted a.post-undelete-link:visited {
 article .content {
 	background: #fff;
 	border: 1px solid #adadad;
+	min-height: 200px;
 	overflow: auto;
 	padding: 0px 25px 25px 25px;
-	min-height: 200px;
 }
 article.edit .content {
 	background: #fff;
 	border: 1px solid #adadad;
+	min-height: 200px;	
 	overflow: auto;
 	padding: 0px;
-	min-height: 200px;
 }
 article.sticky .content {
 	background-image: url('img/sticky.png');
@@ -528,24 +526,23 @@ article.excerpt .content {
 article.edit .meta,
 article.content .meta {
 	float: right;
-	padding: 0 20px;
-	width: 85px;
 	line-height: 0px;
 	margin-top: 3px;
+	padding: 0 20px;
+	width: 85px;	
 }
 article.edit .meta h3, 
 article.content .meta h3 {
 	color: #222;
 	display: inline-block;
+	font-family: 'SourceSansProBold';
 	font-size: 14px;
 	font-weight: bold;
-	margin: 0;
-	text-transform: uppercase;
-	font-family: 'SourceSansProBold';
-	width: 75px;
+	margin: 0 0 -8px 0;
+	padding-top: 20px;	
 	text-shadow: 1px 1px #fff;
-	padding-top: 20px;
-	margin-bottom: -8px;
+	text-transform: uppercase;
+	width: 75px;
 }
 article.edit .meta ul,
 article.edit .meta li,
@@ -569,7 +566,6 @@ article .meta a:visited {
 	font-family: 'SourceSansProRegular';
 	font-size: 16px;
 	line-height: 20px;
-
 	text-shadow: 1px 1px #fff;
 }
 article .ace-editor {
@@ -587,25 +583,20 @@ pre {
 /* Static code */
 
 .static_container {
-	position: relative;
-
-	border: 1px solid #333;
 	background-color: #eee;
+	border: 1px solid #333;
 	margin-top: 5px;
 	margin-bottom: 5px;
-
-	-webkit-border-radius: 4px;
-	-moz-border-radius: 4px;
-	border-radius: 4px;
+	position: relative;
 }
 .static_container .ace-tm {
-	position: relative;
 	overflow-x: hidden;
+	position: relative;
 }
 
 pre.static_code {
-	white-space: pre-wrap;
 	margin: 2px;
+	white-space: pre-wrap;
 }
 
 .static_code ol {
@@ -629,7 +620,6 @@ pre.static_code {
 	-moz-border-radius: 0 4px 0 4px;
 	border-radius: 0 4px 0 4px;
 	z-index: 100;
-
 	-webkit-transition: all .1s ease-in-out;
 	-moz-transition: all .1s ease-in-out;
 	-o-transition: all .1s ease-in-out;
@@ -649,11 +639,11 @@ pre.static_code {
 
 .clearfix:after {
 	content: ".";
-	display: block;
 	clear: both;
-	visibility: hidden;
+	display: block;
+	height: 0;	
 	line-height: 0;
-	height: 0;
+	visibility: hidden;	
 }
  
 .clearfix {
@@ -671,8 +661,8 @@ html[xmlns] .clearfix {
 /* Utility */
 
 .none {
-	padding-top: 10px;
 	color: #999;
+	padding-top: 10px;
 	text-shadow: 1px 1px #fff;
 }
 .transparent {

@@ -2,7 +2,7 @@
 	<header>
 		<!-- <a href="<?php the_permalink(); ?>" class="post-link"><?php the_time(); ?></a> -->
 	 	<?php edit_post_link(__('', 'capsule'), '', ''); ?>
-		<a href="#" class="post-stick-link"><span><?php _e('Sticky', 'capsule'); ?></span></a>
+		<a href="#" class="post-stick-link"><span><?php _e('article:not(.sticky) .post-stick-link'); ?></span></a>
 		<a href="#" class="post-delete-link"><span><?php _e('Sticky', 'capsule'); ?></span></a>
 	</header>
 	<div class="leftCol">
@@ -24,8 +24,6 @@
 	</div>
 	<div class="content">
 		<?php the_content(); ?>
-		<div class="resizer"></div>
-		
 	</div>
 </article>
 
