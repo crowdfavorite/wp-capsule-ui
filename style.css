@@ -469,25 +469,33 @@ article.dirty header .post-dirty {
 
 /* Deleted */
 
-article.deleted {
+article.deleted .content {
 	margin-top: 30px;
-	background: #ccc;
+	background: transparent;
 	color: #666;
+	border: none;
+}
+article.deleted {
+	height: 40px;
+	margin-bottom: 10px;
 }
 article.deleted span.msg {
 	display: inline-block;
+	text-align: center;
 	color: #222;
+	margin-left: 24px;
 	font-family: 'SourceSansProRegular', Helvetica;
 	font-size: 16px;
 	text-shadow: 1px 1px #fff;
 }
 article.deleted a.post-undelete-link,
 article.deleted a.post-undelete-link:visited {
-	background: #999;
+	background: #222;
 	color: #fff;
 	display: inline-block;
-	float: right;
-	padding: 3px 10px;
+	padding: 7px 13px 5px;
+	margin-left: 12px;
+	font-size: 14px;
 }
 
 /* Content */
