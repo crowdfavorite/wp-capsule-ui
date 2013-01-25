@@ -470,23 +470,20 @@ article.dirty header .post-dirty {
 /* Deleted */
 
 article.deleted {
+	margin-top: 30px;
 	background: #ccc;
-	border-radius: 5px;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
 	color: #666;
-	padding: 10px;
 }
 article.deleted span.msg {
 	display: inline-block;
-	padding: 3px 5px;
+	color: #222;
+	font-family: 'SourceSansProRegular', Helvetica;
+	font-size: 16px;
+	text-shadow: 1px 1px #fff;
 }
 article.deleted a.post-undelete-link,
 article.deleted a.post-undelete-link:visited {
 	background: #999;
-	border-radius: 3px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
 	color: #fff;
 	display: inline-block;
 	float: right;
