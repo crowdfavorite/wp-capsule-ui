@@ -181,12 +181,12 @@ body {
 .pagination .nav-previous {
 	float: right;
 	margin-right: 128px;
-	margin-top: 25px;
+	margin-top: 23px;
 }
 .nav-next {
 	float: left;
 	margin-left: 52px;
-	margin-top: 25px;
+	margin-top: 23px;
 }
 .pagination a {
 	color: #222;
@@ -380,7 +380,7 @@ article.edit header {
 	position: absolute;
 	right: 126px;
 	width: 31px;
-	z-index: 1;
+	z-index: 9000;
 }
 
 article header a,
@@ -506,17 +506,16 @@ article .content {
 	padding: 0px 25px 25px 25px;
 }
 article.edit .content {
-	background: #fff;
+	background: #1a1a1a;
 	border: 1px solid #adadad;
 	min-height: 200px;	
 	overflow: auto;
-	padding: 0px;
+	padding: 0;
 }
 article.sticky .content {
 	background-image: url('img/sticky.png');
 	background-repeat: no-repeat;
 	background-position: 100% 0%;
-	resize: vertical;
 }
 article.excerpt .content {
 	max-height: 200px;
