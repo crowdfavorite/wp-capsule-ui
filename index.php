@@ -59,6 +59,7 @@ wp_head();
 		<a href="index.php">Search</a>
 		<a href="index.php">Settings</a>
 </nav>
+
 <div id="wrap">
 	<header id="header">
 		<div class="inner">

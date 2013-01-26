@@ -26,4 +26,3 @@
 		<?php the_content(); ?>
 	</div>
 </article>
-
