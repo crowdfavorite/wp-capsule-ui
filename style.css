@@ -165,13 +165,14 @@ body {
 }
 .page-title {
 	color: #222;
-	font-family: 'SourceSansProSemiBold';
+	font-family: 'SourceSansProRegular';
 	font-weight: normal;
 	margin: 0;
-	padding: 10px 0px;
+	padding: 26px 0 0 0;
 	text-shadow: 1px 1px #fff;
 }
 .page-title em {
+	font-family: 'SourceSansProSemiBold';	
 	font-style: normal;
 	font-weight: bold;
 }
