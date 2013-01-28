@@ -195,7 +195,6 @@ body {
 	font-size: 20px;
 	text-shadow: 1px 1px #fff;
 }
-
 /* Nav */
 .mainNav a {
 	display: inline-block;
@@ -223,6 +222,36 @@ body {
 .nav-next a {
 	background: transparent url('img/arrow-left.png') no-repeat 0% 25%;
 	padding-left: 20px;
+}
+/* Project Menu */
+.project-list {
+	box-shadow: 1px 1px #adadad;
+	margin-left: 118px;
+	margin-top: -100px;
+	z-index: 100;
+	line-height: 52px;
+	position: absolute;
+	overflow: hidden;
+	display: none;
+}
+.projects:hover .project-list {
+	display: block;
+}
+.project-list li {
+	background: #111;
+	height: 50px;
+	width: 175px;
+	border-bottom: 1px solid #333;
+	padding: 0 20px;
+}
+.project-list li:hover {
+	background: #333;
+}
+.project-list li.list-last {
+	background: #222 url('img/arrow-right-white.png') no-repeat 85% 50%;
+}
+.project-list li.list-last:hover {
+	background: #333 url('img/arrow-right-white.png') no-repeat 85% 50%;
 }
 /* Header */
 
@@ -573,6 +602,12 @@ article .ace-editor {
 	height: 400px;
 	width: 100%;
 }
+.ace-footer {
+	border: 1px solid red;
+	width: 50px;
+	height: 50px;
+	position: absolute;
+}
 /* Code */
 
 pre {
@@ -672,4 +707,5 @@ html[xmlns] .clearfix {
 	/* background image set in functions.php */
 	height: 100%;
 	width: 100%;
+	
 }
