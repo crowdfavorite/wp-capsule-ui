@@ -54,20 +54,20 @@ wp_head();
 <nav class="mainNav">
 		<a href="index.php" class="logo"> </a>
 		<a href="index.php" class="home-link">Home</a>
-		<a href="index.php">New Post</a>
+		<a href="#" class="post-new-link"><span><?php _e('New Post', '.post-new-link'); ?></span></a>
 		<a href="index.php" class="projects">Projects
 			<ul class="project-list">
 				<li>@test</li>
 				<li>@social</li>
 				<li>@capsule</li>
-				<li>@threads</li>
+				<li>@tacos</li>
 				<li>@persnickety</li>
 				<li>@threads</li>
 				<li class="list-last">All Projects</li>
 			</ul>
 		</a>
 		<a href="index.php">Search</a>
-		<a href="index.php">Settings</a>
+		<a href="/wp/wp-admin/">Settings</a>
 </nav>
 
 <div id="wrap">
