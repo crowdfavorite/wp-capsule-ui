@@ -21,5 +21,8 @@
 	</div>
 	<div class="content">
 		<div id="ace-editor-<?php echo $post->ID; ?>" class="ace-editor"></div>
+		<div class="status">
+			<p>Last Saved at 1:38pm 1/17/2013</p>
+		</div>
 	</div>
 </article>

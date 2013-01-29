@@ -534,6 +534,20 @@ article .content {
 	min-height: 200px;
 	overflow: auto;
 	padding: 0px 25px 25px 25px;
+	position: relative;
+}
+.status {
+	background: #333;	
+	bottom: 1px;
+	height: 21px;
+	left: 47px;
+	position: absolute;
+	right: 0;
+}
+.status p {
+	color: #7f7f7f;
+	font-size: 12px;
+	margin: 5px 0 0 9px;
 }
 article.edit .content {
 	background: #1a1a1a;
@@ -608,6 +622,7 @@ article .ace-editor {
 	height: 50px;
 	position: absolute;
 }
+
 /* Code */
 
 pre {
