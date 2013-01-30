@@ -24,7 +24,5 @@
 	</div>
 	<div class="content">
 		<?php the_content(); ?>
-		<div class="close-content">
-		</div>
 	</div>
 </article>

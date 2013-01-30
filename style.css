@@ -549,6 +549,14 @@ article .content {
 	font-size: 12px;
 	margin: 5px 0 0 9px;
 }
+.close-content {
+	height: 20px;
+	border: 1px solid red;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
 article.edit .content {
 	background: #1a1a1a;
 	border: 1px solid #adadad;

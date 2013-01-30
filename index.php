@@ -54,7 +54,7 @@ wp_head();
 <nav class="mainNav">
 		<a href="index.php" class="logo"> </a>
 		<a href="index.php" class="home-link">Home</a>
-		<a href="#" class="post-new-link"><span><?php _e('New Post', '.post-new-link'); ?></span></a>
+		<a href="<?php echo esc_url(admin_url('post-new.php')); ?>" class="post-new-link"><?php _e('New Post', 'capsule'); ?></a>
 		<a href="index.php" class="projects">Projects
 			<ul class="project-list">
 				<li>@test</li>
