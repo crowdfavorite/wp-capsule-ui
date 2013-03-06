@@ -11,7 +11,12 @@ nav a {
 	font-family: 'SourceSansProRegular', Helvetica;	
 	font-size: 1.125em;
 	text-shadow: 1px 1px #111;
+	text-decoration: none;
 }
+
+nav a:visited { color: white; }
+nav a:hover { color: white; }
+
 code {
 	color: #222;
 	font-family: 'SourceCodeProRegular', Helvetica;
@@ -29,6 +34,7 @@ code {
 	list-style-type: none;
 	line-height: 0px;
 	text-align: center;
+	padding: 0;
 }
 .day {
 	font-family: 'SourceSansProBold';
@@ -148,13 +154,13 @@ article header a.post-close-link {
 	background: transparent url_ver('../img/close-static.png') no-repeat center center;
 }
 article header a.post-edit-link {
-	background: transparent url_ver('img/edit.png') no-repeat center center;
+	background: transparent url_ver('../img/edit.png') no-repeat center center;
 }
 article header a.post-stick-link {
-	background: transparent url_ver('img/star.png') no-repeat center center;
+	background: transparent url_ver('../img/star.png') no-repeat center center;
 }
 article header a.post-delete-link {
-	background: transparent url_ver('img/delete.png') no-repeat center center;
+	background: transparent url_ver('../img/delete.png') no-repeat center center;
 }
 article header a.post-close-link span,
 article header a.post-edit-link span,
@@ -300,6 +306,10 @@ article.content .meta ul,
 article.content .meta li {
 	display: block;
 	line-height: 0px;
+}
+
+.meta ul {
+	padding: 0;
 }
 
 .content header,

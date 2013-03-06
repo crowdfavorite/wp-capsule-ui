@@ -63,15 +63,15 @@ $font-sans: Helvetica, Arial, sans-serif;
 
 // Break Points
 
-$small-min: 480px;
-$medium-min: 760px;
-$large-min: 1025px;
+// $small-min: 480px;
+// $medium-min: 760px;
+// $large-min: 1025px;
 
-// Media Query Mixin
+// // Media Query Mixin
 
-@mixin breakpoint($bp) {
-	@media (min-width: $bp)  { @content; }
-}
+// @mixin breakpoint($bp) {
+// 	@media (min-width: $bp)  { @content; }
+// }
 
 // --------------------------------------------------
 // Generic Mixins
@@ -155,9 +155,6 @@ $assetpath: "/wp-content/themes/capsule/assets/img/";
 // RESET — Normalize, Boilerplate, Formalize
 @import "reset";
 
-// Crowd Favorite grid for content
-//@import "grid";
-
 // Helper Classes & Debug Styles
 @import "utility";
 
@@ -169,6 +166,3 @@ $assetpath: "/wp-content/themes/capsule/assets/img/";
 
 // Global Content
 @import "content";
-
-// Widgets
-//@import "widgets";

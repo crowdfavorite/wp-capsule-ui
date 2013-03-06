@@ -71,7 +71,7 @@ html, button, input, select, textarea {
   color: #222; }
 
 body {
-  background-image: url("img/tile.png");
+  background-image: url("../img/tile.png?ver=1.0");
   color: #000;
   font-family: sans-serif;
   font-size: 13px;
@@ -493,10 +493,7 @@ td {
 .sticky {
   /* Add styles here if you wish to callout sticky posts */ }
 
-/* --------------------------------------------------
- * Standard / Utility Classes
--------------------------------------------------- */
-/* Pagination */
+w
 .pagination {
   min-height: 20px;
   margin: 30px 0; }
@@ -730,7 +727,14 @@ nav a {
   color: white;
   font-family: "SourceSansProRegular", Helvetica;
   font-size: 1.125em;
-  text-shadow: 1px 1px #111111; }
+  text-shadow: 1px 1px #111111;
+  text-decoration: none; }
+
+nav a:visited {
+  color: white; }
+
+nav a:hover {
+  color: white; }
 
 code {
   color: #222;
@@ -747,7 +751,8 @@ code {
 .leftCol ul {
   list-style-type: none;
   line-height: 0px;
-  text-align: center; }
+  text-align: center;
+  padding: 0; }
 
 .day {
   font-family: 'SourceSansProBold';
@@ -861,13 +866,13 @@ article header a.post-close-link {
   background: transparent url("../img/close-static.png?ver=1.0") no-repeat center center; }
 
 article header a.post-edit-link {
-  background: transparent url("img/edit.png?ver=1.0") no-repeat center center; }
+  background: transparent url("../img/edit.png?ver=1.0") no-repeat center center; }
 
 article header a.post-stick-link {
-  background: transparent url("img/star.png?ver=1.0") no-repeat center center; }
+  background: transparent url("../img/star.png?ver=1.0") no-repeat center center; }
 
 article header a.post-delete-link {
-  background: transparent url("img/delete.png?ver=1.0") no-repeat center center; }
+  background: transparent url("../img/delete.png?ver=1.0") no-repeat center center; }
 
 article header a.post-close-link span,
 article header a.post-edit-link span,
@@ -1009,6 +1014,9 @@ article.content .meta ul,
 article.content .meta li {
   display: block;
   line-height: 0px; }
+
+.meta ul {
+  padding: 0; }
 
 .content header,
 .excerpt header {
