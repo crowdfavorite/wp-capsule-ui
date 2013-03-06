@@ -12,11 +12,13 @@
 	position: fixed;
 	text-align: center;
 	width: 100%;
-}
 
-#footer a,
-#footer a:visited {
-	color: #fff;
-	font-family: 'SourceSansProSemibold';
-	font-size: 14px;
+	a {
+		&,
+		&:visited {
+			color: $white;
+			font-family: 'SourceSansProSemibold';
+			font-size: 14px;
+		}
+	}
 }

@@ -50,23 +50,27 @@ else {
 </head>
 <body <?php body_class(); ?>>
 
-<nav class="mainNav">
-		<a href="index.php" class="logo"> </a>
-		<a href="index.php" class="home-link">Home</a>
-		<a href="<?php echo esc_url(admin_url('post-new.php')); ?>" class="post-new-link"><?php _e('New Post', 'capsule'); ?></a>
-		<a href="index.php" class="projects">Projects
+<nav class="main-nav">
+
+	<a href="index.php" class="logo">Capsule</a>
+
+	<ul>
+		<li><a href="index.php">Home</a></li>
+		<li><a href="<?php echo esc_url(admin_url('post-new.php')); ?>" class="post-new-link"><?php _e('New Post', 'capsule'); ?></a></li>
+		<li><a href="index.php" class="projects">Projects</a>
 			<ul class="project-list">
-				<li>@test</li>
-				<li>@social</li>
-				<li>@capsule</li>
-				<li>@tacos</li>
-				<li>@persnickety</li>
-				<li>@threads</li>
-				<li class="list-last">All Projects</li>
+				<li><a href="#">@test</a></li>
+				<li><a href="#">@social</a></li>
+				<li><a href="#">@capsule</a></li>
+				<li><a href="#">@tacos</a></li>
+				<li><a href="#">@persnickety</a></li>
+				<li><a href="#">@threads</a></li>
+				<li class="list-last"><a href="#">All Projects</a></li>
 			</ul>
-		</a>
-		<a href="index.php">Search</a>
-		<a href="/wp/wp-admin/">Settings</a>
+		</li>
+		<li><a href="index.php">Search</a></li>
+		<li><a href="/wp/wp-admin/">Settings</a></li>
+	</ul>
 </nav>
 
 <div id="wrap">
@@ -101,8 +105,8 @@ if (have_posts()) {
 	if ( $wp_query->max_num_pages > 1 ) {
 ?>
 		<nav class="pagination clearfix">
-			<div class="nav-previous"><?php next_posts_link( __( 'Older posts <span class="meta-nav">&rarr;</span>', 'twentyeleven' ) ); ?></div>
-			<div class="nav-next"><?php previous_posts_link( __( '<span class="meta-nav">&larr;</span> Newer posts', 'twentyeleven' ) ); ?></div>
+			<div class="nav-previous"><?php next_posts_link( __( 'Older posts <span class="meta-nav">&rarr;</span>', 'capsule' ) ); ?></div>
+			<div class="nav-next"><?php previous_posts_link( __( '<span class="meta-nav">&larr;</span> Newer posts', 'capsule' ) ); ?></div>
 		</nav>
 <?php
 	}
