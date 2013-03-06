@@ -36,11 +36,11 @@ audio:not([controls]) { display: none; }
 
 html { font-size: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
 
-html, button, input, select, textarea { font-family: sans-serif; color: #222; }
+html, button, input, select, textarea { font-family: sans-serif; color: $gray; }
 
 body {
   background-image: url_ver('../img/tile.png');
-  color: #000;
+  color: $black;
   font-family: sans-serif;
   font-size: 13px;
   height: 100%;
@@ -93,9 +93,9 @@ dfn { font-style: italic; }
 
 hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0; }
 
-ins { background: #ff9; color: #000; text-decoration: none; }
+ins { background: #ff9; color: $black; text-decoration: none; }
 
-mark { background: #ff0; color: #000; font-style: italic; font-weight: bold; }
+mark { background: #ff0; color: $black; font-style: italic; font-weight: bold; }
 
 /* Redeclare monospace font family: h5bp.com/j */
 pre, code, kbd, samp { font-family: monospace, serif; _font-family: 'courier new', monospace; font-size: 1em; }

@@ -10,7 +10,7 @@ nav {
 	a {
 		font-family: 'SourceSansProRegular', Helvetica;	
 		font-size: 1.125em;
-		text-shadow: 1px 1px #111;
+		text-shadow: 1px 1px $gray-dark;
 		text-decoration: none;
 
 		&,
@@ -156,7 +156,7 @@ article {
 	header {
 		background: $white;
 		border: 1px solid #adadad;
-		box-shadow: 0px 1px #eee;
+		@include box-shadow(0px 1px 0 #eee);
 		color: $white;
 		height: 96px;
 		margin-top: 40px;
@@ -196,9 +196,7 @@ article {
 
 .unstyled {
 	border: 0;
-	-moz-box-shadow: none;
-	-webkit-box-shadow: none;
-	box-shadow: none;
+	@include box-shadow(none);
 }
 
 .save-indicator {
@@ -233,7 +231,7 @@ article {
 		margin-top: 22px;
 	}
 	.msg {
-		color: #222;
+		color: $gray;
 		display: inline-block;
 		font-family: 'SourceSansProRegular', Helvetica;
 		font-size: 16px;
@@ -244,7 +242,7 @@ article {
 	.post-undelete-link {
 		&,
 		&:visited {
-			background: #222;
+			background: $gray;
 			color: $white;
 			display: inline-block;
 			font-size: 14px;
@@ -265,7 +263,7 @@ article {
 	position: relative;
 }
 .status {
-	background: #333;	
+	background: $gray-light;	
 	bottom: 1px;
 	height: 21px;
 	left: 47px;
@@ -308,7 +306,7 @@ article {
 		width: 85px;
 
 		h3 {
-			color: #222;
+			color: $gray;
 			display: inline-block;
 			font-family: 'SourceSansProBold';
 			font-size: 14px;
@@ -345,7 +343,7 @@ article {
 .post-meta a {
 	&,
 	&:visited {
-		color: #222;
+		color: $gray;
 		font-family: 'SourceSansProRegular';
 		font-size: 16px;
 		line-height: 20px;
@@ -374,7 +372,7 @@ pre {
 }
 
 code {
-	color: #222;
+	color: $gray;
 	font-family: 'SourceCodeProRegular', Helvetica;
 	font-size: 13px;
 }
@@ -383,7 +381,7 @@ code {
 
 .static_container {
 	background-color: #eee;
-	border: 1px solid #333;
+	border: 1px solid $gray-light;
 	margin-top: 5px;
 	margin-bottom: 5px;
 	position: relative;
@@ -393,30 +391,21 @@ code {
 		position: relative;
 	}
 	.code_language {
-		position: absolute;
-		top: 0px;
-		right: 0px;
-		padding: 1px 5px;
-		height: 1.9em;
 		background-color: #ccc;
+		@include border-radius(0 4px 0 4px);
 		font-size: 80%;
-		-webkit-border-radius: 0 4px 0 4px;
-		-moz-border-radius: 0 4px 0 4px;
-		border-radius: 0 4px 0 4px;
+		height: 1.9em;
+		padding: 1px 5px;
+		position: absolute;
+		right: 0px;
+		top: 0px;
+		@include transition(all .1s ease-in-out);
 		z-index: 100;
-		-webkit-transition: all .1s ease-in-out;
-		-moz-transition: all .1s ease-in-out;
-		-o-transition: all .1s ease-in-out;
-		-ms-transition: all .1s ease-in-out;
+		
 	}
 	&:hover .code_language {
-		-webkit-transform: translate(0,-2em);
-		-moz-transform: translate(0,-2em);
-		-o-transform: translate(0,-2em);
-		-ms-transform: translate(0,-2em);
-		-webkit-border-radius: 4px;
-		-moz-border-radius: 4px;
-		border-radius: 4px;
+		@include border-radius(4px);
+		@include transform(0, -2em);
 	}
 }
 

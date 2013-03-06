@@ -7,11 +7,11 @@
 // --------------------------------------------------
 
 // Colors
-
-// $color-dark: #444;
-// $color: #666;
-// $color-light: #999;
 $white: #fff;
+$gray-light: #333;
+$gray: #222;
+$gray-dark: #111;
+$black: #000;
 
 // Typography
 @font-face {
@@ -89,10 +89,10 @@ $font-sans: Helvetica, Arial, sans-serif;
 	-webkit-background-clip: padding-box;
 }
 
-@mixin box-shadow($x: 0, $y: 3px, $spread: 3px, $color: #666) {
-	-moz-box-shadow: $x $y $spread $color; /* FF3.5+ */
-	-webkit-box-shadow: $x $y $spread $color; /* Saf3+, Chrome */
-	box-shadow: $x $y $spread $color; /* Standard. Opera 10.5, IE9+ */
+@mixin box-shadow($first: 0 3px 3px #666, $second: none) {
+	-moz-box-shadow: $first, $second; /* FF3.5+ */
+	-webkit-box-shadow: $first, $second; /* Saf3+, Chrome */
+	box-shadow: $first, $second; /* Standard. Opera 10.5, IE9+ */
 }
 
 @mixin transition ($transition: 0.1s ease) {
@@ -103,6 +103,13 @@ $font-sans: Helvetica, Arial, sans-serif;
 	transition: $transition;
 }
 
+@mixin transform($x: 1, $y: -2em) {
+	-webkit-transform: translate($x, $y);
+	-moz-transform: translate($x, $y);
+	-o-transform: translate($x, $y);
+	-ms-transform: translate($x, $y);
+	transform: translate($x, $y);
+}
 
 // --------------------------------------------------
 // Image Versioning Functions: use these for all image references in SCSS.

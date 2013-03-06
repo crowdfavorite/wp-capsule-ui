@@ -110,7 +110,7 @@
 .none {
 	color: #999;
 	padding-top: 10px;
-	text-shadow: 1px 1px #fff;
+	text-shadow: 1px 1px $white;
 }
 .transparent {
 	opacity: 0;
@@ -119,5 +119,4 @@
 	/* background image set in functions.php */
 	height: 100%;
 	width: 100%;
-	
 }

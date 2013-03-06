@@ -68,11 +68,11 @@ html {
 
 html, button, input, select, textarea {
   font-family: sans-serif;
-  color: #222; }
+  color: #222222; }
 
 body {
   background-image: url("../img/tile.png?ver=1.0");
-  color: #000;
+  color: black;
   font-family: sans-serif;
   font-size: 13px;
   height: 100%;
@@ -143,12 +143,12 @@ hr {
 
 ins {
   background: #ff9;
-  color: #000;
+  color: black;
   text-decoration: none; }
 
 mark {
   background: #ff0;
-  color: #000;
+  color: black;
   font-style: italic;
   font-weight: bold; }
 
@@ -545,8 +545,12 @@ w
       height: 29px;
       padding-left: 30px;
       width: 258px;
-      -webkit-box-shadow: inset 0 2px 5px #dddddd;
-      box-shadow: inner 0 2px 5px #dddddd; }
+      -moz-box-shadow: inset 0 2px 5px #dddddd, none;
+      /* FF3.5+ */
+      -webkit-box-shadow: inset 0 2px 5px #dddddd, none;
+      /* Saf3+, Chrome */
+      box-shadow: inset 0 2px 5px #dddddd, none;
+      /* Standard. Opera 10.5, IE9+ */ }
       #header form input[type="submit"] {
         display: none; }
   #header a.post-new-link, #header a.post-new-link:visited {
@@ -602,7 +606,7 @@ w
 /* 	Main Navigation
 	------------------------------------------------------- */
 .main-nav {
-  background: #222;
+  background: #222222;
   float: left;
   width: 138px; }
   .main-nav ul {
@@ -614,10 +618,15 @@ w
         display: block;
         padding: 21px 0 21px 20px; }
         .main-nav ul li a:hover {
-          background-color: #333;
+          background-color: #333333;
           text-decoration: none; }
       .main-nav ul li ul {
-        box-shadow: 1px 1px #adadad;
+        -moz-box-shadow: 1px 1px #adadad, none;
+        /* FF3.5+ */
+        -webkit-box-shadow: 1px 1px #adadad, none;
+        /* Saf3+, Chrome */
+        box-shadow: 1px 1px #adadad, none;
+        /* Standard. Opera 10.5, IE9+ */
         left: -9999em;
         z-index: 100;
         position: absolute;
@@ -626,10 +635,10 @@ w
         .main-nav ul li ul li {
           border-bottom: 1px solid #333333; }
           .main-nav ul li ul li a {
-            background-color: #111;
+            background-color: #111111;
             padding: 19px 0 19px 20px; }
             .main-nav ul li ul li a:hover {
-              background-color: #333; }
+              background-color: #333333; }
           .main-nav ul li ul li.list-last a {
             background-image: url("../img/arrow-right-white.png?ver=1.0");
             background-repeat: no-repeat;
@@ -653,39 +662,35 @@ w
 /* 	Page Headers
 ------------------------------------------------------- */
 .page-title {
-  color: #222;
+  color: #222222;
   font-family: 'SourceSansProRegular';
   font-weight: normal;
   margin: 0;
   padding: 26px 0 0 0;
   text-shadow: 1px 1px white; }
+  .page-title em {
+    font-family: 'SourceSansProSemiBold';
+    font-style: normal;
+    font-weight: bold; }
 
-.page-title em {
-  font-family: 'SourceSansProSemiBold';
-  font-style: normal;
-  font-weight: bold; }
-
-.body .pagination {
+.pagination {
   display: block; }
-
-.pagination .nav-previous {
-  float: right;
-  margin-right: 128px;
-  margin-top: 23px; }
-
-.nav-next {
-  float: left;
-  margin-left: 52px;
-  margin-top: 23px; }
-
-.pagination a {
-  color: #222;
-  font-family: "SourceSansProRegular", Helvetica;
-  font-size: 20px;
-  text-shadow: 1px 1px white; }
+  .pagination .nav-previous {
+    float: right;
+    margin-right: 128px;
+    margin-top: 23px; }
+  .pagination .nav-next {
+    float: left;
+    margin-left: 52px;
+    margin-top: 23px; }
+  .pagination a {
+    color: #222222;
+    font-family: "SourceSansProRegular", Helvetica;
+    font-size: 20px;
+    text-shadow: 1px 1px white; }
 
 #footer {
-  background-color: #222;
+  background-color: #222222;
   bottom: 0px;
   clear: both;
   color: #9d9da1;
@@ -806,7 +811,12 @@ article header .post-last-saved {
   .content header {
     background: white;
     border: 1px solid #adadad;
-    box-shadow: 0px 1px #eeeeee;
+    -moz-box-shadow: 0px 1px 0 #eeeeee, none;
+    /* FF3.5+ */
+    -webkit-box-shadow: 0px 1px 0 #eeeeee, none;
+    /* Saf3+, Chrome */
+    box-shadow: 0px 1px 0 #eeeeee, none;
+    /* Standard. Opera 10.5, IE9+ */
     color: white;
     height: 96px;
     margin-top: 40px;
@@ -838,9 +848,12 @@ article header .post-last-saved {
 
 .unstyled {
   border: 0;
-  -moz-box-shadow: none;
-  -webkit-box-shadow: none;
-  box-shadow: none; }
+  -moz-box-shadow: none, none;
+  /* FF3.5+ */
+  -webkit-box-shadow: none, none;
+  /* Saf3+, Chrome */
+  box-shadow: none, none;
+  /* Standard. Opera 10.5, IE9+ */ }
 
 .save-indicator {
   float: right;
@@ -867,7 +880,7 @@ article header .post-last-saved {
     color: #666;
     margin-top: 22px; }
   .deleted .msg {
-    color: #222;
+    color: #222222;
     display: inline-block;
     font-family: "SourceSansProRegular", Helvetica;
     font-size: 16px;
@@ -875,7 +888,7 @@ article header .post-last-saved {
     text-align: center;
     text-shadow: 1px 1px white; }
   .deleted .post-undelete-link, .deleted .post-undelete-link:visited {
-    background: #222;
+    background: #222222;
     color: white;
     display: inline-block;
     font-size: 14px;
@@ -892,7 +905,7 @@ article header .post-last-saved {
   position: relative; }
 
 .status {
-  background: #333;
+  background: #333333;
   bottom: 1px;
   height: 21px;
   left: 47px;
@@ -930,7 +943,7 @@ article header .post-last-saved {
   width: 85px; }
   .edit .post-meta h3,
   .content .post-meta h3 {
-    color: #222;
+    color: #222222;
     display: inline-block;
     font-family: 'SourceSansProBold';
     font-size: 14px;
@@ -958,7 +971,7 @@ article header .post-last-saved {
   display: block; }
 
 .post-meta a, .post-meta a:visited {
-  color: #222;
+  color: #222222;
   font-family: 'SourceSansProRegular';
   font-size: 16px;
   line-height: 20px;
@@ -981,7 +994,7 @@ pre {
   padding: 16px; }
 
 code {
-  color: #222;
+  color: #222222;
   font-family: "SourceCodeProRegular", Helvetica;
   font-size: 13px; }
 
@@ -996,29 +1009,47 @@ code {
     overflow-x: hidden;
     position: relative; }
   .static_container .code_language {
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    padding: 1px 5px;
-    height: 1.9em;
     background-color: #ccc;
-    font-size: 80%;
-    -webkit-border-radius: 0 4px 0 4px;
     -moz-border-radius: 0 4px 0 4px;
+    /* FF1+ */
+    -webkit-border-radius: 0 4px 0 4px;
+    /* Saf3+, Chrome */
     border-radius: 0 4px 0 4px;
-    z-index: 100;
+    /* Standard. IE9+ */
+    /**
+     * @bugfix border-radius background bleed
+     * @see http://tumble.sneak.co.nz/post/928998513/fixing-the-background-bleed
+     */
+    -webkit-background-clip: padding-box;
+    font-size: 80%;
+    height: 1.9em;
+    padding: 1px 5px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
     -webkit-transition: all 0.1s ease-in-out;
     -moz-transition: all 0.1s ease-in-out;
     -o-transition: all 0.1s ease-in-out;
-    -ms-transition: all 0.1s ease-in-out; }
+    -ms-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+    z-index: 100; }
   .static_container:hover .code_language {
+    -moz-border-radius: 4px;
+    /* FF1+ */
+    -webkit-border-radius: 4px;
+    /* Saf3+, Chrome */
+    border-radius: 4px;
+    /* Standard. IE9+ */
+    /**
+     * @bugfix border-radius background bleed
+     * @see http://tumble.sneak.co.nz/post/928998513/fixing-the-background-bleed
+     */
+    -webkit-background-clip: padding-box;
     -webkit-transform: translate(0, -2em);
     -moz-transform: translate(0, -2em);
     -o-transform: translate(0, -2em);
     -ms-transform: translate(0, -2em);
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px; }
+    transform: translate(0, -2em); }
 
 pre.static_code {
   margin: 2px;
