@@ -33,11 +33,21 @@ function capsule_unauthorized_json() {
 
 function capsule_resources() {
 	$template_url = trailingslashit(get_template_directory_uri());
-	
+	$assets_url = trailingslashit($template_url . 'assets');
+
+	// Styles
+	wp_enqueue_style(
+		'capsule_styles',
+		$assets_url.'css/style.css',
+		array(),
+		CAPSULE_URL_VERSION
+	);
+
+	// Scripts
 	wp_enqueue_script('jquery');
 	wp_enqueue_script(
 		'capsule',
-		$template_url.'js/capsule.js',
+		$assets_url.'js/capsule.js',
 		array('jquery', 'ace', 'statichighlight', 'cfmarkdown'),
 		CAPSULE_URL_VERSION,
 		true
@@ -55,7 +65,7 @@ function capsule_resources() {
 	);
 	wp_enqueue_script(
 		'statichighlight',
-		$template_url.'js/static_highlight.js',
+		$assets_url.'js/static_highlight.js',
 		array('ace'),
 		CAPSULE_URL_VERSION,
 		true
@@ -76,14 +86,14 @@ function capsule_resources() {
 	);
 	wp_enqueue_script(
 		'cfmarkdown',
-		$template_url.'js/syntax/cfmarkdown.js',
+		$assets_url.'js/syntax/cfmarkdown.js',
 		array('jquery', 'ace', 'twitter-text'),
 		CAPSULE_URL_VERSION,
 		true
 	);
 	wp_enqueue_script(
 		'cf_php_highlight_rules',
-		$template_url.'js/syntax/cf_php_highlight_rules.js',
+		$assets_url.'js/syntax/cf_php_highlight_rules.js',
 		array('ace'),
 		CAPSULE_URL_VERSION,
 		true
@@ -97,7 +107,7 @@ function capsule_resources() {
 	);
 	wp_enqueue_script(
 		'jquery-scrollto',
-		$template_url.'js/jquery.scrollTo-1.4.2-min.js',
+		$assets_url.'js/jquery.scrollTo-1.4.2-min.js',
 		array('jquery'),
 		CAPSULE_URL_VERSION,
 		true

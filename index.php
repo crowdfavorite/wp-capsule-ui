@@ -43,11 +43,10 @@ else {
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
 	<meta name="viewport" content="width=device-width" />
+	
 	<title><?php wp_title( '|', true, 'right' ); echo esc_html( get_bloginfo('name'), 1 ).$title_description; ?></title>
-	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo('stylesheet_url'); ?>" />
-<?php
-wp_head();
-?>
+	
+	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
 
