@@ -72,7 +72,7 @@ html, button, input, select, textarea {
 
 body {
   background-image: url("../img/tile.png?ver=1.0");
-  color: black;
+  color: #333333;
   font-family: sans-serif;
   font-size: 13px;
   height: 100%;
@@ -143,12 +143,12 @@ hr {
 
 ins {
   background: #ff9;
-  color: black;
+  color: #333333;
   text-decoration: none; }
 
 mark {
   background: #ff0;
-  color: black;
+  color: #333333;
   font-style: italic;
   font-weight: bold; }
 
