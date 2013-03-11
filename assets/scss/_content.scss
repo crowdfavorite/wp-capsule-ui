@@ -320,6 +320,17 @@ article {
 		ul {
 			padding: 0;
 		}
+		li {
+			a {
+				background: $gray-light;
+				color: $white;
+				font-size: 12px;
+				padding: 3px;
+				@include border-radius(3px);
+				text-decoration: none;
+				text-shadow: none;
+			}
+		}
 		ul,
 		li {
 			display: block;

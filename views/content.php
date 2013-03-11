@@ -4,7 +4,7 @@
 		<?php edit_post_link(__('Edit', 'capsule'), '', ''); ?>
 		<a href="#" class="post-stick-link"><span><?php _e('Sticky', 'capsule'); ?></span></a>
 	</header>
-	<div class="meta">
+	<div class="post-meta">
 		<h3><?php _e('Projects', 'capsule'); ?></h3>
 		<?php echo capsule_term_list(get_the_ID(), 'projects'); ?>
 		<br>

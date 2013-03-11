@@ -956,6 +956,25 @@ article header .post-last-saved {
   .edit .post-meta ul,
   .content .post-meta ul {
     padding: 0; }
+  .edit .post-meta li a,
+  .content .post-meta li a {
+    background: #333333;
+    color: white;
+    font-size: 12px;
+    padding: 3px;
+    -moz-border-radius: 3px;
+    /* FF1+ */
+    -webkit-border-radius: 3px;
+    /* Saf3+, Chrome */
+    border-radius: 3px;
+    /* Standard. IE9+ */
+    /**
+     * @bugfix border-radius background bleed
+     * @see http://tumble.sneak.co.nz/post/928998513/fixing-the-background-bleed
+     */
+    -webkit-background-clip: padding-box;
+    text-decoration: none;
+    text-shadow: none; }
   .edit .post-meta ul,
   .edit .post-meta li,
   .content .post-meta ul,

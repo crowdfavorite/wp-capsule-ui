@@ -246,7 +246,11 @@ add_filter('get_the_terms', 'capsule_get_the_terms', 10, 3);
 
 function capsule_term_list($post_id, $taxonomy) {
 	if (($tax_terms = get_the_terms($post_id, $taxonomy)) != false) {
-		return get_the_term_list($post_id, $taxonomy, '<ul><li>', '</li><li>', '</li></ul>'); 
+		if($taxonomy == 'post_tag') {
+			return get_the_term_list($post_id, $taxonomy, '<ul class="post-meta-tags"><li>', '</li><li>', '</li></ul>'); 
+		} else {
+			return get_the_term_list($post_id, $taxonomy, '<ul><li>', '</li><li>', '</li></ul>'); 
+		}
 	}
 	else {
 		return '<ul><li class="none">'.__('(none)', 'capsule').'</li></ul>';
