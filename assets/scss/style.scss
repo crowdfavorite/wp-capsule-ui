@@ -89,10 +89,10 @@ $font-sans: Helvetica, Arial, sans-serif;
 	-webkit-background-clip: padding-box;
 }
 
-@mixin box-shadow($first: 0 3px 3px #666, $second: none) {
-	-moz-box-shadow: $first, $second; /* FF3.5+ */
-	-webkit-box-shadow: $first, $second; /* Saf3+, Chrome */
-	box-shadow: $first, $second; /* Standard. Opera 10.5, IE9+ */
+@mixin box-shadow($first: 0 3px 3px #666) {
+	-moz-box-shadow: $first; /* FF3.5+ */
+	-webkit-box-shadow: $first; /* Saf3+, Chrome */
+	box-shadow: $first; /* Standard. Opera 10.5, IE9+ */
 }
 
 @mixin transition ($transition: 0.1s ease) {
