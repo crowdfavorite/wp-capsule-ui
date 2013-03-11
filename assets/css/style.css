@@ -728,7 +728,7 @@ nav a {
   .post-date ul {
     list-style-type: none;
     line-height: 0px;
-    text-align: center;
+    text-align: right;
     padding: 0; }
   .post-date .day {
     font-family: 'SourceSansProBold';
