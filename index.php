@@ -117,11 +117,7 @@ if (have_posts()) {
 	</div>
 </div>
 
-<footer id="footer"><a href="http://crowdfavorite.com/capsule/">Capsule</a> by <a href="http://crowdfavorite.com">Crowd Favorite</a></footer>
-
-<?php
-wp_footer();
-?>
+<?php wp_footer(); ?>
 
 </body>
 </html>
