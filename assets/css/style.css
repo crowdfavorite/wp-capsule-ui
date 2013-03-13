@@ -763,45 +763,52 @@ nav a {
   text-transform: uppercase;
   width: 50px; }
 
-article header a, article header a:visited {
-  color: #ccc; }
-article header a:hover {
-  text-decoration: underline; }
-article header a.post-link {
-  display: inline-block;
-  width: 100px; }
-article header a.post-close-link {
-  background: transparent url("../img/close-static.png?ver=1.0") center center no-repeat; }
-article header a.post-edit-link {
-  background: transparent url("../img/edit.png?ver=1.0") center center no-repeat; }
-article header a.post-stick-link {
-  background: transparent url("../img/star.png?ver=1.0") center center no-repeat; }
-article header a.post-delete-link {
-  background: transparent url("../img/delete.png?ver=1.0") center center no-repeat; }
-article header a.post-close-link, article header a.post-delete-link, article header a.post-edit-link, article header a.post-save-link, article header a.post-stick-link {
-  float: right;
-  height: 100%;
-  margin-left: 5px;
-  padding-left: 2px;
-  padding-right: 2px; }
-article header a.post-close-link, article header a.post-delete-link, article header a.post-edit-link, article header a.post-stick-link {
-  color: transparent;
-  height: 16px;
-  margin: 0px;
-  padding: 8px;
-  width: 15px; }
-  article header a.post-close-link:hover, article header a.post-delete-link:hover, article header a.post-edit-link:hover, article header a.post-stick-link:hover {
-    background-color: #eee;
-    text-decoration: none; }
-  article header a.post-close-link span, article header a.post-delete-link span, article header a.post-edit-link span, article header a.post-stick-link span {
-    display: none; }
-article header a.post-close-link:hover {
-  background: transparent url("../img/close-hover.png?ver=1.0") no-repeat center center; }
-article header .post-last-saved {
-  color: #999;
-  margin-left: 5px; }
-  article header .post-last-saved:hover {
-    color: white; }
+article {
+  font-family: 'SourceSansProRegular';
+  font-size: 15px;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  width: 100%; }
+  article header a, article header a:visited {
+    color: #ccc; }
+  article header a:hover {
+    text-decoration: underline; }
+  article header a.post-link {
+    display: inline-block;
+    width: 100px; }
+  article header a.post-close-link {
+    background: transparent url("../img/close-static.png?ver=1.0") center center no-repeat; }
+  article header a.post-edit-link {
+    background: transparent url("../img/edit.png?ver=1.0") center center no-repeat; }
+  article header a.post-stick-link {
+    background: transparent url("../img/star.png?ver=1.0") center center no-repeat; }
+  article header a.post-delete-link {
+    background: transparent url("../img/delete.png?ver=1.0") center center no-repeat; }
+  article header a.post-close-link, article header a.post-delete-link, article header a.post-edit-link, article header a.post-save-link, article header a.post-stick-link {
+    float: right;
+    height: 100%;
+    margin-left: 5px;
+    padding-left: 2px;
+    padding-right: 2px; }
+  article header a.post-close-link, article header a.post-delete-link, article header a.post-edit-link, article header a.post-stick-link {
+    color: transparent;
+    height: 16px;
+    margin: 0px;
+    padding: 8px;
+    width: 15px; }
+    article header a.post-close-link:hover, article header a.post-delete-link:hover, article header a.post-edit-link:hover, article header a.post-stick-link:hover {
+      background-color: #eee;
+      text-decoration: none; }
+    article header a.post-close-link span, article header a.post-delete-link span, article header a.post-edit-link span, article header a.post-stick-link span {
+      display: none; }
+  article header a.post-close-link:hover {
+    background: transparent url("../img/close-hover.png?ver=1.0") no-repeat center center; }
+  article header .post-last-saved {
+    color: #999;
+    margin-left: 5px; }
+    article header .post-last-saved:hover {
+      color: white; }
 
 .spinner {
   left: 0;
@@ -810,31 +817,24 @@ article header .post-last-saved {
   .spinner span {
     display: none; }
 
-.content {
-  font-family: 'SourceSansProRegular';
-  font-size: 15px;
-  margin: 0;
-  padding: 0;
-  position: relative;
-  width: 100%; }
-  .content header {
-    background: white;
-    border: 1px solid #adadad;
-    -moz-box-shadow: 0px 1px 0 #eeeeee;
-    /* FF3.5+ */
-    -webkit-box-shadow: 0px 1px 0 #eeeeee;
-    /* Saf3+, Chrome */
-    box-shadow: 0px 1px 0 #eeeeee;
-    /* Standard. Opera 10.5, IE9+ */
-    color: white;
-    height: 96px;
-    margin-top: 40px;
-    position: absolute;
-    right: 120px;
-    width: 31px;
-    z-index: 1; }
-  .content h1 {
-    font-size: 20px; }
+.content header {
+  background: white;
+  border: 1px solid #adadad;
+  -moz-box-shadow: 0px 1px 0 #eeeeee;
+  /* FF3.5+ */
+  -webkit-box-shadow: 0px 1px 0 #eeeeee;
+  /* Saf3+, Chrome */
+  box-shadow: 0px 1px 0 #eeeeee;
+  /* Standard. Opera 10.5, IE9+ */
+  color: white;
+  height: 96px;
+  margin-top: 40px;
+  position: absolute;
+  right: 120px;
+  width: 31px;
+  z-index: 1; }
+.content h1 {
+  font-size: 20px; }
 
 .edit header {
   background: #141414;
@@ -869,7 +869,7 @@ article header .post-last-saved {
   margin: 2px 10px 0 0;
   visibility: hidden; }
 
-.saving img.save-indicator {
+.saving .save-indicator {
   visibility: visible; }
 
 .post-dirty {
@@ -883,7 +883,7 @@ article header .post-last-saved {
 .deleted {
   height: 40px;
   margin-bottom: 10px; }
-  .deleted .content {
+  .deleted .post-content {
     background: transparent;
     border: none;
     color: #666;
@@ -902,7 +902,8 @@ article header .post-last-saved {
     display: inline-block;
     font-size: 14px;
     margin-left: 12px;
-    padding: 7px 13px 5px; }
+    padding: 7px 13px 5px;
+    text-decoration: none; }
 
 /* Content */
 .post-content {
@@ -932,6 +933,13 @@ article header .post-last-saved {
   bottom: 0;
   left: 0;
   right: 0; }
+
+.edit .post-content {
+  background: #1a1a1a;
+  border: 1px solid #adadad;
+  min-height: 200px;
+  overflow: auto;
+  padding: 0; }
 
 .sticky .post-content {
   background-image: url("../img/sticky.png?ver=1.0");

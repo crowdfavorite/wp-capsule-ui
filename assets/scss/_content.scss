@@ -66,6 +66,13 @@ nav {
 }
 
 article {
+	font-family: 'SourceSansProRegular';
+	font-size: 15px;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	width: 100%;
+
 	header {
 		a {
 			&,
@@ -146,12 +153,6 @@ article {
 }
 
 .content {
-	font-family: 'SourceSansProRegular';
-	font-size: 15px;
-	margin: 0;
-	padding: 0;
-	position: relative;
-	width: 100%;
 	
 	header {
 		background: $white;
@@ -186,6 +187,7 @@ article {
 		min-height: 200px;	
 		overflow: auto;
 		padding: 0;
+
 	}
 }
 
@@ -205,7 +207,7 @@ article {
 	visibility: hidden;
 }
 
-.saving img.save-indicator {
+.saving .save-indicator {
 	visibility: visible;
 }
 
@@ -224,7 +226,7 @@ article {
 	height: 40px;
 	margin-bottom: 10px;
 
-	.content {
+	.post-content {
 		background: transparent;
 		border: none;
 		color: #666;
@@ -248,6 +250,7 @@ article {
 			font-size: 14px;
 			margin-left: 12px;
 			padding: 7px 13px 5px;
+			text-decoration: none;
 		}
 	}
 }
@@ -262,6 +265,7 @@ article {
 	padding: 0px 25px 25px 25px;
 	position: relative;
 }
+
 .status {
 	background: $gray-light;	
 	bottom: 1px;
@@ -284,6 +288,14 @@ article {
 	bottom: 0;
 	left: 0;
 	right: 0;
+}
+
+.edit .post-content {
+	background: #1a1a1a;
+	border: 1px solid #adadad;
+	min-height: 200px;	
+	overflow: auto;
+	padding: 0;
 }
 
 .sticky .post-content {
