@@ -486,7 +486,7 @@ td {
   border: 0; }
 
 .wp-caption dd {
-  font-size: .9em;
+  font-size: .9rem;
   padding: 2px 8px 3px 8px;
   margin: 1px 0 0 0; }
 
@@ -501,7 +501,7 @@ w
 .pagination .prev,
 .pagination .next {
   display: block;
-  line-height: 1.2em;
+  line-height: 0.8rem;
   width: 48%; }
 
 .pagination .next {
@@ -722,7 +722,7 @@ h1 {
 
 nav a {
   font-family: "SourceSansProRegular", Helvetica;
-  font-size: 1.125em;
+  font-size: 1rem;
   text-shadow: 1px 1px #111111;
   text-decoration: none; }
   nav a, nav a:hover, nav a:visited {
@@ -1013,7 +1013,7 @@ article {
   line-height: 20px;
   text-shadow: 1px 1px white; }
 
-.ace-editor {
+.post-content .ace-editor {
   position: relative;
   height: 400px;
   width: 100%; }
@@ -1058,7 +1058,7 @@ code {
      */
     -webkit-background-clip: padding-box;
     font-size: 80%;
-    height: 1.9em;
+    height: 1.5rem;
     padding: 1px 5px;
     position: absolute;
     right: 0px;
@@ -1095,8 +1095,3 @@ pre.static_code {
     overflow-x: scroll; }
     pre.static_code ol li {
       padding-right: 40px; }
-
-/** Attachment Page
- -------------------------------------------------- */
-/** WP Gallery
- -------------------------------------------------- */

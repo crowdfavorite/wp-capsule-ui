@@ -9,7 +9,7 @@ h1 {
 nav {
 	a {
 		font-family: 'SourceSansProRegular', Helvetica;	
-		font-size: 1.125em;
+		font-size: 1rem;
 		text-shadow: 1px 1px $gray-dark;
 		text-decoration: none;
 
@@ -374,7 +374,7 @@ article {
 	}
 }
 
-.ace-editor {
+.post-content .ace-editor {
 	position: relative;
 	height: 400px;
 	width: 100%;
@@ -417,7 +417,7 @@ code {
 		background-color: #ccc;
 		@include border-radius(0 4px 0 4px);
 		font-size: 80%;
-		height: 1.9em;
+		height: 1.5rem;
 		padding: 1px 5px;
 		position: absolute;
 		right: 0px;
@@ -445,37 +445,3 @@ pre.static_code {
 		}
 	}
 }
-
-// .entry-header {
-// }
-// .entry-title {
-// }
-// .entry-date {
-// }
-// .entry-content {
-// }
-// .entry-meta {
-// }
-
-/** Attachment Page
- -------------------------------------------------- */
-// .attachment-header {
-// }
-// .attachment-content {
-// }
-// .attachment-prev {
-// }
-// .attachment-next {
-// }
-
-
-/** WP Gallery
- -------------------------------------------------- */
-// .gallery-item {
-// }
-// .gallery-item .gallery-icon {
-// }
-// .gallery-item .gallery-icon img {
-// }
-// .gallery-item .gallery-icon a {
-// }
