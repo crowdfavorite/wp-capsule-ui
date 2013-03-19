@@ -418,7 +418,7 @@
 	Capsule.sizeEditor = function() {
 		$('.ace-editor:not(.resized)').each(function() {
 			$(this).height(
-				($(window).height() - $(this).closest('article').find('header').height() - 40) + 'px'
+				($(window).height() - $(this).closest('article').find('header').height() - 61) + 'px'
 			);
 		});
 	};

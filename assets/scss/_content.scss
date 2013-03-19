@@ -268,9 +268,9 @@ article {
 
 .status {
 	background: $gray-light;	
-	bottom: 1px;
+	bottom: 0;
 	height: 21px;
-	left: 47px;
+	left: 0;
 	position: absolute;
 	right: 0;
 
@@ -295,7 +295,7 @@ article {
 	border: 1px solid #adadad;
 	min-height: 200px;	
 	overflow: auto;
-	padding: 0;
+	padding: 0 0 21px;
 }
 
 .sticky .post-content {
