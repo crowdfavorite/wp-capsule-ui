@@ -610,12 +610,6 @@ w
 .main-nav {
   background: #222222;
   bottom: 0;
-  -moz-box-shadow: 3px 0 1px 1px #adadad;
-  /* FF3.5+ */
-  -webkit-box-shadow: 3px 0 1px 1px #adadad;
-  /* Saf3+, Chrome */
-  box-shadow: 3px 0 1px 1px #adadad;
-  /* Standard. Opera 10.5, IE9+ */
   position: fixed;
   top: 0;
   width: 138px;
@@ -746,8 +740,9 @@ nav a {
     text-align: right;
     padding: 0; }
   .post-date .day {
-    font-family: 'SourceSansProBold';
-    font-size: 30px; }
+    font-family: 'SourceSansProSemiBold';
+    font-size: 30px;
+    font-weight: normal; }
   .post-date .month {
     font-family: 'SourceSansProSemiBold';
     font-size: 18px;
