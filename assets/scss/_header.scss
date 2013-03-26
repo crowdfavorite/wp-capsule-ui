@@ -189,5 +189,11 @@
 		font-family: 'SourceSansProRegular', Helvetica;
 		font-size: 20px;
 		text-shadow: 1px 1px $white;
+		&:visited {
+			color: $gray;
+		}
+		&:hover {
+			color: $black;
+		}		
 	}
 }

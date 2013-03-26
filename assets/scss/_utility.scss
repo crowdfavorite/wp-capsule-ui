@@ -91,16 +91,17 @@
 .pagination {
 	min-height: 20px;
 	margin: 30px 0;
-}
-.pagination .prev,
-.pagination .next {
-	display: block;
-	line-height: 0.8rem;
-	width: 48%;
-}
-.pagination .next {
-	float: right;
-	text-align: right;
+
+	.prev,
+	.next {
+		display: block;
+		line-height: 0.8rem;
+		width: 48%;
+	}
+	.next {
+		float: right;
+		text-align: right;
+	}
 }
 
 /* --------------------------------------------------
