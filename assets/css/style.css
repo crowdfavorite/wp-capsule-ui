@@ -880,30 +880,29 @@ article {
   visibility: visible; }
 
 /* Deleted */
-.deleted {
-  height: 40px;
-  margin-bottom: 10px; }
-  .deleted .post-content {
-    background: transparent;
-    border: none;
-    color: #666;
-    margin-top: 22px; }
-  .deleted .msg {
-    color: #222222;
-    display: inline-block;
-    font-family: "SourceSansProRegular", Helvetica;
-    font-size: 16px;
-    margin-left: 24px;
-    text-align: center;
-    text-shadow: 1px 1px white; }
-  .deleted .post-undelete-link, .deleted .post-undelete-link:visited {
-    background: #222222;
-    color: white;
-    display: inline-block;
-    font-size: 14px;
-    margin-left: 12px;
-    padding: 7px 13px 5px;
-    text-decoration: none; }
+.deleted .post-content {
+  background: transparent;
+  border: none;
+  color: #666;
+  margin-top: 30px;
+  min-height: auto;
+  padding-bottom: 0; }
+.deleted .msg {
+  color: #222222;
+  display: inline-block;
+  font-family: "SourceSansProRegular", Helvetica;
+  font-size: 16px;
+  margin-left: 25px;
+  text-align: center;
+  text-shadow: 1px 1px white; }
+.deleted .post-undelete-link, .deleted .post-undelete-link:visited {
+  background: #222222;
+  color: white;
+  display: inline-block;
+  font-size: 14px;
+  margin-left: 12px;
+  padding: 7px 13px 5px;
+  text-decoration: none; }
 
 /* Content */
 .post-content {

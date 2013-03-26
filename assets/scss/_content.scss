@@ -224,21 +224,20 @@ article {
 /* Deleted */
 
 .deleted {
-	height: 40px;
-	margin-bottom: 10px;
-
 	.post-content {
 		background: transparent;
 		border: none;
 		color: #666;
-		margin-top: 22px;
+		margin-top: 30px;
+		min-height: auto;
+		padding-bottom: 0;
 	}
 	.msg {
 		color: $gray;
 		display: inline-block;
 		font-family: 'SourceSansProRegular', Helvetica;
 		font-size: 16px;
-		margin-left: 24px;
+		margin-left: 25px;
 		text-align: center;
 		text-shadow: 1px 1px $white;
 	}
