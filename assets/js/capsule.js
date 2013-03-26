@@ -506,19 +506,10 @@
 			Capsule.unstickPost(postId, $article);
 		}).on('mousewheel', 'article.edit', function(e) {
 			e.preventDefault();
-		}).on('click', '#header .post-new-link', function(e) {
+		}).on('click', '.post-new-link', function(e) {
 			e.preventDefault();
-			var $article = $('<article></article>').height('400px'),
-				timestamp = (new Date()).getTime() / 1000,
-				ymd = date('Ymd', timestamp),
-				$dateTitle = $('.body h2.date-' + ymd);
-			if ($dateTitle.size()) {
-				$dateTitle.after($article);
-			}
-			else {
-				$('.body').prepend($article)
-					.prepend('<h2 class="date-title date-' + ymd + '">' + date('F j, Y', timestamp) + '</h2>');
-			}
+			var $article = $('<article></article>').height('400px');
+			$('.body').prepend($article);
 			Capsule.createPost($article);
 		});
 		$(window).on('resize', function() {
