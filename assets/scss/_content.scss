@@ -313,8 +313,7 @@ article {
 .content {
 	.post-meta {
 		float: right;
-		line-height: 0px;
-		margin-top: 3px;
+		margin-top: 20px;
 		padding: 0 20px;
 		width: 85px;
 
@@ -324,26 +323,30 @@ article {
 			font-family: 'SourceSansProBold';
 			font-size: 14px;
 			font-weight: bold;
-			margin: 0 0 -8px 0;
-			padding-top: 20px;	
+			margin: 0 0 3px 0;
+			line-height: 14px;
 			text-shadow: 1px 1px $white;
 			text-transform: uppercase;
 			width: 75px;
 		}
 		ul {
 			padding: 0;
+			margin: 0 0 20px;
 		}
 		li {
+			list-style-type: none;
+			margin-bottom: 2px;
+
+			&:last-of-type {
+				margin-bottom: 0;
+			}
+
 			a {
 				font-size: 16px;
+				line-height: 16px;
 				text-decoration: none;
 				text-shadow: none;
 			}
-		}
-		ul,
-		li {
-			display: block;
-			line-height: 0px;		
 		}
 	}
 }
