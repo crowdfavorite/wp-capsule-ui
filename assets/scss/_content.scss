@@ -335,11 +335,7 @@ article {
 		}
 		li {
 			a {
-				background: $gray-light;
-				color: $white;
-				font-size: 12px;
-				padding: 3px;
-				@include border-radius(3px);
+				font-size: 16px;
 				text-decoration: none;
 				text-shadow: none;
 			}
