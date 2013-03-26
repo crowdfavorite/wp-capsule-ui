@@ -83,6 +83,7 @@ body {
   width: 100%; }
 
 #wrap {
+  min-width: 586px;
   max-width: 100%;
   padding: 0 23px 60px 161px; }
 

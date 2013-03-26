@@ -52,6 +52,7 @@ body {
 }
 
 #wrap {
+  min-width: 586px; // 768px - padding 
   max-width: 100%;
   padding: 0 23px 60px 161px;
 }
