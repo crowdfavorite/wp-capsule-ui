@@ -57,6 +57,7 @@ function capsule_controller() {
 		}
 		switch ($_POST['capsule_action']) {
 			case 'create_post':
+				global $post;
 				$post_id = wp_insert_post(array(
 					'post_title' => time(),
 					'post_status' => 'draft',
