@@ -1,3 +1,15 @@
+body {
+  background-image: url_ver('../img/tile.png');
+  background-size: 8px;	
+  color: $gray-light;
+  font-family: sans-serif;
+  font-size: 13px;
+}
+
+.container {
+	min-height: 100%;
+}
+
 /* 	Content - Posts, Pages, Comments
 	------------------------------------------------------- */
 

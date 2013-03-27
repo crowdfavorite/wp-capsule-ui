@@ -70,23 +70,21 @@ html, button, input, select, textarea {
   font-family: sans-serif;
   color: #222222; }
 
+html, body {
+  height: 100%; }
+
 body {
-  background-image: url("../img/tile.png?ver=1.0");
-  background-size: 8px;
-  color: #333333;
-  font-family: sans-serif;
-  font-size: 13px;
   height: 100%;
   margin-top: 30px;
   margin: 0;
   min-height: 100%;
   padding: 0;
-  width: 100%;
-  padding-bottom: 172px; }
+  width: 100%; }
 
 #wrap {
   min-width: 586px;
   max-width: 100%;
+  overflow: auto;
   padding: 0 23px 60px 161px; }
 
 /*
@@ -699,20 +697,29 @@ w
     .pagination a:hover {
       color: black; }
 
-#footer {
-  background-color: #222222;
-  bottom: 0px;
+footer {
+  background: none;
   clear: both;
-  color: #9d9da1;
-  font-size: 11px;
-  padding: 7px 0px;
-  position: fixed;
-  text-align: center;
-  width: 100%; }
-  #footer a, #footer a:visited {
-    color: white;
-    font-family: 'SourceSansProSemibold';
-    font-size: 14px; }
+  height: 30px;
+  margin-top: -50px;
+  position: relative; }
+
+.footer-logo {
+  width: 180px;
+  height: 28px;
+  background: url(../svg/cf-logo.svg) no-repeat;
+  float: right;
+  margin-right: 24px; }
+
+body {
+  background-image: url("../img/tile.png?ver=1.0");
+  background-size: 8px;
+  color: #333333;
+  font-family: sans-serif;
+  font-size: 13px; }
+
+.container {
+  min-height: 100%; }
 
 /* 	Content - Posts, Pages, Comments
 	------------------------------------------------------- */
@@ -734,7 +741,7 @@ nav a {
   float: left;
   margin-right: 23px;
   margin-top: 5px;
-  text-shadow: 1px 1px white; }
+  text-shadow: 2px 2px white; }
   .post-date ul {
     list-style-type: none;
     line-height: 0px;

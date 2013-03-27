@@ -2,23 +2,26 @@
 // Global Footer: featured links, site map links, legal
 // --------------------------------------------------
 
-#footer {
-	background-color: $gray;
-	bottom: 0px;
-	clear: both;
-	color: #9d9da1;
-	font-size: 11px;
-	padding: 7px 0px;
-	position: fixed;
-	text-align: center;
-	width: 100%;
 
-	a {
-		&,
-		&:visited {
-			color: $white;
-			font-family: 'SourceSansProSemibold';
-			font-size: 14px;
-		}
-	}
+footer {
+	background: none;
+	clear:both;
+	height: 30px;
+	margin-top: -50px;
+	position: relative;
+} 
+
+.footer-logo {
+	width: 180px;
+	height: 28px;
+	background: url(../svg/cf-logo.svg) no-repeat;
+	float: right;
+	margin-right: 24px;
 }
+
+
+
+
+
+
+

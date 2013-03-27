@@ -49,89 +49,97 @@ else {
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-
-<nav class="main-nav">
-
-	<a href="index.php" class="logo">Capsule</a>
-
-	<ul>
-		<li><a href="index.php"><?php _e('Home', 'capsule'); ?></a></li>
-		<li><a href="<?php echo esc_url(admin_url('post-new.php')); ?>" class="post-new-link"><?php _e('New Post', 'capsule'); ?></a></li>
-		<li><a href="index.php" class="projects"><?php _e('Projects', 'capsule'); ?></a>
-			<ul class="project-list">
-				<li><a href="#">@test</a></li>
-				<li><a href="#">@social</a></li>
-				<li><a href="#">@capsule</a></li>
-				<li><a href="#">@tacos</a></li>
-				<li><a href="#">@persnickety</a></li>
-				<li><a href="#">@threads</a></li>
-				<li class="list-last"><a href="#">All Projects</a></li>
-			</ul>
-		</li>
-		<li><a href="<?php echo esc_url(admin_url()); ?>"><?php _e('Settings', 'capsule'); ?></a></li>
-	</ul>
-</nav>
-
-<div id="wrap">
-	<header id="header">
-		<div class="inner">
-<?php
-
-$title = '';
-
-if (is_home() || is_front_page()) {
-	$title = __('Home', 'capsule');
-}
-else if (is_search()) {
-	$title = sprintf(__('Search: %s', 'capsule'), esc_html(get_query_var('s')));
-}
-else if (is_tag()) {
-	$term = get_queried_object();
-	$title = sprintf(__('#%s', 'capsule'), esc_html($term->name));
-}
-else if (is_tax('projects')) {
-	$term = get_queried_object();
-	$title = sprintf(__('@%s', 'capsule'), esc_html($term->name));
-}
-
-?>
-			<h1><?php echo $title; ?></h1>
-			<form class="clearfix" action="<?php echo esc_url(home_url('/')); ?>" method="get" onsubmit="<?php echo $search_onsubmit; ?>">
-				<input type="text" name="s" value="" placeholder="<?php _e('Search projects, code, tags, etc...', 'capsule'); ?>" />
-				<input type="submit" name="search_submit" value="<?php _e('Search', 'capsule'); ?>" />
-			</form>
+<div class="container">
+	<nav class="main-nav">
+	
+		<a href="index.php" class="logo">Capsule</a>
+	
+		<ul>
+			<li><a href="index.php"><?php _e('Home', 'capsule'); ?></a></li>
+			<li><a href="<?php echo esc_url(admin_url('post-new.php')); ?>" class="post-new-link"><?php _e('New Post', 'capsule'); ?></a></li>
+			<li><a href="index.php" class="projects"><?php _e('Projects', 'capsule'); ?></a>
+				<ul class="project-list">
+					<li><a href="#">@test</a></li>
+					<li><a href="#">@social</a></li>
+					<li><a href="#">@capsule</a></li>
+					<li><a href="#">@tacos</a></li>
+					<li><a href="#">@persnickety</a></li>
+					<li><a href="#">@threads</a></li>
+					<li class="list-last"><a href="#">All Projects</a></li>
+				</ul>
+			</li>
+			<li><a href="<?php echo esc_url(admin_url()); ?>"><?php _e('Settings', 'capsule'); ?></a></li>
+		</ul>
+	</nav>
+	
+	<div id="wrap">
+		<header id="header">
+			<div class="inner">
+	<?php
+	
+	$title = '';
+	
+	if (is_home() || is_front_page()) {
+		$title = __('Home', 'capsule');
+	}
+	else if (is_search()) {
+		$title = sprintf(__('Search: %s', 'capsule'), esc_html(get_query_var('s')));
+	}
+	else if (is_tag()) {
+		$term = get_queried_object();
+		$title = sprintf(__('#%s', 'capsule'), esc_html($term->name));
+	}
+	else if (is_tax('projects')) {
+		$term = get_queried_object();
+		$title = sprintf(__('@%s', 'capsule'), esc_html($term->name));
+	}
+	
+	?>
+				<h1><?php echo $title; ?></h1>
+				<form class="clearfix" action="<?php echo esc_url(home_url('/')); ?>" method="get" onsubmit="<?php echo $search_onsubmit; ?>">
+					<input type="text" name="s" value="" placeholder="<?php _e('Search projects, code, tags, etc...', 'capsule'); ?>" />
+					<input type="submit" name="search_submit" value="<?php _e('Search', 'capsule'); ?>" />
+				</form>
+			</div>
+		</header>
+		<div class="body">
+	<?php
+	
+	if (have_posts()) {
+		while (have_posts()) {
+			the_post();
+			
+			if (is_singular()) {
+				include('views/content.php');
+			}
+			else {
+				include('views/excerpt.php');
+			}
+		}
+		if ( $wp_query->max_num_pages > 1 ) {
+	?>
+			<nav class="pagination clearfix">
+				<div class="nav-previous"><?php next_posts_link( __( 'Older posts <span class="meta-nav">&rarr;</span>', 'capsule' ) ); ?></div>
+				<div class="nav-next"><?php previous_posts_link( __( '<span class="meta-nav">&larr;</span> Newer posts', 'capsule' ) ); ?></div>
+			</nav>
+	<?php
+		}
+	
+	}
+	
+	?>
 		</div>
-	</header>
-	<div class="body">
-<?php
-
-if (have_posts()) {
-	while (have_posts()) {
-		the_post();
-		
-		if (is_singular()) {
-			include('views/content.php');
-		}
-		else {
-			include('views/excerpt.php');
-		}
-	}
-	if ( $wp_query->max_num_pages > 1 ) {
-?>
-		<nav class="pagination clearfix">
-			<div class="nav-previous"><?php next_posts_link( __( 'Older posts <span class="meta-nav">&rarr;</span>', 'capsule' ) ); ?></div>
-			<div class="nav-next"><?php previous_posts_link( __( '<span class="meta-nav">&larr;</span> Newer posts', 'capsule' ) ); ?></div>
-		</nav>
-<?php
-	}
-
-}
-
-?>
 	</div>
+	
+	
+	<?php wp_footer(); ?>
+
 </div>
 
-<?php wp_footer(); ?>
+<footer id="footer">
+	<div class="footer-logo"></div>
+</footer>
+
 
 </body>
 </html>
