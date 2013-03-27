@@ -739,7 +739,7 @@ nav a {
 /* Content - Left Column */
 .post-date {
   float: left;
-  margin-right: 23px;
+  margin-right: 15px;
   margin-top: 5px;
   text-shadow: 2px 2px white; }
   .post-date ul {
@@ -963,7 +963,6 @@ article {
 .content .post-meta {
   float: right;
   margin-top: 20px;
-  margin-left: 8px;
   padding: 0 0 0 15px;
   width: 142px; }
   .edit .post-meta h3,
