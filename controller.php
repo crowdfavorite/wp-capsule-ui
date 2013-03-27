@@ -157,6 +157,7 @@ function capsule_controller() {
 			case 'undelete_post':
 // required params:
 // - post_id
+				global $post;
 				$post_id = intval($_POST['post_id']);
 				$post = wp_untrash_post($post_id);
 				if ($post != false) {
