@@ -126,7 +126,8 @@ function capsule_wp_head() {
 ?>
 <style>
 .spinner {
-	background: #fff url(<?php echo admin_url('images/loading.gif'); ?>) no-repeat center center;
+	background: url(<?php echo admin_url('images/loading.gif'); ?>) no-repeat center center;
+	background-size: 12px;
 }
 </style>
 <?php
