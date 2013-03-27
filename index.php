@@ -55,9 +55,9 @@ else {
 	<a href="index.php" class="logo">Capsule</a>
 
 	<ul>
-		<li><a href="index.php">Home</a></li>
+		<li><a href="index.php"><?php _e('Home', 'capsule'); ?></a></li>
 		<li><a href="<?php echo esc_url(admin_url('post-new.php')); ?>" class="post-new-link"><?php _e('New Post', 'capsule'); ?></a></li>
-		<li><a href="index.php" class="projects">Projects</a>
+		<li><a href="index.php" class="projects"><?php _e('Projects', 'capsule'); ?></a>
 			<ul class="project-list">
 				<li><a href="#">@test</a></li>
 				<li><a href="#">@social</a></li>
@@ -68,15 +68,34 @@ else {
 				<li class="list-last"><a href="#">All Projects</a></li>
 			</ul>
 		</li>
-		<li><a href="index.php">Search</a></li>
-		<li><a href="/wp/wp-admin/">Settings</a></li>
+		<li><a href="<?php echo esc_url(admin_url()); ?>"><?php _e('Settings', 'capsule'); ?></a></li>
 	</ul>
 </nav>
 
 <div id="wrap">
 	<header id="header">
 		<div class="inner">
-			<h1>All Posts</h1> 
+<?php
+
+$title = '';
+
+if (is_home() || is_front_page()) {
+	$title = __('Home', 'capsule');
+}
+else if (is_search()) {
+	$title = sprintf(__('Search: %s', 'capsule'), esc_html(get_query_var('s')));
+}
+else if (is_tag()) {
+	$term = get_queried_object();
+	$title = sprintf(__('#%s', 'capsule'), esc_html($term->name));
+}
+else if (is_tax('projects')) {
+	$term = get_queried_object();
+	$title = sprintf(__('@%s', 'capsule'), esc_html($term->name));
+}
+
+?>
+			<h1><?php echo $title; ?></h1>
 			<form class="clearfix" action="<?php echo esc_url(home_url('/')); ?>" method="get" onsubmit="<?php echo $search_onsubmit; ?>">
 				<input type="text" name="s" value="" placeholder="<?php _e('Search projects, code, tags, etc...', 'capsule'); ?>" />
 				<input type="submit" name="search_submit" value="<?php _e('Search', 'capsule'); ?>" />
@@ -85,11 +104,6 @@ else {
 	</header>
 	<div class="body">
 <?php
-
-if (is_search() || is_archive()) {
-	include(STYLESHEETPATH.'/lib/cf-archive-title/cf-archive-title.php');
-	cfpt_page_title('<h2 class="page-title">', '</h2>');
-}
 
 if (have_posts()) {
 	while (have_posts()) {
