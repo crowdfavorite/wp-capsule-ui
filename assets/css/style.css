@@ -730,7 +730,7 @@ nav a {
 /* Content - Left Column */
 .post-date {
   float: left;
-  margin-right: 20px;
+  margin-right: 15px;
   margin-top: 5px;
   text-shadow: 2px 2px white; }
   .post-date ul {
@@ -830,7 +830,7 @@ article {
   height: 96px;
   margin-top: 40px;
   position: absolute;
-  right: 120px;
+  right: 153px;
   width: 31px;
   z-index: 1; }
 .content h1 {
@@ -954,8 +954,8 @@ article {
 .content .post-meta {
   float: right;
   margin-top: 20px;
-  padding: 0 20px;
-  width: 85px; }
+  padding: 0 0 0 15px;
+  width: 142px; }
   .edit .post-meta h3,
   .content .post-meta h3 {
     color: #222222;
