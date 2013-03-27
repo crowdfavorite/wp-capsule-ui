@@ -40,6 +40,7 @@ html, button, input, select, textarea { font-family: sans-serif; color: $gray; }
 
 body {
   background-image: url_ver('../img/tile.png');
+  background-size: 8px;	
   color: $gray-light;
   font-family: sans-serif;
   font-size: 13px;
@@ -49,6 +50,7 @@ body {
   min-height: 100%;
   padding: 0;
   width: 100%;  
+  padding-bottom: 172px;
 }
 
 #wrap {
