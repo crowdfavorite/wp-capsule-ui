@@ -136,7 +136,7 @@ else {
 
 </div>
 
-<footer id="footer">
+<footer>
 	<div class="footer-logo"></div>
 </footer>
 
