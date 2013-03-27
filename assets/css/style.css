@@ -800,7 +800,7 @@ article {
     padding: 8px;
     width: 15px; }
     article header a.post-close-link:hover, article header a.post-delete-link:hover, article header a.post-edit-link:hover, article header a.post-stick-link:hover {
-      background-color: #eee;
+      background-color: #e0e0e0;
       text-decoration: none; }
     article header a.post-close-link span, article header a.post-delete-link span, article header a.post-edit-link span, article header a.post-stick-link span {
       display: none; }
