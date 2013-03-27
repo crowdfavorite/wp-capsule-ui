@@ -741,7 +741,8 @@ nav a {
   float: left;
   margin-right: 15px;
   margin-top: 5px;
-  text-shadow: 2px 2px white; }
+  text-shadow: 2px 2px white;
+  width: 40px; }
   .post-date ul {
     list-style-type: none;
     line-height: 0px;
