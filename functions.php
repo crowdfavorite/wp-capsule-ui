@@ -275,3 +275,21 @@ function capsule_trim_excerpt($excerpt) {
 }
 add_filter('get_the_excerpt', 'capsule_trim_excerpt');
 
+/** Step 1. */
+function capsule_menu() {
+	add_menu_page( 'Capsule', 'Capsule', 'manage_options', 'capsule', 'capsule_options' );
+}
+
+/** Step 2  */
+add_action( 'admin_menu', 'capsule_menu' );
+
+/** Step 3. */
+function capsule_options() {
+	if ( !current_user_can( 'manage_options' ) )  {
+		wp_die( __( 'You do not have sufficient permissions to access this page.' ) );
+	}
+	echo '<div class="wrap">';
+	echo '<p>Capsule settings page</p>';
+	echo '</div>';
+}
+
