@@ -1023,6 +1023,9 @@ article {
   height: 50px;
   position: absolute; }
 
+.post-content .ace-twilight .ace_gutter {
+  color: #7f7f7f; }
+
 /* Code */
 pre {
   background: #f6f6f6;
