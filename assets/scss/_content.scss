@@ -102,6 +102,15 @@ article {
 			}
 			&.post-close-link {
 				background: transparent url_ver('../img/close-static.png') center center no-repeat;
+				color: transparent;
+				height: 30px;
+				position: absolute;
+				right: 0;
+				top: 0;
+				width: 30px;
+				&:hover {
+					background: transparent url_ver('../img/close-hover.png') no-repeat center center;
+				}
 			}
 			&.post-edit-link {
 				background: transparent url_ver('../img/edit.png') center center no-repeat;
@@ -112,7 +121,6 @@ article {
 			&.post-delete-link {
 				background: transparent url_ver('../img/delete.png') center center no-repeat;
 			}
-			&.post-close-link,
 			&.post-delete-link,
 			&.post-edit-link,
 			&.post-save-link,
@@ -123,7 +131,6 @@ article {
 				padding-left: 2px;
 				padding-right: 2px;
 			}
-			&.post-close-link,
 			&.post-delete-link,
 			&.post-edit-link,
 			&.post-stick-link {
@@ -140,9 +147,6 @@ article {
 				span {
 					display: none;
 				}
-			}
-			&.post-close-link:hover {
-				background: transparent url_ver('../img/close-hover.png') no-repeat center center;
 			}
 		}
 		.post-last-saved {
@@ -167,7 +171,6 @@ article {
 }
 
 .content {
-	
 	header {
 		background: $white;
 		border: 1px solid #adadad;
@@ -186,15 +189,6 @@ article {
 }
 
 .edit {
-	header {
-		background: #141414;
-		height: 31px;
-		margin-top: 1px;
-		position: absolute;
-		right: 126px;
-		width: 31px;
-		z-index: 9000;
-	}
 	.post-content {
 		background: #1a1a1a;
 		border: 1px solid #adadad;
@@ -281,8 +275,9 @@ article {
 
 .status {
 	background: $gray-light;	
-	bottom: 0;
-	height: 21px;
+	top: 0;
+	height: 30px;
+	line-height: 25px;
 	left: 0;
 	position: absolute;
 	right: 0;
@@ -308,7 +303,7 @@ article {
 	border: 1px solid #adadad;
 	min-height: 200px;	
 	overflow: auto;
-	padding: 0 0 21px;
+	padding-top: 30px;
 }
 
 .sticky .post-content {

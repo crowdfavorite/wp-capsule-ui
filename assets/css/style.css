@@ -539,7 +539,7 @@ w
     display: block;
     float: right; }
     #header form input {
-      background: white url("../img/search.png?ver=1.0") no-repeat 8px 50%;
+      background: white url("../img/search.png?ver=1.1") no-repeat 8px 50%;
       border: 1px solid #ababab;
       color: #999;
       font-family: 'SourceSansProRegular';
@@ -598,7 +598,7 @@ w
 /** Masthead
  -------------------------------------------------- */
 .logo {
-  background-image: url("../img/logo.png?ver=1.0");
+  background-image: url("../img/logo.png?ver=1.1");
   display: block;
   height: 55px;
   margin-bottom: 45px;
@@ -644,7 +644,7 @@ w
             .main-nav ul li ul li a:hover {
               background-color: #333333; }
           .main-nav ul li ul li.list-last a {
-            background-image: url("../img/arrow-right-white.png?ver=1.0");
+            background-image: url("../img/arrow-right-white.png?ver=1.1");
             background-repeat: no-repeat;
             background-position: 85% 50%; }
       .main-nav ul li:hover ul {
@@ -656,11 +656,11 @@ w
   display: none; }
 
 .nav-previous a {
-  background: transparent url("../img/arrow-right.png?ver=1.0") no-repeat 100% 25%;
+  background: transparent url("../img/arrow-right.png?ver=1.1") no-repeat 100% 25%;
   padding-right: 20px; }
 
 .nav-next a {
-  background: transparent url("../img/arrow-left.png?ver=1.0") no-repeat 0% 25%;
+  background: transparent url("../img/arrow-left.png?ver=1.1") no-repeat 0% 25%;
   padding-left: 20px; }
 
 /* 	Page Headers
@@ -712,7 +712,7 @@ footer {
   margin-right: 24px; }
 
 body {
-  background-image: url("../img/tile.png?ver=1.0");
+  background-image: url("../img/tile.png?ver=1.1");
   background-size: 8px;
   color: #333333;
   font-family: sans-serif;
@@ -788,32 +788,38 @@ article {
     display: inline-block;
     width: 100px; }
   article header a.post-close-link {
-    background: transparent url("../img/close-static.png?ver=1.0") center center no-repeat; }
+    background: transparent url("../img/close-static.png?ver=1.1") center center no-repeat;
+    color: transparent;
+    height: 30px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 30px; }
+    article header a.post-close-link:hover {
+      background: transparent url("../img/close-hover.png?ver=1.1") no-repeat center center; }
   article header a.post-edit-link {
-    background: transparent url("../img/edit.png?ver=1.0") center center no-repeat; }
+    background: transparent url("../img/edit.png?ver=1.1") center center no-repeat; }
   article header a.post-stick-link {
-    background: transparent url("../img/star.png?ver=1.0") center center no-repeat; }
+    background: transparent url("../img/star.png?ver=1.1") center center no-repeat; }
   article header a.post-delete-link {
-    background: transparent url("../img/delete.png?ver=1.0") center center no-repeat; }
-  article header a.post-close-link, article header a.post-delete-link, article header a.post-edit-link, article header a.post-save-link, article header a.post-stick-link {
+    background: transparent url("../img/delete.png?ver=1.1") center center no-repeat; }
+  article header a.post-delete-link, article header a.post-edit-link, article header a.post-save-link, article header a.post-stick-link {
     float: right;
     height: 100%;
     margin-left: 5px;
     padding-left: 2px;
     padding-right: 2px; }
-  article header a.post-close-link, article header a.post-delete-link, article header a.post-edit-link, article header a.post-stick-link {
+  article header a.post-delete-link, article header a.post-edit-link, article header a.post-stick-link {
     color: transparent;
     height: 16px;
     margin: 0px;
     padding: 8px;
     width: 15px; }
-    article header a.post-close-link:hover, article header a.post-delete-link:hover, article header a.post-edit-link:hover, article header a.post-stick-link:hover {
+    article header a.post-delete-link:hover, article header a.post-edit-link:hover, article header a.post-stick-link:hover {
       background-color: #e0e0e0;
       text-decoration: none; }
-    article header a.post-close-link span, article header a.post-delete-link span, article header a.post-edit-link span, article header a.post-stick-link span {
+    article header a.post-delete-link span, article header a.post-edit-link span, article header a.post-stick-link span {
       display: none; }
-  article header a.post-close-link:hover {
-    background: transparent url("../img/close-hover.png?ver=1.0") no-repeat center center; }
   article header .post-last-saved {
     color: #999;
     margin-left: 5px; }
@@ -846,14 +852,6 @@ article {
 .content h1 {
   font-size: 20px; }
 
-.edit header {
-  background: #141414;
-  height: 31px;
-  margin-top: 1px;
-  position: absolute;
-  right: 126px;
-  width: 31px;
-  z-index: 9000; }
 .edit .post-content {
   background: #1a1a1a;
   border: 1px solid #adadad;
@@ -925,8 +923,9 @@ article {
 
 .status {
   background: #333333;
-  bottom: 0;
-  height: 21px;
+  top: 0;
+  height: 30px;
+  line-height: 25px;
   left: 0;
   position: absolute;
   right: 0; }
@@ -948,15 +947,15 @@ article {
   border: 1px solid #adadad;
   min-height: 200px;
   overflow: auto;
-  padding: 0 0 21px; }
+  padding-top: 30px; }
 
 .sticky .post-content {
-  background-image: url("../img/sticky.png?ver=1.0");
+  background-image: url("../img/sticky.png?ver=1.1");
   background-repeat: no-repeat;
   background-position: 100% 0%; }
 
 .sticky .post-stick-link {
-  background: #eeeeee url("../img/star.png?ver=1.0") center center no-repeat; }
+  background: #eeeeee url("../img/star.png?ver=1.1") center center no-repeat; }
 
 .excerpt .post-content {
   max-height: 200px;
