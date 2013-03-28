@@ -955,6 +955,9 @@ article {
   background-repeat: no-repeat;
   background-position: 100% 0%; }
 
+.sticky .post-stick-link {
+  background: #eeeeee url("../img/star.png?ver=1.0") center center no-repeat; }
+
 .excerpt .post-content {
   max-height: 200px;
   min-height: 200px;

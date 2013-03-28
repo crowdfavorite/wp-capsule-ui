@@ -316,6 +316,10 @@ article {
 	background-repeat: no-repeat;
 	background-position: 100% 0%;
 }
+
+.sticky .post-stick-link {
+	background: #eee url_ver('../img/star.png') center center no-repeat;
+}
 .excerpt .post-content {
 	max-height: 200px;
 	min-height: 200px;
