@@ -93,6 +93,10 @@ else {
 		$term = get_queried_object();
 		$title = sprintf(__('@%s', 'capsule'), esc_html($term->name));
 	}
+	else if (is_tax('code')) {
+		$term = get_queried_object();
+		$title = sprintf(__('`%s', 'capsule'), esc_html($term->name));
+	}
 	
 	?>
 				<h1><?php echo $title; ?></h1>
