@@ -16,18 +16,17 @@
 
 
 /* =============================================================================
-   HTML5 display definitions
-   ========================================================================== */
+	HTML5 display definitions
+	========================================================================== */
 
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block; }
 audio, canvas, video { display: inline-block; *display: inline; *zoom: 1; }
 audio:not([controls]) { display: none; }
 [hidden] { display: none; }
 
-
 /* =============================================================================
-   Base
-   ========================================================================== */
+	 Base
+	 ========================================================================== */
 
 /*
  * 1. Correct text resizing oddly in IE6/7 when body font-size is set using em units
@@ -41,19 +40,19 @@ html, button, input, select, textarea { font-family: sans-serif; color: $gray; }
 html, body {height: 100%;}
 
 body {
-  height: 100%;
-  margin-top: 30px;
-  margin: 0;
-  min-height: 100%;
-  padding: 0;
-  width: 100%;  
+	height: 100%;
+	margin-top: 30px;
+	margin: 0;
+	min-height: 100%;
+	padding: 0;
+	width: 100%;  
 }
 
 #wrap {
-  min-width: 586px; // 768px - padding 
-  max-width: 100%;
-  overflow: auto;
-  padding: 0 23px 60px 161px;
+	min-width: 586px; // 768px - padding 
+	max-width: 100%;
+	overflow: auto;
+	padding: 0 23px 60px 161px;
 }
 
 /*
@@ -67,8 +66,8 @@ body {
 
 
 /* =============================================================================
-   Links
-   ========================================================================== */
+	 Links
+	 ========================================================================== */
 
 a { color: #00e; }
 a:visited { color: #551a8b; }
@@ -80,8 +79,8 @@ a:hover, a:active { outline: 0; }
 
 
 /* =============================================================================
-   Typography
-   ========================================================================== */
+	 Typography
+	 ========================================================================== */
 
 abbr[title] { border-bottom: 1px dotted; }
 
@@ -115,8 +114,8 @@ sub { bottom: -0.25em; }
 
 
 /* =============================================================================
-   Lists
-   ========================================================================== */
+	 Lists
+	 ========================================================================== */
 
 ul, ol { margin: 1em 0; padding: 0 0 0 40px; }
 dd { margin: 0 0 0 40px; }
@@ -124,8 +123,8 @@ nav ul, nav ol { list-style: none; list-style-image: none; margin: 0; padding: 0
 
 
 /* =============================================================================
-   Embedded content
-   ========================================================================== */
+	 Embedded content
+	 ========================================================================== */
 
 /*
  * 1. Improve image quality when scaled in IE7: h5bp.com/d
@@ -142,15 +141,15 @@ svg:not(:root) { overflow: hidden; }
 
 
 /* =============================================================================
-   Figures
-   ========================================================================== */
+	 Figures
+	 ========================================================================== */
 
 figure { margin: 0; }
 
 
 /* =============================================================================
-   Forms
-   ========================================================================== */
+	 Forms
+	 ========================================================================== */
 
 form { margin: 0; }
 fieldset { border: 0; margin: 0; padding: 0; }
@@ -220,35 +219,35 @@ input:invalid, textarea:invalid { background-color: #f0dddd; }
 
 
 /* =============================================================================
-   Tables
-   ========================================================================== */
+	 Tables
+	 ========================================================================== */
 
 table { border-collapse: collapse; border-spacing: 0; }
 td { vertical-align: top; }
 
 
 /* =============================================================================
-   Chrome Frame Prompt
-   ========================================================================== */
+	 Chrome Frame Prompt
+	 ========================================================================== */
 
 .chromeframe { margin: 0.2em 0; background: #ccc; color: black; padding: 0.2em 0; }
 
 /* ==|== print styles =======================================================
-   Print styles.
-   Inlined to avoid required HTTP connection: h5bp.com/r
-   ========================================================================== */
+	 Print styles.
+	 Inlined to avoid required HTTP connection: h5bp.com/r
+	 ========================================================================== */
 
 @media print {
-  * { background: transparent !important; color: black !important; box-shadow:none !important; text-shadow: none !important; } /* Black prints faster: h5bp.com/s */
-  a, a:visited { text-decoration: underline; }
-  a[href]:after { content: " (" attr(href) ")"; }
-  abbr[title]:after { content: " (" attr(title) ")"; }
-  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; } /* Don't show links for images, or javascript/internal links */
-  pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
-  thead { display: table-header-group; } /* h5bp.com/t */
-  tr, img { page-break-inside: avoid; }
-  img { max-width: 100% !important; }
-  @page { margin: 0.5cm; }
-  p, h2, h3 { orphans: 3; widows: 3; }
-  h2, h3 { page-break-after: avoid; }
+	* { background: transparent !important; color: black !important; box-shadow:none !important; text-shadow: none !important; } /* Black prints faster: h5bp.com/s */
+	a, a:visited { text-decoration: underline; }
+	a[href]:after { content: " (" attr(href) ")"; }
+	abbr[title]:after { content: " (" attr(title) ")"; }
+	.ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; } /* Don't show links for images, or javascript/internal links */
+	pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+	thead { display: table-header-group; } /* h5bp.com/t */
+	tr, img { page-break-inside: avoid; }
+	img { max-width: 100% !important; }
+	@page { margin: 0.5cm; }
+	p, h2, h3 { orphans: 3; widows: 3; }
+	h2, h3 { page-break-after: avoid; }
 }

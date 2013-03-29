@@ -1,9 +1,9 @@
 body {
-  background-image: url_ver('../img/tile.png');
-  background-size: 8px;	
-  color: $gray-light;
-  font-family: sans-serif;
-  font-size: 13px;
+	background-image: url_ver('../img/tile.png');
+	background-size: 8px;	
+	color: $gray-light;
+	font-family: sans-serif;
+	font-size: 13px;
 }
 
 .container {
@@ -36,8 +36,7 @@ nav {
 /* Content - Left Column */
 .post-date {
 	float: left;
-	margin-right: 15px;
-	margin-top: 15px;
+	margin: 15px 15px 0 0;
 	text-shadow: 2px 2px $white;
 	width: 40px;
 
@@ -348,7 +347,7 @@ article {
 .content {
 	.post-meta {
 		float: right;
-		margin-top: 20px;
+		margin-top: 15px;
 		padding: 0 0 0 15px;
 		width: 142px;
 
