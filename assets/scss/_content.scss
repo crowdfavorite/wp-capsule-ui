@@ -16,7 +16,6 @@ body {
 h1 {
 	font-family: 'SourceSansProSemibold', Helvetica;
 	font-size: 32px;
-	text-shadow: 1px 1px $white;		
 }
 nav {
 	a {
@@ -37,7 +36,6 @@ nav {
 .post-date {
 	float: left;
 	margin: 15px 15px 0 0;
-	text-shadow: 2px 2px $white;
 	width: 40px;
 
 	ul {
@@ -248,7 +246,6 @@ article {
 		font-size: 16px;
 		margin-left: 25px;
 		text-align: center;
-		text-shadow: 1px 1px $white;
 	}
 	.post-undelete-link {
 		&,
@@ -365,7 +362,6 @@ article {
 			font-weight: bold;
 			margin: 0 0 3px 0;
 			line-height: 14px;
-			text-shadow: 1px 1px $white;
 			text-transform: uppercase;
 			width: 75px;
 		}
@@ -410,7 +406,6 @@ article {
 		font-family: 'SourceSansProRegular';
 		font-size: 16px;
 		line-height: 20px;
-		text-shadow: 1px 1px $white;
 	}
 }
 
