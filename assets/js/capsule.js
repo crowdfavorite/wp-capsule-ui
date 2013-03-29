@@ -342,7 +342,6 @@
 	};
 	
 	$(function() {
-	
 		$(document).on('click', 'article.excerpt.toggleable .post-content', function(e) {
 			// load full content on excerpt click
 			$(this).closest('article.excerpt.toggleable').removeClass('excerpt').addClass('open');

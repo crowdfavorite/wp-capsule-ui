@@ -138,7 +138,7 @@ hr {
   display: block;
   height: 1px;
   border: 0;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid #cccccc;
   margin: 1em 0;
   padding: 0; }
 
@@ -156,7 +156,7 @@ mark {
 /* Redeclare monospace font family: h5bp.com/j */
 pre, code, kbd, samp {
   font-family: monospace, serif;
-  _font-family: 'courier new', monospace;
+  _font-family: "courier new", monospace;
   font-size: 1em; }
 
 /* Improve readability of pre-formatted text in all browsers */
@@ -369,7 +369,7 @@ td {
 
   /* Don't show links for images, or javascript/internal links */
   pre, blockquote {
-    border: 1px solid #999;
+    border: 1px solid #999999;
     page-break-inside: avoid; }
 
   thead {
@@ -565,7 +565,7 @@ w
     /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#999999', endColorstr='#666666',GradientType=0 );
     /* IE6-9 */
-    border: 1px solid #aaa;
+    border: 1px solid #aaaaaa;
     color: #fff;
     display: inline-block;
     float: right;
@@ -587,7 +587,7 @@ w
     /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#aaaaaa', endColorstr='#787878',GradientType=0 );
     /* IE6-9 */
-    border: 1px solid #aaa; }
+    border: 1px solid #aaaaaa; }
 
 /** Masthead
  -------------------------------------------------- */
@@ -683,7 +683,7 @@ w
     margin-top: 23px; }
   .pagination a {
     color: #222222;
-    font-family: 'SourceSansProRegular', Helvetica;
+    font-family: "SourceSansProRegular", Helvetica;
     font-size: 20px;
     text-shadow: 1px 1px white; }
     .pagination a:visited {
@@ -718,11 +718,11 @@ body {
 /* 	Content - Posts, Pages, Comments
 	------------------------------------------------------- */
 h1 {
-  font-family: 'SourceSansProSemibold', Helvetica;
+  font-family: "SourceSansProSemibold", Helvetica;
   font-size: 32px; }
 
 nav a {
-  font-family: 'SourceSansProRegular', Helvetica;
+  font-family: "SourceSansProRegular", Helvetica;
   font-size: 1rem;
   text-shadow: 1px 1px #111111;
   text-decoration: none; }
@@ -896,7 +896,7 @@ article.edit .post-close-link {
 .deleted .msg {
   color: #222222;
   display: inline-block;
-  font-family: 'SourceSansProRegular', Helvetica;
+  font-family: "SourceSansProRegular", Helvetica;
   font-size: 16px;
   margin-left: 25px;
   text-align: center; }
@@ -972,6 +972,23 @@ article.edit .post-close-link {
 
 .sticky .post-stick-link {
   background: #eeeeee url("../img/star.png?ver=1.1") center center no-repeat; }
+
+.post-excerpt {
+  bottom: 0;
+  background-color: #eeeeee;
+  background-position: center center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  display: block;
+  height: 20px;
+  left: 0;
+  position: absolute;
+  width: 100%; }
+  .post-excerpt:hover {
+    background-color: #e0e0e0; }
+
+.open .post-excerpt {
+  background-image: url("../img/arrow-up.png"); }
 
 .excerpt .post-content {
   cursor: pointer;
@@ -1067,7 +1084,7 @@ pre {
 
 code {
   color: #222222;
-  font-family: 'SourceCodeProRegular', Helvetica;
+  font-family: "SourceCodeProRegular", Helvetica;
   font-size: 13px; }
 
 /* Static code */
