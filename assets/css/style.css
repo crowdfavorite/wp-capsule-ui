@@ -795,6 +795,7 @@ article {
     height: 30px;
     position: absolute;
     right: 0;
+    text-indent: -9999em;
     top: 0;
     width: 30px; }
     article header a.post-close-link:hover {

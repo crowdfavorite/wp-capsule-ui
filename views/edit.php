@@ -19,7 +19,7 @@
 			<p>Last Saved at 1:38pm 1/17/2013</p>
 		</div>
 		<header>
-			<a href="#" class="post-close-link"><span><?php _e('Sticky', 'capsule'); ?></span></a>
+			<a href="#" class="post-close-link"><?php _e('Close', 'capsule'); ?></a>
 		</header>
 		<div id="ace-editor-<?php echo $post->ID; ?>" class="ace-editor"></div>
 	</div>
