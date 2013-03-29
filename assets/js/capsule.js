@@ -448,12 +448,12 @@
 	
 	$(function() {
 	
-		$(document).on('click', 'article.excerpt:not(a.post-edit-link)', function(e) {
+		$(document).on('click', 'article.excerpt:not(a.post-edit-link) .post-excerpt', function(e) {
 			// load full content on excerpt click
-			$(this).closest('article.excerpt').removeClass('excerpt').addClass('open');	
-		}).on('click', 'article:not(.excerpt, a.post-edit-link)', function(e) {
-			// exception for links in header
-			$(this).closest('article').addClass('excerpt')	
+			$(this).closest('article.excerpt').removeClass('excerpt').addClass('open');
+		}).on('click', 'article:not(.excerpt, a.post-edit-link) .post-excerpt', function(e) {
+			// load excerpt on content click
+			$(this).closest('article').removeClass('open').addClass('excerpt');
 		}).on('click', 'article.excerpt header a:not(.post-edit-link)', function(e) {
 			// exception for links in header
 			e.stopPropagation();
