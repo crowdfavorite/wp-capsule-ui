@@ -740,27 +740,30 @@ nav a {
 .post-date {
   float: left;
   margin-right: 15px;
-  margin-top: 5px;
+  margin-top: 15px;
   text-shadow: 2px 2px white;
   width: 40px; }
   .post-date ul {
     list-style-type: none;
-    line-height: 0px;
     text-align: right;
-    padding: 0; }
+    padding: 0;
+    margin: 0; }
   .post-date .day {
     font-family: 'SourceSansProSemiBold';
     font-size: 30px;
-    font-weight: normal; }
+    font-weight: normal;
+    line-height: 30px; }
   .post-date .month {
     font-family: 'SourceSansProSemiBold';
     font-size: 18px;
-    margin-top: -6px;
-    text-transform: uppercase; }
+    line-height: 18px;
+    text-transform: uppercase;
+    margin-top: -5px; }
   .post-date .year {
     font-family: 'SourceSansProSemiBold';
     font-size: 14px;
-    margin-top: -4px; }
+    line-height: 14px;
+    margin-top: -2px; }
 
 /** Posts Default
  -------------------------------------------------- */

@@ -7,9 +7,9 @@
 	</header>
 	<div class="post-date">
 		<ul>
-			<li><h2 class="day"><?php the_time('j'); ?></h2></li>
-			<li><h3 class="month"><?php the_time('M'); ?></h3></li>
-			<li><h4 class="year"><?php the_time('Y'); ?></h4></li>
+			<li class="day"><?php the_time('j'); ?></li>
+			<li class="month"><?php the_time('M'); ?></li>
+			<li class="year"><?php the_time('Y'); ?></li>
 		</ul>
 	</div>	
 	<div class="post-meta">
