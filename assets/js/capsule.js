@@ -450,7 +450,7 @@
 	
 		$(document).on('click', 'article.excerpt:not(a.post-edit-link)', function(e) {
 			// load full content on excerpt click
-			$(this).closest('article.excerpt').removeClass('excerpt')	
+			$(this).closest('article.excerpt').removeClass('excerpt').addClass('open');	
 		}).on('click', 'article:not(.excerpt, a.post-edit-link)', function(e) {
 			// exception for links in header
 			$(this).closest('article').addClass('excerpt')	

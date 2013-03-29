@@ -960,10 +960,27 @@ article {
 .sticky .post-stick-link {
   background: #eeeeee url("../img/star.png?ver=1.1") center center no-repeat; }
 
+.post-excerpt {
+  bottom: 0;
+  background-color: #eeeeee;
+  background-position: center center;
+  background-repeat: no-repeat;
+  display: block;
+  height: 20px;
+  left: 0;
+  position: absolute;
+  width: 100%; }
+
+.open .post-excerpt {
+  background-image: url("../img/arrow-up.png"); }
+
 .excerpt .post-content {
   max-height: 200px;
   min-height: 200px;
-  overflow: hidden; }
+  overflow: hidden;
+  position: relative; }
+.excerpt .post-excerpt {
+  background-image: url("../img/arrow-down.png"); }
 
 .edit .post-meta,
 .content .post-meta {

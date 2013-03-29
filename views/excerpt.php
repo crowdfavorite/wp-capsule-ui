@@ -22,5 +22,6 @@
 	</div>
 	<div class="post-content">
 		<?php the_content(); ?>
+		<div class="post-excerpt"></div>
 	</div>
 </article>
