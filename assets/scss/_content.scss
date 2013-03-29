@@ -321,11 +321,16 @@ article {
 	background-color: #eeeeee;
 	background-position: center center;
 	background-repeat: no-repeat;
+	cursor: pointer;
 	display: block;
-	height: 20px;
+	height: 30px;
 	left: 0;
 	position: absolute;
 	width: 100%;
+
+	&:hover {
+		background-color: #e0e0e0;
+	}
 }
 .open {
 	.post-excerpt {
@@ -334,8 +339,8 @@ article {
 }
 .excerpt {
 	.post-content {
-		max-height: 200px;
-		min-height: 200px;
+		max-height: 230px;
+		min-height: 230px;
 		overflow: hidden;
 		position: relative;
 	}
