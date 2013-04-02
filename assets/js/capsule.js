@@ -277,8 +277,10 @@
 		window.editors[postId].getSession().setUseWrapMode(true);
 		window.editors[postId].getSession().setMode('cf/js/syntax/cfmarkdown');
 		window.editors[postId].setShowPrintMargin(false);
-		window.editors[postId].setTheme('ace/theme/twilight')
+		window.editors[postId].setTheme('ace/theme/twilight');
 		window.editors[postId].getSession().setValue(content);
+		window.editors[postId].container.style.lineHeight = '21px';
+		window.editors[postId].renderer.setPadding(12);
 		window.editors[postId].commands.addCommand({
 			name: 'save',
 			bindKey: {
