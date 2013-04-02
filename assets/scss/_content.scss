@@ -151,20 +151,17 @@ article {
 }
 
 article.edit {
-	header {
-		a {
-			&.post-close-link {
-				background: transparent url_ver('../img/close-static.png') center center no-repeat;
-				color: transparent;
-				height: 30px;
-				position: absolute;
-				right: 0;
-				top: 0;
-				width: 30px;
-				&:hover {
-					background: transparent url_ver('../img/close-hover.png') no-repeat center center;
-				}
-			}
+	.post-close-link {
+		background: transparent url_ver('../img/close-static.png') center center no-repeat;
+		color: transparent;
+		height: 30px;
+		overflow: hidden;
+		position: absolute;
+		right: 0;
+		top: 0;
+		width: 30px;
+		&:hover {
+			background: transparent url_ver('../img/close-hover.png') no-repeat center center;
 		}
 	}
 }
