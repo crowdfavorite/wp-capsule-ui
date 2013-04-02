@@ -7,7 +7,7 @@
 	
 	.inner {
 		border-bottom: 1px solid #adadad;
-		height: 50px;		
+		height: 50px;
 		padding: 14px 0 0 0;
 		width: 100%;
 	}
@@ -22,12 +22,11 @@
 		input {
 			background: $white url_ver('../img/search.png') no-repeat 8px 50%;
 			border: 1px solid #ababab;
-			color: #999;	
+			color: #333;	
 			font-family: 'SourceSansProRegular';
 			height: 29px;
 			padding-left: 30px;
 			width: 258px;
-			@include box-shadow(inset 0 2px 5px #ddd);
 			
 			&[type="submit"] {
 				display: none;

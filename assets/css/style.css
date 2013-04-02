@@ -541,17 +541,11 @@ w
     #header form input {
       background: white url("../img/search.png?ver=1.1") no-repeat 8px 50%;
       border: 1px solid #ababab;
-      color: #999;
+      color: #333;
       font-family: 'SourceSansProRegular';
       height: 29px;
       padding-left: 30px;
-      width: 258px;
-      -moz-box-shadow: inset 0 2px 5px #dddddd;
-      /* FF3.5+ */
-      -webkit-box-shadow: inset 0 2px 5px #dddddd;
-      /* Saf3+, Chrome */
-      box-shadow: inset 0 2px 5px #dddddd;
-      /* Standard. Opera 10.5, IE9+ */ }
+      width: 258px; }
       #header form input[type="submit"] {
         display: none; }
   #header a.post-new-link, #header a.post-new-link:visited {
@@ -924,7 +918,7 @@ article.edit header a.post-close-link {
   position: relative; }
 
 .status {
-  background: #333333;
+  background: #232323;
   top: 0;
   height: 30px;
   line-height: 25px;
@@ -932,9 +926,23 @@ article.edit header a.post-close-link {
   position: absolute;
   right: 0; }
   .status p {
-    color: #7f7f7f;
-    font-size: 12px;
-    margin: 5px 0 0 9px; }
+    color: #787878;
+    font-size: 13px;
+    margin: 3px 0 0 9px; }
+  .status .dirty-indicator,
+  .status .saving-indicator {
+    display: none;
+    font-family: 'SourceSansProBold';
+    margin-left: 7px; }
+
+.dirty .dirty-indicator {
+  display: inline; }
+
+.saving .dirty-indicator {
+  display: none; }
+
+.saving .saving-indicator {
+  display: inline; }
 
 .close-content {
   height: 20px;
@@ -953,6 +961,11 @@ article.edit header a.post-close-link {
 
 .sticky .post-content {
   background-image: url("../img/sticky.png?ver=1.1");
+  background-repeat: no-repeat;
+  background-position: 100% 0%; }
+
+.sticky-loading .post-content {
+  background-image: url("../img/sticky-loading.png?ver=1.1");
   background-repeat: no-repeat;
   background-position: 100% 0%; }
 
@@ -1036,14 +1049,12 @@ article.edit header a.post-close-link {
   height: 400px;
   width: 100%; }
 
-.ace-footer {
-  border: 1px solid red;
-  width: 50px;
-  height: 50px;
-  position: absolute; }
-
 .post-content .ace-twilight .ace_gutter {
-  color: #7f7f7f; }
+  color: #676767; }
+
+.post-content .editor-padding {
+  background: #232323;
+  height: 3px; }
 
 /* Code */
 pre {

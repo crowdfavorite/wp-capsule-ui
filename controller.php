@@ -108,10 +108,14 @@ function capsule_controller() {
 					$taxonomies[$tax] = $terms;
 					$post_title .= ' '.implode(' ', $terms);
 				}
+				// if the content is empty, wp_update_post fails
+				if (empty($_POST['content'])) {
+					$_POST['content'] = ' ';
+				}
 				$update = wp_update_post(array(
 					'ID' => $post_id,
 					'post_title' => trim($post_title),
-					'post_content' => stripslashes($_POST['content']),
+					'post_content' => $_POST['content'],
 					'post_status' => 'publish',
 				));
 				if ($update) {

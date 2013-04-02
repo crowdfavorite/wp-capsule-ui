@@ -111,22 +111,22 @@
 		}
 
 		var timestamp = (new Date()).getTime() / 1000,
-		ymd = date('g:i a', timestamp),
-		save_cb = function() {
-			Capsule.delaySave[postId] = null;
-			Capsule.updatePost(postId, window.editors[postId].getSession().getValue());
-		}
-		change_cb = function() {
-			$article.clearQueue().addClass('dirty');
-			if (Capsule.delaySave[postId]) {
-				clearTimeout(Capsule.delaySave[postId]);
-			}
-			Capsule.delaySave[postId] = setTimeout(save_cb, 10000);
-			window.editors[postId].getSession().removeEventListener('change', change_cb);
-			return true;
-		};
+			updated = date('g:i a', timestamp),
+			save_cb = function() {
+				Capsule.delaySave[postId] = null;
+				Capsule.updatePost(postId, window.editors[postId].getSession().getValue());
+			},
+			change_cb = function() {
+				$article.clearQueue().addClass('dirty');
+				if (Capsule.delaySave[postId]) {
+					clearTimeout(Capsule.delaySave[postId]);
+				}
+				Capsule.delaySave[postId] = setTimeout(save_cb, 10000);
+				window.editors[postId].getSession().removeEventListener('change', change_cb);
+				return true;
+			};
 		if (!suppress_time_display) {
-			$article.find('span.post-last-saved').html("Last saved: " + ymd);
+			$article.find('span.post-last-saved').html(updated);
 		}
 		window.editors[postId].getSession().on('change', change_cb);
 
@@ -232,8 +232,7 @@
 	};
 	
 	Capsule.stickPost = function(postId, $article) {
-		$article.addClass('unstyled').children().addClass('transparent').end()
-			.append(Capsule.spinner());
+		$article.addClass('sticky-loading');
 		Capsule.post(
 			capsuleL10n.endpointAjax,
 			{
@@ -241,40 +240,19 @@
 				post_id: postId
 			},
 			function(response) {
-				var article_datebar,
-					sticky_datebar,
-					datebar_classes;
-
 				if (response.result == 'success') {
-					article_datebar = $($article.prevAll('.date-title')[0]);
-					datebar_classes = article_datebar.attr('class').split(' ');
-
-					sticky_datebar = $('.body').find('.'+datebar_classes.join('.')+'.date-title-sticky');
-					if (sticky_datebar.length <= 0) {
-						sticky_datebar = article_datebar.clone().addClass('date-title-sticky').prependTo('div.body');
-					}
-					$article.addClass('sticky');
-					sticky_datebar.after($article.detach());
-					// If there are no other articles (that is, if the next element
-					// after the datebar is also a date-title element), remove it
-					if (article_datebar.next().hasClass('date-title')) {
-						article_datebar.remove();
-					}
+					$article.addClass('sticky').removeClass('sticky-loading');
 				}
 				else {
 					alert(response.msg);
 				}
-				$article.removeClass('unstyled').children().removeClass('transparent').end()
-					.find('.spinner').remove();
-				$article.scrollintoview({ offset: 10 });
 			},
 			'json'
 		);
 	};
 	
 	Capsule.unstickPost = function(postId, $article) {
-		$article.addClass('unstyled').children().addClass('transparent').end()
-			.append(Capsule.spinner());
+		$article.addClass('sticky-loading');
 		Capsule.post(
 			capsuleL10n.endpointAjax,
 			{
@@ -282,32 +260,12 @@
 				post_id: postId
 			},
 			function(response) {
-				var article_datebar,
-					sticky_datebar,
-					datebar_classes;
-
 				if (response.result == 'success') {
-					sticky_datebar = $($article.prevAll('.date-title')[0]);
-					datebar_classes = sticky_datebar.attr('class').split(' ');
-
-					article_datebar = $('.body').find('.'+datebar_classes.join('.').replace('.date-title-sticky', ':not(.date-title-sticky)'));
-					if (article_datebar.length <= 0) {
-						article_datebar = sticky_datebar.clone().removeClass('date-title-sticky').appendTo('div.body');
-					}
-					$article.removeClass('sticky');
-					article_datebar.after($article.detach());
-					// If there are no other articles (that is, if the next element
-					// after the datebar is also a date-title element), remove it
-					if (sticky_datebar.next().hasClass('date-title')) {
-						sticky_datebar.remove();
-					}
+					$article.removeClass('sticky sticky-loading');
 				}
 				else {
 					alert(response.msg);
 				}
-				$article.removeClass('unstyled').children().removeClass('transparent').end()
-					.find('.spinner').remove();
-				$article.scrollintoview({ offset: 10 });
 			},
 			'json'
 		);

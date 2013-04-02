@@ -281,7 +281,7 @@ article.edit {
 }
 
 .status {
-	background: $gray-light;	
+	background: #232323;
 	top: 0;
 	height: 30px;
 	line-height: 25px;
@@ -290,10 +290,25 @@ article.edit {
 	right: 0;
 
 	p {
-		color: #7f7f7f;
-		font-size: 12px;
-		margin: 5px 0 0 9px;
+		color: #787878;
+		font-size: 13px;
+		margin: 3px 0 0 9px;
 	}
+	.dirty-indicator,
+	.saving-indicator {
+		display: none;
+		font-family: 'SourceSansProBold';
+		margin-left: 7px;
+	}
+}
+.dirty .dirty-indicator {
+	display: inline;
+}
+.saving .dirty-indicator {
+	display: none;
+}
+.saving .saving-indicator {
+	display: inline;
 }
 
 .close-content {
@@ -315,6 +330,11 @@ article.edit {
 
 .sticky .post-content {
 	background-image: url_ver('../img/sticky.png');
+	background-repeat: no-repeat;
+	background-position: 100% 0%;
+}
+.sticky-loading .post-content {
+	background-image: url_ver('../img/sticky-loading.png');
 	background-repeat: no-repeat;
 	background-position: 100% 0%;
 }
@@ -423,15 +443,13 @@ article.edit {
 	width: 100%;
 }
 
-.ace-footer {
-	border: 1px solid red;
-	width: 50px;
-	height: 50px;
-	position: absolute;
+.post-content .ace-twilight .ace_gutter {
+	color: #676767;
 }
 
-.post-content .ace-twilight .ace_gutter {
-	color: #7f7f7f;
+.post-content .editor-padding {
+	background: #232323;
+	height: 3px;
 }
 
 /* Code */
