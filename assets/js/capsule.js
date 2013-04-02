@@ -444,7 +444,7 @@ console.log(editor)
 			var $article = $(this).closest('article'),
 				postId = $article.data('post-id');
 			Capsule.unstickPost(postId, $article);
-		}).on('mousewheel', 'article.edit', function(e) {
+		}).on('mousewheel', 'article.edit .post-content', function(e) {
 			e.preventDefault();
 		}).on('click', '.post-new-link', function(e) {
 			e.preventDefault();
