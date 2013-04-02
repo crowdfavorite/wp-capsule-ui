@@ -19,7 +19,7 @@ $font-sans: 'SourceSansProRegular';
 $font-sans-semibold: 'SourceSansProSemibold';
 $font-sans-bold: 'SourceSansProBold';
 $font-mono: 'SourceCodeProRegular';
-$font-icon: 'Entypo';
+$font-icon: 'Fontawesome';
 
 @font-face {
 	font-family: 'SourceSansProSemibold';
@@ -62,14 +62,14 @@ $font-icon: 'Entypo';
 		 url('../fonts/source-code-pro/SourceCodePro-Regular-webfont.svg#SourceCodeProRegular') format('svg');
 }
 @font-face {
-	font-family: 'Entypo';
+	font-family: 'Fontawesome';
 	font-style: normal;
 	font-weight: normal;
-	src: url('../fonts/entypo/entypo.eot');
-	src: url('../fonts/entypo/entypo.eot?#iefix') format('embedded-opentype'),
-		 url('../fonts/entypo/entypo.woff') format('woff'),
-		 url('../fonts/entypo/entypo.ttf') format('truetype'),
-		 url('../fonts/entypo/entypo.svg') format('svg');
+	src: url('../fonts/fontawesome/fontawesome.eot');
+	src: url('../fonts/fontawesome/fontawesome.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/fontawesome/fontawesome.woff') format('woff'),
+		 url('../fonts/fontawesome/fontawesome.ttf') format('truetype'),
+		 url('../fonts/fontawesome/fontawesome.svg') format('svg');
 }
 
 
