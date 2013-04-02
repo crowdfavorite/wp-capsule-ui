@@ -52,9 +52,9 @@ else {
 <div class="container">
 	<nav class="main-nav">
 		<ul>
-			<li><a href="index.php"><?php _e('Home', 'capsule'); ?></a></li>
+			<li><a href="<?php echo esc_url(site_url('/')); ?>"><?php _e('Home', 'capsule'); ?></a></li>
 			<li><a href="<?php echo esc_url(admin_url('post-new.php')); ?>" class="post-new-link"><?php _e('New Post', 'capsule'); ?></a></li>
-			<li><a href="index.php" class="projects"><?php _e('Projects', 'capsule'); ?></a>
+			<li><a href="#" class="projects"><?php _e('Projects', 'capsule'); ?></a>
 				<ul class="project-list">
 					<li><a href="#">@test</a></li>
 					<li><a href="#">@social</a></li>
@@ -65,6 +65,7 @@ else {
 					<li class="list-last"><a href="#">All Projects</a></li>
 				</ul>
 			</li>
+			<li><a href="#" class="tags"><?php _e('Tags', 'capsule'); ?></a></li>
 			<li><a href="<?php echo esc_url(admin_url('admin.php?page=capsule')); ?>"><?php _e('Settings', 'capsule'); ?></a></li>
 		</ul>
 	</nav>
@@ -104,36 +105,35 @@ else if (is_tax('code')) {
 			</div>
 		</header>
 		<div class="body">
-	<?php
-	
-	if (have_posts()) {
-		while (have_posts()) {
-			the_post();
-			
-			if (is_singular()) {
-				include('views/content.php');
-			}
-			else {
-				include('views/excerpt.php');
-			}
+<?php
+
+if (have_posts()) {
+	while (have_posts()) {
+		the_post();
+		
+		if (is_singular()) {
+			include('views/content.php');
 		}
-		if ( $wp_query->max_num_pages > 1 ) {
-	?>
+		else {
+			include('views/excerpt.php');
+		}
+	}
+	if ( $wp_query->max_num_pages > 1 ) {
+?>
 			<nav class="pagination clearfix">
 				<div class="nav-previous"><?php next_posts_link( __( 'Older posts <span class="meta-nav">&rarr;</span>', 'capsule' ) ); ?></div>
 				<div class="nav-next"><?php previous_posts_link( __( '<span class="meta-nav">&larr;</span> Newer posts', 'capsule' ) ); ?></div>
 			</nav>
-	<?php
-		}
-	
+<?php
 	}
-	
-	?>
+
+}
+
+?>
 		</div>
 	</div>
 	
-	
-	<?php wp_footer(); ?>
+<?php wp_footer(); ?>
 
 </div>
 
@@ -141,10 +141,5 @@ else if (is_tax('code')) {
 	<div class="footer-logo"></div>
 </footer>
 
-
 </body>
 </html>
-
-<!-- $ymd = get_the_time('Ymd', $post);
-$sticky_class = is_sticky() ? "date-title-sticky" : "";
-the_date('F j, Y', '<h2 class="date-title date-'.$ymd.' '.$sticky_class.'">', '</h2>'); -->
