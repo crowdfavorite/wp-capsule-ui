@@ -1,4 +1,4 @@
-<article id="post-content-<?php the_ID(); ?>" data-post-id="<?php the_ID(); ?>" <?php post_class('content clearfix excerpt'); ?>>
+<article id="post-content-<?php the_ID(); ?>" data-post-id="<?php the_ID(); ?>" <?php post_class('content clearfix excerpt' . (is_sticky() ? ' sticky' : '')); ?>>
 	<nav class="post-menu">
 	 	<?php edit_post_link(__('Edit', 'capsule'), '', ''); ?>
 		<a href="#" class="post-stick-link"><span><?php _e('Sticky', 'capsule'); ?></span></a>

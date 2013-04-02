@@ -261,7 +261,9 @@
 			},
 			function(response) {
 				if (response.result == 'success') {
-					$article.removeClass('sticky sticky-loading');
+					// in some situations the sticky class is added twice by WP + custom code,
+					// this removes both instances
+					$article.removeClass('sticky sticky sticky-loading');
 				}
 				else {
 					alert(response.msg);
@@ -301,6 +303,41 @@
 				Capsule.centerEditor(postId);
 			}
 		});
+		window.editors[postId].commands.addCommand({
+			name: 'close',
+			bindKey: {
+				mac: 'Esc',
+				win: 'Esc'
+			},
+			exec: function(editor) {
+				var $article = $('#post-edit-' + postId);
+				Capsule.updatePost(postId, window.editors[postId].getSession().getValue(), $article, true);
+			}
+		});
+		window.editors[postId].commands.addCommand({
+			name: 'indent',
+			bindKey: {
+				mac: 'Command-]',
+				win: 'Control-]'
+			},
+			exec: function(editor) {
+				var position = editor.getCursorPosition();
+console.log(editor)
+				editor.moveCursorTo(position.row, 0);
+				editor.indent();
+				editor.moveCursorTo(position.row, position.column + 4);
+			}
+		});
+		window.editors[postId].commands.addCommand({
+			name: 'outdent',
+			bindKey: {
+				mac: 'Command-[',
+				win: 'Control-['
+			},
+			exec: function(editor) {
+				editor.blockOutdent();
+			}
+		});
 
 		Capsule.watchForEditorChanges(postId, undefined, true);
 		window.editors[postId].focus();
@@ -309,7 +346,7 @@
 	Capsule.sizeEditor = function() {
 		$('.ace-editor:not(.resized)').each(function() {
 			$(this).height(
-				($(window).height() - $(this).closest('article').find('header').height() - 70) + 'px'
+				($(window).height() - $(this).closest('article').find('header').height() - 60) + 'px'
 			);
 		});
 	};
