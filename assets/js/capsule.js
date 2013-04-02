@@ -102,6 +102,8 @@
 						catch (er) {console.log(er); throw(er);}
 					});
 					$article.replaceWith(block);
+					$article = $('#post-content-' + postId);
+					Capsule.postExpandable($article);
 					$('#post-content-' + postId).scrollintoview({ offset: 10 });
 				}
 			},
@@ -121,6 +123,8 @@
 			function(response) {
 				if (response.html) {
 					$article.replaceWith(response.html);
+					$article = $('#post-content-' + postId);
+					Capsule.postExpandable($article);
 					$('#post-content-' + postId).scrollintoview({ offset: 10 });
 				}
 			},
@@ -289,6 +293,8 @@
 			function(response) {
 				if (response.result == 'success') {
 					$article.replaceWith(response.html);
+					$article = $('#post-content-' + postId);
+					Capsule.postExpandable($article);
 				}
 				else {
 					alert(response.msg);
@@ -446,21 +452,20 @@
 		return tags;
 	};
 	
+	Capsule.postExpandable = function($article) {
+		if ($article.find('.post-content:first')[0].scrollHeight > $article[0].scrollHeight) {
+			$article.addClass('toggleable');
+		}
+	};
+	
 	$(function() {
 	
-		$(document).on('click', 'article.excerpt:not(a.post-edit-link) .post-excerpt', function(e) {
+		$(document).on('click', 'article.excerpt.toggleable:not(nav.post-menu a)', function(e) {
 			// load full content on excerpt click
-			$(this).closest('article.excerpt').removeClass('excerpt').addClass('open');
-		}).on('click', 'article:not(.excerpt, a.post-edit-link) .post-excerpt', function(e) {
+			$(this).closest('article.excerpt.toggleable').removeClass('excerpt').addClass('open');
+		}).on('click', 'article:not(.excerpt, a.post-edit-link) .post-toggle', function(e) {
 			// load excerpt on content click
 			$(this).closest('article').removeClass('open').addClass('excerpt');
-		}).on('click', 'article.excerpt header a:not(.post-edit-link)', function(e) {
-			// exception for links in header
-			e.stopPropagation();
-		}).on('dblclick', 'article.content header', function(e) {
-			e.preventDefault();
-			// load excerpt on full content doubleclick
-			$(this).closest('article.content').addClass('excerpt')
 		}).on('click', 'article .post-edit-link', function(e) {
 			// load editor
 			var $article = $(this).closest('article'),
@@ -520,6 +525,10 @@
 		}).on('blur', function() {
 			Capsule.saveAllEditors();
 		})
+		$('article').each(function() {
+			Capsule.postExpandable($(this));
+		});
+		
 	});
 
 })(jQuery);

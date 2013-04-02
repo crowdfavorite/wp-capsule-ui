@@ -46,7 +46,7 @@ else {
 	
 	<title><?php wp_title( '|', true, 'right' ); echo esc_html( get_bloginfo('name'), 1 ).$title_description; ?></title>
 	
-	<?php wp_head(); ?>
+<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
 <div class="container">
@@ -68,37 +68,37 @@ else {
 					<li class="list-last"><a href="#">All Projects</a></li>
 				</ul>
 			</li>
-			<li><a href="<?php echo esc_url(admin_url()); ?>"><?php _e('Settings', 'capsule'); ?></a></li>
+			<li><a href="<?php echo esc_url(admin_url('admin.php?page=capsule')); ?>"><?php _e('Settings', 'capsule'); ?></a></li>
 		</ul>
 	</nav>
 	
 	<div id="wrap">
 		<header id="header">
 			<div class="inner">
-	<?php
-	
-	$title = '';
-	
-	if (is_home() || is_front_page()) {
-		$title = __('Home', 'capsule');
-	}
-	else if (is_search()) {
-		$title = sprintf(__('Search: %s', 'capsule'), esc_html(get_query_var('s')));
-	}
-	else if (is_tag()) {
-		$term = get_queried_object();
-		$title = sprintf(__('#%s', 'capsule'), esc_html($term->name));
-	}
-	else if (is_tax('projects')) {
-		$term = get_queried_object();
-		$title = sprintf(__('@%s', 'capsule'), esc_html($term->name));
-	}
-	else if (is_tax('code')) {
-		$term = get_queried_object();
-		$title = sprintf(__('`%s', 'capsule'), esc_html($term->name));
-	}
-	
-	?>
+<?php
+
+$title = '';
+
+if (is_home() || is_front_page()) {
+	$title = __('Home', 'capsule');
+}
+else if (is_search()) {
+	$title = sprintf(__('Search: %s', 'capsule'), esc_html(get_query_var('s')));
+}
+else if (is_tag()) {
+	$term = get_queried_object();
+	$title = sprintf(__('#%s', 'capsule'), esc_html($term->name));
+}
+else if (is_tax('projects')) {
+	$term = get_queried_object();
+	$title = sprintf(__('@%s', 'capsule'), esc_html($term->name));
+}
+else if (is_tax('code')) {
+	$term = get_queried_object();
+	$title = sprintf(__('`%s', 'capsule'), esc_html($term->name));
+}
+
+?>
 				<h1><?php echo $title; ?></h1>
 				<form class="clearfix" action="<?php echo esc_url(home_url('/')); ?>" method="get" onsubmit="<?php echo $search_onsubmit; ?>">
 					<input type="text" name="s" value="" placeholder="<?php _e('Search projects, code, tags, etc...', 'capsule'); ?>" />

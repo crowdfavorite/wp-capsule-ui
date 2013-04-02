@@ -87,7 +87,7 @@ article {
 	position: relative;
 	width: 100%;
 
-	header {
+	nav.post-menu {
 		a {
 			&,
 			&:visited {
@@ -95,23 +95,6 @@ article {
 			}
 			&:hover {
 				text-decoration: underline;
-			}
-			&.post-link {
-				display: inline-block;
-				width: 100px;
-			}
-			&.post-close-link {
-				background: transparent url_ver('../img/close-static.png') center center no-repeat;
-				color: transparent;
-				height: 30px;
-				position: absolute;
-				right: 0;
-				text-indent: -9999em;
-				top: 0;
-				width: 30px;
-				&:hover {
-					background: transparent url_ver('../img/close-hover.png') no-repeat center center;
-				}
 			}
 			&.post-edit-link {
 				background: transparent url_ver('../img/edit.png') center center no-repeat;
@@ -138,7 +121,9 @@ article {
 				color: transparent;
 				height: 16px;
 				margin: 0px;
+				overflow: hidden;
 				padding: 8px;
+				text-indent: 100px;
 				width: 15px;
 				
 				&:hover {
@@ -159,6 +144,29 @@ article {
 			}
 		}
 	}
+	.post-date a {
+		color: $gray;
+		text-decoration: none;
+	}
+}
+
+article.edit {
+	header {
+		a {
+			&.post-close-link {
+				background: transparent url_ver('../img/close-static.png') center center no-repeat;
+				color: transparent;
+				height: 30px;
+				position: absolute;
+				right: 0;
+				top: 0;
+				width: 30px;
+				&:hover {
+					background: transparent url_ver('../img/close-hover.png') no-repeat center center;
+				}
+			}
+		}
+	}
 }
 
 .spinner {
@@ -172,7 +180,7 @@ article {
 }
 
 .content {
-	header {
+	nav.post-menu {
 		background: $white;
 		border: 1px solid #adadad;
 		@include box-shadow(0px 1px 0 #eee);
@@ -266,7 +274,7 @@ article {
 .post-content {
 	background: $white;
 	border: 1px solid #adadad;
-	min-height: 200px;
+	min-height: 150px;
 	overflow: auto;
 	padding: 0px 25px 25px 25px;
 	position: relative;
@@ -314,36 +322,36 @@ article {
 .sticky .post-stick-link {
 	background: #eee url_ver('../img/star.png') center center no-repeat;
 }
-.post-excerpt {
-	bottom: 0;
-	background-color: #eeeeee;
-	background-position: center center;
-	background-repeat: no-repeat;
-	cursor: pointer;
-	display: block;
-	height: 30px;
-	left: 0;
-	position: absolute;
-	width: 100%;
-
-	&:hover {
-		background-color: #e0e0e0;
-	}
-}
-.open {
-	.post-excerpt {
-		background-image: url('../img/arrow-up.png');
-	}
-}
 .excerpt {
 	.post-content {
+		cursor: pointer;
 		max-height: 230px;
-		min-height: 230px;
 		overflow: hidden;
 		position: relative;
 	}
-	.post-excerpt {
-		background-image: url('../img/arrow-down.png');
+}
+.toggleable {
+	.post-toggle {
+		bottom: 0;
+		background-color: #eee;
+		background-image: url_ver('../img/arrow-down.png');
+		background-position: center center;
+		background-repeat: no-repeat;
+		cursor: pointer;
+		display: block;
+		height: 20px;
+		left: 0;
+		position: absolute;
+		width: 100%;
+
+		&:hover {
+			background-color: #e0e0e0;
+		}
+	}
+}
+.open {
+	.post-toggle {
+		background-image: url_ver('../img/arrow-up.png');
 	}
 }
 .edit,
@@ -389,11 +397,11 @@ article {
 
 .content,
 .excerpt {
-	header {
+	nav.post-menu {
 		display: none;	
 	}
 	&:hover {
-		header {
+		nav.post-menu {
 			display: block;		
 		}
 	}
