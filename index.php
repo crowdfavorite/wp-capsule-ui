@@ -52,9 +52,9 @@ else {
 <div class="container">
 	<nav class="main-nav">
 		<ul>
-			<li><a href="<?php echo esc_url(site_url('/')); ?>"><?php _e('Home', 'capsule'); ?></a></li>
-			<li><a href="<?php echo esc_url(admin_url('post-new.php')); ?>" class="post-new-link"><?php _e('New Post', 'capsule'); ?></a></li>
-			<li><a href="#" class="projects"><?php _e('Projects', 'capsule'); ?></a>
+			<li><a href="<?php echo esc_url(site_url('/')); ?>" class="icon"><?php _e('&#8962;', 'capsule'); ?></a></li>
+			<li><a href="<?php echo esc_url(admin_url('post-new.php')); ?>" class="post-new-link icon"><?php _e('&oplus;', 'capsule'); ?></a></li>
+			<li><a href="#" class="projects ss-icon-projects"><?php _e('@', 'capsule'); ?></a>
 				<ul class="project-list">
 					<li><a href="#">@test</a></li>
 					<li><a href="#">@social</a></li>
@@ -65,8 +65,8 @@ else {
 					<li class="list-last"><a href="#">All Projects</a></li>
 				</ul>
 			</li>
-			<li><a href="#" class="tags"><?php _e('Tags', 'capsule'); ?></a></li>
-			<li><a href="<?php echo esc_url(admin_url('admin.php?page=capsule')); ?>"><?php _e('Settings', 'capsule'); ?></a></li>
+			<li><a href="#" class="tags ss-icon-tags"><?php _e('#', 'capsule'); ?></a></li>
+			<li><a href="<?php echo esc_url(admin_url('admin.php?page=capsule')); ?>" class="icon"><?php _e('&#9881;', 'capsule'); ?></a></li>
 		</ul>
 	</nav>
 	

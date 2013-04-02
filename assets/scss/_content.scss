@@ -17,17 +17,32 @@ h1 {
 	font-family: 'SourceSansProSemibold', Helvetica;
 	font-size: 32px;
 }
+
 nav {
 	a {
+		color: #e0e0e0;
 		font-family: 'SourceSansProRegular', Helvetica;
 		font-size: 1rem;
+		line-height: 48px;
 		text-shadow: 1px 1px $gray-dark;
 		text-decoration: none;
-
-		&,
+		text-align: center;
 		&:hover,
 		&:visited {
 			color: $white;
+		}
+		&.icon {
+			font-family: $font-icon;
+			font-size: 40px;
+		}
+		&.ss-icon-projects {
+			font-family: $font-sans-semibold;
+			font-size: 24px;
+		}
+		&.ss-icon-tags {
+			font-family: $font-sans-bold;
+			font-size: 26px;
+
 		}
 	}
 } 
