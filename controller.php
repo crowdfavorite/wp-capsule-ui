@@ -6,6 +6,38 @@ function capsule_controller() {
 			capsule_unauthorized_json();
 		}
 		switch ($_GET['capsule_action']) {
+			case 'search':
+			global $wpdb;
+			if (!empty($_GET['q']) && in_array($_GET['q'][0], array('@', '#', '`'))) {
+				$prefix = $_GET['q'][0];
+				switch ($prefix) {
+					case '@':
+						$taxonomy = 'projects';
+						break;
+					case '#':
+						$taxonomy = 'post_tag';
+						break;
+					case '`':
+						$taxonomy = 'code';
+						break;
+					default:
+						$taxonomy = null;
+						break;
+				}
+
+				$term_name = stripslashes(substr($_GET['q'], 1, strlen($_GET['q'])));
+				if (!strlen($term_name) < 2) {
+					// Taken from wp_ajax_ajax_tag_search()
+					$results = $wpdb->get_col( $wpdb->prepare( "SELECT t.name FROM $wpdb->term_taxonomy AS tt INNER JOIN $wpdb->terms AS t ON tt.term_id = t.term_id WHERE tt.taxonomy = %s AND t.name LIKE (%s)", $taxonomy, '%' . like_escape( $term_name ) . '%' ) );
+					$html = '';
+					foreach ($results as $result) {
+						$html .= $prefix.$result."\n";
+					}
+					echo $html;
+				}
+			}
+				die();
+				break;
 			case 'post_excerpt':
 			case 'post_content':
 // required params:

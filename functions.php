@@ -45,10 +45,11 @@ function capsule_resources() {
 
 	// Scripts
 	wp_enqueue_script('jquery');
+	wp_enqueue_script('suggest');
 	wp_enqueue_script(
 		'capsule',
 		$assets_url.'js/capsule.js',
-		array('jquery', 'ace', 'statichighlight', 'cfmarkdown'),
+		array('jquery', 'ace', 'statichighlight', 'cfmarkdown', 'suggest'),
 		CAPSULE_URL_VERSION,
 		true
 	);
@@ -274,4 +275,16 @@ function capsule_trim_excerpt($excerpt) {
 	return $excerpt;
 }
 add_filter('get_the_excerpt', 'capsule_trim_excerpt');
+
+// Generate the searchurl for the frontend
+function capsule_header_js() {
+?>
+<script type="text/javascript">
+var capsuleSearchURL = '<?php echo home_url(); ?>';
+</script>
+<?php 
+}
+if (!is_admin()) {
+	add_action('wp_head', 'capsule_header_js');
+}
 

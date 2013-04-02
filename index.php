@@ -99,8 +99,8 @@ else if (is_tax('code')) {
 ?>
 				<h1><?php echo $title; ?></h1>
 				<form class="clearfix" action="<?php echo esc_url(home_url('/')); ?>" method="get" onsubmit="<?php echo $search_onsubmit; ?>">
-					<input type="text" name="s" value="" placeholder="<?php _e('Search @projects, #tags, `code, etc&hellip;', 'capsule'); ?>" />
-					<input type="submit" name="search_submit" value="<?php _e('Search', 'capsule'); ?>" />
+					<input type="text" class="js-search" name="s" value="" placeholder="<?php _e('Search @projects, #tags, `code, etc&hellip;', 'capsule'); ?>" />
+					<input type="submit" value="<?php _e('Search', 'capsule'); ?>" />
 				</form>
 			</div>
 		</header>

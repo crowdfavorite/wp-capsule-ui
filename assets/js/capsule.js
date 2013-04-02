@@ -322,7 +322,7 @@
 				Capsule.updatePost(postId, window.editors[postId].getSession().getValue());
 			}
 		});
-	}
+	};
 	
 	Capsule.extractCodeLanguages = function(content) {
 		var block = new RegExp("^```[a-zA-Z]+\\s*$", "gm"),
@@ -344,6 +344,16 @@
 	};
 	
 	$(function() {
+		$('.js-search').suggest(capsuleSearchURL + '?capsule_action=search', {
+			delay : 500,
+			minchars: 3,
+			multiple: true,
+			multipleSep: ' ',
+			resultsClass: 'search_results',
+			selectClass: 'search_selected',
+			matchClass: 'search_match'
+		});
+
 		$(document).on('click', 'article.excerpt.toggleable .post-content', function(e) {
 			// load full content on excerpt click
 			$(this).closest('article.excerpt.toggleable').removeClass('excerpt').addClass('open');
@@ -408,11 +418,10 @@
 			Capsule.sizeEditor();
 		}).on('blur', function() {
 			Capsule.saveAllEditors();
-		})
+		});
 		$('article').each(function() {
 			Capsule.postExpandable($(this));
 		});
-		
 	});
 
 })(jQuery);

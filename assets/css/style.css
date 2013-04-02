@@ -1127,3 +1127,20 @@ pre.static_code {
     overflow-x: scroll; }
     pre.static_code ol li {
       padding-right: 40px; }
+
+/* Typeahead search */
+.search_selected {
+  color: white;
+  background-color: #323333; }
+
+ul.search_results {
+  list-style-type: none;
+  background-color: #fff;
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  border: 1px solid #adadad;
+  width: 288px;
+  display: none; }
+  ul.search_results li {
+    padding: 10px; }

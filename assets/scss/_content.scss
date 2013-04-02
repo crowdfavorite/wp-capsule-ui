@@ -515,3 +515,25 @@ pre.static_code {
 		}
 	}
 }
+
+/* Typeahead search */
+
+.search_selected {
+	color: $white;
+	background-color: $black;
+}
+
+ul.search_results {
+	list-style-type: none;
+	background-color: #fff;
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	border: 1px solid #adadad;
+	width: 288px;
+	display:none;
+
+	li {
+		padding: 10px;
+	}
+}
