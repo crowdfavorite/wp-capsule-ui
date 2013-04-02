@@ -172,9 +172,9 @@ var CFMarkdownHighlightRules = function() {
             regex: "^\\-+(?=\\s*$)"
         }, { // header
             token : function(value) {
-                return "markup.heading." + value.length;
+                return "markup.heading." + (value.length - 1);
             },
-            regex : "^#{1,6}"
+            regex : "^#{1,6} "
         }, 
 		github_embed("javascript", "js-"),
 		github_embed("js", "js-"),
