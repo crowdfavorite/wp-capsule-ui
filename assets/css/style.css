@@ -812,15 +812,16 @@ article {
     color: #222222;
     text-decoration: none; }
 
-article.edit header a.post-close-link {
+article.edit .post-close-link {
   background: transparent url("../img/close-static.png?ver=1.1") center center no-repeat;
   color: transparent;
   height: 30px;
+  overflow: hidden;
   position: absolute;
   right: 0;
   top: 0;
   width: 30px; }
-  article.edit header a.post-close-link:hover {
+  article.edit .post-close-link:hover {
     background: transparent url("../img/close-hover.png?ver=1.1") no-repeat center center; }
 
 .spinner {
