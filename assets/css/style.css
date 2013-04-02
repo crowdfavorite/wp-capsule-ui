@@ -979,6 +979,9 @@ article.edit .post-close-link {
   overflow: hidden;
   position: relative; }
 
+.excerpt.sticky .post-content {
+  max-height: 150px; }
+
 .toggleable .post-toggle {
   bottom: 0;
   background-color: #eee;

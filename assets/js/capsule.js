@@ -343,7 +343,7 @@
 	
 	$(function() {
 	
-		$(document).on('click', 'article.excerpt.toggleable:not(nav.post-menu a)', function(e) {
+		$(document).on('click', 'article.excerpt.toggleable .post-content', function(e) {
 			// load full content on excerpt click
 			$(this).closest('article.excerpt.toggleable').removeClass('excerpt').addClass('open');
 		}).on('click', 'article:not(.excerpt, a.post-edit-link) .post-toggle', function(e) {

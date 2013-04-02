@@ -347,6 +347,11 @@ article.edit {
 		position: relative;
 	}
 }
+.excerpt.sticky {
+	.post-content {
+		max-height: 150px;
+	}
+}
 .toggleable {
 	.post-toggle {
 		bottom: 0;
