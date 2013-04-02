@@ -76,7 +76,7 @@
 	padding-top: 30px;
 	position: fixed;
 	top: 0;
-	width: 84px;
+	width: 72px;
 	z-index: 100;
 	
 
@@ -95,36 +95,6 @@
 					background-color: $gray-dark;
 					text-decoration: none;
 				}
-			}
-
-			ul {
-				@include box-shadow(1px 1px #adadad);
-				left: -9999em;
-				z-index: 100;
-				position: absolute;
-				top: 0;
-				width: 215px;
-
-				li {
-					border-bottom: 1px solid $gray-light;
-
-					a {
-						background-color: $gray-dark;
-						padding: 19px 0 19px 20px;
-
-						&:hover {
-							background-color: $gray-light;
-						}
-					}
-					&.list-last a {
-						background-image: url_ver('../img/arrow-right-white.png');
-						background-repeat: no-repeat;
-						background-position: 85% 50%;
-					}
-				}
-			}
-			&:hover ul {
-				left: 110px;
 			}
 		}
 	}

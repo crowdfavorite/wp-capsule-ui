@@ -54,17 +54,7 @@ else {
 		<ul>
 			<li><a href="<?php echo esc_url(site_url('/')); ?>" class="icon"><?php _e('&#xf015;', 'capsule'); ?></a></li>
 			<li><a href="<?php echo esc_url(admin_url('post-new.php')); ?>" class="post-new-link icon"><?php _e('&#xf055;', 'capsule'); ?></a></li>
-			<li><a href="#" class="projects ss-icon-projects"><?php _e('@', 'capsule'); ?></a>
-				<ul class="project-list">
-					<li><a href="#">@test</a></li>
-					<li><a href="#">@social</a></li>
-					<li><a href="#">@capsule</a></li>
-					<li><a href="#">@tacos</a></li>
-					<li><a href="#">@persnickety</a></li>
-					<li><a href="#">@threads</a></li>
-					<li class="list-last"><a href="#">All Projects</a></li>
-				</ul>
-			</li>
+			<li><a href="#" class="projects ss-icon-projects"><?php _e('@', 'capsule'); ?></a></li>
 			<li><a href="#" class="tags ss-icon-tags"><?php _e('#', 'capsule'); ?></a></li>
 			<li><a href="<?php echo esc_url(admin_url('admin.php?page=capsule')); ?>" class="icon"><?php _e('&#xf013;', 'capsule'); ?></a></li>
 		</ul>
