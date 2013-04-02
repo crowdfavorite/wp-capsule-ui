@@ -22,7 +22,7 @@
 		input {
 			background: $white url_ver('../img/search.png') no-repeat 8px 50%;
 			border: 1px solid #ababab;
-			color: #333;	
+			color: #333;
 			font-family: 'SourceSansProRegular';
 			height: 29px;
 			padding-left: 30px;
@@ -64,26 +64,16 @@
 	}
 }
 
-/** Masthead
- -------------------------------------------------- */
-
-.logo {
-	background-image: url_ver('../img/logo.png');
-	display: block;
-	height: 55px;
-	margin-bottom: 45px;
-	text-indent: -9999em;
-}
-
 /* 	Main Navigation
 	------------------------------------------------------- */
 
 .main-nav {
 	background: $gray;
 	bottom: 0;
+	padding-top: 30px;
 	position: fixed;
 	top: 0;
-	width: 138px;
+	width: 110px;
 	z-index: 100;
 
 	ul {
@@ -163,7 +153,7 @@
 	text-shadow: 1px 1px $white;
 
 	em {
-		font-family: 'SourceSansProSemiBold';	
+		font-family: 'SourceSansProSemiBold';
 		font-style: normal;
 		font-weight: bold;
 	}
@@ -192,6 +182,6 @@
 		}
 		&:hover {
 			color: $black;
-		}		
+		}
 	}
 }

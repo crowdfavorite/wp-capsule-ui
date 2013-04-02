@@ -83,9 +83,10 @@ body {
 
 #wrap {
   min-width: 586px;
+  /* 768px - padding */
   max-width: 100%;
   overflow: auto;
-  padding: 0 23px 60px 161px; }
+  padding: 0 23px 60px 135px; }
 
 /*
  * Remove text-shadow in selection highlight: h5bp.com/i
@@ -589,23 +590,15 @@ w
     /* IE6-9 */
     border: 1px solid #aaaaaa; }
 
-/** Masthead
- -------------------------------------------------- */
-.logo {
-  background-image: url("../img/logo.png?ver=1.1");
-  display: block;
-  height: 55px;
-  margin-bottom: 45px;
-  text-indent: -9999em; }
-
 /* 	Main Navigation
 	------------------------------------------------------- */
 .main-nav {
   background: #222222;
   bottom: 0;
+  padding-top: 30px;
   position: fixed;
   top: 0;
-  width: 138px;
+  width: 110px;
   z-index: 100; }
   .main-nav ul {
     position: relative;
@@ -831,23 +824,8 @@ article.edit .post-close-link {
   .spinner span {
     display: none; }
 
-.content nav.post-menu {
-  background: white;
-  border: 1px solid #adadad;
-  -moz-box-shadow: 0px 1px 0 #eeeeee;
-  /* FF3.5+ */
-  -webkit-box-shadow: 0px 1px 0 #eeeeee;
-  /* Saf3+, Chrome */
-  box-shadow: 0px 1px 0 #eeeeee;
-  /* Standard. Opera 10.5, IE9+ */
-  color: white;
-  height: 96px;
-  margin-top: 40px;
-  position: absolute;
-  right: 153px;
-  width: 31px;
-  z-index: 1; }
-.content h1 {
+/* Content styling */
+.post-content h1 {
   font-size: 20px; }
 
 .edit .post-content {
@@ -1001,7 +979,7 @@ article.edit .post-close-link {
 
 .toggleable .post-toggle {
   bottom: 0;
-  background-color: #eee;
+  background-color: #fff;
   background-image: url("../img/arrow-down.png?ver=1.1");
   background-position: center center;
   background-repeat: no-repeat;
@@ -1012,7 +990,10 @@ article.edit .post-close-link {
   position: absolute;
   width: 100%; }
   .toggleable .post-toggle:hover {
-    background-color: #e0e0e0; }
+    background-color: #f6f6f6; }
+
+.toggleable:not(.open):hover .post-toggle {
+  background-color: #f6f6f6; }
 
 .open .post-toggle {
   background-image: url("../img/arrow-up.png?ver=1.1"); }
@@ -1047,14 +1028,29 @@ article.edit .post-close-link {
       margin-bottom: 0; }
     .edit .post-meta li a,
     .content .post-meta li a {
-      font-size: 16px;
-      line-height: 16px;
+      font-size: 14px;
+      line-height: 14px;
       text-decoration: none;
       text-shadow: none; }
 
 .content nav.post-menu,
 .excerpt nav.post-menu {
-  display: none; }
+  background: white;
+  border: 1px solid #adadad;
+  -moz-box-shadow: 0px 1px 0 #eeeeee;
+  /* FF3.5+ */
+  -webkit-box-shadow: 0px 1px 0 #eeeeee;
+  /* Saf3+, Chrome */
+  box-shadow: 0px 1px 0 #eeeeee;
+  /* Standard. Opera 10.5, IE9+ */
+  color: white;
+  display: none;
+  height: 96px;
+  margin-top: 40px;
+  position: absolute;
+  right: 153px;
+  width: 31px;
+  z-index: 1; }
 .content:hover nav.post-menu,
 .excerpt:hover nav.post-menu {
   display: block; }

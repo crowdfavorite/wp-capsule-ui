@@ -51,9 +51,6 @@ else {
 <body <?php body_class(); ?>>
 <div class="container">
 	<nav class="main-nav">
-	
-		<a href="index.php" class="logo">Capsule</a>
-	
 		<ul>
 			<li><a href="index.php"><?php _e('Home', 'capsule'); ?></a></li>
 			<li><a href="<?php echo esc_url(admin_url('post-new.php')); ?>" class="post-new-link"><?php _e('New Post', 'capsule'); ?></a></li>

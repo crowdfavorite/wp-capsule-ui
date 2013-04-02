@@ -1,6 +1,6 @@
 body {
 	background-image: url_ver('../img/tile.png');
-	background-size: 8px;	
+	background-size: 8px;
 	color: $gray-light;
 	font-family: sans-serif;
 	font-size: 13px;
@@ -19,7 +19,7 @@ h1 {
 }
 nav {
 	a {
-		font-family: 'SourceSansProRegular', Helvetica;	
+		font-family: 'SourceSansProRegular', Helvetica;
 		font-size: 1rem;
 		text-shadow: 1px 1px $gray-dark;
 		text-decoration: none;
@@ -29,7 +29,7 @@ nav {
 		&:visited {
 			color: $white;
 		}
-	}	
+	}
 } 
 
 /* Content - Left Column */
@@ -176,19 +176,9 @@ article.edit {
 	}
 }
 
-.content {
-	nav.post-menu {
-		background: $white;
-		border: 1px solid #adadad;
-		@include box-shadow(0px 1px 0 #eee);
-		color: $white;
-		height: 96px;
-		margin-top: 40px;
-		position: absolute;
-		right: 153px;
-		width: 31px;
-		z-index: 1;
-	}
+/* Content styling */
+
+.post-content {
 	h1 {
 		font-size: 20px;
 	}
@@ -198,7 +188,7 @@ article.edit {
 	.post-content {
 		background: #1a1a1a;
 		border: 1px solid #adadad;
-		min-height: 200px;	
+		min-height: 200px;
 		overflow: auto;
 		padding: 0;
 	}
@@ -320,7 +310,7 @@ article.edit {
 .edit .post-content {
 	background: $gray-light;
 	border: 1px solid #adadad;
-	min-height: 200px;	
+	min-height: 200px;
 	overflow: auto;
 	padding: 30px 0 0;
 }
@@ -377,7 +367,7 @@ article.edit {
 .toggleable {
 	.post-toggle {
 		bottom: 0;
-		background-color: #eee;
+		background-color: #fff;
 		background-image: url_ver('../img/arrow-down.png');
 		background-position: center center;
 		background-repeat: no-repeat;
@@ -389,10 +379,14 @@ article.edit {
 		width: 100%;
 
 		&:hover {
-			background-color: #e0e0e0;
+			background-color: #f6f6f6;
 		}
 	}
 }
+.toggleable:not(.open):hover .post-toggle {
+	background-color: #f6f6f6;
+}
+
 .open {
 	.post-toggle {
 		background-image: url_ver('../img/arrow-up.png');
@@ -430,8 +424,8 @@ article.edit {
 			}
 
 			a {
-				font-size: 16px;
-				line-height: 16px;
+				font-size: 14px;
+				line-height: 14px;
 				text-decoration: none;
 				text-shadow: none;
 			}
@@ -442,12 +436,20 @@ article.edit {
 .content,
 .excerpt {
 	nav.post-menu {
-		display: none;	
+		background: $white;
+		border: 1px solid #adadad;
+		@include box-shadow(0px 1px 0 #eee);
+		color: $white;
+		display: none;
+		height: 96px;
+		margin-top: 40px;
+		position: absolute;
+		right: 153px;
+		width: 31px;
+		z-index: 1;
 	}
-	&:hover {
-		nav.post-menu {
-			display: block;		
-		}
+	&:hover nav.post-menu {
+		display: block;
 	}
 }
 
