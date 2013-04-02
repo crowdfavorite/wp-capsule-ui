@@ -14,6 +14,13 @@ $gray-dark: #111;
 $black: #323333;
 
 // Typography
+
+$font-sans: 'SourceSansProRegular';
+$font-sans-semibold: 'SourceSansProSemibold';
+$font-sans-bold: 'SourceSansProBold';
+$font-mono: 'SourceCodeProRegular';
+$font-icon: 'Entypo';
+
 @font-face {
 	font-family: 'SourceSansProSemibold';
 	font-style: normal;
@@ -54,9 +61,19 @@ $black: #323333;
 		 url('../fonts/source-code-pro/SourceCodePro-Regular-webfont.ttf') format('truetype'),
 		 url('../fonts/source-code-pro/SourceCodePro-Regular-webfont.svg#SourceCodeProRegular') format('svg');
 }
+@font-face {
+	font-family: 'Entypo';
+	font-style: normal;
+	font-weight: normal;
+	src: url('../fonts/entypo/entypo.eot');
+	src: url('../fonts/entypo/entypo.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/entypo/entypo.woff') format('woff'),
+		 url('../fonts/entypo/entypo.ttf') format('truetype'),
+		 url('../fonts/entypo/entypo.svg') format('svg');
+}
 
-$font-serif: Georgia, "Times New Roman", Times, serif;
-$font-sans: Helvetica, Arial, sans-serif;
+
+
 
 // --------------------------------------------------
 // Generic Mixins
