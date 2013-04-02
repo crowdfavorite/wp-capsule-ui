@@ -123,13 +123,13 @@ if (have_posts()) {
 		</div>
 	</div>
 	
-<?php wp_footer(); ?>
-
 </div>
 
 <footer>
-	<div class="footer-logo"></div>
+	<p><a href="http://crowdfavorite.com/capsule/">Capsule</a> by <a href="http://crowdfavorite.com">Crowd Favorite</a></p>
 </footer>
+
+<?php wp_footer(); ?>
 
 </body>
 </html>

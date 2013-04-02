@@ -161,7 +161,10 @@ function capsule_controller() {
 					$result = 'error';
 					$msg = 'Saving post #'.$post_id.' failed.';
 				}
-				$response = compact('post_id', 'result', 'msg');
+				$projects_html = capsule_term_list($post_id, 'projects');
+				$tags_html = capsule_term_list($post_id, 'post_tag');
+				$code_html = capsule_term_list($post_id, 'code');
+				$response = compact('post_id', 'result', 'msg', 'projects_html', 'tags_html', 'code_html');
 				header('Content-type: application/json');
 				echo json_encode($response);
 				die();

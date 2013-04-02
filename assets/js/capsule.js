@@ -73,9 +73,9 @@
 			function(response) {
 				if (response.html) {
 					$article.replaceWith(response.html);
-					Capsule.centerEditor(postId);
 					Capsule.sizeEditor();
 					Capsule.initEditor(postId, response.content);
+					Capsule.centerEditor(postId);
 				}
 			},
 			'json'
@@ -175,6 +175,7 @@
 					}
 					else {
 						$article.removeClass('saving');
+						Capsule.updatePostTaxonomies($article, response.projects_html, response.tags_html,response.code_html);
 						Capsule.watchForEditorChanges(postId, $article);
 					}
 				}
@@ -182,7 +183,11 @@
 			'json'
 		);
 	};
-	
+
+	Capsule.updatePostTaxonomies = function($article, project_html, tags_html, code_html) {
+		$article.find('.post-meta').html(project_html + tags_html + code_html);
+	};
+
 	Capsule.deletePost = function(postId, $article) {
 		$article.addClass('unstyled').children().addClass('transparent').end()
 			.append(Capsule.spinner());

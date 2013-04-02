@@ -626,36 +626,31 @@ w
         .main-nav ul li a:hover {
           background-color: #111111;
           text-decoration: none; }
-      .main-nav ul li ul {
-        -moz-box-shadow: 1px 1px #adadad;
-        /* FF3.5+ */
-        -webkit-box-shadow: 1px 1px #adadad;
-        /* Saf3+, Chrome */
-        box-shadow: 1px 1px #adadad;
-        /* Standard. Opera 10.5, IE9+ */
-        left: -9999em;
-        z-index: 100;
-        position: absolute;
-        top: 0;
-        width: 215px; }
-        .main-nav ul li ul li {
-          border-bottom: 1px solid #333333; }
-          .main-nav ul li ul li a {
-            background-color: #111111;
-            padding: 19px 0 19px 20px; }
-            .main-nav ul li ul li a:hover {
-              background-color: #333333; }
-          .main-nav ul li ul li.list-last a {
-            background-image: url("../img/arrow-right-white.png?ver=1.1");
-            background-repeat: no-repeat;
-            background-position: 85% 50%; }
-      .main-nav ul li:hover ul {
-        left: 72px; }
 
 /* 	Pagination Links
 ------------------------------------------------------- */
 .meta-nav {
   display: none; }
+
+.pagination {
+  display: block; }
+  .pagination .nav-previous {
+    float: right;
+    margin-right: 157px;
+    margin-top: 23px; }
+  .pagination .nav-next {
+    float: left;
+    margin-left: 55px;
+    margin-top: 23px; }
+  .pagination a {
+    color: #222222;
+    font-family: 'SourceSansProRegular', Helvetica;
+    font-size: 20px;
+    text-shadow: 1px 1px white; }
+    .pagination a:visited {
+      color: #222222; }
+    .pagination a:hover {
+      color: #323333; }
 
 .nav-previous a {
   background: transparent url("../img/arrow-right.png?ver=1.1") no-repeat 100% 25%;
@@ -679,39 +674,20 @@ w
     font-style: normal;
     font-weight: bold; }
 
-.pagination {
-  display: block; }
-  .pagination .nav-previous {
-    float: right;
-    margin-right: 128px;
-    margin-top: 23px; }
-  .pagination .nav-next {
-    float: left;
-    margin-left: 52px;
-    margin-top: 23px; }
-  .pagination a {
-    color: #222222;
-    font-family: 'SourceSansProRegular', Helvetica;
-    font-size: 20px;
-    text-shadow: 1px 1px white; }
-    .pagination a:visited {
-      color: #222222; }
-    .pagination a:hover {
-      color: #323333; }
-
 footer {
   background: none;
   clear: both;
   height: 30px;
   margin-top: -50px;
   position: relative; }
-
-.footer-logo {
-  width: 180px;
-  height: 28px;
-  background: url("../svg/cf-logo.svg?ver=1.1") no-repeat;
-  float: right;
-  margin-right: 24px; }
+  footer p {
+    color: #999;
+    text-align: center; }
+    footer p a {
+      color: #888;
+      text-decoration: none; }
+    footer p a:hover {
+      color: #777; }
 
 body {
   background-image: url("../img/tile.png?ver=1.1");

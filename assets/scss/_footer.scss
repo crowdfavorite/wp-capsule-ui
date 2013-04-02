@@ -8,12 +8,17 @@ footer {
 	height: 30px;
 	margin-top: -50px;
 	position: relative;
-}
-
-.footer-logo {
-	width: 180px;
-	height: 28px;
-	background: url_ver('../svg/cf-logo.svg') no-repeat;
-	float: right;
-	margin-right: 24px;
+	
+	p {
+		color: #999;
+		text-align: center;
+		
+		a {
+			color: #888;
+			text-decoration: none;
+		}
+		a:hover {
+			color: #777;
+		}
+	}
 }
