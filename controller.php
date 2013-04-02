@@ -26,7 +26,7 @@ function capsule_controller() {
 				}
 
 				$term_name = stripslashes(substr($_GET['q'], 1, strlen($_GET['q'])));
-				if (!strlen($term_name) < 2) {
+				if (!strlen($term_name) < 1) {
 					// Taken from wp_ajax_ajax_tag_search()
 					$results = $wpdb->get_col( $wpdb->prepare( "SELECT t.name FROM $wpdb->term_taxonomy AS tt INNER JOIN $wpdb->terms AS t ON tt.term_id = t.term_id WHERE tt.taxonomy = %s AND t.name LIKE (%s)", $taxonomy, like_escape( $term_name ) . '%' ) );
 					$html = '';

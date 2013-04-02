@@ -346,7 +346,8 @@
 	$(function() {
 		$('.js-search').suggest(capsuleSearchURL + '?capsule_action=search', {
 			delay : 500,
-			minchars: 3,
+			// token plus first character
+			minchars: 2,
 			multiple: true,
 			multipleSep: ' ',
 			resultsClass: 'search_results',
