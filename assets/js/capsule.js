@@ -291,8 +291,8 @@
 		window.editors[postId].commands.addCommand({
 			name: 'save',
 			bindKey: {
-				win: 'Ctrl-S',
-				mac: 'Command-S'
+				mac: 'Command-S',
+				win: 'Ctrl-S'
 			},
 			exec: function(editor) {
 				Capsule.updatePost(postId, editor.getSession().getValue());
@@ -323,11 +323,10 @@
 			name: 'indent',
 			bindKey: {
 				mac: 'Command-]',
-				win: 'Control-]'
+				win: 'Ctrl-]'
 			},
 			exec: function(editor) {
 				var position = editor.getCursorPosition();
-console.log(editor)
 				editor.moveCursorTo(position.row, 0);
 				editor.indent();
 				editor.moveCursorTo(position.row, position.column + 4);
@@ -337,7 +336,7 @@ console.log(editor)
 			name: 'outdent',
 			bindKey: {
 				mac: 'Command-[',
-				win: 'Control-['
+				win: 'Ctrl-['
 			},
 			exec: function(editor) {
 				editor.blockOutdent();
