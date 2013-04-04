@@ -19,7 +19,7 @@ $font-sans: 'SourceSansProRegular';
 $font-sans-semibold: 'SourceSansProSemibold';
 $font-sans-bold: 'SourceSansProBold';
 $font-mono: 'SourceCodeProRegular';
-$font-icon: 'Fontawesome';
+$font-icon: 'Fontello';
 
 @font-face {
 	font-family: 'SourceSansProSemibold';
@@ -62,14 +62,14 @@ $font-icon: 'Fontawesome';
 		 url('../fonts/source-code-pro/SourceCodePro-Regular-webfont.svg#SourceCodeProRegular') format('svg');
 }
 @font-face {
-	font-family: 'Fontawesome';
+	font-family: 'Fontello';
 	font-style: normal;
 	font-weight: normal;
-	src: url('../fonts/fontawesome/fontawesome.eot');
-	src: url('../fonts/fontawesome/fontawesome.eot?#iefix') format('embedded-opentype'),
-		 url('../fonts/fontawesome/fontawesome.woff') format('woff'),
-		 url('../fonts/fontawesome/fontawesome.ttf') format('truetype'),
-		 url('../fonts/fontawesome/fontawesome.svg') format('svg');
+	src: url('../fonts/fontello/fontello.eot');
+	src: url('../fonts/fontello/fontello.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/fontello/fontello.woff') format('woff'),
+		 url('../fonts/fontello/fontello.ttf') format('truetype'),
+		 url('../fonts/fontello/fontello.svg') format('svg');
 }
 
 

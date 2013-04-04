@@ -27,11 +27,11 @@
   src: url("../fonts/source-code-pro/SourceCodePro-Regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/source-code-pro/SourceCodePro-Regular-webfont.woff") format("woff"), url("../fonts/source-code-pro/SourceCodePro-Regular-webfont.ttf") format("truetype"), url("../fonts/source-code-pro/SourceCodePro-Regular-webfont.svg#SourceCodeProRegular") format("svg"); }
 
 @font-face {
-  font-family: 'Fontawesome';
+  font-family: 'Fontello';
   font-style: normal;
   font-weight: normal;
-  src: url("../fonts/fontawesome/fontawesome.eot");
-  src: url("../fonts/fontawesome/fontawesome.eot?#iefix") format("embedded-opentype"), url("../fonts/fontawesome/fontawesome.woff") format("woff"), url("../fonts/fontawesome/fontawesome.ttf") format("truetype"), url("../fonts/fontawesome/fontawesome.svg") format("svg"); }
+  src: url("../fonts/fontello/fontello.eot");
+  src: url("../fonts/fontello/fontello.eot?#iefix") format("embedded-opentype"), url("../fonts/fontello/fontello.woff") format("woff"), url("../fonts/fontello/fontello.ttf") format("truetype"), url("../fonts/fontello/fontello.svg") format("svg"); }
 
 /*
  * HTML5 Boilerplate
@@ -716,7 +716,7 @@ nav a {
   nav a:hover, nav a:visited {
     color: white; }
   nav a.icon {
-    font-family: "Fontawesome";
+    font-family: "Fontello";
     font-size: 23px; }
   nav a.ss-icon-projects {
     font-family: "SourceSansProSemibold";
