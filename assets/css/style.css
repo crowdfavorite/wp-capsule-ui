@@ -718,12 +718,6 @@ nav a {
   nav a.icon {
     font-family: "Fontello";
     font-size: 23px; }
-  nav a.ss-icon-projects {
-    font-family: "SourceSansProSemibold";
-    font-size: 24px; }
-  nav a.ss-icon-tags {
-    font-family: "SourceSansProBold";
-    font-size: 26px; }
 
 /* Content - Left Column */
 .post-date {
