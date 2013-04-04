@@ -683,7 +683,8 @@ footer {
   footer p {
     color: #999;
     text-align: center; }
-    footer p a {
+    footer p a,
+    footer p a:visited {
       color: #888;
       text-decoration: none; }
     footer p a:hover {
