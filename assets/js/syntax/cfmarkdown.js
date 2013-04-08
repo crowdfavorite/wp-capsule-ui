@@ -152,7 +152,7 @@ var CFMarkdownHighlightRules = function() {
         }, 
 		{
 			token: "keyword",
-			regex: twttr.txt.regexSupplant("(?:^|\\s)#{atSigns}[a-zA-Z0-9_\-]{1,20}")
+			regex: twttr.txt.regexSupplant("(?:^|\\s)#{atSigns}[a-zA-Z0-9._\-]{1,20}")
 		},
 		{
 			token: ["constant", "constant"],
