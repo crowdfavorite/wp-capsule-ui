@@ -552,7 +552,7 @@ w
       color: #333;
       font-family: 'SourceSansProRegular';
       height: 29px;
-      padding-left: 30px;
+      padding: 3px 0 0 30px;
       width: 258px; }
       #header form input[type="submit"] {
         display: none; }

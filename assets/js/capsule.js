@@ -50,7 +50,8 @@
 					$article.replaceWith(response.html);
 					$article = $('#post-content-' + postId);
 					Capsule.postExpandable($article);
-					$('#post-content-' + postId).scrollintoview({ offset: 10 });
+					$article.scrollintoview({ offset: 10 });
+					Capsule.highlightCodeSyntax($article.find('.post-content'));
 				}
 			},
 			'json'
@@ -384,6 +385,68 @@
 		}
 	};
 	
+	Capsule.highlightCodeSyntax = function($elem) {
+		if (typeof $elem == 'undefined') {
+			$elem = $('article:not(.edit) .post-content');
+		}
+		$elem.each(function() {
+			var block = $(this);
+			block.find("pre>code").each(function(i) {
+				var el = $(this), 
+					data, lang,
+					newlines = [""];
+				// markdown uses <br> for leading blank
+				// lines; replace with real newlines for Ace
+				el.find("br").each(function(i) {
+					newlines.push("");
+				});
+				data = newlines.join("\n") + el.text();
+
+				// remove markdown's trailing newline
+				if (data.substr(-1) === "\n") {
+					data = data.substr(0, data.length - 1);
+				}
+	
+				lang = el.attr('class');
+				if (lang) {
+					lang = lang.match(/language-([-_a-z0-9]+)/i);
+					if (lang) {
+						lang = lang[1].toLowerCase();
+					}
+					if ("js" === lang) {
+						lang = "javascript";
+					}
+				}
+				else {
+					lang = "code";
+				}
+				try {
+					var highlighter = require("ace/ext/static_highlight");
+					var theme = require("ace/theme/textmate");
+					var mode = require("ace/mode/" + lang);
+					var dom = require("ace/lib/dom");
+					if (!mode) {
+						mode = require("ace/mode/text");
+					}
+					if (mode) {
+
+						mode = mode.Mode;
+						mode = new mode();
+						if ('php' === lang) {
+							var Tokenizer = require("ace/tokenizer").Tokenizer;
+							var PhpLangHighlightRules = require("cf/js/syntax/cf_php_highlight_rules").PhpLangHighlightRules;
+							mode.$tokenizer = new Tokenizer(new PhpLangHighlightRules().getRules());
+						}
+						highlighted = highlighter.render(data, mode, theme, 1, lang);
+						el.closest("pre").replaceWith(highlighted.html);
+					}
+				}
+				catch (er) {console.log(er); throw(er);}
+			});
+			$(this).html(block);
+		});
+	};
+	
 	$(function() {
 		$('.js-search').suggest(capsuleSearchURL + '?capsule_action=search', {
 			delay : 500,
@@ -464,6 +527,8 @@
 		$('article').each(function() {
 			Capsule.postExpandable($(this));
 		});
+		
+		Capsule.highlightCodeSyntax();
 	});
 
 })(jQuery);
