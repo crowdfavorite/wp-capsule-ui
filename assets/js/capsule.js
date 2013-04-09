@@ -339,7 +339,7 @@ function($) {
 			exec: function(editor) {
 				editor.blockIndent();
 			},
-		    multiSelectAction: "forEachLine"
+			multiSelectAction: "forEachLine"
 		});
 		window.editors[postId].commands.addCommand({
 			name: 'cfoutdent',
@@ -350,7 +350,7 @@ function($) {
 			exec: function(editor) {
 				editor.blockOutdent();
 			},
-		    multiSelectAction: "forEachLine"
+			multiSelectAction: "forEachLine"
 		});
 
 		Capsule.watchForEditorChanges(postId, undefined, true);
