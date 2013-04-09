@@ -46,10 +46,43 @@ function capsule_resources() {
 	// Scripts
 	wp_enqueue_script('jquery');
 	wp_enqueue_script('suggest');
+
+	// require.js enforces JS module dependencies, heavily used in 
+	// loading Ace and related code
+	wp_enqueue_script(
+		'requirejslib',
+		$template_url.'lib/require.js',
+		array(),
+		CAPSULE_URL_VERSION,
+		true
+	);
+	wp_enqueue_script(
+		'requirejs',
+		$assets_url.'js/requirejs_config.js',
+		array('requirejslib'),
+		CAPSULE_URL_VERSION,
+		true
+	);
+	wp_localize_script('requirejs', 'requirejsL10n', array(
+		'capsule' => $assets_url,
+		'ace' => $template_url.'lib/ace/lib/ace',
+		'lib' => $template_url.'lib',
+		'cachebust' => urlencode(CAPSULE_URL_VERSION),
+	));
+	// Load the partially pre-built ace to speed up loading times,
+	// even though we pull things in with require.js from the
+	// unbuilt code
+	wp_enqueue_script(
+		'ace',
+		$template_url.'lib/ace/build/src/ace.js',
+		array('requirejs'),
+		CAPSULE_URL_VERSION,
+		true
+	);
 	wp_enqueue_script(
 		'capsule',
 		$assets_url.'js/capsule.js',
-		array('jquery', 'ace', 'statichighlight', 'cfmarkdown', 'suggest'),
+		array('jquery', 'twitter-text', 'suggest', 'ace'),
 		CAPSULE_URL_VERSION,
 		true
 	);
@@ -57,20 +90,7 @@ function capsule_resources() {
 		'endpointAjax' => home_url('index.php'),
 		'loading' => __('Loading...', 'capsule'),
 	));
-	wp_enqueue_script(
-		'ace',
-		$template_url.'lib/ace/build/src/ace.js',
-		array('jquery'),
-		CAPSULE_URL_VERSION,
-		true
-	);
-	wp_enqueue_script(
-		'statichighlight',
-		$assets_url.'js/static_highlight.js',
-		array('ace'),
-		CAPSULE_URL_VERSION,
-		true
-	);
+
 	wp_enqueue_script(
 		'php-date',
 		$template_url.'lib/phpjs/functions/datetime/date.js',
@@ -85,20 +105,7 @@ function capsule_resources() {
 		CAPSULE_URL_VERSION,
 		true
 	);
-	wp_enqueue_script(
-		'cfmarkdown',
-		$assets_url.'js/syntax/cfmarkdown.js',
-		array('jquery', 'ace', 'twitter-text'),
-		CAPSULE_URL_VERSION,
-		true
-	);
-	wp_enqueue_script(
-		'cf_php_highlight_rules',
-		$assets_url.'js/syntax/cf_php_highlight_rules.js',
-		array('ace'),
-		CAPSULE_URL_VERSION,
-		true
-	);
+
 	wp_enqueue_script(
 		'json',
 		$template_url.'lib/json-js/json2.js',

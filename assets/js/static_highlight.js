@@ -37,12 +37,14 @@
  *
  * ***** END LICENSE BLOCK ***** */
 
-define('ace/ext/static_highlight', ['require', 'exports', 'module', 'ace/edit_session', 'ace/layer/text', 'ace/requirejs/text!.static.css'], function(require, exports, module) {
+define('cf/js/static_highlight', ['require', 'exports', 'module', 
+    'ace/edit_session', 'ace/layer/text', 'ace/requirejs/text!ace/ext/static.css'], 
+function(require, exports, module) {
 "use strict";
 
-var EditSession = require("../edit_session").EditSession;
-var TextLayer = require("../layer/text").Text;
-var baseStyles = require("../requirejs/text!./static.css");
+var EditSession = require("ace/edit_session").EditSession;
+var TextLayer = require("ace/layer/text").Text;
+var baseStyles = require("ace/requirejs/text!ace/ext/static.css");
 
 /* Transforms a given input code snippet into HTML using the given mode
 *

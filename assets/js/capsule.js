@@ -1,5 +1,15 @@
 (function($) {
+require(
+	[
+		'ace/ace', 'cf/js/syntax/cf_php_highlight_rules', 'cf/js/syntax/cfmarkdown', 
+		'ace/mode/text',
+		'cf/js/static_highlight', 'ace/theme/textmate', 
+		'ace/lib/dom', 'ace/tokenizer', 
+		'cf/js/syntax/cf_php_highlight_rules'
+	], 
+	function() {
 
+	var ace = require('ace/ace');
 	window.editors = {},
 	window.Capsule = {},
 	Capsule.delaySave = {};
@@ -393,7 +403,7 @@
 			var block = $(this);
 			block.find("pre>code").each(function(i) {
 				var el = $(this), 
-					data, lang,
+					data, lang, requirelang
 					newlines = [""];
 				// markdown uses <br> for leading blank
 				// lines; replace with real newlines for Ace
@@ -420,34 +430,45 @@
 				else {
 					lang = "code";
 				}
+				if (lang === "code" || lang === "bash") {
+					requirelang = "text";
+				}
+				else {
+					requirelang = lang;
+				}
 				try {
-					var highlighter = require("ace/ext/static_highlight");
-					var theme = require("ace/theme/textmate");
-					var mode = require("ace/mode/" + lang);
-					var dom = require("ace/lib/dom");
-					if (!mode) {
-						mode = require("ace/mode/text");
-					}
-					if (mode) {
 
-						mode = mode.Mode;
-						mode = new mode();
-						if ('php' === lang) {
-							var Tokenizer = require("ace/tokenizer").Tokenizer;
-							var PhpLangHighlightRules = require("cf/js/syntax/cf_php_highlight_rules").PhpLangHighlightRules;
-							mode.$tokenizer = new Tokenizer(new PhpLangHighlightRules().getRules());
-						}
-						highlighted = highlighter.render(data, mode, theme, 1, lang);
-						el.closest("pre").replaceWith(highlighted.html);
-					}
+					var dohighlight = function(highlighter, theme, mode) {
+						var highlighted;
+						if (mode) {
+							mode = mode.Mode;
+							mode = new mode();
+							if ('php' === lang) {
+								var Tokenizer = require("ace/tokenizer").Tokenizer;
+								var PhpLangHighlightRules = require("cf/js/syntax/cf_php_highlight_rules").PhpLangHighlightRules;
+								mode.$tokenizer = new Tokenizer(new PhpLangHighlightRules().getRules());
+							}
+							highlighted = highlighter.render(data, mode, theme, 1, lang);
+							el.closest("pre").replaceWith(highlighted.html);
+						}                        
+					};
+
+					var requirements = [
+						'cf/js/static_highlight', 'ace/theme/textmate', 
+						'ace/mode/' + requirelang, 'ace/lib/dom', 'ace/tokenizer', 
+						'cf/js/syntax/cf_php_highlight_rules'
+					];
+					require(requirements,
+							dohighlight);
 				}
 				catch (er) {console.log(er); throw(er);}
 			});
-			$(this).html(block);
 		});
 	};
 	
 	$(function() {
+		Capsule.highlightCodeSyntax();
+
 		$('.js-search').suggest(capsuleSearchURL + '?capsule_action=search', {
 			delay : 500,
 			// token plus first character
@@ -528,7 +549,8 @@
 			Capsule.postExpandable($(this));
 		});
 		
-		Capsule.highlightCodeSyntax();
+
 	});
 
+});
 })(jQuery);
