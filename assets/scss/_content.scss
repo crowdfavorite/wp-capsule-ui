@@ -431,7 +431,7 @@ article.edit {
 		position: absolute;
 		right: 153px;
 		width: 31px;
-		z-index: 1;
+		z-index: 100;
 	}
 	&:hover nav.post-menu {
 		display: block;
@@ -465,14 +465,9 @@ article.edit {
 
 /* Code */
 
-pre {
-	background: #f6f6f6;
-	padding: 16px;
-}
-
-code {
+pre, code {
 	color: $gray;
-	font-family: 'SourceCodeProRegular', Helvetica;
+	font-family: 'SourceCodeProRegular', monospace;
 	font-size: 13px;
 }
 
@@ -480,9 +475,8 @@ code {
 
 .static_container {
 	background-color: #eee;
-	border: 1px solid $gray-light;
-	margin-top: 5px;
-	margin-bottom: 5px;
+	margin: 5px 0 5px;
+	padding-top: 3px;
 	position: relative;
 
 	.ace-tm {
@@ -490,30 +484,29 @@ code {
 		position: relative;
 	}
 	.code_language {
-		background-color: #ccc;
-		@include border-radius(0 4px 0 4px);
-		font-size: 80%;
-		height: 1.5rem;
-		padding: 1px 5px;
+		background-color: #eee;
+		color: #666;
+		font-size: 11px;
+		padding: 3px 5px;
 		position: absolute;
 		right: 0px;
+		text-transform: uppercase;
 		top: 0px;
 		@include transition(all .1s ease-in-out);
-		z-index: 100;
+		z-index: 50;
 		
 	}
 	&:hover .code_language {
-		@include border-radius(4px);
-		@include transform(0, -2em);
+		@include transform(0, -1em);
 	}
 }
 
 pre.static_code {
-	margin: 2px;
+	margin: 0;
 	white-space: pre-wrap;
 
 	ol {
-		margin: 2px;
+		margin: 0;
 		overflow-x: scroll;
 
 		li {

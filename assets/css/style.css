@@ -1031,7 +1031,7 @@ article.edit .post-close-link {
   position: absolute;
   right: 153px;
   width: 31px;
-  z-index: 1; }
+  z-index: 100; }
 .content:hover nav.post-menu,
 .excerpt:hover nav.post-menu {
   display: block; }
@@ -1055,73 +1055,47 @@ article.edit .post-close-link {
   height: 3px; }
 
 /* Code */
-pre {
-  background: #f6f6f6;
-  padding: 16px; }
-
-code {
+pre, code {
   color: #222222;
-  font-family: 'SourceCodeProRegular', Helvetica;
+  font-family: 'SourceCodeProRegular', monospace;
   font-size: 13px; }
 
 /* Static code */
 .static_container {
   background-color: #eee;
-  border: 1px solid #333333;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin: 5px 0 5px;
+  padding-top: 3px;
   position: relative; }
   .static_container .ace-tm {
     overflow-x: hidden;
     position: relative; }
   .static_container .code_language {
-    background-color: #ccc;
-    -moz-border-radius: 0 4px 0 4px;
-    /* FF1+ */
-    -webkit-border-radius: 0 4px 0 4px;
-    /* Saf3+, Chrome */
-    border-radius: 0 4px 0 4px;
-    /* Standard. IE9+ */
-    /**
-     * @bugfix border-radius background bleed
-     * @see http://tumble.sneak.co.nz/post/928998513/fixing-the-background-bleed
-     */
-    -webkit-background-clip: padding-box;
-    font-size: 80%;
-    height: 1.5rem;
-    padding: 1px 5px;
+    background-color: #eee;
+    color: #666;
+    font-size: 11px;
+    padding: 3px 5px;
     position: absolute;
     right: 0px;
+    text-transform: uppercase;
     top: 0px;
     -webkit-transition: all 0.1s ease-in-out;
     -moz-transition: all 0.1s ease-in-out;
     -o-transition: all 0.1s ease-in-out;
     -ms-transition: all 0.1s ease-in-out;
     transition: all 0.1s ease-in-out;
-    z-index: 100; }
+    z-index: 50; }
   .static_container:hover .code_language {
-    -moz-border-radius: 4px;
-    /* FF1+ */
-    -webkit-border-radius: 4px;
-    /* Saf3+, Chrome */
-    border-radius: 4px;
-    /* Standard. IE9+ */
-    /**
-     * @bugfix border-radius background bleed
-     * @see http://tumble.sneak.co.nz/post/928998513/fixing-the-background-bleed
-     */
-    -webkit-background-clip: padding-box;
-    -webkit-transform: translate(0, -2em);
-    -moz-transform: translate(0, -2em);
-    -o-transform: translate(0, -2em);
-    -ms-transform: translate(0, -2em);
-    transform: translate(0, -2em); }
+    -webkit-transform: translate(0, -1em);
+    -moz-transform: translate(0, -1em);
+    -o-transform: translate(0, -1em);
+    -ms-transform: translate(0, -1em);
+    transform: translate(0, -1em); }
 
 pre.static_code {
-  margin: 2px;
+  margin: 0;
   white-space: pre-wrap; }
   pre.static_code ol {
-    margin: 2px;
+    margin: 0;
     overflow-x: scroll; }
     pre.static_code ol li {
       padding-right: 40px; }
