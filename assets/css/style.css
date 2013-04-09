@@ -718,7 +718,8 @@ nav a {
     color: white; }
   nav a.icon {
     font-family: "Fontello";
-    font-size: 23px; }
+    font-size: 23px;
+    -webkit-font-smoothing: subpixel-antialiased; }
 
 /* Content - Left Column */
 .post-date {

@@ -34,6 +34,7 @@ nav {
 		&.icon {
 			font-family: $font-icon;
 			font-size: 23px;
+			-webkit-font-smoothing: subpixel-antialiased; 
 		}
 	}
 } 
