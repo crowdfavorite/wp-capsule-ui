@@ -62,7 +62,7 @@ var JsonHighlightRules = require("ace/mode/json_highlight_rules").JsonHighlightR
 function github_embed(tag, prefix) {
     return { // Github style block
         token : "support.function",
-        regex : "^```" + tag + "\\s*$",
+        regex : "^```\\s*" + tag + "\\s*$",
         next  : prefix + "start"
     };
 }
@@ -232,6 +232,14 @@ var CFMarkdownHighlightRules = function() {
        regex : "^```",
        next  : "start"
     }]);
+
+    var html = new HtmlHighlightRules().getRules();
+    for (var i in html) {
+        if (this.$rules[i])
+            this.$rules[i] = this.$rules[i].concat(html[i]);
+        else
+            this.$rules[i] = html[i];
+    }
 };
 oop.inherits(CFMarkdownHighlightRules, TextHighlightRules);
 
