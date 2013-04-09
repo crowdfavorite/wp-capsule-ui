@@ -337,11 +337,9 @@ function($) {
 				win: 'Ctrl-]'
 			},
 			exec: function(editor) {
-				var position = editor.getCursorPosition();
-				editor.moveCursorTo(position.row, 0);
-				editor.indent();
-				editor.moveCursorTo(position.row, position.column + 4);
-			}
+				editor.blockIndent();
+			},
+		    multiSelectAction: "forEachLine"
 		});
 		window.editors[postId].commands.addCommand({
 			name: 'cfoutdent',
@@ -351,7 +349,8 @@ function($) {
 			},
 			exec: function(editor) {
 				editor.blockOutdent();
-			}
+			},
+		    multiSelectAction: "forEachLine"
 		});
 
 		Capsule.watchForEditorChanges(postId, undefined, true);
