@@ -7,6 +7,7 @@ require(
 		'cf/js/static_highlight', 'ace/theme/textmate'
 	],  
 function($) {
+"use strict";
 	var ace = require('ace/ace');
 
 	window.editors = {},
@@ -402,7 +403,7 @@ function($) {
 			var block = $(this);
 			block.find("pre>code").each(function(i) {
 				var el = $(this), 
-					data, lang, requirelang
+					data, lang, requirelang,
 					newlines = [""];
 				// markdown uses <br> for leading blank
 				// lines; replace with real newlines for Ace
