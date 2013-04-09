@@ -331,7 +331,7 @@ function($) {
 			}
 		});
 		window.editors[postId].commands.addCommand({
-			name: 'indent',
+			name: 'cfindent',
 			bindKey: {
 				mac: 'Command-]',
 				win: 'Ctrl-]'
@@ -344,7 +344,7 @@ function($) {
 			}
 		});
 		window.editors[postId].commands.addCommand({
-			name: 'outdent',
+			name: 'cfoutdent',
 			bindKey: {
 				mac: 'Command-[',
 				win: 'Ctrl-['
