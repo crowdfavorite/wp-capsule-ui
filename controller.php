@@ -137,7 +137,21 @@ function capsule_controller() {
 				);
 				foreach ($taxonomies as $tax => $terms) {
 					$terms = json_decode(stripslashes($_POST[$tax]));
-					$taxonomies[$tax] = $terms;
+					// There is no easy WP way assign terms by name to a post on the fly
+					// they must be created first and then use the slug (or ID for heirarchial)
+					foreach ($terms as $term_name) {
+						$term = get_term_by('name', $term_name, $tax);
+						if (!$term) {
+							$term_data = wp_insert_term($term_name, $tax);
+							if (!is_wp_error($term_data)) {
+								$term = get_term_by('id', $term_data['term_id'], $tax);
+								$taxonomies[$tax][] = $term->slug;
+							}
+						}
+						else {
+							$taxonomies[$tax][] = $term->slug;
+						}
+					}
 					$post_title .= ' '.implode(' ', $terms);
 				}
 				// if the content is empty, wp_update_post fails
