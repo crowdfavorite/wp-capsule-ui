@@ -1,15 +1,14 @@
-(function($) {
 require(
 	[
-		'ace/ace', 'cf/js/syntax/cf_php_highlight_rules', 'cf/js/syntax/cfmarkdown', 
-		'ace/mode/text',
-		'cf/js/static_highlight', 'ace/theme/textmate', 
-		'ace/lib/dom', 'ace/tokenizer', 
-		'cf/js/syntax/cf_php_highlight_rules'
-	], 
-	function() {
-
+		'jquery',
+		'ace/ace', 
+		'ace/mode/text', 'ace/lib/dom', 'ace/tokenizer', 
+		'cf/js/syntax/cf_php_highlight_rules', 'cf/js/syntax/cfmarkdown', 
+		'cf/js/static_highlight', 'ace/theme/textmate'
+	],  
+function($) {
 	var ace = require('ace/ace');
+
 	window.editors = {},
 	window.Capsule = {},
 	Capsule.delaySave = {};
@@ -548,9 +547,5 @@ require(
 		$('article').each(function() {
 			Capsule.postExpandable($(this));
 		});
-		
-
 	});
-
 });
-})(jQuery);

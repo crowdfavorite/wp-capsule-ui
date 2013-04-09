@@ -7,3 +7,14 @@ require.config({
     },
     urlArgs: "ver=" + requirejsL10n.cachebust
 });
+
+// Fake jQuery definition to avoid loading jQuery
+// twice or other similar inconveniences
+if (!require.defined("jquery")) {
+    define('jquery', function wpjquery() {
+        if (!wpjquery.jQuery) {
+            wpjquery.jQuery = window.jQuery;
+        }
+        return wpjquery.jQuery;
+    });
+}
