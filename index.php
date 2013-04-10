@@ -53,8 +53,8 @@ else {
 	<nav class="main-nav">
 		<ul>
 			<li><a href="<?php echo esc_url(site_url('/')); ?>" class="icon"><?php _e('', 'capsule'); ?></a></li>
-			<li><a href="<?php echo esc_url(admin_url('post-new.php')); ?>" class="post-new-link icon"><?php _e('', 'capsule'); ?></a></li>
-			<li><a href="#" class="projects icon"><?php _e('', 'capsule'); ?></a></li>
+			<li><a href="<?php echo esc_url(admin_url('post-new.php')); ?>" class="post-new-link icon"><?php _e('', 'capsule'); ?></a></li>
+			<li><a href="#" class="projects icon-projects"><?php _e('@', 'capsule'); ?></a></li>
 			<li><a href="#" class="tags icon"><?php _e('#', 'capsule'); ?></a></li>
 			<li><a href="<?php echo esc_url(admin_url('admin.php?page=capsule')); ?>" class="icon"><?php _e('', 'capsule'); ?></a></li>
 		</ul>
