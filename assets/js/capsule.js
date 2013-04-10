@@ -519,13 +519,13 @@ function($) {
 			var $article = $(this).closest('article'),
 				postId = $article.data('post-id');
 			Capsule.undeletePost(postId, $article);
-		}).on('click', 'article:not(.sticky) .post-stick-link', function(e) {
+		}).on('click', 'article:not(.sticky) .post-sticky-link', function(e) {
 			e.stopPropagation();
 			e.preventDefault();
 			var $article = $(this).closest('article'),
 				postId = $article.data('post-id');
 			Capsule.stickPost(postId, $article);
-		}).on('click', 'article.sticky .post-stick-link', function(e) {
+		}).on('click', 'article.sticky .post-unsticky-link', function(e) {
 			e.stopPropagation();
 			e.preventDefault();
 			var $article = $(this).closest('article'),

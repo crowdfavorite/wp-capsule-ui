@@ -99,38 +99,103 @@ article {
 	position: relative;
 	width: 100%;
 
-	nav.post-menu {
-		display: none;
-		position: absolute;
-		right: 0;
-		top: 5px;
-		width: 35px;
-		z-index: 100;
-		
-		a {
-			display: block;
-			height: 30px;
-			font-family: $font-icon;
-			font-size: 18px;
-			text-align: center;
-			text-decoration: none;
-			width: 35px;
-			&,
-			&:visited {
-				color: #bbb;
-			}
-			&:hover {
-				color: $gray;
-			}
-		}
-	}
-	&:hover nav.post-menu {
-		display: block;
-	}
 	.post-date a {
 		color: $gray;
 		text-decoration: none;
 	}
+}
+
+.post-menu {
+	position: absolute;
+	right: 0;
+	top: 7px;
+	width: 35px;
+	z-index: 100;
+	
+	a,
+	span {
+		display: none;
+		height: 30px;
+		font-family: $font-icon;
+		font-size: 18px;
+		text-align: center;
+		text-decoration: none;
+		width: 35px;
+		&,
+		&:visited {
+			color: #bbb;
+		}
+		&:hover {
+			color: $gray;
+		}
+	}
+	.post-edit-link {
+		padding-left: 2px;
+	}
+	.post-unsticky-link,
+	.post-sticky-loading-link {
+		display: none;
+	}
+}
+.post-content:hover .post-menu a {
+	display: block;
+
+	&.post-unsticky-link {
+		display: none;
+	}
+}
+/* solid vs. outlined star icon */
+.sticky .post-menu,
+.sticky .post-content:hover .post-menu {
+	.post-sticky-link {
+		display: none;
+	}
+	.post-unsticky-link {
+		display: block;
+	}
+}
+.sticky-loading .post-menu,
+.sticky-loading .post-content:hover .post-menu {
+	.post-sticky-link,
+	.post-unsticky-link {
+		display: none;
+	}
+	.post-sticky-loading {
+		display: block;
+	}
+}
+
+nav.post-menu span.post-sticky-loading {
+	height: 21px;
+	margin-bottom: 9px;
+	margin-left: 7px;
+	overflow: hidden;
+	width: 21px;
+	-webkit-animation: Rotate 1250ms infinite linear;
+	-moz-animation: Rotate 1250ms infinite linear;
+	-ms-animation: Rotate 1250ms infinite linear;
+	-o-animation: Rotate 1250ms infinite linear;
+	animation: Rotate 1250ms infinite linear;
+}
+@-o-keyframes Rotate {
+	from {-o-transform:rotate(0deg);}
+	to {-o-transform:rotate(360deg);}
+}
+@-moz-keyframes Rotate {
+	from {-moz-transform:rotate(0deg);}
+	to {-moz-transform:rotate(360deg);}
+}
+@-ms-keyframes Rotate {
+	from {-ms-transform:rotate(0deg);}
+	to {-ms-transform:rotate(360deg);}
+}
+@-webkit-keyframes Rotate {
+	from {-webkit-transform:rotate(0deg);}
+	to {-webkit-transform:rotate(360deg);}
+}
+@-keyframes Rotate {
+	from { transform:rotate(0deg);}
+	to { transform:rotate(360deg);}
 }
 
 article.edit {
