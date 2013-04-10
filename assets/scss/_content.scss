@@ -18,7 +18,7 @@ h1 {
 	font-size: 32px;
 }
 
-nav {
+nav.main-nav {
 	a {
 		color: #e0e0e0;
 		font-family: 'SourceSansProRegular', Helvetica;
@@ -100,61 +100,32 @@ article {
 	width: 100%;
 
 	nav.post-menu {
+		display: none;
+		position: absolute;
+		right: 0;
+		top: 5px;
+		width: 35px;
+		z-index: 100;
+		
 		a {
+			display: block;
+			height: 30px;
+			font-family: $font-icon;
+			font-size: 18px;
+			text-align: center;
+			text-decoration: none;
+			width: 35px;
 			&,
 			&:visited {
-				color: #ccc;
+				color: #bbb;
 			}
 			&:hover {
-				text-decoration: underline;
-			}
-			&.post-edit-link {
-				background: transparent url_ver('../img/edit.png') center center no-repeat;
-			}
-			&.post-stick-link {
-				background: transparent url_ver('../img/star.png') center center no-repeat;
-			}
-			&.post-delete-link {
-				background: transparent url_ver('../img/delete.png') center center no-repeat;
-			}
-			&.post-delete-link,
-			&.post-edit-link,
-			&.post-save-link,
-			&.post-stick-link {
-				float: right;
-				height: 100%;
-				margin-left: 5px;
-				padding-left: 2px;
-				padding-right: 2px;
-			}
-			&.post-delete-link,
-			&.post-edit-link,
-			&.post-stick-link {
-				color: transparent;
-				height: 16px;
-				margin: 0px;
-				overflow: hidden;
-				padding: 8px;
-				text-indent: 100px;
-				width: 15px;
-				
-				&:hover {
-					background-color: #e0e0e0;
-					text-decoration: none;
-				}
-				span {
-					display: none;
-				}
+				color: $gray;
 			}
 		}
-		.post-last-saved {
-			color: #999;
-			margin-left: 5px;
-			
-			&:hover {
-				color: $white;
-			}
-		}
+	}
+	&:hover nav.post-menu {
+		display: block;
 	}
 	.post-date a {
 		color: $gray;
@@ -195,7 +166,7 @@ article.edit {
 	border: 1px solid #adadad;
 	min-height: 150px;
 	overflow: auto;
-	padding: 5px 25px 25px 25px;
+	padding: 5px 35px 25px 25px;
 	position: relative;
 
 	h1, h2, h3, h4, h5, p {
@@ -359,21 +330,6 @@ article.edit {
 	padding: 30px 0 0;
 }
 
-.sticky .post-content {
-	background-image: url_ver('../img/sticky.png');
-	background-repeat: no-repeat;
-	background-position: 100% 0%;
-}
-.sticky-loading .post-content {
-	background-image: url_ver('../img/sticky-loading.png');
-	background-repeat: no-repeat;
-	background-position: 100% 0%;
-}
-
-.sticky .post-stick-link {
-	background: #eee url_ver('../img/star.png') center center no-repeat;
-}
-
 .excerpt {
 	.post-content {
 		cursor: pointer;
@@ -454,26 +410,6 @@ article.edit {
 				text-shadow: none;
 			}
 		}
-	}
-}
-
-.content,
-.excerpt {
-	nav.post-menu {
-		background: $white;
-		border: 1px solid #adadad;
-		@include box-shadow(0px 1px 0 #eee);
-		color: $white;
-		display: none;
-		height: 96px;
-		margin-top: 40px;
-		position: absolute;
-		right: 153px;
-		width: 31px;
-		z-index: 100;
-	}
-	&:hover nav.post-menu {
-		display: block;
 	}
 }
 

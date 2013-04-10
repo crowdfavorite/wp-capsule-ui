@@ -1,9 +1,4 @@
 <article id="post-content-<?php the_ID(); ?>" data-post-id="<?php the_ID(); ?>" <?php post_class('content clearfix excerpt' . (is_sticky() ? ' sticky' : '')); ?>>
-	<nav class="post-menu">
-	 	<?php edit_post_link(__('Edit', 'capsule'), '', ''); ?>
-		<a href="#" class="post-stick-link"><span><?php _e('Sticky', 'capsule'); ?></span></a>
-		<a href="#" class="post-delete-link"><span><?php _e('Delete', 'capsule'); ?></span></a>
-	</nav>
 	<div class="post-date">
 		<a href="<?php the_permalink(); ?>">
 			<ul>
@@ -22,6 +17,12 @@ echo capsule_term_list(get_the_ID(), 'code');
 	</div>
 	<div class="post-content">
 		<?php the_content(); ?>
+		<nav class="post-menu">
+			<a href="#" class="post-sticky-link">&#57391;</a>
+			<a href="#" class="post-unsticky-link">&#57393;</a>
+			<?php edit_post_link('&#57535;', '', ''); ?>
+			<a href="#" class="post-delete-link">&#59177;</a>
+		</nav>
 		<div class="post-toggle"></div>
 	</div>
 </article>
