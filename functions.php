@@ -6,6 +6,7 @@ define('CAPSULE_TAX_PREFIX_TAG', '#');
 define('CAPSULE_TAX_PREFIX_CODE', '`');
 
 include('controller.php');
+include_once('lib/wp-taxonomy-filter/taxonomy-filter.php');
 
 show_admin_bar(false);
 
@@ -295,3 +296,25 @@ if (!is_admin()) {
 	add_action('wp_head', 'capsule_header_js');
 }
 
+function capsule_taxonomy_filter() {
+	$args = array(
+		'taxonomies' => array(
+			'projects' => array(
+				'prefix' => '@',
+			),
+			'post_tag' => array(
+				'prefix' => '#',
+			),
+		),
+		'authors' => 1,
+		'date' => 1,
+	);
+	if (function_exists('cftf_build_form')) {
+		cftf_build_form($args);
+	}
+}
+
+function capsule_tax_filter_url() {
+	return get_template_directory_uri().'/lib/wp-taxonomy-filter/';
+}
+add_filter('cftf_url', 'capsule_tax_filter_url');

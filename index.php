@@ -70,6 +70,9 @@ $title = '';
 if (is_home() || is_front_page()) {
 	$title = __('Home', 'capsule');
 }
+else if (function_exists('cftf_is_filter') && cftf_is_filter()) {
+	$title = __('Filter', 'capsule');
+}
 else if (is_search()) {
 	$title = sprintf(__('Search: %s', 'capsule'), esc_html(get_query_var('s')));
 }
@@ -88,6 +91,7 @@ else if (is_tax('code')) {
 
 ?>
 				<h1><?php echo $title; ?></h1>
+				<?php capsule_taxonomy_filter(); ?> <br />
 				<form class="clearfix" action="<?php echo esc_url(home_url('/')); ?>" method="get" onsubmit="<?php echo $search_onsubmit; ?>">
 					<input type="text" class="js-search" name="s" value="" placeholder="<?php _e('Search @projects, #tags, `code, etc&hellip;', 'capsule'); ?>" />
 					<input type="submit" value="<?php _e('Search', 'capsule'); ?>" />
