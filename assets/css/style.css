@@ -828,8 +828,35 @@ article.edit .post-close-link {
     display: none; }
 
 /* Content styling */
-.post-content h1 {
-  font-size: 20px; }
+.post-content {
+  background: white;
+  border: 1px solid #adadad;
+  min-height: 150px;
+  overflow: auto;
+  padding: 5px 25px 25px 25px;
+  position: relative; }
+  .post-content h1, .post-content h2, .post-content h3, .post-content h4, .post-content h5, .post-content p {
+    line-height: 140%;
+    margin: 10px 0 0;
+    padding: 0; }
+  .post-content ul, .post-content ol {
+    padding-left: 35px; }
+  .post-content li {
+    line-height: 140%; }
+  .post-content h1 {
+    font-size: 22px; }
+  .post-content h2 {
+    font-size: 20px; }
+  .post-content h3 {
+    font-size: 18px; }
+  .post-content h4 {
+    font-size: 16px; }
+  .post-content h5 {
+    color: #666;
+    font-size: 15px;
+    text-transform: uppercase; }
+  .post-content hr {
+    margin: 1.25em 2em; }
 
 .edit .post-content {
   background: #1a1a1a;
@@ -891,14 +918,6 @@ article.edit .post-close-link {
   text-decoration: none; }
 
 /* Content */
-.post-content {
-  background: white;
-  border: 1px solid #adadad;
-  min-height: 150px;
-  overflow: auto;
-  padding: 0px 25px 25px 25px;
-  position: relative; }
-
 .status {
   background: #232323;
   top: 0;

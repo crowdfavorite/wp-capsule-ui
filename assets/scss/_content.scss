@@ -191,8 +191,43 @@ article.edit {
 /* Content styling */
 
 .post-content {
+	background: $white;
+	border: 1px solid #adadad;
+	min-height: 150px;
+	overflow: auto;
+	padding: 5px 25px 25px 25px;
+	position: relative;
+
+	h1, h2, h3, h4, h5, p {
+		line-height: 140%;
+		margin: 10px 0 0;
+		padding: 0;
+	}
+	ul, ol {
+		padding-left: 35px;
+	}
+	li {
+		line-height: 140%;
+	}
 	h1 {
+		font-size: 22px;
+	}
+	h2 {
 		font-size: 20px;
+	}
+	h3 {
+		font-size: 18px;
+	}
+	h4 {
+		font-size: 16px;
+	}
+	h5 {
+		color: #666;
+		font-size: 15px;
+		text-transform: uppercase;
+	}
+	hr {
+		margin: 1.25em 2em;
 	}
 }
 
@@ -269,15 +304,6 @@ article.edit {
 }
 
 /* Content */
-
-.post-content {
-	background: $white;
-	border: 1px solid #adadad;
-	min-height: 150px;
-	overflow: auto;
-	padding: 0px 25px 25px 25px;
-	position: relative;
-}
 
 .status {
 	background: #232323;
