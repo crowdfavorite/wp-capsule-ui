@@ -543,6 +543,8 @@ w
     width: 100%; }
   #header h1 {
     float: left;
+    font-family: 'SourceSansProSemibold', Helvetica;
+    font-size: 32px;
     line-height: 0em; }
   #header form.search {
     display: block;
@@ -742,6 +744,29 @@ ul.search_results {
         .main-nav ul li a:hover {
           background-color: #111111;
           text-decoration: none; }
+  .main-nav a {
+    color: #e0e0e0;
+    font-family: 'SourceSansProRegular', Helvetica;
+    font-size: 1rem;
+    line-height: 48px;
+    text-shadow: 1px 1px #111111;
+    text-decoration: none;
+    text-align: center;
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    -o-transition: all 0.1s ease-in-out;
+    -ms-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out; }
+    .main-nav a:hover, .main-nav a:visited {
+      color: white; }
+    .main-nav a.icon {
+      font-family: "Fontello";
+      font-size: 23px;
+      -webkit-font-smoothing: subpixel-antialiased; }
+    .main-nav a.icon-projects {
+      font-family: "SourceSansProSemibold";
+      font-size: 27px;
+      -webkit-font-smoothing: subpixel-antialiased; }
 
 /* 	Page Headers
 ------------------------------------------------------- */
@@ -821,34 +846,6 @@ body {
 
 /* 	Content - Posts, Pages, Comments
 	------------------------------------------------------- */
-h1 {
-  font-family: 'SourceSansProSemibold', Helvetica;
-  font-size: 32px; }
-
-nav.main-nav a {
-  color: #e0e0e0;
-  font-family: 'SourceSansProRegular', Helvetica;
-  font-size: 1rem;
-  line-height: 48px;
-  text-shadow: 1px 1px #111111;
-  text-decoration: none;
-  text-align: center;
-  -webkit-transition: all 0.1s ease-in-out;
-  -moz-transition: all 0.1s ease-in-out;
-  -o-transition: all 0.1s ease-in-out;
-  -ms-transition: all 0.1s ease-in-out;
-  transition: all 0.1s ease-in-out; }
-  nav.main-nav a:hover, nav.main-nav a:visited {
-    color: white; }
-  nav.main-nav a.icon {
-    font-family: "Fontello";
-    font-size: 23px;
-    -webkit-font-smoothing: subpixel-antialiased; }
-  nav.main-nav a.icon-projects {
-    font-family: "SourceSansProSemibold";
-    font-size: 27px;
-    -webkit-font-smoothing: subpixel-antialiased; }
-
 /* Content - Left Column */
 .post-date {
   float: left;
@@ -899,6 +896,7 @@ article {
     text-decoration: none; }
 
 .post-menu {
+  overflow: hidden;
   position: absolute;
   right: 0;
   top: 7px;

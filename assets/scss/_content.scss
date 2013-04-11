@@ -13,38 +13,6 @@ body {
 /* 	Content - Posts, Pages, Comments
 	------------------------------------------------------- */
 
-h1 {
-	font-family: 'SourceSansProSemibold', Helvetica;
-	font-size: 32px;
-}
-
-nav.main-nav {
-	a {
-		color: #e0e0e0;
-		font-family: 'SourceSansProRegular', Helvetica;
-		font-size: 1rem;
-		line-height: 48px;
-		text-shadow: 1px 1px $gray-dark;
-		text-decoration: none;
-		text-align: center;
-		@include transition(all .1s ease-in-out);
-		&:hover,
-		&:visited {
-			color: $white;
-		}
-		&.icon {
-			font-family: $font-icon;
-			font-size: 23px;
-			-webkit-font-smoothing: subpixel-antialiased; 
-		}
-		&.icon-projects {
-			font-family: $font-sans-semibold;
-			font-size: 27px;
-			-webkit-font-smoothing: subpixel-antialiased; 
-		}	
-	}
-} 
-
 /* Content - Left Column */
 .post-date {
 	float: left;
@@ -107,6 +75,7 @@ article {
 }
 
 .post-menu {
+	overflow: hidden;
 	position: absolute;
 	right: 0;
 	top: 7px;
