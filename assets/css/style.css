@@ -602,18 +602,20 @@ w
         min-width: 180px; }
       #header .filter .chzn-container .chzn-results .highlighted {
         background: #222222; }
-    #header .filter .chzn-container-multi .chzn-choices .search-choice {
-      -moz-border-radius: 0;
-      /* FF1+ */
-      -webkit-border-radius: 0;
-      /* Saf3+, Chrome */
-      border-radius: 0;
-      /* Standard. IE9+ */
-      /**
-       * @bugfix border-radius background bleed
-       * @see http://tumble.sneak.co.nz/post/928998513/fixing-the-background-bleed
-       */
-      -webkit-background-clip: padding-box; }
+    #header .filter .chzn-container-multi .chzn-choices {
+      background: #fff; }
+      #header .filter .chzn-container-multi .chzn-choices .search-choice {
+        -moz-border-radius: 0;
+        /* FF1+ */
+        -webkit-border-radius: 0;
+        /* Saf3+, Chrome */
+        border-radius: 0;
+        /* Standard. IE9+ */
+        /**
+         * @bugfix border-radius background bleed
+         * @see http://tumble.sneak.co.nz/post/928998513/fixing-the-background-bleed
+         */
+        -webkit-background-clip: padding-box; }
     #header .filter .chzn-container-active .chzn-single,
     #header .filter .chzn-container-active .chzn-choices {
       border-color: #aaa;

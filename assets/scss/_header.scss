@@ -86,8 +86,12 @@
 				background: $gray;
 			}
 		}
-		.chzn-container-multi .chzn-choices .search-choice {
-			@include border-radius(0);
+		.chzn-container-multi .chzn-choices {
+			background: #fff;
+			
+			.search-choice {
+				@include border-radius(0);
+			}
 		}
 		.chzn-container-active .chzn-single,
 		.chzn-container-active .chzn-choices {
