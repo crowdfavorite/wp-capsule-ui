@@ -800,10 +800,12 @@ footer {
 
 .nav-previous a {
   background: transparent url("../img/arrow-right.png?ver=1.1") no-repeat 100% 25%;
+  background-size: 10px 15px;
   padding-right: 20px; }
 
 .nav-next a {
   background: transparent url("../img/arrow-left.png?ver=1.1") no-repeat 0% 25%;
+  background-size: 10px 15px;
   padding-left: 20px; }
 
 body {

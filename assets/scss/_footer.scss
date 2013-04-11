@@ -58,10 +58,12 @@ footer {
 }
 .nav-previous a {
 	background: transparent url_ver('../img/arrow-right.png') no-repeat 100% 25%;
+	background-size: 10px 15px;
 	padding-right: 20px;
 }
 .nav-next a {
 	background: transparent url_ver('../img/arrow-left.png') no-repeat 0% 25%;
+	background-size: 10px 15px;
 	padding-left: 20px;
 }
 
