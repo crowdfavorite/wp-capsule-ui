@@ -121,7 +121,7 @@ a:hover {
   color: #06e; }
 
 a:focus {
-  outline: thin dotted; }
+  outline: none; }
 
 /* Improve readability when focused and hovered in all browsers: h5bp.com/h */
 a:hover, a:active {
@@ -534,6 +534,7 @@ w
   width: 100%; }
 
 #header {
+  font-family: 'SourceSansProRegular';
   margin: 0; }
   #header .inner {
     border-bottom: 1px solid #adadad;
@@ -557,7 +558,160 @@ w
       #header form.search input[type="submit"] {
         display: none; }
   #header .filter {
-    display: none; }
+    display: none;
+    font-family: 'SourceSansProRegular';
+    padding-top: 30px; }
+    #header .filter select {
+      width: 18%; }
+    #header .filter .cftf-options,
+    #header .filter .cftf-dates {
+      margin-left: 55px;
+      margin-bottom: 10px; }
+      #header .filter .cftf-options .label,
+      #header .filter .cftf-dates .label {
+        color: #999;
+        display: inline-block;
+        float: left;
+        height: 25px;
+        line-height: 25px;
+        padding-top: 3px;
+        position: relative;
+        width: 100px; }
+    #header .filter .cftf-submit {
+      padding: 3px 0 0 155px; }
+      #header .filter .cftf-submit input {
+        background: #222222;
+        border: 0;
+        color: white;
+        font-family: 'SourceSansProRegular';
+        padding: 7px 13px; }
+    #header .filter .chzn-container {
+      margin-right: 10px;
+      min-width: 180px; }
+      #header .filter .chzn-container .chzn-drop {
+        -moz-box-shadow: none;
+        /* FF3.5+ */
+        -webkit-box-shadow: none;
+        /* Saf3+, Chrome */
+        box-shadow: none;
+        /* Standard. Opera 10.5, IE9+ */
+        min-width: 178px; }
+      #header .filter .chzn-container .chzn-choices input {
+        min-width: 180px; }
+      #header .filter .chzn-container .chzn-results .highlighted {
+        background: #222222; }
+    #header .filter .chzn-container-multi .chzn-choices .search-choice {
+      -moz-border-radius: 0;
+      /* FF1+ */
+      -webkit-border-radius: 0;
+      /* Saf3+, Chrome */
+      border-radius: 0;
+      /* Standard. IE9+ */
+      /**
+       * @bugfix border-radius background bleed
+       * @see http://tumble.sneak.co.nz/post/928998513/fixing-the-background-bleed
+       */
+      -webkit-background-clip: padding-box; }
+    #header .filter .chzn-container-active .chzn-single,
+    #header .filter .chzn-container-active .chzn-choices {
+      border-color: #aaa;
+      -moz-box-shadow: none;
+      /* FF3.5+ */
+      -webkit-box-shadow: none;
+      /* Saf3+, Chrome */
+      box-shadow: none;
+      /* Standard. Opera 10.5, IE9+ */ }
+    #header .filter .cftf-date {
+      border: 1px solid #aaa;
+      padding: 6px 5px;
+      width: 150px; }
+    #header .filter .cftf-date-sep {
+      color: #999;
+      padding: 0 2px; }
+
+.filter-toggle, .filter-toggle:visited, .filter-toggle:hover, .filter-toggle:active {
+  color: #999;
+  margin-right: 7px;
+  text-decoration: none;
+  text-transform: uppercase; }
+
+.filters-on #header .filter-toggle, .filters-on #header .filter-toggle:visited, .filters-on #header .filter-toggle:hover, .filters-on #header .filter-toggle:active {
+  color: #222222; }
+.filters-on #header .search input {
+  opacity: 0.3; }
+
+/* Typeahead search */
+.search_selected {
+  background-color: #323333;
+  color: white; }
+
+ul.search_results {
+  background-color: #fff;
+  border: 1px solid #adadad;
+  border-top: 0;
+  display: none;
+  font-family: 'SourceSansProRegular';
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  width: 288px; }
+  ul.search_results li {
+    padding: 10px; }
+
+/* Date picker */
+.ui-datepicker {
+  background: white;
+  border: 1px solid #aaa;
+  border-top: #222222;
+  font-family: 'SourceSansProRegular';
+  padding: 6px; }
+
+.ui-datepicker-header {
+  background: #222222;
+  color: #fff;
+  margin: -6px -6px 5px -6px;
+  padding: 6px 5px 4px; }
+
+.ui-datepicker .ui-datepicker-title {
+  text-align: center; }
+
+.ui-datepicker-prev,
+.ui-datepicker-next,
+.ui-datepicker-prev:hover,
+.ui-datepicker-next:hover {
+  color: white;
+  cursor: pointer;
+  font-size: 11px;
+  padding-top: 1px; }
+
+.ui-datepicker-prev {
+  float: left; }
+
+.ui-datepicker-next {
+  float: right; }
+
+.ui-datepicker table {
+  margin: 0; }
+
+.ui-datepicker th {
+  text-align: center; }
+
+.ui-datepicker td a {
+  color: #666;
+  display: block;
+  padding: 3px;
+  text-align: right;
+  text-decoration: none; }
+
+.ui-datepicker td a:hover {
+  text-decoration: underline; }
+
+.ui-datepicker .ui-datepicker-current-day a {
+  background: #eff6ff; }
+
+.ui-datepicker .ui-datepicker-today a {
+  border: 1px solid #eee; }
 
 /* 	Main Navigation
 	------------------------------------------------------- */
@@ -588,6 +742,36 @@ w
         .main-nav ul li a:hover {
           background-color: #111111;
           text-decoration: none; }
+
+/* 	Page Headers
+------------------------------------------------------- */
+.page-title {
+  color: #222222;
+  font-family: 'SourceSansProRegular';
+  font-weight: normal;
+  margin: 0;
+  padding: 26px 0 0 0;
+  text-shadow: 1px 1px white; }
+  .page-title em {
+    font-family: 'SourceSansProSemiBold';
+    font-style: normal;
+    font-weight: bold; }
+
+footer {
+  background: none;
+  clear: both;
+  height: 30px;
+  margin-top: -50px;
+  position: relative; }
+  footer p {
+    color: #999;
+    text-align: center; }
+    footer p a,
+    footer p a:visited {
+      color: #888;
+      text-decoration: none; }
+    footer p a:hover {
+      color: #777; }
 
 /* 	Pagination Links
 ------------------------------------------------------- */
@@ -621,36 +805,6 @@ w
 .nav-next a {
   background: transparent url("../img/arrow-left.png?ver=1.1") no-repeat 0% 25%;
   padding-left: 20px; }
-
-/* 	Page Headers
-------------------------------------------------------- */
-.page-title {
-  color: #222222;
-  font-family: 'SourceSansProRegular';
-  font-weight: normal;
-  margin: 0;
-  padding: 26px 0 0 0;
-  text-shadow: 1px 1px white; }
-  .page-title em {
-    font-family: 'SourceSansProSemiBold';
-    font-style: normal;
-    font-weight: bold; }
-
-footer {
-  background: none;
-  clear: both;
-  height: 30px;
-  margin-top: -50px;
-  position: relative; }
-  footer p {
-    color: #999;
-    text-align: center; }
-    footer p a,
-    footer p a:visited {
-      color: #888;
-      text-decoration: none; }
-    footer p a:hover {
-      color: #777; }
 
 body {
   background-image: url("../img/tile.png?ver=1.1");
@@ -1128,20 +1282,3 @@ pre.static_code {
     overflow-x: scroll; }
     pre.static_code ol li {
       padding-right: 40px; }
-
-/* Typeahead search */
-.search_selected {
-  color: white;
-  background-color: #323333; }
-
-ul.search_results {
-  list-style-type: none;
-  background-color: #fff;
-  position: absolute;
-  padding: 0;
-  margin: 0;
-  border: 1px solid #adadad;
-  width: 288px;
-  display: none; }
-  ul.search_results li {
-    padding: 10px; }

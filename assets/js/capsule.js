@@ -538,6 +538,22 @@ function($) {
 			var $article = $('<article></article>').height('400px');
 			$('.body').prepend($article);
 			Capsule.createPost($article);
+		}).on('click', '.filter-toggle', function(e) {
+			e.preventDefault();
+			var $body = $('body'),
+				$header = $('#header'),
+				$search = $header.find('input[name="s"]'),
+				$filter = $header.find('.filter');
+			if (!$body.hasClass('filters-on')) {
+				$filter.slideDown();
+				$('body').addClass('filters-on');
+				$search.attr('disabled', 'disabled');
+			}
+			else {
+				$filter.slideUp();
+				$('body').removeClass('filters-on');
+				$search.removeAttr('disabled');
+			}
 		});
 		$(window).on('resize', function() {
 			Capsule.sizeEditor();

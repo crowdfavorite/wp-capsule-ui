@@ -220,6 +220,7 @@ function capsule_register_taxonomies() {
 				'slug' => 'evergreen',
 				'with_front' => false,
 			),
+			'show_ui' => false,
 		)
 	);
 }
@@ -297,6 +298,9 @@ if (!is_admin()) {
 }
 
 function capsule_taxonomy_filter() {
+	if (!class_exists('CF_Taxonomy_Filter')) {
+		return;
+	}
 	$args = array(
 		'taxonomies' => array(
 			'projects' => array(
@@ -305,13 +309,47 @@ function capsule_taxonomy_filter() {
 			'post_tag' => array(
 				'prefix' => '#',
 			),
+			'code' => array(
+				'prefix' => '`',
+			),
 		),
 		'authors' => 1,
 		'date' => 1,
 	);
-	if (function_exists('cftf_build_form')) {
-		cftf_build_form($args);
+	$cftf = new CF_Taxonomy_Filter($args);
+
+	CF_Taxonomy_Filter::start_form($cftf->options['form_options']);
+
+	echo '<div class="cftf-options"><span class="label">'.__('Options', 'cftf').'</span>';
+
+	foreach ($cftf->options['taxonomies'] as $taxonomy => $args) {
+		if (is_array($args)) {
+			CF_Taxonomy_Filter::tax_filter($taxonomy, $args);
+		}
+		// Just passed in taxonomy name with no options
+		else {
+			CF_Taxonomy_Filter::tax_filter($args);
+		}
 	}
+
+	$author_options = !empty($cftf->options['author_options']) ? $cftf->options['author_options'] : array();
+	CF_Taxonomy_Filter::author_select($author_options);
+
+	echo '</div>';
+	echo '<div class="cftf-dates"><span class="label">'.__('Date Range', 'cftf').'</span>';
+
+	$start_options = !empty($cftf->options['date_options']['start']) ? $this->options['date_options']['start'] : array();
+	$end_options = !empty($cftf->options['date_options']['end']) ? $this->options['date_options']['end'] : array();
+	CF_Taxonomy_Filter::date_filter($start_options, $end_options);
+
+	echo '</div>';
+	echo '<div class="cftf-submit">';
+
+	CF_Taxonomy_Filter::submit_button($cftf->options['submit_options']);
+
+	echo '</div>';
+
+	CF_Taxonomy_Filter::end_form();
 }
 
 function capsule_tax_filter_url() {

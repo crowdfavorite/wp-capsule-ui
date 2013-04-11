@@ -52,11 +52,11 @@ else {
 <div class="container">
 	<nav class="main-nav">
 		<ul>
-			<li><a href="<?php echo esc_url(site_url('/')); ?>" class="icon"><?php _e('', 'capsule'); ?></a></li>
-			<li><a href="<?php echo esc_url(admin_url('post-new.php')); ?>" class="post-new-link icon"><?php _e('', 'capsule'); ?></a></li>
+			<li><a href="<?php echo esc_url(site_url('/')); ?>" class="icon">&#59392;</a></li>
+			<li><a href="<?php echo esc_url(admin_url('post-new.php')); ?>" class="post-new-link icon">&#59396;</a></li>
 			<li><a href="#" class="projects icon-projects"><?php _e('@', 'capsule'); ?></a></li>
 			<li><a href="#" class="tags icon"><?php _e('#', 'capsule'); ?></a></li>
-			<li><a href="<?php echo esc_url(admin_url('admin.php?page=capsule')); ?>" class="icon"><?php _e('', 'capsule'); ?></a></li>
+			<li><a href="<?php echo esc_url(admin_url('admin.php?page=capsule')); ?>" class="icon">&#59400;</a></li>
 		</ul>
 	</nav>
 	
@@ -92,6 +92,7 @@ else if (is_tax('code')) {
 ?>
 				<h1><?php echo $title; ?></h1>
 				<form class="search clearfix" action="<?php echo esc_url(home_url('/')); ?>" method="get" onsubmit="<?php echo $search_onsubmit; ?>">
+					<a href="#" class="filter-toggle"><?php _e('Filters', 'capsule'); ?></a>
 					<input type="text" class="js-search" name="s" value="" placeholder="<?php _e('Search @projects, #tags, `code, etc&hellip;', 'capsule'); ?>" />
 					<input type="submit" value="<?php _e('Search', 'capsule'); ?>" />
 				</form>

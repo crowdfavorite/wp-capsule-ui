@@ -23,3 +23,45 @@ footer {
 		}
 	}
 }
+
+/* 	Pagination Links
+------------------------------------------------------- */
+
+.meta-nav {
+	display: none;
+}
+.pagination {
+	display: block;
+
+	.nav-previous {
+		float: right;
+		margin-right: 157px;
+		margin-top: 23px;
+	}
+	.nav-next {
+		float: left;
+		margin-left: 55px;
+		margin-top: 23px;
+	}
+	a {
+		color: $gray;
+		font-family: 'SourceSansProRegular', Helvetica;
+		font-size: 20px;
+		text-shadow: 1px 1px $white;
+		&:visited {
+			color: $gray;
+		}
+		&:hover {
+			color: $black;
+		}
+	}
+}
+.nav-previous a {
+	background: transparent url_ver('../img/arrow-right.png') no-repeat 100% 25%;
+	padding-right: 20px;
+}
+.nav-next a {
+	background: transparent url_ver('../img/arrow-left.png') no-repeat 0% 25%;
+	padding-left: 20px;
+}
+

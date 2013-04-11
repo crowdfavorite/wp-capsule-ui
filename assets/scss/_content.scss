@@ -564,26 +564,3 @@ pre.static_code {
 		}
 	}
 }
-
-/* Typeahead search */
-
-.search_selected {
-	background-color: $black;
-	color: $white;
-}
-
-ul.search_results {
-	background-color: #fff;
-	border: 1px solid #adadad;
-	border-top: 0;
-	display:none;
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-	position: absolute;
-	width: 288px;
-
-	li {
-		padding: 10px;
-	}
-}
