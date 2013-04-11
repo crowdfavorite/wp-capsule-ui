@@ -47,7 +47,9 @@ footer {
 		color: $gray;
 		font-family: 'SourceSansProRegular', Helvetica;
 		font-size: 20px;
+		text-decoration: none;
 		text-shadow: 1px 1px $white;
+
 		&:visited {
 			color: $gray;
 		}

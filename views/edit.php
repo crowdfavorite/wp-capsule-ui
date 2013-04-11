@@ -24,7 +24,7 @@ echo capsule_term_list(get_the_ID(), 'code');
 			</p>
 		</div>
 		<header>
-			<a href="#" class="post-close-link" title="<?php _e('Close', 'capsule'); ?>">&#10006;</a>
+			<a href="#" class="post-close-link" title="<?php _e('Close', 'capsule'); ?>">&#59393;</a>
 		</header>
 		<div id="ace-editor-<?php echo $post->ID; ?>" class="ace-editor"></div>
 	</div>
