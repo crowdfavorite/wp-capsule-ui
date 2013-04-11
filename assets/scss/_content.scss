@@ -27,6 +27,7 @@ nav.main-nav {
 		text-shadow: 1px 1px $gray-dark;
 		text-decoration: none;
 		text-align: center;
+		@include transition(all .1s ease-in-out);
 		&:hover,
 		&:visited {
 			color: $white;
@@ -121,6 +122,7 @@ article {
 		text-align: center;
 		text-decoration: none;
 		width: 35px;
+		@include transition(all .1s ease-in-out);
 		&,
 		&:visited {
 			color: #bbb;

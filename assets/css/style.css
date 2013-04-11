@@ -146,7 +146,7 @@ hr {
   display: block;
   height: 1px;
   border: 0;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid #cccccc;
   margin: 1em 0;
   padding: 0; }
 
@@ -164,7 +164,7 @@ mark {
 /* Redeclare monospace font family: h5bp.com/j */
 pre, code, kbd, samp {
   font-family: monospace, serif;
-  _font-family: 'courier new', monospace;
+  _font-family: "courier new", monospace;
   font-size: 1em; }
 
 /* Improve readability of pre-formatted text in all browsers */
@@ -377,7 +377,7 @@ td {
 
   /* Don't show links for images, or javascript/internal links */
   pre, blockquote {
-    border: 1px solid #999;
+    border: 1px solid #999999;
     page-break-inside: avoid; }
 
   thead {
@@ -622,7 +622,7 @@ w
       box-shadow: none;
       /* Standard. Opera 10.5, IE9+ */ }
     #header .filter .cftf-date {
-      border: 1px solid #aaa;
+      border: 1px solid #aaaaaa;
       padding: 6px 5px;
       width: 150px; }
     #header .filter .cftf-date-sep {
@@ -662,7 +662,7 @@ ul.search_results {
 /* Date picker */
 .ui-datepicker {
   background: white;
-  border: 1px solid #aaa;
+  border: 1px solid #aaaaaa;
   border-top: #222222;
   font-family: 'SourceSansProRegular';
   padding: 6px; }
@@ -711,16 +711,16 @@ ul.search_results {
   background: #eff6ff; }
 
 .ui-datepicker .ui-datepicker-today a {
-  border: 1px solid #eee; }
+  border: 1px solid #eeeeee; }
 
 /* 	Main Navigation
 	------------------------------------------------------- */
 .main-nav {
   background: #222222;
   bottom: 0;
-  -moz-box-shadow: inset -1px 0px 0px #000;
-  -webkit-box-shadow: inset -1px 0px 0px #000;
-  box-shadow: inset -1px 0px 0px #000;
+  -moz-box-shadow: inset -1px 0px 0px black;
+  -webkit-box-shadow: inset -1px 0px 0px black;
+  box-shadow: inset -1px 0px 0px black;
   padding-top: 30px;
   position: fixed;
   top: 0;
@@ -790,7 +790,7 @@ footer {
     margin-top: 23px; }
   .pagination a {
     color: #222222;
-    font-family: 'SourceSansProRegular', Helvetica;
+    font-family: "SourceSansProRegular", Helvetica;
     font-size: 20px;
     text-shadow: 1px 1px white; }
     .pagination a:visited {
@@ -819,17 +819,22 @@ body {
 /* 	Content - Posts, Pages, Comments
 	------------------------------------------------------- */
 h1 {
-  font-family: 'SourceSansProSemibold', Helvetica;
+  font-family: "SourceSansProSemibold", Helvetica;
   font-size: 32px; }
 
 nav.main-nav a {
   color: #e0e0e0;
-  font-family: 'SourceSansProRegular', Helvetica;
+  font-family: "SourceSansProRegular", Helvetica;
   font-size: 1rem;
   line-height: 48px;
   text-shadow: 1px 1px #111111;
   text-decoration: none;
-  text-align: center; }
+  text-align: center;
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  -ms-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out; }
   nav.main-nav a:hover, nav.main-nav a:visited {
     color: white; }
   nav.main-nav a.icon {
@@ -910,7 +915,12 @@ article {
     font-size: 18px;
     text-align: center;
     text-decoration: none;
-    width: 35px; }
+    width: 35px;
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    -o-transition: all 0.1s ease-in-out;
+    -ms-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out; }
     .post-menu a, .post-menu a:visited,
     .post-menu span,
     .post-menu span:visited {
@@ -1097,7 +1107,7 @@ article.edit .post-close-link {
 .deleted .msg {
   color: #222222;
   display: inline-block;
-  font-family: 'SourceSansProRegular', Helvetica;
+  font-family: "SourceSansProRegular", Helvetica;
   font-size: 16px;
   margin-left: 30px;
   text-align: center; }
@@ -1240,7 +1250,7 @@ article.edit .post-close-link {
 /* Code */
 pre, code {
   color: #222222;
-  font-family: 'SourceCodeProRegular', monospace;
+  font-family: "SourceCodeProRegular", monospace;
   font-size: 13px; }
 
 /* Static code */
