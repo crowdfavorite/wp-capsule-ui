@@ -347,6 +347,6 @@ function capsule_taxonomy_filter() {
 }
 
 function capsule_tax_filter_url() {
-	return get_template_directory_uri().'/lib/wp-taxonomy-filter/';
+	return get_template_directory_uri().'/ui/lib/wp-taxonomy-filter/';
 }
 add_filter('cftf_url', 'capsule_tax_filter_url');
