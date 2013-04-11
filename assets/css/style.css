@@ -741,7 +741,13 @@ article {
   right: 0;
   top: 7px;
   width: 35px;
-  z-index: 100; }
+  z-index: 100;
+  /* 
+  	.post-sticky-link,
+  	.post-unsticky-link {
+  		padding-left: 1px;
+  	}
+   */ }
   .post-menu a,
   .post-menu span {
     display: none;
@@ -755,9 +761,8 @@ article {
     .post-menu span,
     .post-menu span:visited {
       color: #bbb; }
-    .post-menu a:hover,
-    .post-menu span:hover {
-      color: #222222; }
+  .post-menu a:hover {
+    color: #222222; }
   .post-menu .post-edit-link {
     padding-left: 2px; }
   .post-menu .post-unsticky-link,
@@ -834,16 +839,20 @@ nav.post-menu span.post-sticky-loading {
     transform: rotate(360deg); } }
 
 article.edit .post-close-link {
-  background: transparent url("../img/close-static.png?ver=1.1") center center no-repeat;
-  color: transparent;
+  color: white;
+  font-family: "Fontello";
+  font-size: 18px;
   height: 30px;
   overflow: hidden;
+  padding-top: 5px;
   position: absolute;
   right: 0;
+  text-align: center;
+  text-decoration: none;
   top: 0;
   width: 30px; }
   article.edit .post-close-link:hover {
-    background: transparent url("../img/close-hover.png?ver=1.1") no-repeat center center; }
+    opacity: 0.7; }
 
 .spinner {
   left: 0;
@@ -959,7 +968,7 @@ article.edit .post-close-link {
   .status p {
     color: #787878;
     font-size: 13px;
-    margin: 3px 0 0 9px; }
+    margin: 8px 0 0 9px; }
   .status .dirty-indicator,
   .status .saving-indicator {
     display: none;

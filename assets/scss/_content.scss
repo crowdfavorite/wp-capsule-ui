@@ -125,13 +125,19 @@ article {
 		&:visited {
 			color: #bbb;
 		}
-		&:hover {
-			color: $gray;
-		}
+	}
+	a:hover {
+		color: $gray;
 	}
 	.post-edit-link {
 		padding-left: 2px;
 	}
+/* 
+	.post-sticky-link,
+	.post-unsticky-link {
+		padding-left: 1px;
+	}
+ */
 	.post-unsticky-link,
 	.post-sticky-loading-link {
 		display: none;
@@ -200,16 +206,20 @@ nav.post-menu span.post-sticky-loading {
 
 article.edit {
 	.post-close-link {
-		background: transparent url_ver('../img/close-static.png') center center no-repeat;
-		color: transparent;
+		color: $white;
+		font-family: $font-icon;
+		font-size: 18px;
 		height: 30px;
 		overflow: hidden;
+		padding-top: 5px;
 		position: absolute;
 		right: 0;
+		text-align: center;
+		text-decoration: none;
 		top: 0;
 		width: 30px;
 		&:hover {
-			background: transparent url_ver('../img/close-hover.png') no-repeat center center;
+			opacity: 0.7;
 		}
 	}
 }
@@ -359,7 +369,7 @@ article.edit {
 	p {
 		color: #787878;
 		font-size: 13px;
-		margin: 3px 0 0 9px;
+		margin: 8px 0 0 9px;
 	}
 	.dirty-indicator,
 	.saving-indicator {
