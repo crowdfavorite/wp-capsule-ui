@@ -103,12 +103,6 @@ article {
 	.post-edit-link {
 		padding-left: 2px;
 	}
-/* 
-	.post-sticky-link,
-	.post-unsticky-link {
-		padding-left: 1px;
-	}
- */
 	.post-unsticky-link,
 	.post-sticky-loading-link {
 		display: none;
@@ -254,16 +248,6 @@ article.edit {
 	}
 }
 
-.edit {
-	.post-content {
-		background: #1a1a1a;
-		border: 1px solid #adadad;
-		min-height: 200px;
-		overflow: auto;
-		padding: 0;
-	}
-}
-
 .content,
 .edit {
 	margin-top: 30px;
@@ -300,8 +284,9 @@ article.edit {
 		background: transparent;
 		border: none;
 		color: #666;
+		height: auto;
 		margin-top: 30px;
-		min-height: auto;
+		min-height: 0;
 		padding-bottom: 0;
 	}
 	.msg {
@@ -359,18 +344,9 @@ article.edit {
 	display: inline;
 }
 
-.close-content {
-	height: 20px;
-	border: 1px solid red;
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	right: 0;
-}
-
 .edit .post-content {
 	background: $gray-light;
-	border: 1px solid #adadad;
+	border: 1px solid $gray;
 	min-height: 200px;
 	overflow: auto;
 	padding: 30px 0 0;
