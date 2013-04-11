@@ -28,7 +28,12 @@ function capsule_controller() {
 				$term_name = stripslashes(substr($_GET['q'], 1, strlen($_GET['q'])));
 				if (!strlen($term_name) < 1) {
 					// Taken from wp_ajax_ajax_tag_search()
-					$results = $wpdb->get_col( $wpdb->prepare( "SELECT t.name FROM $wpdb->term_taxonomy AS tt INNER JOIN $wpdb->terms AS t ON tt.term_id = t.term_id WHERE tt.taxonomy = %s AND t.name LIKE (%s)", $taxonomy, like_escape( $term_name ) . '%' ) );
+					$results = $wpdb->get_col($wpdb->prepare("
+						SELECT t.name 
+						FROM $wpdb->term_taxonomy AS tt 
+						INNER JOIN $wpdb->terms AS t ON tt.term_id = t.term_id 
+						WHERE tt.taxonomy = %s AND t.name LIKE (%s)
+					", $taxonomy, like_escape($term_name).'%'));
 					$html = '';
 					foreach ($results as $result) {
 						$html .= $prefix.$result."\n";
@@ -50,7 +55,7 @@ function capsule_controller() {
 						setup_postdata($post);
 						$view = str_replace('post_', '', $_GET['capsule_action']);
 						ob_start();
-						include(STYLESHEETPATH.'/views/'.$view.'.php');
+						include(STYLESHEETPATH.'/ui/views/'.$view.'.php');
 						$html = ob_get_clean();
 						$response = compact('html');
 						header('Content-type: application/json');
@@ -69,7 +74,7 @@ function capsule_controller() {
 						$post = get_post($post_id);
 						setup_postdata($post);
 						ob_start();
-						include(STYLESHEETPATH.'/views/edit.php');
+						include(STYLESHEETPATH.'/ui/views/edit.php');
 						$html = ob_get_clean();
 						$response = array(
 							'html' => $html,
@@ -106,7 +111,7 @@ function capsule_controller() {
 					$post = get_post($post_id);
 					setup_postdata($post);
 					ob_start();
-					include(STYLESHEETPATH.'/views/edit.php');
+					include(STYLESHEETPATH.'/ui/views/edit.php');
 					$html = ob_get_clean();
 					$ymd = get_the_time('Ymd', $post);
 					$response = array(
@@ -194,7 +199,7 @@ function capsule_controller() {
 					$result = 'success';
 					$msg = __('Post deleted', 'capsule');
 					ob_start();
-					include(STYLESHEETPATH.'/views/deleted.php');
+					include(STYLESHEETPATH.'/ui/views/deleted.php');
 					$html = ob_get_clean();
 				}
 				else {
@@ -219,7 +224,7 @@ function capsule_controller() {
 					$result = 'success';
 					$msg = __('Post recovered from trash.', 'capsule');
 					ob_start();
-					include(STYLESHEETPATH.'/views/excerpt.php');
+					include(STYLESHEETPATH.'/ui/views/excerpt.php');
 					$html = ob_get_clean();
 				}
 				else {

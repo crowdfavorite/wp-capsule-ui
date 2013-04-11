@@ -33,7 +33,7 @@ function capsule_unauthorized_json() {
 }
 
 function capsule_resources() {
-	$template_url = trailingslashit(get_template_directory_uri());
+	$template_url = trailingslashit(get_template_directory_uri()).'ui/';
 	$assets_url = trailingslashit($template_url . 'assets');
 
 	// Styles
@@ -269,7 +269,7 @@ function capsule_term_list($post_id, $taxonomy) {
 }
 
 function capsule_the_content_markdown($content) {
-	include_once(STYLESHEETPATH.'/lib/php-markdown/markdown_extended.php');
+	include_once(STYLESHEETPATH.'/ui/lib/php-markdown/markdown_extended.php');
 	return MarkdownExtended($content);
 }
 add_filter('the_content', 'capsule_the_content_markdown');
