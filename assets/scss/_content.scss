@@ -568,19 +568,20 @@ pre.static_code {
 /* Typeahead search */
 
 .search_selected {
-	color: $white;
 	background-color: $black;
+	color: $white;
 }
 
 ul.search_results {
-	list-style-type: none;
 	background-color: #fff;
-	position: absolute;
-	padding: 0;
-	margin: 0;
 	border: 1px solid #adadad;
-	width: 288px;
+	border-top: 0;
 	display:none;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	width: 288px;
 
 	li {
 		padding: 10px;
