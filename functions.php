@@ -313,18 +313,15 @@ function capsule_taxonomy_filter() {
 				'prefix' => '`',
 			),
 		),
-		'authors' => 1,
-		'date' => 1,
 	);
-	$cftf = new CF_Taxonomy_Filter($args);
 
-	CF_Taxonomy_Filter::start_form($cftf->options['form_options']);
+	CF_Taxonomy_Filter::start_form();
 
 	echo '<div class="cftf-options"><span class="label">'.__('Options', 'cftf').'</span>';
 
-	foreach ($cftf->options['taxonomies'] as $taxonomy => $args) {
+	foreach ($args['taxonomies'] as $taxonomy => $tax_args) {
 		if (is_array($args)) {
-			CF_Taxonomy_Filter::tax_filter($taxonomy, $args);
+			CF_Taxonomy_Filter::tax_filter($taxonomy, $tax_args);
 		}
 		// Just passed in taxonomy name with no options
 		else {
@@ -332,20 +329,17 @@ function capsule_taxonomy_filter() {
 		}
 	}
 
-	$author_options = !empty($cftf->options['author_options']) ? $cftf->options['author_options'] : array();
-	CF_Taxonomy_Filter::author_select($author_options);
+	CF_Taxonomy_Filter::author_select();
 
 	echo '</div>';
 	echo '<div class="cftf-dates"><span class="label">'.__('Date Range', 'cftf').'</span>';
 
-	$start_options = !empty($cftf->options['date_options']['start']) ? $this->options['date_options']['start'] : array();
-	$end_options = !empty($cftf->options['date_options']['end']) ? $this->options['date_options']['end'] : array();
-	CF_Taxonomy_Filter::date_filter($start_options, $end_options);
+	CF_Taxonomy_Filter::date_filter();
 
 	echo '</div>';
 	echo '<div class="cftf-submit">';
 
-	CF_Taxonomy_Filter::submit_button($cftf->options['submit_options']);
+	CF_Taxonomy_Filter::submit_button();
 
 	echo '</div>';
 
