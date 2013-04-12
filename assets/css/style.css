@@ -773,6 +773,13 @@ ul.search_results {
       font-size: 27px;
       -webkit-font-smoothing: subpixel-antialiased; }
 
+/* hack for webkit */
+.sidr-animating .main-nav {
+  display: none; }
+
+.sidr-open .main-nav {
+  left: 260px; }
+
 .sidr-projects-open .projects,
 .sidr-tags-open .tags {
   background: #111111 url("../img/menu-sidr-open?ver=1.1") left center no-repeat;

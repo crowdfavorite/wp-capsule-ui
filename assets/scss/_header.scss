@@ -279,6 +279,13 @@ ul.search_results {
 		}	
 	}
 }
+/* hack for webkit */
+.sidr-animating .main-nav {
+	display: none;
+}
+.sidr-open .main-nav {
+	left: 260px;
+}
 .sidr-projects-open .projects,
 .sidr-tags-open .tags {
 	background: #111 url_ver('../img/menu-sidr-open') left center no-repeat;
