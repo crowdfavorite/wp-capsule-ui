@@ -643,6 +643,8 @@ w
   color: #222222; }
 .filters-on #header .search input {
   opacity: 0.3; }
+.filters-on #header .filter {
+  display: block; }
 
 /* Typeahead search */
 .search_selected {
@@ -793,6 +795,7 @@ footer {
   position: relative; }
   footer p {
     color: #999;
+    margin-left: 71px;
     text-align: center; }
     footer p a,
     footer p a:visited {
@@ -1230,6 +1233,16 @@ article.edit .post-close-link {
 .post-content .editor-padding {
   background: #232323;
   height: 3px; }
+
+.search-no-results-msg {
+  color: #999;
+  font-family: 'SourceSansProRegular';
+  font-size: 22px;
+  padding-top: 200px;
+  text-align: center; }
+
+.filters-on .search-no-results-msg {
+  padding-top: 75px; }
 
 /* Code */
 pre, code {

@@ -26,6 +26,9 @@ else {
 	$search_onsubmit = '';
 }
 
+$filter_class = (function_exists('cftf_is_filter') && cftf_is_filter() ? 'filters-on' : '');
+	
+
 ?>
 <!DOCTYPE html>
 <!--[if IE 6]>
@@ -48,7 +51,7 @@ else {
 	
 <?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?>>
+<body <?php body_class($filter_class); ?>>
 <div class="container">
 	<nav class="main-nav">
 		<ul>
@@ -123,7 +126,11 @@ if (have_posts()) {
 			</nav>
 <?php
 	}
-
+}
+else if (is_search()) {
+?>
+			<p class="search-no-results-msg"><?php _e('Nothing to see here&hellip; move along.', 'capsule'); ?></p>
+<?php
 }
 
 ?>

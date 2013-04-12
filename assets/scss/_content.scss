@@ -460,6 +460,17 @@ article.edit {
 	height: 3px;
 }
 
+.search-no-results-msg {
+	color: #999;
+	font-family: 'SourceSansProRegular';
+	font-size: 22px;
+	padding-top: 200px;
+	text-align: center;
+}
+.filters-on .search-no-results-msg {
+	padding-top: 75px;
+}
+
 /* Code */
 
 pre, code {
