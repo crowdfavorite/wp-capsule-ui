@@ -19,3 +19,6 @@
 [submodule "lib/wp-taxonomy-filter"]
 	path = lib/wp-taxonomy-filter
 	url = git@github.com:crowdfavorite/wp-taxonomy-filter.git
+[submodule "lib/sidr"]
+	path = lib/sidr
+	url = git@github.com:crowdfavorite/sidr.git

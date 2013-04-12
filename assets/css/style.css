@@ -768,10 +768,15 @@ ul.search_results {
       font-family: "Fontello";
       font-size: 23px;
       -webkit-font-smoothing: subpixel-antialiased; }
-    .main-nav a.icon-projects {
+    .main-nav a.projects {
       font-family: "SourceSansProSemibold";
       font-size: 27px;
       -webkit-font-smoothing: subpixel-antialiased; }
+
+.sidr-projects-open .projects,
+.sidr-tags-open .tags {
+  background: #111111 url("../img/menu-sidr-open?ver=1.1") left center no-repeat;
+  background-size: 12px 75px; }
 
 /* 	Page Headers
 ------------------------------------------------------- */
@@ -786,6 +791,56 @@ ul.search_results {
     font-family: 'SourceSansProSemiBold';
     font-style: normal;
     font-weight: bold; }
+
+/*	Sidr Menu
+------------------------------------------------------- */
+.sidr {
+  /* Default Settings */
+  display: none;
+  position: absolute;
+  position: fixed;
+  top: 0;
+  height: 100%;
+  z-index: 999999;
+  width: 260px;
+  overflow-x: none;
+  overflow-y: auto;
+  /* Theme Settings */
+  background: #222222;
+  color: white;
+  font-family: 'SourceSansProRegular'; }
+  .sidr .sidr-inner {
+    padding: 15px 0; }
+  .sidr.right {
+    left: auto;
+    right: -260px; }
+  .sidr.left {
+    left: -260px;
+    right: auto; }
+  .sidr h2 {
+    padding-left: 15px; }
+  .sidr a,
+  .sidr a:visited {
+    color: white;
+    display: block;
+    padding: 7px 0 7px 15px;
+    text-decoration: none; }
+  .sidr a:active,
+  .sidr a:hover {
+    background: #111;
+    color: #f8f8f8; }
+  .sidr ul {
+    list-style: none;
+    margin: 0;
+    padding: 0; }
+  .sidr li {
+    font-size: 14px;
+    padding-right: 15px; }
+
+/*	Sidr Content
+------------------------------------------------------- */
+#projects, #tags {
+  display: none; }
 
 footer {
   background: none;

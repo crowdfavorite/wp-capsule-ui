@@ -27,7 +27,6 @@ else {
 }
 
 $filter_class = (function_exists('cftf_is_filter') && cftf_is_filter() ? 'filters-on' : '');
-	
 
 ?>
 <!DOCTYPE html>
@@ -57,7 +56,7 @@ $filter_class = (function_exists('cftf_is_filter') && cftf_is_filter() ? 'filter
 		<ul>
 			<li><a href="<?php echo esc_url(site_url('/')); ?>" class="icon">&#59392;</a></li>
 			<li><a href="<?php echo esc_url(admin_url('post-new.php')); ?>" class="post-new-link icon">&#59396;</a></li>
-			<li><a href="#" class="projects icon-projects"><?php _e('@', 'capsule'); ?></a></li>
+			<li><a href="#sidr" class="projects"><?php _e('@', 'capsule'); ?></a></li>
 			<li><a href="#" class="tags icon"><?php _e('#', 'capsule'); ?></a></li>
 			<li><a href="<?php echo esc_url(admin_url('admin.php?page=capsule')); ?>" class="icon">&#59400;</a></li>
 		</ul>
@@ -142,6 +141,31 @@ else if (is_search()) {
 <footer>
 	<p><a href="http://crowdfavorite.com/capsule/">Capsule</a> by <a href="http://crowdfavorite.com">Crowd Favorite</a></p>
 </footer>
+
+<div id="projects">
+	<h2><?php _e('Projects', 'capsule'); ?></h2>
+	<ul>
+<?php
+wp_list_categories(array(
+	'show_option_none' => __('(none)', 'capsule'),
+	'taxonomy' => 'projects',
+	'title_li' => ''
+));
+?>
+	</ul>
+</div>
+<div id="tags">
+	<h2><?php _e('Tags', 'capsule'); ?></h2>
+	<ul>
+<?php
+wp_list_categories(array(
+	'show_option_none' => __('(none)', 'capsule'),
+	'taxonomy' => 'post_tag',
+	'title_li' => ''
+));
+?>
+	</ul>
+</div>
 
 <?php wp_footer(); ?>
 
