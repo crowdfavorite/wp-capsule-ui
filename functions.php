@@ -5,7 +5,9 @@ define('CAPSULE_TAX_PREFIX_PROJECT', '@');
 define('CAPSULE_TAX_PREFIX_TAG', '#');
 define('CAPSULE_TAX_PREFIX_CODE', '`');
 
-include('controller.php');
+if (!defined('CAPSULE_SERVER') || !CAPSULE_SERVER) {
+	include('controller.php');
+}
 include_once('lib/wp-taxonomy-filter/taxonomy-filter.php');
 
 show_admin_bar(false);

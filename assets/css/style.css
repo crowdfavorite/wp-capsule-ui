@@ -722,6 +722,9 @@ ul.search_results {
 
 /* 	Main Navigation
 	------------------------------------------------------- */
+.capsule-server .main-nav .post-new-link {
+  display: none; }
+
 .main-nav {
   background: #222222;
   bottom: 0;
@@ -968,6 +971,9 @@ article {
   article .post-date a {
     color: #222222;
     text-decoration: none; }
+
+.capsule-server .post-menu {
+  display: none; }
 
 .post-menu {
   overflow: hidden;

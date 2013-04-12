@@ -16,6 +16,10 @@
  * **********************************************************************
  */
 
+if (!isset($body_classes)) {
+	$body_classes = array();
+}
+
 $blog_desc = get_bloginfo('description');
 $title_description = (is_home() && !empty($blog_desc) ? ' - '.$blog_desc : '');
 
@@ -26,7 +30,9 @@ else {
 	$search_onsubmit = '';
 }
 
-$filter_class = (function_exists('cftf_is_filter') && cftf_is_filter() ? 'filters-on' : '');
+if (function_exists('cftf_is_filter') && cftf_is_filter()) {
+	$body_classes[] = 'filters-on';
+}
 
 ?>
 <!DOCTYPE html>
@@ -50,7 +56,7 @@ $filter_class = (function_exists('cftf_is_filter') && cftf_is_filter() ? 'filter
 	
 <?php wp_head(); ?>
 </head>
-<body <?php body_class($filter_class); ?>>
+<body <?php body_class(implode(' ', $body_classes)); ?>>
 <div class="container">
 	<nav class="main-nav">
 		<ul>

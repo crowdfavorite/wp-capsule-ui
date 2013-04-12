@@ -222,6 +222,9 @@ ul.search_results {
 /* 	Main Navigation
 	------------------------------------------------------- */
 
+.capsule-server .main-nav .post-new-link {
+	display: none;
+}
 .main-nav {
 	background: $gray;
 	bottom: 0;
