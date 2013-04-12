@@ -59,6 +59,7 @@ $filter_class = (function_exists('cftf_is_filter') && cftf_is_filter() ? 'filter
 			<li><a href="#sidr" class="projects"><?php _e('@', 'capsule'); ?></a></li>
 			<li><a href="#" class="tags icon"><?php _e('#', 'capsule'); ?></a></li>
 			<li><a href="<?php echo esc_url(admin_url('admin.php?page=capsule')); ?>" class="icon">&#59400;</a></li>
+			<li><span class="spacer"></span></li>
 		</ul>
 	</nav>
 	

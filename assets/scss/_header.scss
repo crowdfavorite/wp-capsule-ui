@@ -228,13 +228,13 @@ ul.search_results {
 	-moz-box-shadow: inset -1px 0px 0px #000;
 	-webkit-box-shadow: inset -1px 0px 0px #000;
 	box-shadow: inset -1px 0px 0px #000;
+	overflow: hidden;
 	padding-top: 30px;
 	position: fixed;
 	top: 0;
 	width: 72px;
 	z-index: 100;
 	
-
 	ul {
 		position: relative;
 
@@ -278,14 +278,21 @@ ul.search_results {
 			-webkit-font-smoothing: subpixel-antialiased; 
 		}	
 	}
+	.spacer {
+		display: block;
+		height: 2000px;
+		width: 72px;
+	}
 }
 /* hack for webkit */
 .sidr-animating .main-nav {
-	display: none;
+	height: 100%;
+	position: relative;
 }
 .sidr-open .main-nav {
 	left: 260px;
 }
+
 .sidr-projects-open .projects,
 .sidr-tags-open .tags {
 	background: #111 url_ver('../img/menu-sidr-open') left center no-repeat;

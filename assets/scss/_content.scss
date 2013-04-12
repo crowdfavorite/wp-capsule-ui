@@ -246,6 +246,14 @@ article.edit {
 		margin-right: 30px;
 		padding-left: 9px;
 	}
+	a,
+	a:visited {
+		color: #666;
+	}
+	a:active,
+	a:hover {
+		color: #333;
+	}
 }
 
 .content,
