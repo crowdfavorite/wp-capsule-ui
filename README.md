@@ -1,4 +1,3 @@
-tasty-beverage
-==============
+# Capsule UI
 
-If you're lazy, I'm in stealth mode.
+The shared interface code for [Capsule](https://github.com/crowdfavorite/wp-capsule) and [Capsule Server](https://github.com/crowdfavorite/wp-capsule-server).
