@@ -372,14 +372,13 @@ function capsule_credits() {
 			<li><a href="http://requirejs.org/">RequireJS</a> (<a href="https://github.com/jrburke/requirejs">GitHub</a>)</li>
 			<li><a href="http://www.berriart.com/sidr/">Sidr</a> (<a href="https://github.com/artberri/sidr">GitHub</a>)</li>
 			<li><a href="http://sass-lang.com/">Sass</a> (<a href="https://github.com/nex3/sass">GitHub</a>)</li>
-			<li><a href="http://www.google.com/fonts/specimen/Source+Sans+Pro">Source Sans Pro</a> (<a href="https://github.com/adobe/source-sans-pro">GitHub</a>) &amp <a href="http://www.google.com/fonts/specimen/Source+Code+Pro">Source Code Pro</a> (<a href="https://github.com/adobe/source-code-pro">GitHub</a>)</li>
-			<li>Icon font created via <a href="http://fontello.com">Fontello</a> (under <a href="http://scripts.sil.org/OFL">SIL</a>)</li>
-			<li><a href="http://somerandomdude.com/work/iconic/">Iconic</a>, by P.J. Onori</li>
-			<li><a href="http://entypo.com/">Entypo</a>, by Daniel Bruce</li>
-			<li><a href="http://www.justbenicestudio.com/studio/websymbols/">Web Symbols</a>, by Just Be Nice studio</li>
-			<li><a href="http://aristeides.com/">Elusive</a>, by Aristeides Stathopoulos</li>
-			<li><a href="http://fontello.com">Fontelico</a>, by Crowdsourced, for Fontello project</li>
-
+			<li><a href="http://www.google.com/fonts/specimen/Source+Sans+Pro">Source Sans Pro</a> (<a href="https://github.com/adobe/source-sans-pro">GitHub</a>)</li>
+			<li><a href="http://www.google.com/fonts/specimen/Source+Code+Pro">Source Code Pro</a> (<a href="https://github.com/adobe/source-code-pro">GitHub</a>)</li>
+			<li><a href="http://fontello.com">Fontello</a> (<a href="https://github.com/fontello/fontello">GitHub</a>) &amp; Fontelico (<a href="https://github.com/fontello/fontelico.font">GitHub</a>)</li>
+			<li><a href="http://aristeides.com/">Elusive</a> (<a href="https://github.com/aristath/elusive-iconfont">GitHub</a>)</li>
+			<li><a href="http://entypo.com/">Entypo</a> (<a href="https://github.com/danielbruce/entypo">GitHub</a>)</li>
+			<li><a href="http://somerandomdude.com/work/iconic/">Iconic</a> (<a href="https://github.com/somerandomdude/Iconic">GitHub</a>)</li>
+			<li><a href="http://www.justbenicestudio.com/studio/websymbols/">Web Symbols</a></li>
 		</ul>
 <?php
 }
