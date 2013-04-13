@@ -554,6 +554,10 @@ function($) {
 				$('body').removeClass('filters-on');
 				$search.removeAttr('disabled');
 			}
+		}).on('heartbeat-connection-lost', function() { // WP 3.6 heartbeat API support
+			$('body:not(".capsule-server")').addClass('connection-lost')
+		}).on('heartbeat-connection-restored', function() { // WP 3.6 heartbeat API support
+			$('body').removeClass('connection-lost')
 		});
 		$(window).on('resize', function() {
 			Capsule.sizeEditor();

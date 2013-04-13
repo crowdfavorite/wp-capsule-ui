@@ -173,6 +173,7 @@ wp_list_categories(array(
 ?>
 	</ul>
 </div>
+<div class="connection-error"><?php _e('Lost connection to server.', 'capsule'); ?></div>
 
 <?php wp_footer(); ?>
 
