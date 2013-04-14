@@ -858,6 +858,25 @@ ul.search_results {
 #projects, #tags {
   display: none; }
 
+/*	Connection Notice
+------------------------------------------------------- */
+.connection-error {
+  display: none; }
+
+.connection-lost .connection-error {
+  background: #900;
+  color: #fff;
+  display: block;
+  font-family: 'SourceSansProRegular';
+  font-size: 20px;
+  opacity: .95;
+  padding: 12px 0 10px;
+  position: fixed;
+  text-align: center;
+  top: 0;
+  width: 100%;
+  z-index: 9999; }
+
 footer {
   background: none;
   clear: both;

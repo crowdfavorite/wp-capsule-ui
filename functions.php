@@ -137,6 +137,16 @@ function capsule_resources() {
 		CAPSULE_URL_VERSION,
 		true
 	);
+	wp_enqueue_script(
+		'sidr',
+		$template_url.'lib/sidr/dist/jquery.sidr.js',
+		array('jquery'),
+		CAPSULE_URL_VERSION,
+		true
+	);
+	if (!defined('CAPSULE_SERVER') || !CAPSULE_SERVER) {
+		wp_enqueue_script('heartbeat');
+	}
 }
 add_action('wp_enqueue_scripts', 'capsule_resources');
 
