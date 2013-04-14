@@ -22,3 +22,6 @@
 [submodule "lib/sidr"]
 	path = lib/sidr
 	url = git@github.com:crowdfavorite/sidr.git
+[submodule "lib/linkify"]
+	path = lib/linkify
+	url = git@github.com:crowdfavorite/linkify.git

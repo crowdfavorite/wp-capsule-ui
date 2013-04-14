@@ -152,6 +152,13 @@ function capsule_resources() {
 	if (!defined('CAPSULE_SERVER') || !CAPSULE_SERVER) {
 		wp_enqueue_script('heartbeat');
 	}
+	wp_enqueue_script(
+		'linkify',
+		$template_url.'lib/linkify/1.0/jquery.linkify-1.0-min.js',
+		array('jquery'),
+		CAPSULE_URL_VERSION,
+		true
+	);
 }
 add_action('wp_enqueue_scripts', 'capsule_resources');
 
@@ -386,6 +393,7 @@ function capsule_credits() {
 			<li>JSON in JavaScript (<a href="https://github.com/douglascrockford/JSON-js">GitHub</a>)</li>
 			<li><a href="http://requirejs.org/">RequireJS</a> (<a href="https://github.com/jrburke/requirejs">GitHub</a>)</li>
 			<li><a href="http://www.berriart.com/sidr/">Sidr</a> (<a href="https://github.com/artberri/sidr">GitHub</a>)</li>
+			<li>Linkify (<a href="https://github.com/maranomynet/linkify">GitHub</a>)</li>
 			<li><a href="http://sass-lang.com/">Sass</a> (<a href="https://github.com/nex3/sass">GitHub</a>)</li>
 			<li><a href="http://www.google.com/fonts/specimen/Source+Sans+Pro">Source Sans Pro</a> (<a href="https://github.com/adobe/source-sans-pro">GitHub</a>)</li>
 			<li><a href="http://www.google.com/fonts/specimen/Source+Code+Pro">Source Code Pro</a> (<a href="https://github.com/adobe/source-code-pro">GitHub</a>)</li>

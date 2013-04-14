@@ -60,7 +60,7 @@ function($) {
 					$article.replaceWith(response.html);
 					$article = $('#post-content-' + postId);
 					Capsule.postExpandable($article);
-					$article.scrollintoview({ offset: 10 });
+					$article.scrollintoview({ offset: 10 }).find('.post-content').linkify();
 					Capsule.highlightCodeSyntax($article.find('.post-content'));
 				}
 			},
@@ -575,5 +575,6 @@ function($) {
 			name: 'sidr-tags',
 			source: '#tags'
 		});
+		$(':not(.edit) .post-content').linkify();
 	});
 });
