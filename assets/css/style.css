@@ -869,7 +869,8 @@ ul.search_results {
   display: block;
   font-family: 'SourceSansProRegular';
   font-size: 20px;
-  padding: 10px;
+  opacity: .95;
+  padding: 12px 0 10px;
   position: fixed;
   text-align: center;
   top: 0;
