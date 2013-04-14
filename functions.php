@@ -24,6 +24,11 @@ function capsule_gatekeeper() {
 }
 add_action('init', 'capsule_gatekeeper', 9999);
 
+function capsule_login_duration() {
+    return 2592000; // 30 * 24 * 60 * 60 = 30 days
+}
+add_filter('auth_cookie_expiration', 'capsule_login_duration');
+
 function capsule_unauthorized_json() {
 	header('Content-type: application/json');
 	echo json_encode(array(
