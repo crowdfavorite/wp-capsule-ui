@@ -13,7 +13,7 @@ include_once('lib/wp-taxonomy-filter/taxonomy-filter.php');
 show_admin_bar(false);
 
 function capsule_gatekeeper() {
-	if (!current_user_can('publish_posts')) {
+	if (!current_user_can('read')) {
 		$login_page = wp_login_url();
 		is_ssl() ? $proto = 'https://' : $proto = 'http://';
 		$requested = $proto.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
