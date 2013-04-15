@@ -69,7 +69,10 @@ function($) {
 	};
 
 	Capsule.centerEditor = function(postId) {
-		$.scrollTo('#post-edit-' + postId, {offset: -10});
+		$('#post-edit-' + postId).scrollintoview({
+			duration: 200,
+			offset: 15
+		})
 	};
 
 	Capsule.loadEditor = function($article, postId) {

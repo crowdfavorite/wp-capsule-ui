@@ -122,13 +122,6 @@ function capsule_resources() {
 		true
 	);
 	wp_enqueue_script(
-		'jquery-scrollto',
-		$assets_url.'js/jquery.scrollTo-1.4.2-min.js',
-		array('jquery'),
-		CAPSULE_URL_VERSION,
-		true
-	);
-	wp_enqueue_script(
 		'jquery-scrollintoview',
 		$template_url.'lib/jquery-scrollintoview/jquery.scrollintoview.min.js',
 		array('jquery'),
