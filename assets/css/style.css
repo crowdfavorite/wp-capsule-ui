@@ -1096,7 +1096,7 @@ nav.post-menu span.post-sticky-loading {
   to {
     transform: rotate(360deg); } }
 
-article.edit .post-close-link {
+article.edit header .post-close-link {
   color: white;
   font-family: "Fontello";
   font-size: 18px;
@@ -1109,7 +1109,7 @@ article.edit .post-close-link {
   text-decoration: none;
   top: 0;
   width: 30px; }
-  article.edit .post-close-link:hover {
+  article.edit header .post-close-link:hover {
     opacity: 0.7; }
 
 .spinner {
