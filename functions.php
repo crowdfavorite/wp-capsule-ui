@@ -405,3 +405,18 @@ function capsule_credits() {
 		</ul>
 <?php
 }
+
+// Similar functionality of wp_create_term but wp_create_term is in wp-admin includes which are not loaded for api calls
+function capsule_create_term($tag_name, $taxonomy) {
+	if ($term_info = term_exists($tag_name, $taxonomy)) {
+		if (is_array($term_info)) {
+			return $term_info['term_id'];
+		}
+			return false;
+		}
+		$term_info = wp_insert_term($tag_name, $taxonomy);
+		if (is_array($term_info)) {
+			return $term_info['term_id'];
+		}
+		return false;
+}
