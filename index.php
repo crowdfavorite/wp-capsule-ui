@@ -27,7 +27,7 @@ $blog_desc = get_bloginfo('description');
 $title_description = (is_home() && !empty($blog_desc) ? ' - '.$blog_desc : '');
 
 if (get_option('permalink_structure') != '') {
-	$search_onsubmit = "location.href=this.action+'search/'+encodeURIComponent(this.s.value).replace(/%20/g, '+'); return false;";
+	$search_onsubmit = "location.href=this.action+'search/'+encodeURIComponent(this.s.value).replace(/%20/g, '+').replace(/%2f/gi, '/'); return false;";
 }
 else {
 	$search_onsubmit = '';
