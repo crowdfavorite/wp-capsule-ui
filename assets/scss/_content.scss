@@ -364,7 +364,6 @@ article.edit header .post-close-link {
 
 .excerpt {
 	.post-content {
-		cursor: pointer;
 		max-height: 230px;
 		overflow: hidden;
 		position: relative;
@@ -376,6 +375,9 @@ article.edit header .post-close-link {
 	}
 }
 .toggleable {
+	.post-content {
+		cursor: pointer;
+	}
 	.post-toggle {
 		bottom: 0;
 		background-color: #fff;

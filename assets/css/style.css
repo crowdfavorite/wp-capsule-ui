@@ -1250,7 +1250,6 @@ article.edit header .post-close-link {
   padding: 30px 0 0; }
 
 .excerpt .post-content {
-  cursor: pointer;
   max-height: 230px;
   overflow: hidden;
   position: relative; }
@@ -1258,6 +1257,8 @@ article.edit header .post-close-link {
 .excerpt.sticky .post-content {
   max-height: 150px; }
 
+.toggleable .post-content {
+  cursor: pointer; }
 .toggleable .post-toggle {
   bottom: 0;
   background-color: #fff;
