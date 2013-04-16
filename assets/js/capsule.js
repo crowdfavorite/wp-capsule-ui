@@ -570,13 +570,15 @@ function($) {
 		$('article').each(function() {
 			Capsule.postExpandable($(this));
 		});
-		$('.main-nav .projects').sidr({
+		$('.main-nav').find('.projects').sidr({
 			name: 'sidr-projects',
 			source: '#projects',
-		});
-		$('.main-nav .tags').sidr({
+		}).end().find('.tags').sidr({
 			name: 'sidr-tags',
 			source: '#tags'
+		}).end().find('.servers').sidr({
+			name: 'sidr-servers',
+			source: '#servers'
 		});
 		$(':not(.edit) .post-content').linkify();
 	});

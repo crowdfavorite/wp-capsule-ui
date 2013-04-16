@@ -20,6 +20,9 @@ if (!isset($body_classes)) {
 	$body_classes = array();
 }
 
+global $cap_client;
+$cap_servers = $cap_client->get_servers();
+
 $blog_desc = get_bloginfo('description');
 $title_description = (is_home() && !empty($blog_desc) ? ' - '.$blog_desc : '');
 
@@ -62,8 +65,15 @@ if (function_exists('cftf_is_filter') && cftf_is_filter()) {
 		<ul>
 			<li><a href="<?php echo esc_url(site_url('/')); ?>" class="icon">&#59392;</a></li>
 			<li><a href="<?php echo esc_url(admin_url('post-new.php')); ?>" class="post-new-link icon">&#59396;</a></li>
-			<li><a href="#sidr" class="projects"><?php _e('@', 'capsule'); ?></a></li>
-			<li><a href="#" class="tags icon"><?php _e('#', 'capsule'); ?></a></li>
+			<li><a href="#projects" class="projects"><?php _e('@', 'capsule'); ?></a></li>
+			<li><a href="#tags" class="tags icon"><?php _e('#', 'capsule'); ?></a></li>
+<?php
+if (!empty($cap_servers)) {
+?>
+			<li><a href="#servers" class="servers icon">&#59254;</a></li>
+<?php
+}
+?>
 			<li><a href="<?php echo esc_url(admin_url('admin.php?page=capsule')); ?>" class="icon">&#59400;</a></li>
 			<li><span class="spacer"></span></li>
 		</ul>
@@ -172,6 +182,23 @@ wp_list_categories(array(
 ));
 ?>
 	</ul>
+</div>
+<div id="servers">
+	<h2><?php _e('Capsule Servers', 'capsule'); ?></h2>
+	<ul>
+<?php
+
+// don't handle 0 server situations here because the menu item is hidden in that situation
+
+// $cap_servers set at top of page
+foreach ($cap_servers as $cap_server) {
+	$server = $cap_client->process_server($cap_server);
+?>
+		<li><a href="<?php echo esc_url($server->url); ?>"><?php echo esc_html($server->post_title); ?></a></li>
+<?php
+}
+
+?>
 </div>
 <div class="connection-error"><?php _e('Lost connection to server.', 'capsule'); ?></div>
 
