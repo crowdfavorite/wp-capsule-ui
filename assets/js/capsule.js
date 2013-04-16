@@ -107,9 +107,9 @@ function($) {
 			function(response) {
 				if (response.html) {
 					$article.replaceWith(response.html);
-					Capsule.centerEditor(response.post_id);
 					Capsule.sizeEditor();
 					Capsule.initEditor(response.post_id, '');
+					Capsule.centerEditor(response.post_id);
 				}
 			},
 			'json'
