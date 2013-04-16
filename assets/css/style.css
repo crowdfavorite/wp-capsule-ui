@@ -671,6 +671,7 @@ ul.search_results {
   background: white;
   border: 1px solid #aaa;
   border-top: #222222;
+  display: none;
   font-family: 'SourceSansProRegular';
   padding: 6px; }
 
@@ -835,6 +836,7 @@ ul.search_results {
     right: auto; }
   .sidr h2 {
     padding-left: 15px; }
+  .sidr span.sidr-class-none,
   .sidr a,
   .sidr a:visited {
     color: white;

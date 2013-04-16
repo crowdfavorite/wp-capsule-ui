@@ -169,6 +169,7 @@ ul.search_results {
 	background: $white;
 	border: 1px solid #aaa;
 	border-top: $gray;
+	display: none;
 	font-family: 'SourceSansProRegular';
 	padding: 6px;
 }
@@ -354,6 +355,7 @@ ul.search_results {
 	h2 {
 		padding-left: 15px;
 	}
+	span.sidr-class-none,
 	a,
 	a:visited {
 		color: $white;

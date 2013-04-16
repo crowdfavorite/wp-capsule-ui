@@ -154,7 +154,7 @@ else if (is_search()) {
 	<ul>
 <?php
 wp_list_categories(array(
-	'show_option_none' => __('(none)', 'capsule'),
+	'show_option_none' => '<span class="none">'.__('(none)', 'capsule').'</none>',
 	'taxonomy' => 'projects',
 	'title_li' => ''
 ));
@@ -166,7 +166,7 @@ wp_list_categories(array(
 	<ul>
 <?php
 wp_list_categories(array(
-	'show_option_none' => __('(none)', 'capsule'),
+	'show_option_none' => '<span class="none">'.__('(none)', 'capsule').'</none>',
 	'taxonomy' => 'post_tag',
 	'title_li' => ''
 ));
