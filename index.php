@@ -21,7 +21,7 @@ if (!isset($body_classes)) {
 }
 
 global $cap_client;
-$cap_servers = $cap_client->get_servers();
+$cap_servers = $cap_client ? $cap_client->get_servers() : array(); 
 
 $blog_desc = get_bloginfo('description');
 $title_description = (is_home() && !empty($blog_desc) ? ' - '.$blog_desc : '');
