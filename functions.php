@@ -5,12 +5,17 @@ define('CAPSULE_TAX_PREFIX_PROJECT', '@');
 define('CAPSULE_TAX_PREFIX_TAG', '#');
 define('CAPSULE_TAX_PREFIX_CODE', '`');
 
-if (!defined('CAPSULE_SERVER') || !CAPSULE_SERVER) {
+function is_capsule_server() {
+	return (defined('CAPSULE_SERVER') && CAPSULE_SERVER);
+}
+
+if (!is_capsule_server()) {
 	include('controller.php');
 }
 include_once('lib/wp-taxonomy-filter/taxonomy-filter.php');
 
 show_admin_bar(false);
+
 
 function capsule_gatekeeper() {
 	if (!current_user_can('read')) {
@@ -142,7 +147,7 @@ function capsule_resources() {
 		CAPSULE_URL_VERSION,
 		true
 	);
-	if (!defined('CAPSULE_SERVER') || !CAPSULE_SERVER) {
+	if (!is_capsule_server()) {
 		wp_enqueue_script('heartbeat');
 	}
 	wp_enqueue_script(

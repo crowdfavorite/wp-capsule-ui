@@ -13,6 +13,19 @@
 echo capsule_term_list(get_the_ID(), 'projects');
 echo capsule_term_list(get_the_ID(), 'post_tag');
 echo capsule_term_list(get_the_ID(), 'code');
+
+if (is_capsule_server()) {
+?>
+		<p class="author">
+<?php
+
+echo get_avatar(get_the_author_meta('email'), 20);
+printf(__('<a href="%s1">%s2</a>', 'capsule'), esc_url(get_the_author_meta('url')), get_the_author_meta('display_name'));
+
+?>
+		</p>
+<?php
+}
 ?>
 	</div>
 	<div class="post-content">

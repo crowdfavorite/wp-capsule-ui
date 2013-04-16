@@ -1286,6 +1286,7 @@ article.edit header .post-close-link {
 .edit .post-meta,
 .content .post-meta {
   float: right;
+  font-family: 'SourceSansProRegular';
   margin-top: 15px;
   padding: 0 0 0 15px;
   width: 142px; }
@@ -1311,18 +1312,31 @@ article.edit header .post-close-link {
     .edit .post-meta li:last-of-type,
     .content .post-meta li:last-of-type {
       margin-bottom: 0; }
-    .edit .post-meta li a,
-    .content .post-meta li a {
-      font-size: 14px;
-      line-height: 14px;
-      text-decoration: none;
-      text-shadow: none; }
-
-.post-meta a, .post-meta a:visited {
-  color: #222222;
-  font-family: 'SourceSansProRegular';
-  font-size: 16px;
-  line-height: 20px; }
+  .edit .post-meta a,
+  .edit .post-meta a:visited,
+  .content .post-meta a,
+  .content .post-meta a:visited {
+    color: #222222;
+    font-size: 14px;
+    line-height: 14px;
+    text-decoration: none;
+    text-shadow: none; }
+  .edit .post-meta a:active,
+  .edit .post-meta a:hover,
+  .content .post-meta a:active,
+  .content .post-meta a:hover {
+    text-decoration: underline; }
+  .edit .post-meta p.author,
+  .content .post-meta p.author {
+    font-size: 14px;
+    height: 20px;
+    line-height: 20px;
+    margin: 0 0 0 25px;
+    position: relative; }
+    .edit .post-meta p.author img,
+    .content .post-meta p.author img {
+      position: absolute;
+      margin-left: -25px; }
 
 .post-content .ace-editor {
   position: relative;

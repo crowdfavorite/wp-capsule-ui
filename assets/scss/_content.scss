@@ -410,6 +410,7 @@ article.edit header .post-close-link {
 .content {
 	.post-meta {
 		float: right;
+		font-family: 'SourceSansProRegular';
 		margin-top: 15px;
 		padding: 0 0 0 15px;
 		width: 142px;
@@ -436,24 +437,31 @@ article.edit header .post-close-link {
 			&:last-of-type {
 				margin-bottom: 0;
 			}
-
-			a {
-				font-size: 14px;
-				line-height: 14px;
-				text-decoration: none;
-				text-shadow: none;
+		}
+		a,
+		a:visited {
+			color: $gray;
+			font-size: 14px;
+			line-height: 14px;
+			text-decoration: none;
+			text-shadow: none;
+		}
+		a:active,
+		a:hover {
+			text-decoration: underline;
+		}
+		p.author {
+			font-size: 14px;
+			height: 20px;
+			line-height: 20px;
+			margin: 0 0 0 25px;
+			position: relative;
+			
+			img {
+				position: absolute;
+				margin-left: -25px;
 			}
 		}
-	}
-}
-
-.post-meta a {
-	&,
-	&:visited {
-		color: $gray;
-		font-family: 'SourceSansProRegular';
-		font-size: 16px;
-		line-height: 20px;
 	}
 }
 
