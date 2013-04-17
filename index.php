@@ -107,7 +107,14 @@ else if (is_tax('code')) {
 	$term = get_queried_object();
 	$title = sprintf(__('`%s', 'capsule'), esc_html($term->name));
 }
-
+else if (is_tax('code')) {
+	$term = get_queried_object();
+	$title = sprintf(__('`%s', 'capsule'), esc_html($term->name));
+}
+else if (is_author()) {
+	$author = get_queried_object();
+	$title = sprintf(__('Author: %s', 'capsule'), esc_html($author->display_name));
+}
 ?>
 				<h1><?php echo $title; ?></h1>
 				<form class="search clearfix" action="<?php echo esc_url(home_url('/')); ?>" method="get" onsubmit="<?php echo $search_onsubmit; ?>">

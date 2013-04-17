@@ -20,7 +20,7 @@ if (is_capsule_server()) {
 <?php
 
 echo get_avatar(get_the_author_meta('email'), 20);
-printf(__('<a href="%s1">%s</a>', 'capsule'), esc_url(get_the_author_meta('url')), get_the_author_meta('display_name'));
+printf(__('<a href="%1$s">%2$s</a>', 'capsule'), esc_url(get_author_posts_url($post->post_author)), get_the_author_meta('display_name'));
 
 ?>
 		</p>
