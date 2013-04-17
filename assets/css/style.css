@@ -935,7 +935,7 @@ footer {
   padding-left: 20px; }
 
 body {
-  background-image: url("../img/tile.png?ver=1.1");
+  background: #f2f2f2 url("../img/tile.png?ver=1.1");
   background-size: 8px;
   color: #333333;
   font-family: sans-serif;
