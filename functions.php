@@ -436,14 +436,14 @@ function capsule_wp_editor_warning() {
 	color: #fff;
 	display: none;
 	font-size: 15px;
-	left: 20px;
+	left: 1%;
 	line-height: 180%;
 	opacity: 0.8;
 	padding: 100px 50px 125px;
 	position: absolute;
 	text-align: center;
 	top: 20px;
-	width: 88%;
+	width: 89%;
 	z-index: 99999999;
 }
 .capsule-editor-warning h3 {
