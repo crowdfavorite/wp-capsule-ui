@@ -428,4 +428,58 @@ function capsule_login_redirect($redirect_to, $request_str) {
 }
 add_action('login_redirect', 'capsule_login_redirect', 10, 2);
 
+function capsule_wp_editor_warning() {
+?>
+<style type="text/css">
+.capsule-editor-warning {
+	background: #222;
+	color: #fff;
+	display: none;
+	font-size: 15px;
+	left: 20px;
+	line-height: 180%;
+	opacity: 0.8;
+	padding: 100px 50px 125px;
+	position: absolute;
+	text-align: center;
+	top: 20px;
+	width: 88%;
+	z-index: 99999999;
+}
+.capsule-editor-warning h3 {
+	font-size: 36px;
+}
+.capsule-editor-warning a,
+.capsule-editor-warning a:visited {
+	color: #eee;
+}
+.capsule-editor-warning a:active,
+.capsule-editor-warning a:hover {
+	color: #fff;
+}
+.capsule-editor-warning .bypass {
+	font-size: 13px;
+	padding-top: 30px;
+}
+#post {
+	position: relative;
+}
+</style>
+<div class="capsule-editor-warning">
+	<h3><?php _e('Whoa Cowboy!', 'capsule'); ?></h3>
+	<p><?php printf(__('<b>Capsule is designed for front-end editing only.</b><br />Changes to projects, tags, etc. here will be overwritten when this post is edited on the front-end.<br /><a href="%s">Let\'s head back over there.</a>', 'capsule'), esc_url(home_url())); ?>
+	<p class="bypass"><?php _e('Ok, ok - I get it. <a href="#">Let me in anyway</a>.', 'capsule'); ?>
+</div>
+<script type="text/javascript">
+jQuery(function($) {
+	var $warning = $('.capsule-editor-warning');
+	$warning.prependTo($('#post')).fadeIn()
+		.find('.bypass a').on('click', function() {
+		$warning.fadeOut();
+	});
+});
+</script>
+<?php
+}
+add_action('edit_form_after_title', 'capsule_wp_editor_warning');
 
