@@ -156,7 +156,7 @@ else if (is_search()) {
 </div>
 
 <footer>
-	<p><a href="http://crowdfavorite.com/capsule/">Capsule</a> by <a href="http://crowdfavorite.com">Crowd Favorite</a></p>
+	<p><a href="http://crowdfavorite.com/capsule/">Capsule</a> by <a href="http://crowdfavorite.com">Crowd Favorite</a> &middot; <?php wp_loginout(home_url()); ?></p>
 </footer>
 
 <div id="projects">

@@ -418,3 +418,14 @@ function capsule_create_term($tag_name, $taxonomy) {
 		}
 		return false;
 }
+
+// redirect to front-page by default
+function capsule_login_redirect($redirect_to, $request_str) {
+	if (empty($request_str)) {
+		$redirect_to = home_url('/');
+	}
+	return $redirect_to;
+}
+add_action('login_redirect', 'capsule_login_redirect', 10, 2);
+
+
