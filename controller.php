@@ -33,6 +33,7 @@ function capsule_controller() {
 						FROM $wpdb->term_taxonomy AS tt 
 						INNER JOIN $wpdb->terms AS t ON tt.term_id = t.term_id 
 						WHERE tt.taxonomy = %s AND t.name LIKE (%s)
+						AND tt.count > 0
 					", $taxonomy, like_escape($term_name).'%'));
 					$html = '';
 					foreach ($results as $result) {
