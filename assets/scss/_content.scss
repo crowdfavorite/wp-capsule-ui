@@ -308,6 +308,9 @@ article.edit header .post-close-link {
 		text-align: center;
 	}
 	.post-undelete-link {
+		&:hover {
+			color: #DDD;
+		}
 		&,
 		&:visited {
 			background: $gray;
