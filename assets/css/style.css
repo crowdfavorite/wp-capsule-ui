@@ -1209,6 +1209,8 @@ article.edit header .post-close-link {
   font-size: 16px;
   margin-left: 30px;
   text-align: center; }
+.deleted .post-undelete-link:hover {
+  color: #DDD; }
 .deleted .post-undelete-link, .deleted .post-undelete-link:visited {
   background: #222222;
   color: white;
