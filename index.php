@@ -27,10 +27,10 @@ $blog_desc = get_bloginfo('description');
 $title_description = (is_home() && !empty($blog_desc) ? ' - '.$blog_desc : '');
 
 if (get_option('permalink_structure') != '') {
-	$search_onsubmit = "location.href=this.action+'search/'+encodeURIComponent(this.s.value).replace(/%20/g, '+').replace(/%2f/gi, '/'); return false;";
+	$search_permastruct = "1";
 }
 else {
-	$search_onsubmit = '';
+	$search_permastruct = "0";
 }
 
 if (function_exists('cftf_is_filter') && cftf_is_filter()) {
@@ -117,7 +117,7 @@ else if (is_author()) {
 }
 ?>
 				<h1><?php echo $title; ?></h1>
-				<form class="search clearfix" action="<?php echo esc_url(home_url('/')); ?>" method="get" onsubmit="<?php echo $search_onsubmit; ?>">
+				<form class="search clearfix" action="<?php echo esc_url(home_url('/')); ?>" method="get" data-permastruct="<?php echo $search_permastruct; ?>">
 					<a href="#" class="filter-toggle"><?php _e('Filters', 'capsule'); ?></a>
 					<input type="text" class="js-search" name="s" value="<?php echo esc_attr(get_query_var('s')); ?>" placeholder="<?php _e('Search @projects, #tags, `code, etc&hellip;', 'capsule'); ?>" />
 					<input type="submit" value="<?php _e('Search', 'capsule'); ?>" />

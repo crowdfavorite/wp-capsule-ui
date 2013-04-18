@@ -467,7 +467,7 @@ function($) {
 			});
 		});
 	};
-	
+
 	$(function() {
 		Capsule.highlightCodeSyntax();
 
@@ -480,6 +480,22 @@ function($) {
 			resultsClass: 'search_results',
 			selectClass: 'search_selected',
 			matchClass: 'search_match'
+		});
+
+		$('.js-search').closest('form').on('submit', function(e) {
+			e.preventDefault();
+			var $input = $('.js-search', $(this));
+			var $form = $(this);
+
+			$input.val($input.val().trim());
+			if ($form.data('permastruct') == 1) {
+				window.location.href = this.action+'search/'+encodeURIComponent(this.s.value).replace(/%20/g, '+').replace(/%2f/gi, '/');
+				return false;
+			}
+			else {
+				$form.unbind('submit');
+				$form.submit();
+			}
 		});
 
 		$(document).on('click', 'article.excerpt.toggleable .post-content', function(e) {
