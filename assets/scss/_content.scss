@@ -192,7 +192,9 @@ article.edit header .post-close-link {
 }
 
 .spinner {
-	left: 0;
+	background: url_ver('../img/loading.gif') no-repeat center center;
+	background-size: 32px;
+	left: -52px;
 	position: absolute;
 	top: 0;
 

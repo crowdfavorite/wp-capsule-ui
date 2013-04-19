@@ -160,18 +160,6 @@ function capsule_resources() {
 }
 add_action('wp_enqueue_scripts', 'capsule_resources');
 
-function capsule_wp_head() {
-?>
-<style>
-.spinner {
-	background: url(<?php echo admin_url('images/loading.gif'); ?>) no-repeat center center;
-	background-size: 12px;
-}
-</style>
-<?php
-}
-add_action('wp_head', 'capsule_wp_head');
-
 function capsule_register_taxonomies() {
 	register_taxonomy(
 		'projects',

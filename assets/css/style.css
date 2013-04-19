@@ -1117,7 +1117,9 @@ article.edit header .post-close-link {
     opacity: 0.7; }
 
 .spinner {
-  left: 0;
+  background: url("../img/loading.gif?ver=1.1") no-repeat center center;
+  background-size: 32px;
+  left: -52px;
   position: absolute;
   top: 0; }
   .spinner span {
