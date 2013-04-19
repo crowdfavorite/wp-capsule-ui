@@ -318,6 +318,10 @@ article.edit header .post-close-link {
 			padding: 7px 13px 5px;
 			text-decoration: none;
 		}
+		&:hover,
+		&:active {
+			color: #eee;
+		}
 	}
 }
 

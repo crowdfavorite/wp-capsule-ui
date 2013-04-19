@@ -1217,6 +1217,8 @@ article.edit header .post-close-link {
   margin-left: 12px;
   padding: 7px 13px 5px;
   text-decoration: none; }
+.deleted .post-undelete-link:hover, .deleted .post-undelete-link:active {
+  color: #eee; }
 
 /* Content */
 .status {
