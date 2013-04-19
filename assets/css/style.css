@@ -1283,7 +1283,7 @@ article.edit header .post-close-link {
   .toggleable .post-toggle:hover {
     background-color: #f6f6f6; }
 
-.toggleable:not(.open):hover .post-toggle {
+.toggleable:not(.open) .post-content:hover .post-toggle {
   background-color: #f6f6f6; }
 
 .open .post-toggle {

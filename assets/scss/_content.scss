@@ -403,7 +403,7 @@ article.edit header .post-close-link {
 		}
 	}
 }
-.toggleable:not(.open):hover .post-toggle {
+.toggleable:not(.open) .post-content:hover .post-toggle {
 	background-color: #f6f6f6;
 }
 
