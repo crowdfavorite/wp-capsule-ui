@@ -510,10 +510,11 @@ function($) {
 				postId = $article.data('post-id');
 			Capsule.loadEditor($article, postId);
 			e.preventDefault();
-			// don't allow bubbling to load content
-			if ($article.hasClass('excerpt')) {
-				e.stopPropagation();
-			}
+		}).on('dblclick', 'article:not(.edit) .post-content', function(e) {
+			// load editor
+			var $article = $(this).closest('article'),
+				postId = $article.data('post-id');
+			Capsule.loadEditor($article, postId);
 		}).on('click', 'article .post-close-link', function(e) {
 			e.preventDefault();
 			// save content and load excerpt
