@@ -493,8 +493,7 @@ function($) {
 				return false;
 			}
 			else {
-				$form.unbind('submit');
-				$form.submit();
+				$form.unbind('submit').submit();
 			}
 		});
 
@@ -555,6 +554,15 @@ function($) {
 			e.preventDefault();
 		}).on('click', '.post-new-link', function(e) {
 			e.preventDefault();
+			if ($('#sidr-projects').is(':visible')) {
+				$.sidr('close', 'sidr-projects');
+			}
+			if ($('#sidr-tags').is(':visible')) {
+				$.sidr('close', 'sidr-tags');
+			}
+			if ($('#sidr-servers').is(':visible')) {
+				$.sidr('close', 'sidr-servers');
+			}
 			var $article = $('<article></article>').height('400px');
 			$('.body').prepend($article);
 			Capsule.createPost($article);
