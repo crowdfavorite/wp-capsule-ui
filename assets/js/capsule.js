@@ -510,7 +510,7 @@ function($) {
 				postId = $article.data('post-id');
 			Capsule.loadEditor($article, postId);
 			e.preventDefault();
-		}).on('dblclick', 'article:not(.edit) .post-content', function(e) {
+		}).on('dblclick', 'body:not(.capsule-server) article:not(.edit) .post-content', function(e) {
 			// load editor
 			var $article = $(this).closest('article'),
 				postId = $article.data('post-id');
