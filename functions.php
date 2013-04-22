@@ -18,7 +18,7 @@ show_admin_bar(false);
 
 
 function capsule_gatekeeper() {
-	if (!current_user_can('read')) {
+	if (!current_user_can('read') && strpos(admin_url(), $_SERVER['REQUEST_URI']) !== false) {
 		$login_page = wp_login_url();
 		is_ssl() ? $proto = 'https://' : $proto = 'http://';
 		$requested = $proto.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
