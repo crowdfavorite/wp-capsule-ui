@@ -514,6 +514,9 @@ function($) {
 			var $article = $(this).closest('article'),
 				postId = $article.data('post-id');
 			Capsule.loadEditor($article, postId);
+		}).on('dblclick', 'body:not(.capsule-server) article:not(.edit) pre, body:not(.capsule-server) article:not(.edit) code', function(e) {
+			// Don't load editor on double-click inside code blocks (pre or code)
+			e.stopPropagation();
 		}).on('click', 'article .post-close-link', function(e) {
 			e.preventDefault();
 			// save content and load excerpt
