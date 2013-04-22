@@ -113,13 +113,18 @@
 
 .filter-toggle {
 	&,
-	&:visited,
+	&:visited {
+		background: #ddd;
+		color: #999;
+		font-size: 14px;
+		margin-right: 7px;
+		padding: 7px 13px 5px;
+		text-decoration: none;
+	}
 	&:hover,
 	&:active {
-		color: #999;
-		margin-right: 7px;
-		text-decoration: none;
-		text-transform: uppercase;
+		background: #222;
+		color: $white;
 	}
 }
 .filters-on #header {
@@ -128,7 +133,8 @@
 		&:visited,
 		&:hover,
 		&:active {
-			color: $gray;
+			background: #222;
+			color: $white;
 		}
 	}
 	.search input {

@@ -11,7 +11,6 @@ footer {
 	
 	p {
 		color: #999;
-		margin-left: 71px;
 		text-align: center;
 		
 		a,
@@ -19,8 +18,10 @@ footer {
 			color: #888;
 			text-decoration: none;
 		}
-		a:hover {
+		a:hover,
+		a:active {
 			color: #777;
+			text-decoration: underline;
 		}
 	}
 }
