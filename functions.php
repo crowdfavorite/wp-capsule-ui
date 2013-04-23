@@ -5,17 +5,23 @@ define('CAPSULE_TAX_PREFIX_PROJECT', '@');
 define('CAPSULE_TAX_PREFIX_TAG', '#');
 define('CAPSULE_TAX_PREFIX_CODE', '`');
 
+show_admin_bar(false);
+
 function is_capsule_server() {
 	return (defined('CAPSULE_SERVER') && CAPSULE_SERVER);
+}
+
+function capsule_mode() {
+	if (!defined('CAPSULE_MODE')) {
+		define('CAPSULE_MODE', 'prod');
+	}
+	return CAPSULE_MODE;
 }
 
 if (!is_capsule_server()) {
 	include('controller.php');
 }
 include_once('lib/wp-taxonomy-filter/taxonomy-filter.php');
-
-show_admin_bar(false);
-
 
 function capsule_gatekeeper() {
 	if (!current_user_can('read') && strpos(admin_url(), $_SERVER['REQUEST_URI']) !== false) {
@@ -44,7 +50,45 @@ function capsule_unauthorized_json() {
 	die();
 }
 
-function capsule_resources() {
+function capsule_resources_prod() {
+	$template_url = trailingslashit(get_template_directory_uri()).'ui/';
+	$assets_url = trailingslashit($template_url . 'assets');
+
+	// Styles
+	wp_enqueue_style(
+		'capsule_styles',
+		$assets_url.'css/optimized.css',
+		array(),
+		CAPSULE_URL_VERSION
+	);
+
+	// Scripts
+	// Scripts
+	wp_enqueue_script('jquery');
+	wp_enqueue_script('suggest');
+	wp_enqueue_script(
+		'capsule',
+		$assets_url.'js/optimized.js',
+		array(),
+		CAPSULE_URL_VERSION,
+		true
+	);
+	wp_localize_script('capsule', 'capsuleL10n', array(
+		'endpointAjax' => home_url('index.php'),
+		'loading' => __('Loading...', 'capsule'),
+	));
+	wp_localize_script('capsule', 'requirejsL10n', array(
+		'capsule' => $assets_url,
+		'ace' => $template_url.'lib/ace/lib/ace',
+		'lib' => $template_url.'lib',
+		'cachebust' => urlencode(CAPSULE_URL_VERSION),
+	));
+	if (!is_capsule_server()) {
+		wp_enqueue_script('heartbeat');
+	}
+}
+
+function capsule_resources_dev() {
 	$template_url = trailingslashit(get_template_directory_uri()).'ui/';
 	$assets_url = trailingslashit($template_url . 'assets');
 
@@ -158,7 +202,12 @@ function capsule_resources() {
 		true
 	);
 }
-add_action('wp_enqueue_scripts', 'capsule_resources');
+if (capsule_mode() == 'dev' || (defined('SCRIPT_DEBUG') && SCRIPT_DEBUG)) {
+	add_action('wp_enqueue_scripts', 'capsule_resources_dev');
+}
+else {
+	add_action('wp_enqueue_scripts', 'capsule_resources_prod');
+}
 
 function capsule_register_taxonomies() {
 	register_taxonomy(
