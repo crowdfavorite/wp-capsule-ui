@@ -2,11 +2,7 @@
 
 function capsule_controller() {
 	if (!empty($_GET['capsule_action'])) {
-		if (!current_user_can('edit_posts')) {
-			capsule_unauthorized_json();
-		}
-		switch ($_GET['capsule_action']) {
-			case 'search':
+		if ($_GET['capsule_action'] == 'search') {
 			global $wpdb;
 			if (!empty($_GET['q']) && in_array($_GET['q'][0], array('@', '#', '`'))) {
 				$prefix = $_GET['q'][0];
@@ -22,7 +18,7 @@ function capsule_controller() {
 						break;
 					default:
 						$taxonomy = null;
-						break;
+						break; 
 				}
 
 				$term_name = stripslashes(substr($_GET['q'], 1, strlen($_GET['q'])));
@@ -42,8 +38,12 @@ function capsule_controller() {
 					echo $html;
 				}
 			}
-				die();
-				break;
+			die();
+		}
+		if (!current_user_can('edit_posts')) {
+			capsule_unauthorized_json();
+		}
+		switch ($_GET['capsule_action']) {
 			case 'post_excerpt':
 			case 'post_content':
 // required params:
