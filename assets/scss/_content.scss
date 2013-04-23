@@ -405,9 +405,13 @@ article.edit header .post-close-link {
 }
 .toggleable:not(.open) .post-content:hover .post-toggle {
 	background-color: #f6f6f6;
+	cursor: pointer;
 }
 
 .open {
+	.post-content {
+		cursor: auto;
+	}
 	.post-toggle {
 		background-image: url_ver('../img/arrow-up.png');
 	}

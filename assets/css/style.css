@@ -1291,8 +1291,11 @@ article.edit header .post-close-link {
     background-color: #f6f6f6; }
 
 .toggleable:not(.open) .post-content:hover .post-toggle {
-  background-color: #f6f6f6; }
+  background-color: #f6f6f6;
+  cursor: pointer; }
 
+.open .post-content {
+  cursor: auto; }
 .open .post-toggle {
   background-image: url("../img/arrow-up.png?ver=1.1"); }
 
