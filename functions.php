@@ -63,7 +63,6 @@ function capsule_resources_prod() {
 	);
 
 	// Scripts
-	// Scripts
 	wp_enqueue_script('jquery');
 	wp_enqueue_script('suggest');
 	wp_enqueue_script(
