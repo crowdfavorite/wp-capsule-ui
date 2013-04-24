@@ -1418,6 +1418,7 @@ pre.static_code {
   white-space: pre-wrap; }
   pre.static_code ol {
     margin: 0;
-    overflow-x: scroll; }
+    overflow-x: scroll;
+    padding-left: 55px; }
     pre.static_code ol li {
       padding-right: 40px; }
