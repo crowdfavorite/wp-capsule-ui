@@ -127,7 +127,7 @@ function capsule_resources_dev() {
 	));
 	wp_enqueue_script(
 		'capsulebundle',
-		$assets_url.'out.js',
+		$assets_url.'js/capsule.js',
 		array('requirejs'),
 		CAPSULE_URL_VERSION,
 		true
