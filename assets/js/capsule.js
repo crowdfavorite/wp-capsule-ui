@@ -1,15 +1,16 @@
-require(
-	[
+define('cf/js/capsule', ['require', 'exports', 'module', 
 		'jquery',
 		'ace/ace', 
 		'ace/mode/text', 'ace/lib/dom', 'ace/tokenizer', 
 		'cf/js/syntax/cf_php_highlight_rules', 'cf/js/syntax/cfmarkdown', 
 		'cf/js/static_highlight', 'ace/theme/textmate'
 	],  
-function($) {
+function(require, exports, module, $) {
 "use strict";
 	var ace = require('ace/ace');
-
+	var aceconfig = require('ace/config');
+	aceconfig.set('packaged', true);
+	aceconfig.set('basePath', requirejsL10n.ace + '/build/src-min');
 	window.editors = {},
 	window.Capsule = {},
 	Capsule.delaySave = {};

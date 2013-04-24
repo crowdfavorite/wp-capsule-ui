@@ -57,7 +57,7 @@ function capsule_resources_prod() {
 	// Styles
 	wp_enqueue_style(
 		'capsule_styles',
-		$assets_url.'css/optimized.css',
+		$assets_url.'css/style.css',
 		array(),
 		CAPSULE_URL_VERSION
 	);
@@ -79,7 +79,7 @@ function capsule_resources_prod() {
 	));
 	wp_localize_script('capsule', 'requirejsL10n', array(
 		'capsule' => $assets_url,
-		'ace' => $template_url.'lib/ace/lib/ace',
+		'ace' => $template_url.'lib/ace',
 		'lib' => $template_url.'lib',
 		'cachebust' => urlencode(CAPSULE_URL_VERSION),
 	));
@@ -122,24 +122,22 @@ function capsule_resources_dev() {
 	);
 	wp_localize_script('requirejs', 'requirejsL10n', array(
 		'capsule' => $assets_url,
-		'ace' => $template_url.'lib/ace/lib/ace',
+		'ace' => $template_url.'lib/ace',
 		'lib' => $template_url.'lib',
 		'cachebust' => urlencode(CAPSULE_URL_VERSION),
 	));
-	// Load the partially pre-built ace to speed up loading times,
-	// even though we pull things in with require.js from the
-	// unbuilt code
 	wp_enqueue_script(
-		'ace',
-		$template_url.'lib/ace/build/src/ace.js',
+		'capsulebundle',
+		$assets_url.'out.js',
 		array('requirejs'),
 		CAPSULE_URL_VERSION,
 		true
 	);
+
 	wp_enqueue_script(
 		'capsule',
-		$assets_url.'js/capsule.js',
-		array('jquery', 'twitter-text', 'suggest', 'ace'),
+		$assets_url.'js/load.js',
+		array('jquery', 'twitter-text', 'suggest', 'capsulebundle'),
 		CAPSULE_URL_VERSION,
 		true
 	);
