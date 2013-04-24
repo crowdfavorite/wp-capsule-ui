@@ -1,10 +1,30 @@
+###
+Cakefile - Task automation for Capsule development
+
+Copyright (C) 2013 Crowd Favorite, Ltd. All rights reserved.
+
+This file is part of Capsule.
+
+Capsule is free software; you can redistribute it and/or modify it
+under the terms of the GNU General Public License as published by the
+Free Software Foundation; either version 2 of the License, or (at your
+option) any later version.
+
+Capsule is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+02110-1301, USA.
+###
+
 requirejs = require 'requirejs'
 {minify} = require 'uglify-js'
 fs = require 'fs'
 temp = require 'temp'
-# glob = require 'glob'
-# path = require 'path'
-# {spawn} = require 'child_process'
 
 licensePreamble = """/*
 Copyright (C) 2013 Crowd Favorite, Ltd. All rights reserved.
@@ -87,7 +107,10 @@ concatAppJS = (outfile = './assets/js/optimized.js') ->
   fs.writeFileSync(outfile, licensePreamble + '\n')
   for jsfile in appJS
     stats = fs.statSync(jsfile)
-    fs.appendFileSync(outfile, "\n/*** #{jsfile} ***/\n")
+    if jsfile is rjsBuilt.path
+      fs.appendFileSync(outfile, "\n/*** r.js built ***/\n")
+    else
+      fs.appendFileSync(outfile, "\n/*** #{jsfile} ***/\n")
     if jsfile in noUglifyJS
       console.log "concatenating #{jsfile} - #{stats.size} bytes"
       fs.appendFileSync(outfile, fs.readFileSync(jsfile))
