@@ -25,7 +25,8 @@ if (!is_capsule_server()) {
 include_once('lib/wp-taxonomy-filter/taxonomy-filter.php');
 
 function capsule_gatekeeper() {
-	if (!current_user_can('read')) {
+	$keep_out = apply_filters('capsule_gatekeeper_enabled', true);
+	if ($keep_out && !current_user_can('read')) {
 		$login_page = wp_login_url();
 		is_ssl() ? $proto = 'https://' : $proto = 'http://';
 		$requested = $proto.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
