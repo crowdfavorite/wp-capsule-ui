@@ -6,6 +6,7 @@ define('CAPSULE_TAX_PREFIX_TAG', '#');
 define('CAPSULE_TAX_PREFIX_CODE', '`');
 
 show_admin_bar(false);
+remove_post_type_support('post', 'post-formats');
 
 function is_capsule_server() {
 	return (defined('CAPSULE_SERVER') && CAPSULE_SERVER);
