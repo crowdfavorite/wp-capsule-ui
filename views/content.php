@@ -31,11 +31,13 @@ printf(__('<a href="%s1">%s2</a>', 'capsule'), esc_url(get_the_author_meta('url'
 	<div class="post-content">
 		<?php the_content(); ?>
 		<nav class="post-menu">
+			<?php do_action('capsule_post_menu_before', get_the_ID()); ?>
 			<a href="#" class="post-sticky-link" title="<?php _e('Star', 'capsule'); ?>">&#57391;</a>
 			<a href="#" class="post-unsticky-link" title="<?php _e('Un-Star', 'capsule'); ?>">&#57393;</a>
 			<span class="post-sticky-loading" title="<?php _e('Loading...', 'capsule'); ?>">&#59441;</span>
 			<?php edit_post_link('&#57535;', '', ''); ?>
 			<a href="#" class="post-delete-link" title="<?php _e('Trash', 'capsule'); ?>">&#59177;</a>
+			<?php do_action('capsule_post_menu_after', get_the_ID()); ?>
 		</nav>
 	</div>
 </article>
