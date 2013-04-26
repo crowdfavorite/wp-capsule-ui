@@ -36,6 +36,7 @@ printf(__('<a href="%1$s">%2$s</a>', 'capsule'), esc_url(get_author_posts_url($p
 			<span class="post-sticky-loading" title="<?php _e('Loading...', 'capsule'); ?>">&#59441;</span>
 			<?php edit_post_link('&#57535;', '', ''); ?>
 			<a href="#" class="post-delete-link" title="<?php _e('Trash', 'capsule'); ?>">&#59177;</a>
+			<?php do_action( "capsule_post_menu_links" ); ?>
 		</nav>
 		<div class="post-toggle"></div>
 	</div>
