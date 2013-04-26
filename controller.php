@@ -289,6 +289,10 @@ function capsule_controller() {
 // TODO
 
 			break;
+
+			default:
+				do_action( 'capsule_controller_action', $_POST['capsule_action'] );
+				break;
 		}
 	}
 }
