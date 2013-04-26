@@ -87,6 +87,9 @@ function capsule_controller() {
 					die();
 				}
 			break;
+			default:
+				do_action('capsule_controller_action_get', $_GET['capsule_action']);
+			break;
 		}
 	}
 	if (!empty($_POST['capsule_action'])) {
@@ -289,10 +292,9 @@ function capsule_controller() {
 // TODO
 
 			break;
-
 			default:
-				do_action( 'capsule_controller_action', $_POST['capsule_action'] );
-				break;
+				do_action('capsule_controller_action_post', $_POST['capsule_action']);
+			break;
 		}
 	}
 }
