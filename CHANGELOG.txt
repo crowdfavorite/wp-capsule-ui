@@ -1,0 +1,13 @@
+## Version 1.?
+
+- fix auth check (prevent direct access to posts)
+- add filter to allow overriding of Capsule's access restrictions (capsule_gatekeeper_enabled)
+- remove persistent horizontal scrollbar from code blocks (now only appears when needed)
+- add hooks in Capsule's controllers for extensibility (capsule_controller_action_get, capsule_controller_action_post)
+- add before and after actions to post menu (capsule_post_menu_before, capsule_post_menu_after)
+- add before and after actions to main nav (capsule_main_nav_before, capsule_main_nav_after)
+
+
+## Version 1.0
+
+- initial release
