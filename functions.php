@@ -291,6 +291,28 @@ function capsule_register_taxonomies() {
 }
 add_action('init', 'capsule_register_taxonomies');
 
+// check for taxonomy support in permalink patterns
+function capsule_permalink_check() {
+	$rewrite_rules = get_option('rewrite_rules');
+	if ($rewrite_rules == '') {
+		return;
+	}
+	global $wp_rewrite;
+	$pattern = 'projects/';
+	if (substr($pattern, 0, 1) == '/') {
+		$pattern = substr($pattern, 1);
+	}
+	// check for 'projects' in rewrite rules
+	foreach ($rewrite_rules as $rule => $params) {
+		if (substr($rule, 0, strlen($pattern)) == $pattern) {
+			return;
+		}
+	}
+	// flush rules if not found above
+	flush_rewrite_rules();
+}
+add_action('admin_init', 'capsule_permalink_check');
+
 function capsule_get_the_terms($terms, $id, $taxonomy) {
 	if (is_array($terms) && count($terms)) {
 		$prefix = null;
