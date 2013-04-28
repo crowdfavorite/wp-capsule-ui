@@ -6,6 +6,7 @@
 - add hooks in Capsule's controllers for extensibility (capsule_controller_action_get, capsule_controller_action_post)
 - add before and after actions to post menu (capsule_post_menu_before, capsule_post_menu_after)
 - add before and after actions to main nav (capsule_main_nav_before, capsule_main_nav_after)
+- update WP permalinks when pretty premalinks are detected and our custom taxonomies are not present
 
 
 ## Version 1.0
