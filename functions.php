@@ -359,7 +359,7 @@ function capsule_the_content_markdown($content) {
 	include_once(get_template_directory().'/ui/lib/php-markdown/markdown_extended.php');
 	return MarkdownExtended($content);
 }
-add_filter('the_content', 'capsule_the_content_markdown');
+add_filter('the_content', 'capsule_the_content_markdown', 6);
 remove_filter('the_content', 'wpautop');
 remove_filter('the_content', 'wptexturize');
 
