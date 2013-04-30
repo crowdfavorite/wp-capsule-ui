@@ -117,6 +117,7 @@ else if (is_author()) {
 	$author = get_queried_object();
 	$title = sprintf(__('Author: %s', 'capsule'), esc_html($author->display_name));
 }
+$title = apply_filters( 'capsule_page_title', $title );
 ?>
 				<h1><?php echo $title; ?></h1>
 				<form class="search clearfix" action="<?php echo esc_url(home_url('/')); ?>" method="get" data-permastruct="<?php echo $search_permastruct; ?>">
