@@ -105,7 +105,7 @@ function capsule_resources_dev() {
 	wp_enqueue_script('jquery');
 	wp_enqueue_script('suggest');
 
-	// require.js enforces JS module dependencies, heavily used in 
+	// require.js enforces JS module dependencies, heavily used in
 	// loading Ace and related code
 	wp_enqueue_script(
 		'requirejslib',
@@ -378,7 +378,7 @@ function capsule_header_js() {
 <script type="text/javascript">
 var capsuleSearchURL = '<?php echo home_url(); ?>';
 </script>
-<?php 
+<?php
 }
 if (!is_admin()) {
 	add_action('wp_head', 'capsule_header_js');
