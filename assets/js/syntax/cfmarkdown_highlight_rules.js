@@ -148,10 +148,10 @@ var CFMarkdownHighlightRules = function() {
             next  : "listblock"
         }, { // strong ** __
             token : ["string", "string", "string"],
-            regex : "([*]{2}|[_]{2}(?=\\S))([^\\r]*?\\S[*_]*)(\\1)"
+            regex : "\\b([*]{2}|[_]{2}(?=\\S))([^\\r]*?\\S[*_]*)(\\1)\\b"
         }, { // emphasis * _
             token : ["string", "string", "string"],
-            regex : "([*]|[_](?=\\S))([^\\r]*?\\S[*_]*)(\\1)"
+            regex : "\\b([*]|[_](?=\\S))([^\\r]*?\\S[*_]*)(\\1)\\b"
         }, { // 
             token : ["text", "url", "text"],
             regex : "(<)("+
