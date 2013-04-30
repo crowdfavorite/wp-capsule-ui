@@ -345,9 +345,9 @@ add_filter('get_the_terms', 'capsule_get_the_terms', 10, 3);
 function capsule_term_list($post_id, $taxonomy) {
 	if (($tax_terms = get_the_terms($post_id, $taxonomy)) != false) {
 		if ($taxonomy == 'post_tag') {
-			return get_the_term_list($post_id, $taxonomy, '<ul class="post-meta-tags"><li>', '</li><li>', '</li></ul>'); 
+			return get_the_term_list($post_id, $taxonomy, '<ul class="post-meta-tags"><li>', '</li><li>', '</li></ul>');
 		} else {
-			return get_the_term_list($post_id, $taxonomy, '<ul><li>', '</li><li>', '</li></ul>'); 
+			return get_the_term_list($post_id, $taxonomy, '<ul><li>', '</li><li>', '</li></ul>');
 		}
 	}
 	else {
@@ -356,7 +356,7 @@ function capsule_term_list($post_id, $taxonomy) {
 }
 
 function capsule_the_content_markdown($content) {
-	include_once(STYLESHEETPATH.'/ui/lib/php-markdown/markdown_extended.php');
+	include_once(get_template_directory().'/ui/lib/php-markdown/markdown_extended.php');
 	return MarkdownExtended($content);
 }
 add_filter('the_content', 'capsule_the_content_markdown');
