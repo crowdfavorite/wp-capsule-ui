@@ -486,6 +486,51 @@ function capsule_login_redirect($redirect_to, $request_str) {
 }
 add_action('login_redirect', 'capsule_login_redirect', 10, 2);
 
+function capsule_queue_add($post_id) {
+	$post_id = intval($post_id);
+	if (!$post_id) {
+		return;
+	}
+	$queue = get_option('capsule_queue');
+	if (!is_array($queue)) {
+		$queue = array();
+	}
+	$queue[] = $post_id;
+	$queue = array_unique($queue);
+	set_option('capsule_queue', $queue);
+}
+
+function capsule_queue_remove($post_id) {
+	$post_id = intval($post_id);
+	if (!$post_id) {
+		return;
+	}
+	$_queue = get_option('capsule_queue');
+	if (!is_array($queue)) {
+		return;
+	}
+	$queue = array();
+	foreach ($queue as $_post_id) {
+		if ($_post_id != $post_id) {
+			$queue[] = $_post_id;
+		}
+	}
+	$queue = array_unique($queue);
+	set_option('capsule_queue', $queue);
+}
+
+function capsule_queue_run() {
+	set_time_limit(0);
+	$queue = get_option('capsule_queue');
+	for ($i = 0; $i < count($queue) && $i < 10; $i++) {
+// path to controller, auth key
+	}
+	if (count(queue) > 10) {
+// path to controller, auth key, zero second timeout
+//		wp_remote_get();
+	}
+}
+
 function capsule_wp_editor_warning() {
 ?>
 <style type="text/css">
