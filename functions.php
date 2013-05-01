@@ -103,7 +103,17 @@ function capsule_resources_dev() {
 
 	// Scripts
 	wp_enqueue_script('jquery');
+	wp_enqueue_script(
+		'hotkeys',
+		$template_url.'lib/jquery.hotkeys/jquery.hotkeys.js',
+		array('jquery'),
+		CAPSULE_URL_VERSION,
+		true
+	);
 	wp_enqueue_script('suggest');
+	if (!is_capsule_server()) {
+		wp_enqueue_script('heartbeat');
+	}
 
 	// require.js enforces JS module dependencies, heavily used in
 	// loading Ace and related code
@@ -190,9 +200,6 @@ function capsule_resources_dev() {
 		CAPSULE_URL_VERSION,
 		true
 	);
-	if (!is_capsule_server()) {
-		wp_enqueue_script('heartbeat');
-	}
 	wp_enqueue_script(
 		'linkify',
 		$template_url.'lib/linkify/1.0/jquery.linkify-1.0-min.js',

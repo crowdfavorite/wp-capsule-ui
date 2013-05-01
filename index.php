@@ -64,7 +64,7 @@ if (function_exists('cftf_is_filter') && cftf_is_filter()) {
 	<nav class="main-nav">
 		<ul>
 			<?php do_action('capsule_main_nav_before'); ?>
-			<li><a href="<?php echo esc_url(home_url('/')); ?>" class="icon">&#59392;</a></li>
+			<li><a href="<?php echo esc_url(home_url('/')); ?>" class="home icon">&#59392;</a></li>
 			<li><a href="<?php echo esc_url(admin_url('post-new.php')); ?>" class="post-new-link icon">&#59396;</a></li>
 			<li><a href="#projects" class="projects"><?php _e('@', 'capsule'); ?></a></li>
 			<li><a href="#tags" class="tags icon"><?php _e('#', 'capsule'); ?></a></li>

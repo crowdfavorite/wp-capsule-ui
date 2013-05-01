@@ -587,9 +587,15 @@ function(require, exports, module, $) {
 				$search.removeAttr('disabled');
 			}
 		}).on('heartbeat-connection-lost', function() { // WP 3.6 heartbeat API support
-			$('body:not(".capsule-server")').addClass('connection-lost')
+			$('body:not(".capsule-server")').addClass('connection-lost');
 		}).on('heartbeat-connection-restored', function() { // WP 3.6 heartbeat API support
-			$('body').removeClass('connection-lost')
+			$('body').removeClass('connection-lost');
+		}).on('keyup', null, 'shift+h', function() { // home nav
+			location.href = $('.main-nav .home').attr('href');
+		}).on('keyup', null, 'shift+n', function() { // new post
+			$('.main-nav .post-new-link').click();
+		}).on('keyup', null, 'shift+f', function() { // new post
+			$('.js-search').focus().select();
 		});
 		$(window).on('resize', function() {
 			Capsule.sizeEditor();
