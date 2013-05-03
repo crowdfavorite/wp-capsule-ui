@@ -40,6 +40,27 @@ function capsule_controller() {
 			}
 			die();
 		}
+
+		if (strpos($_GET['capsule_action'], 'queue_') === 0 &&
+			stripslashes($_GET['api_key']) == capsule_queue_api_key()) {
+			switch ($_GET['capsule_action']) {
+				case 'queue_run':
+					capsule_queue_run();
+					break;
+				case 'queue_post_to_server':
+// required params:
+// - post_id
+					if (!empty($_GET['post_id'])) {
+						$post_id = intval($_GET['post_id']);
+						if (!empty($post_id)) {
+							capsule_queue_post_to_server($post_id);
+						}
+					}
+					break;
+			}
+			die();
+		}
+
 		if (!current_user_can('edit_posts')) {
 			capsule_unauthorized_json();
 		}

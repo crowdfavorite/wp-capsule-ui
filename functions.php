@@ -486,6 +486,10 @@ function capsule_login_redirect($redirect_to, $request_str) {
 }
 add_action('login_redirect', 'capsule_login_redirect', 10, 2);
 
+function capsule_queue_api_key() {
+	return sha1('capsule_queue'.AUTH_KEY.AUTH_SALT);
+}
+
 function capsule_queue_add($post_id) {
 	$post_id = intval($post_id);
 	if (!$post_id) {
@@ -497,7 +501,7 @@ function capsule_queue_add($post_id) {
 	}
 	$queue[] = $post_id;
 	$queue = array_unique($queue);
-	set_option('capsule_queue', $queue);
+	update_option('capsule_queue', $queue);
 }
 
 function capsule_queue_remove($post_id) {
@@ -516,18 +520,90 @@ function capsule_queue_remove($post_id) {
 		}
 	}
 	$queue = array_unique($queue);
-	set_option('capsule_queue', $queue);
+	update_option('capsule_queue', $queue);
+}
+
+function capsule_queue_start() {
+	$url = add_query_arg(array(
+		'capsule_action' => 'queue_run',
+		'api_key' => capsule_queue_api_key()
+	), site_url('index.php'));
+	wp_remote_get(
+		$url,
+		array(
+			'blocking' => false,
+			'sslverify' => false,
+			'timeout' => 0.01,
+		)
+	);
 }
 
 function capsule_queue_run() {
 	set_time_limit(0);
+	// this is a very weak "lock" mechanism, but may be suitable for
+	// low request situations like Capsule
+	$lock = get_option('capsule_queue_lock');
+	if (!empty($lock) && $lock > strtotime('now')) {
+		return;
+	}
+	update_option('capsule_queue_lock', strtotime('+5 minutes'));
 	$queue = get_option('capsule_queue');
 	for ($i = 0; $i < count($queue) && $i < 10; $i++) {
-// path to controller, auth key
+		$url = add_query_arg(array(
+			'capsule_action' => 'queue_post_to_server',
+			'post_id' => $queue[$i],
+			'api_key' => capsule_queue_api_key()
+		), site_url('index.php'));
+		wp_remote_get(
+			$url,
+			array(
+				'blocking' => false,
+				'sslverify' => false,
+				'timeout' => 0.01,
+			)
+		);
 	}
 	if (count(queue) > 10) {
-// path to controller, auth key, zero second timeout
-//		wp_remote_get();
+		capsule_queue_start();
+	}
+	update_option('capsule_queue_lock', '');
+}
+
+function capsule_queue_post_to_server($post_id) {
+	global $cap_client;
+
+	$post = get_post($post_id);
+
+	// Check if there are any posts in the post type
+	$taxonomies = get_object_taxonomies($post->post_type);
+	$servers = $cap_client->get_servers();
+	$postarr = (array) $post;
+
+	$errors = 0;
+	foreach ($servers as $server_post) {
+		// Only send post if theres a term thats been mapped
+		if ($cap_client->has_server_mapping($post, $server_post)) {
+			$tax_input = $cap_client->format_terms_to_send(
+				$post,
+				$taxonomies,
+				$cap_client->post_type_slug($server_post->post_name)
+			);
+			$mapped_taxonomies = $cap_client->taxonomies_to_map();
+
+			$tax = compact('taxonomies', 'tax_input', 'mapped_taxonomies');
+
+			$api_key = get_post_meta($server_post->ID, $cap_client->server_api_key, true);
+			$endpoint = get_post_meta($server_post->ID, $cap_client->server_url_key, true);
+
+			$response = $cap_client->send_post($postarr, $tax, $api_key, $endpoint);
+			if (!$response || !isset($response->result) || $response->result != 'success') {
+				$errors++;
+			}
+		}
+	}
+	if (empty($errors)) {
+		// "send at least once" style queue - only remove if all sends are successful
+		capsule_queue_remove($post_id);
 	}
 }
 
