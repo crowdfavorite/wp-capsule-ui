@@ -517,11 +517,11 @@ function capsule_queue_remove($post_id) {
 		return;
 	}
 	$_queue = get_option('capsule_queue');
-	if (!is_array($queue)) {
+	if (!is_array($_queue)) {
 		return;
 	}
 	$queue = array();
-	foreach ($queue as $_post_id) {
+	foreach ($_queue as $_post_id) {
 		if ($_post_id != $post_id) {
 			$queue[] = $_post_id;
 		}
