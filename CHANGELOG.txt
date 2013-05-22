@@ -10,6 +10,7 @@
 - fix issues with syntax highlighting markdown emphasis in editor versus display
 - fix double-encoding of ampersands on display
 - fix fenced code blocks not being entity-encoded in some cases
+- add favicon and icon for use with Fluid app
 
 ## Version 1.0
 

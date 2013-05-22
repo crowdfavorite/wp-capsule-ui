@@ -37,6 +37,8 @@ if (function_exists('cftf_is_filter') && cftf_is_filter()) {
 	$body_classes[] = 'filters-on';
 }
 
+$theme_url = trailingslashit(get_template_directory_uri());
+
 ?>
 <!DOCTYPE html>
 <!--[if IE 6]>
@@ -56,6 +58,11 @@ if (function_exists('cftf_is_filter') && cftf_is_filter()) {
 	<meta name="viewport" content="width=device-width" />
 	
 	<title><?php wp_title( '|', true, 'right' ); echo esc_html( get_bloginfo('name'), 1 ).$title_description; ?></title>
+	
+	<link rel="icon" href="<?php echo $theme_url; ?>ui/assets/icon/capsule-16.png" sizes="16x16">
+	<link rel="icon" href="<?php echo $theme_url; ?>ui/assets/icon/capsule-32.png" sizes="32x32">
+	<link rel="icon" href="<?php echo $theme_url; ?>ui/assets/icon/capsule-48.png" sizes="48x48">
+	<link rel="icon" href="<?php echo $theme_url; ?>ui/assets/icon/capsule-128.png" sizes="128x128">
 	
 <?php wp_head(); ?>
 </head>
