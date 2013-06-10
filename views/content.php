@@ -14,6 +14,7 @@ echo capsule_term_list(get_the_ID(), 'projects');
 echo capsule_term_list(get_the_ID(), 'post_tag');
 echo capsule_term_list(get_the_ID(), 'code');
 
+
 if (is_capsule_server()) {
 ?>
 		<p class="author">
@@ -25,6 +26,9 @@ printf(__('<a href="%1$s">%2$s</a>', 'capsule'), esc_url(get_the_author_meta('ur
 ?>
 		</p>
 <?php
+}
+else {
+	echo capsule_last_pushed(get_the_ID());
 }
 ?>
 	</div>

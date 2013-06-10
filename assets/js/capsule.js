@@ -190,7 +190,7 @@ function(require, exports, module, $) {
 					}
 					else {
 						$article.removeClass('saving');
-						Capsule.updatePostTaxonomies($article, response.projects_html, response.tags_html,response.code_html);
+						Capsule.updatePostTaxonomies($article, response.projects_html, response.tags_html, response.code_html, response.servers_html);
 						Capsule.watchForEditorChanges(postId, $article);
 					}
 				}
@@ -199,8 +199,8 @@ function(require, exports, module, $) {
 		);
 	};
 
-	Capsule.updatePostTaxonomies = function($article, project_html, tags_html, code_html) {
-		$article.find('.post-meta').html(project_html + tags_html + code_html);
+	Capsule.updatePostTaxonomies = function($article, project_html, tags_html, code_html, servers_html) {
+		$article.find('.post-meta').html(project_html + tags_html + code_html + servers_html);
 	};
 
 	Capsule.deletePost = function(postId, $article) {

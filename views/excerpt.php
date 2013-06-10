@@ -26,6 +26,9 @@ printf(__('<a href="%1$s">%2$s</a>', 'capsule'), esc_url(get_author_posts_url($p
 		</p>
 <?php
 }
+else {
+	echo capsule_last_pushed(get_the_ID());
+}
 ?>
 	</div>
 	<div class="post-content">
