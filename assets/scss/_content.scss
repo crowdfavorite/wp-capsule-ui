@@ -491,6 +491,24 @@ article.edit header .post-close-link {
 			}
 		}
 	}
+	.push-server-meta {
+		li {
+			margin-bottom: 5px;
+		}
+		.push-server-name,
+		.push-server-date {
+			display: block;
+			font-size: 12px;
+		}
+		a:active .push-server-name,
+		a:hover .push-server-name {
+			text-decoration: none;
+		}
+		.push-server-date {
+			color: #666;
+			padding-top: 2px;
+		}
+	}
 }
 
 .post-content .ace-editor {

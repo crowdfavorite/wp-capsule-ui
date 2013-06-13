@@ -1366,6 +1366,24 @@ article.edit header .post-close-link {
     .content .post-meta p.author img {
       position: absolute;
       margin-left: -25px; }
+.edit .push-server-meta li,
+.content .push-server-meta li {
+  margin-bottom: 5px; }
+.edit .push-server-meta .push-server-name,
+.edit .push-server-meta .push-server-date,
+.content .push-server-meta .push-server-name,
+.content .push-server-meta .push-server-date {
+  display: block;
+  font-size: 12px; }
+.edit .push-server-meta a:active .push-server-name,
+.edit .push-server-meta a:hover .push-server-name,
+.content .push-server-meta a:active .push-server-name,
+.content .push-server-meta a:hover .push-server-name {
+  text-decoration: none; }
+.edit .push-server-meta .push-server-date,
+.content .push-server-meta .push-server-date {
+  color: #666;
+  padding-top: 2px; }
 
 .post-content .ace-editor {
   position: relative;
