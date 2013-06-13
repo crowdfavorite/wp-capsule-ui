@@ -607,6 +607,13 @@ function capsule_queue_post_to_server($post_id) {
 			if (!$response || !isset($response->result) || $response->result != 'success') {
 				$errors++;
 			}
+			// success
+			else {
+				$server_statuses = get_post_meta($post_id, '_cap_client_server_statuses', true);
+				$server_statuses = is_array($server_statuses) ? $server_statuses : array();
+				$server_statuses[$server_post->ID] = gmmktime();
+				update_post_meta($post_id, '_cap_client_server_statuses', $server_statuses);
+			}
 		}
 	}
 	if (empty($errors)) {
@@ -670,3 +677,12 @@ jQuery(function($) {
 }
 add_action('edit_form_after_title', 'capsule_wp_editor_warning');
 
+function capsule_last_pushed($post_id) {
+	$html = '<ul>';
+	$meta = get_post_meta($post_id, '_cap_client_server_statuses', true);
+	foreach ($meta as $server_id => $last_update_gmt) {
+		$html .= '<li>'.$server_id. ' - '. $last_update_gmt.'</li>';
+	}
+	$html .= '</ul>';
+	return $html;
+}
