@@ -1173,6 +1173,19 @@ article.edit header .post-close-link {
   .post-content a:active,
   .post-content a:hover {
     color: #333; }
+  .post-content table {
+    border-bottom: 1px solid #ddd;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-top: 10px; }
+    .post-content table tr {
+      border-top: 1px solid #ddd; }
+    .post-content table th {
+      background: #ececec;
+      font-family: "SourceSansProSemibold"; }
+    .post-content table th, .post-content table td {
+      border: 1px solid #ddd;
+      padding: 7px 10px 5px; }
 
 .content,
 .edit {
