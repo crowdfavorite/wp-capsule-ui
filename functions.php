@@ -689,7 +689,7 @@ function capsule_last_pushed($post_id) {
 	$html = '';
 	$meta = get_post_meta($post_id, '_cap_client_server_statuses', true);
 	if (!empty($meta) && is_array($meta)) {
-		$html .= '<ul class="push-server-meta">';
+		$html .= '<ul class="push-server-list">';
 		foreach ($meta as $server_id => $data) {
 			if (!empty($data['gmt_time'])) {
 				// Server should have sent permalink, but if the server theme is running an older version it will be empty, set it to the server URL

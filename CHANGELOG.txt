@@ -12,6 +12,7 @@
 - fix fenced code blocks not being entity-encoded in some cases
 - add favicon and icon for use with Fluid app
 - add default styling for tables
+- show which servers a post has been pushed to, with link to post on server
 
 ## Version 1.0
 
