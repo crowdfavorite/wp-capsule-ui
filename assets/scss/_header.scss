@@ -400,6 +400,7 @@ ul.search_results {
 .connection-error {
 	display: none;
 }
+.permissions-error,
 .connection-lost .connection-error {
 	background: #900;
 	color: #fff;
@@ -413,4 +414,15 @@ ul.search_results {
 	top: 0;
 	width: 100%;
 	z-index: 9999;
+}
+.permissions-error a,
+.permissions-error a:visited {
+	color: #fff;
+	font-family: 'SourceSansProRegular';
+	font-size: 20px;
+}
+.permissions-error code {
+	color: #fff;
+	font-size: 18px;
+	padding: 0 4px;
 }

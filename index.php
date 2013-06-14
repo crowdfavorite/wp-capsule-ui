@@ -220,7 +220,17 @@ foreach ($cap_servers as $cap_server) {
 </div>
 <div class="connection-error"><?php _e('Lost connection to server.', 'capsule'); ?></div>
 
-<?php wp_footer(); ?>
+<?php
+
+if (!is_capsule_server() && !current_user_can('unfiltered_html')) {
+?>
+<div class="permissions-error"><?php _e('Capsule requires the <code>unfiltered_html</code> capability to work as expected. <a href="https://github.com/crowdfavorite/wp-capsule/issues/15">Learn more</a>.', 'capsule'); ?></div>
+<?php
+}
+
+wp_footer();
+
+?>
 
 </body>
 </html>
