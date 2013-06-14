@@ -7,6 +7,19 @@
 				<li class="year"><?php the_time('Y'); ?></li>
 			</ul>
 		</a>
+<?php
+if (!is_capsule_server()) {
+	$pushed = capsule_last_pushed(get_the_ID());
+	if (!empty($pushed)) {
+?>
+		<div class="push-server-meta">
+			<span class="trigger">&#59254;</span>
+			<?php echo $pushed; ?>
+		</div>
+<?php
+	}
+}
+?>
 	</div>
 	<div class="post-meta">
 <?php
@@ -25,6 +38,9 @@ printf(__('<a href="%1$s">%2$s</a>', 'capsule'), esc_url(get_the_author_meta('ur
 ?>
 		</p>
 <?php
+}
+else {
+	echo capsule_last_pushed(get_the_ID());
 }
 ?>
 	</div>

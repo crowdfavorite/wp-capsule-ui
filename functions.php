@@ -604,8 +604,22 @@ function capsule_queue_post_to_server($post_id) {
 			$endpoint = get_post_meta($server_post->ID, $cap_client->server_url_key, true);
 
 			$response = $cap_client->send_post($postarr, $tax, $api_key, $endpoint);
+
 			if (!$response || !isset($response->result) || $response->result != 'success') {
 				$errors++;
+			}
+			// success
+			else {
+				// Older server theme versions will not send the permalink
+				$permalink = isset($response->data->permalink) ? $response->data->permalink : '';
+
+				$server_statuses = get_post_meta($post_id, '_cap_client_server_statuses', true);
+				$server_statuses = is_array($server_statuses) ? $server_statuses : array();
+				$server_statuses[$server_post->ID] = array(
+					'gmt_time' => gmmktime(),
+					'permalink' => $permalink,
+				);
+				update_post_meta($post_id, '_cap_client_server_statuses', $server_statuses);
 			}
 		}
 	}
@@ -670,3 +684,39 @@ jQuery(function($) {
 }
 add_action('edit_form_after_title', 'capsule_wp_editor_warning');
 
+function capsule_last_pushed($post_id) {
+	global $cap_client;
+	$html = '';
+	$meta = get_post_meta($post_id, '_cap_client_server_statuses', true);
+	if (!empty($meta) && is_array($meta)) {
+		$html .= '<ul class="push-server-list">';
+		foreach ($meta as $server_id => $data) {
+			if (!empty($data['gmt_time'])) {
+				// Server should have sent permalink, but if the server theme is running an older version it will be empty, set it to the server URL
+				$permalink = !empty($data['permalink']) ? $data['permalink'] : get_post_meta($server_id, $cap_client->server_url_key, true);
+				$wp_time = capsule_gmt_to_wp_time($data['gmt_time']);
+				$date_format = apply_filters('capsule_server_push_date_format', 'M j, Y @ g:ia');
+				$html .= '<li><a href="'.esc_url($permalink).'"><span class="push-server-name">'.get_the_title($server_id).'</span><span class="push-server-date">'.date($date_format, $wp_time).'</span></a></li>';
+			}
+		}
+		$html .= '</ul>';
+	}
+	return $html;
+}
+
+function capsule_gmt_to_wp_time($gmt_time) {
+	$timezone_string = get_option('timezone_string');
+	if (!empty($timezone_string)) {
+		// Not using get_option('gmt_offset') because it gets the offset for the
+		// current date/time which doesn't work for timezones with daylight savings time.
+		$gmt_date = date('Y-m-d H:i:s', $gmt_time);
+		$datetime = new DateTime($gmt_date);
+		$datetime->setTimezone(new DateTimeZone(get_option('timezone_string')));
+		$offset_in_secs = $datetime->getOffset();
+		
+		return $gmt_time + $offset_in_secs;
+	}
+	else {
+		return $gmt_time + (get_option('gmt_offset') * 3600);
+	}
+}

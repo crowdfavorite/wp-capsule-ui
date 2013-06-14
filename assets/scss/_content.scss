@@ -491,6 +491,75 @@ article.edit header .post-close-link {
 			}
 		}
 	}
+	.push-server-meta {
+		margin: 15px 15px 0 0;
+		text-align: right;
+		width: 40px;
+
+		.trigger {
+			cursor: pointer;
+			display: block;
+			font-family: $font-icon;
+			font-size: 18px;
+			height: 23px;
+			position: relative;
+		}
+		&:hover {
+			.push-server-list {
+				display: block;
+			}
+		}
+	}
+	.push-server-list {
+		@include box-shadow(0 2px 2px #ccc);
+		background: #fff;
+		border: 1px solid #adadad;
+		display: none;
+		left: 10px;
+		padding: 5px 0;
+		position: absolute;
+		text-align: left;
+		z-index: 100;
+
+		&:before {
+			background: #fff;
+			border: 1px solid #adadad;
+			border-width: 1px 0 0 1px;
+			content: ' ';
+			display: block;
+			height: 5px;
+			left: 17px;
+			position: absolute;
+			top: -3px;
+			transform: rotate(45deg);
+			-webkit-transform: rotate(45deg);
+			/* Firefox */
+			-moz-transform: rotate(45deg);
+			/* IE */
+			-ms-transform: rotate(45deg);
+			/* Opera */
+			-o-transform: rotate(45deg);
+			width: 5px;
+		}
+
+		a {
+			display: block;
+			padding: 7px;
+		}
+		a:hover {
+			background: #eee;
+		}
+		.push-server-name,
+		.push-server-date {
+			display: block;
+			font-size: 12px;
+			text-decoration: none;
+		}
+		.push-server-date {
+			color: #666;
+			padding-top: 2px;
+		}
+	}
 }
 
 .post-content .ace-editor {
