@@ -14,9 +14,6 @@ echo capsule_term_list(get_the_ID(), 'projects');
 echo capsule_term_list(get_the_ID(), 'post_tag');
 echo capsule_term_list(get_the_ID(), 'code');
 
-if (!is_capsule_server()) {
-	echo capsule_last_pushed(get_the_ID());
-}
 ?>
 	</div>
 	<div class="post-content">

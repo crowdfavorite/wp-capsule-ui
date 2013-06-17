@@ -208,8 +208,7 @@ function capsule_controller() {
 				$projects_html = capsule_term_list($post_id, 'projects');
 				$tags_html = capsule_term_list($post_id, 'post_tag');
 				$code_html = capsule_term_list($post_id, 'code');
-				$servers_html = capsule_last_pushed($post_id);
-				$response = compact('post_id', 'result', 'msg', 'projects_html', 'tags_html', 'code_html', 'servers_html');
+				$response = compact('post_id', 'result', 'msg', 'projects_html', 'tags_html', 'code_html');
 				header('Content-type: application/json');
 				echo json_encode($response);
 				die();
