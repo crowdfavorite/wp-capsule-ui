@@ -61,6 +61,7 @@ appJS = [
   'lib/jquery-scrollintoview/jquery.scrollintoview.min.js',
   'lib/sidr/dist/jquery.sidr.js',
   'lib/linkify/1.0/jquery.linkify-1.0-min.js',
+  'lib/jquery.hotkeys/jquery.hotkeys.js',
   rjsBuilt.path
   'assets/js/load.js',
 ]
