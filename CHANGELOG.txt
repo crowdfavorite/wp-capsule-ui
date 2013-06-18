@@ -1,3 +1,7 @@
+## Version 1.1.1
+
+- include jQuery Hotkeys in the optimized.js file
+
 ## Version 1.1
 
 - add keyboard shortcuts for Home, New Post, focus to Search field
