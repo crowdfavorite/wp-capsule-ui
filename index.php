@@ -37,6 +37,8 @@ if (function_exists('cftf_is_filter') && cftf_is_filter()) {
 	$body_classes[] = 'filters-on';
 }
 
+$theme_url = trailingslashit(get_template_directory_uri());
+
 ?>
 <!DOCTYPE html>
 <!--[if IE 6]>
@@ -57,13 +59,19 @@ if (function_exists('cftf_is_filter') && cftf_is_filter()) {
 	
 	<title><?php wp_title( '|', true, 'right' ); echo esc_html( get_bloginfo('name'), 1 ).$title_description; ?></title>
 	
+	<link rel="icon" href="<?php echo $theme_url; ?>ui/assets/icon/capsule-16.png" sizes="16x16">
+	<link rel="icon" href="<?php echo $theme_url; ?>ui/assets/icon/capsule-32.png" sizes="32x32">
+	<link rel="icon" href="<?php echo $theme_url; ?>ui/assets/icon/capsule-48.png" sizes="48x48">
+	<link rel="icon" href="<?php echo $theme_url; ?>ui/assets/icon/capsule-128.png" sizes="128x128">
+	
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(implode(' ', $body_classes)); ?>>
 <div class="container">
 	<nav class="main-nav">
 		<ul>
-			<li><a href="<?php echo esc_url(home_url('/')); ?>" class="icon">&#59392;</a></li>
+			<?php do_action('capsule_main_nav_before'); ?>
+			<li><a href="<?php echo esc_url(home_url('/')); ?>" class="home icon">&#59392;</a></li>
 			<li><a href="<?php echo esc_url(admin_url('post-new.php')); ?>" class="post-new-link icon">&#59396;</a></li>
 			<li><a href="#projects" class="projects"><?php _e('@', 'capsule'); ?></a></li>
 			<li><a href="#tags" class="tags icon"><?php _e('#', 'capsule'); ?></a></li>
@@ -75,6 +83,7 @@ if (!empty($cap_servers)) {
 }
 ?>
 			<li><a href="<?php echo esc_url(admin_url('admin.php?page=capsule')); ?>" class="icon">&#59400;</a></li>
+			<?php do_action('capsule_main_nav_after'); ?>
 			<li><span class="spacer"></span></li>
 		</ul>
 	</nav>
@@ -115,6 +124,8 @@ else if (is_author()) {
 	$author = get_queried_object();
 	$title = sprintf(__('Author: %s', 'capsule'), esc_html($author->display_name));
 }
+$title = apply_filters('capsule_page_title', $title);
+
 ?>
 				<h1><?php echo $title; ?></h1>
 				<form class="search clearfix" action="<?php echo esc_url(home_url('/')); ?>" method="get" data-permastruct="<?php echo $search_permastruct; ?>">
@@ -209,7 +220,17 @@ foreach ($cap_servers as $cap_server) {
 </div>
 <div class="connection-error"><?php _e('Lost connection to server.', 'capsule'); ?></div>
 
-<?php wp_footer(); ?>
+<?php
+
+if (!is_capsule_server() && !current_user_can('unfiltered_html')) {
+?>
+<div class="permissions-error"><?php _e('Capsule requires the <code>unfiltered_html</code> capability to work as expected. <a href="https://github.com/crowdfavorite/wp-capsule/issues/15">Learn more</a>.', 'capsule'); ?></div>
+<?php
+}
+
+wp_footer();
+
+?>
 
 </body>
 </html>

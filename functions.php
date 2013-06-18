@@ -6,6 +6,7 @@ define('CAPSULE_TAX_PREFIX_TAG', '#');
 define('CAPSULE_TAX_PREFIX_CODE', '`');
 
 show_admin_bar(false);
+remove_post_type_support('post', 'post-formats');
 
 function is_capsule_server() {
 	return (defined('CAPSULE_SERVER') && CAPSULE_SERVER);
@@ -24,7 +25,8 @@ if (!is_capsule_server()) {
 include_once('lib/wp-taxonomy-filter/taxonomy-filter.php');
 
 function capsule_gatekeeper() {
-	if (!current_user_can('read')) {
+	$keep_out = apply_filters('capsule_gatekeeper_enabled', true);
+	if ($keep_out && !current_user_can('read')) {
 		$login_page = wp_login_url();
 		is_ssl() ? $proto = 'https://' : $proto = 'http://';
 		$requested = $proto.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
@@ -101,9 +103,19 @@ function capsule_resources_dev() {
 
 	// Scripts
 	wp_enqueue_script('jquery');
+	wp_enqueue_script(
+		'hotkeys',
+		$template_url.'lib/jquery.hotkeys/jquery.hotkeys.js',
+		array('jquery'),
+		CAPSULE_URL_VERSION,
+		true
+	);
 	wp_enqueue_script('suggest');
+	if (!is_capsule_server()) {
+		wp_enqueue_script('heartbeat');
+	}
 
-	// require.js enforces JS module dependencies, heavily used in 
+	// require.js enforces JS module dependencies, heavily used in
 	// loading Ace and related code
 	wp_enqueue_script(
 		'requirejslib',
@@ -127,7 +139,7 @@ function capsule_resources_dev() {
 	));
 	wp_enqueue_script(
 		'capsulebundle',
-		$assets_url.'out.js',
+		$assets_url.'js/capsule.js',
 		array('requirejs'),
 		CAPSULE_URL_VERSION,
 		true
@@ -188,9 +200,6 @@ function capsule_resources_dev() {
 		CAPSULE_URL_VERSION,
 		true
 	);
-	if (!is_capsule_server()) {
-		wp_enqueue_script('heartbeat');
-	}
 	wp_enqueue_script(
 		'linkify',
 		$template_url.'lib/linkify/1.0/jquery.linkify-1.0-min.js',
@@ -289,6 +298,28 @@ function capsule_register_taxonomies() {
 }
 add_action('init', 'capsule_register_taxonomies');
 
+// check for taxonomy support in permalink patterns
+function capsule_permalink_check() {
+	$rewrite_rules = get_option('rewrite_rules');
+	if ($rewrite_rules == '') {
+		return;
+	}
+	global $wp_rewrite;
+	$pattern = 'projects/';
+	if (substr($pattern, 0, 1) == '/') {
+		$pattern = substr($pattern, 1);
+	}
+	// check for 'projects' in rewrite rules
+	foreach ($rewrite_rules as $rule => $params) {
+		if (substr($rule, 0, strlen($pattern)) == $pattern) {
+			return;
+		}
+	}
+	// flush rules if not found above
+	flush_rewrite_rules();
+}
+add_action('admin_init', 'capsule_permalink_check');
+
 function capsule_get_the_terms($terms, $id, $taxonomy) {
 	if (is_array($terms) && count($terms)) {
 		$prefix = null;
@@ -321,9 +352,9 @@ add_filter('get_the_terms', 'capsule_get_the_terms', 10, 3);
 function capsule_term_list($post_id, $taxonomy) {
 	if (($tax_terms = get_the_terms($post_id, $taxonomy)) != false) {
 		if ($taxonomy == 'post_tag') {
-			return get_the_term_list($post_id, $taxonomy, '<ul class="post-meta-tags"><li>', '</li><li>', '</li></ul>'); 
+			return get_the_term_list($post_id, $taxonomy, '<ul class="post-meta-tags"><li>', '</li><li>', '</li></ul>');
 		} else {
-			return get_the_term_list($post_id, $taxonomy, '<ul><li>', '</li><li>', '</li></ul>'); 
+			return get_the_term_list($post_id, $taxonomy, '<ul><li>', '</li><li>', '</li></ul>');
 		}
 	}
 	else {
@@ -332,10 +363,10 @@ function capsule_term_list($post_id, $taxonomy) {
 }
 
 function capsule_the_content_markdown($content) {
-	include_once(STYLESHEETPATH.'/ui/lib/php-markdown/markdown_extended.php');
+	include_once(get_template_directory().'/ui/lib/php-markdown/markdown_extended.php');
 	return MarkdownExtended($content);
 }
-add_filter('the_content', 'capsule_the_content_markdown');
+add_filter('the_content', 'capsule_the_content_markdown', 6);
 remove_filter('the_content', 'wpautop');
 remove_filter('the_content', 'wptexturize');
 
@@ -354,7 +385,7 @@ function capsule_header_js() {
 <script type="text/javascript">
 var capsuleSearchURL = '<?php echo home_url(); ?>';
 </script>
-<?php 
+<?php
 }
 if (!is_admin()) {
 	add_action('wp_head', 'capsule_header_js');
@@ -427,6 +458,7 @@ function capsule_credits() {
 			<li><a href="http://www.berriart.com/sidr/">Sidr</a> (<a href="https://github.com/artberri/sidr">GitHub</a>)</li>
 			<li>Linkify (<a href="https://github.com/maranomynet/linkify">GitHub</a>)</li>
 			<li><a href="http://sass-lang.com/">Sass</a> (<a href="https://github.com/nex3/sass">GitHub</a>)</li>
+			<li>Capsule Icon by <a href="http://dribbble.com/matthewspiel">Matthew Spiel</a></li>
 			<li><a href="http://www.google.com/fonts/specimen/Source+Sans+Pro">Source Sans Pro</a> (<a href="https://github.com/adobe/source-sans-pro">GitHub</a>)</li>
 			<li><a href="http://www.google.com/fonts/specimen/Source+Code+Pro">Source Code Pro</a> (<a href="https://github.com/adobe/source-code-pro">GitHub</a>)</li>
 			<li><a href="http://fontello.com">Fontello</a> (<a href="https://github.com/fontello/fontello">GitHub</a>) &amp; Fontelico (<a href="https://github.com/fontello/fontelico.font">GitHub</a>)</li>
@@ -461,6 +493,141 @@ function capsule_login_redirect($redirect_to, $request_str) {
 	return $redirect_to;
 }
 add_action('login_redirect', 'capsule_login_redirect', 10, 2);
+
+function capsule_queue_api_key() {
+	return sha1('capsule_queue'.AUTH_KEY.AUTH_SALT);
+}
+
+function capsule_queue_add($post_id) {
+	$post_id = intval($post_id);
+	if (!$post_id) {
+		return;
+	}
+	$queue = get_option('capsule_queue');
+	if (!is_array($queue)) {
+		$queue = array();
+	}
+	$queue[] = $post_id;
+	$queue = array_unique($queue);
+	update_option('capsule_queue', $queue);
+}
+
+function capsule_queue_remove($post_id) {
+	$post_id = intval($post_id);
+	if (!$post_id) {
+		return;
+	}
+	$_queue = get_option('capsule_queue');
+	if (!is_array($_queue)) {
+		return;
+	}
+	$queue = array();
+	foreach ($_queue as $_post_id) {
+		if ($_post_id != $post_id) {
+			$queue[] = $_post_id;
+		}
+	}
+	$queue = array_unique($queue);
+	update_option('capsule_queue', $queue);
+}
+
+function capsule_queue_start() {
+	$url = add_query_arg(array(
+		'capsule_action' => 'queue_run',
+		'api_key' => capsule_queue_api_key()
+	), site_url('index.php'));
+	wp_remote_get(
+		$url,
+		array(
+			'blocking' => false,
+			'sslverify' => false,
+			'timeout' => 0.01,
+		)
+	);
+}
+
+function capsule_queue_run() {
+	set_time_limit(0);
+	// this is a very weak "lock" mechanism, but may be suitable for
+	// low request situations like Capsule
+	$lock = get_option('capsule_queue_lock');
+	if (!empty($lock) && $lock > strtotime('now')) {
+		return;
+	}
+	update_option('capsule_queue_lock', strtotime('+5 minutes'));
+	$queue = get_option('capsule_queue');
+	for ($i = 0; $i < count($queue) && $i < 10; $i++) {
+		$url = add_query_arg(array(
+			'capsule_action' => 'queue_post_to_server',
+			'post_id' => $queue[$i],
+			'api_key' => capsule_queue_api_key()
+		), site_url('index.php'));
+		wp_remote_get(
+			$url,
+			array(
+				'blocking' => false,
+				'sslverify' => false,
+				'timeout' => 0.01,
+			)
+		);
+	}
+	if (count(queue) > 10) {
+		capsule_queue_start();
+	}
+	update_option('capsule_queue_lock', '');
+}
+
+function capsule_queue_post_to_server($post_id) {
+	global $cap_client;
+
+	$post = get_post($post_id);
+
+	// Check if there are any posts in the post type
+	$taxonomies = get_object_taxonomies($post->post_type);
+	$servers = $cap_client->get_servers();
+	$postarr = (array) $post;
+
+	$errors = 0;
+	foreach ($servers as $server_post) {
+		// Only send post if theres a term thats been mapped
+		if ($cap_client->has_server_mapping($post, $server_post)) {
+			$tax_input = $cap_client->format_terms_to_send(
+				$post,
+				$taxonomies,
+				$cap_client->post_type_slug($server_post->post_name)
+			);
+			$mapped_taxonomies = $cap_client->taxonomies_to_map();
+
+			$tax = compact('taxonomies', 'tax_input', 'mapped_taxonomies');
+
+			$api_key = get_post_meta($server_post->ID, $cap_client->server_api_key, true);
+			$endpoint = get_post_meta($server_post->ID, $cap_client->server_url_key, true);
+
+			$response = $cap_client->send_post($postarr, $tax, $api_key, $endpoint);
+
+			if (!$response || !isset($response->result) || $response->result != 'success') {
+				$errors++;
+			}
+			// success
+			else {
+				// Older server theme versions will not send the permalink
+				$permalink = isset($response->data->permalink) ? $response->data->permalink : '';
+
+				$server_statuses = get_post_meta($post_id, '_cap_client_server_statuses', true);
+				$server_statuses = is_array($server_statuses) ? $server_statuses : array();
+				$server_statuses[$server_post->ID] = array(
+					'gmt_time' => gmmktime(),
+					'permalink' => $permalink,
+				);
+				update_post_meta($post_id, '_cap_client_server_statuses', $server_statuses);
+			}
+		}
+	}
+	if (empty($errors)) {
+		// "send at least once" style queue - only remove if all sends are successful
+		capsule_queue_remove($post_id);
+	}
+}
 
 function capsule_wp_editor_warning() {
 ?>
@@ -517,3 +684,39 @@ jQuery(function($) {
 }
 add_action('edit_form_after_title', 'capsule_wp_editor_warning');
 
+function capsule_last_pushed($post_id) {
+	global $cap_client;
+	$html = '';
+	$meta = get_post_meta($post_id, '_cap_client_server_statuses', true);
+	if (!empty($meta) && is_array($meta)) {
+		$html .= '<ul class="push-server-list">';
+		foreach ($meta as $server_id => $data) {
+			if (!empty($data['gmt_time'])) {
+				// Server should have sent permalink, but if the server theme is running an older version it will be empty, set it to the server URL
+				$permalink = !empty($data['permalink']) ? $data['permalink'] : get_post_meta($server_id, $cap_client->server_url_key, true);
+				$wp_time = capsule_gmt_to_wp_time($data['gmt_time']);
+				$date_format = apply_filters('capsule_server_push_date_format', 'M j, Y @ g:ia');
+				$html .= '<li><a href="'.esc_url($permalink).'"><span class="push-server-name">'.get_the_title($server_id).'</span><span class="push-server-date">'.date($date_format, $wp_time).'</span></a></li>';
+			}
+		}
+		$html .= '</ul>';
+	}
+	return $html;
+}
+
+function capsule_gmt_to_wp_time($gmt_time) {
+	$timezone_string = get_option('timezone_string');
+	if (!empty($timezone_string)) {
+		// Not using get_option('gmt_offset') because it gets the offset for the
+		// current date/time which doesn't work for timezones with daylight savings time.
+		$gmt_date = date('Y-m-d H:i:s', $gmt_time);
+		$datetime = new DateTime($gmt_date);
+		$datetime->setTimezone(new DateTimeZone(get_option('timezone_string')));
+		$offset_in_secs = $datetime->getOffset();
+		
+		return $gmt_time + $offset_in_secs;
+	}
+	else {
+		return $gmt_time + (get_option('gmt_offset') * 3600);
+	}
+}

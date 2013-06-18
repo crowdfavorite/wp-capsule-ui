@@ -25,3 +25,6 @@
 [submodule "lib/linkify"]
 	path = lib/linkify
 	url = git@github.com:crowdfavorite/linkify.git
+[submodule "lib/jquery.hotkeys"]
+	path = lib/jquery.hotkeys
+	url = git@github.com:crowdfavorite/jquery.hotkeys.git

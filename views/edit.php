@@ -13,12 +13,13 @@
 echo capsule_term_list(get_the_ID(), 'projects');
 echo capsule_term_list(get_the_ID(), 'post_tag');
 echo capsule_term_list(get_the_ID(), 'code');
+
 ?>
 	</div>
 	<div class="post-content">
 		<div class="status">
 			<p>
-				<?php printf(__('Last Saved: <span class="post-last-saved">%s</span>', 'capsule'), get_the_time('g:m a')); ?>
+				<?php printf(__('Last Saved: <span class="post-last-saved">%s</span>', 'capsule'), get_the_modified_date('g:i a')); ?>
 				<span class="dirty-indicator">&bull;</span>
 				<span class="saving-indicator">&hellip;</span>
 			</p>

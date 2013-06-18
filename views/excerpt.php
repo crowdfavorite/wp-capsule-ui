@@ -7,6 +7,19 @@
 				<li class="year"><?php the_time('Y'); ?></li>
 			</ul>
 		</a>
+<?php
+if (!is_capsule_server()) {
+	$pushed = capsule_last_pushed(get_the_ID());
+	if (!empty($pushed)) {
+?>
+		<div class="push-server-meta">
+			<span class="trigger">&#59254;</span>
+			<?php echo $pushed; ?>
+		</div>
+<?php
+	}
+}
+?>
 	</div>
 	<div class="post-meta">
 <?php
@@ -31,11 +44,13 @@ printf(__('<a href="%1$s">%2$s</a>', 'capsule'), esc_url(get_author_posts_url($p
 	<div class="post-content">
 		<?php the_content(); ?>
 		<nav class="post-menu">
+			<?php do_action('capsule_post_menu_before', get_the_ID()); ?>
 			<a href="#" class="post-sticky-link" title="<?php _e('Star', 'capsule'); ?>">&#57391;</a>
 			<a href="#" class="post-unsticky-link" title="<?php _e('Un-Star', 'capsule'); ?>">&#57393;</a>
 			<span class="post-sticky-loading" title="<?php _e('Loading...', 'capsule'); ?>">&#59441;</span>
 			<?php edit_post_link('&#57535;', '', ''); ?>
 			<a href="#" class="post-delete-link" title="<?php _e('Trash', 'capsule'); ?>">&#59177;</a>
+			<?php do_action('capsule_post_menu_after', get_the_ID()); ?>
 		</nav>
 		<div class="post-toggle"></div>
 	</div>
