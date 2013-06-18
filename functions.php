@@ -14,7 +14,7 @@ function is_capsule_server() {
 
 function capsule_mode() {
 	if (!defined('CAPSULE_MODE')) {
-		define('CAPSULE_MODE', 'dev');
+		define('CAPSULE_MODE', 'prod');
 	}
 	return CAPSULE_MODE;
 }
