@@ -6,6 +6,10 @@ body {
 	font-size: 13px;
 }
 
+#wrap {
+	min-width:520px;
+}
+
 .container {
 	min-height: 100%;
 }
@@ -637,6 +641,44 @@ pre.static_code {
 
 		li {
 			padding-right: 40px;
+		}
+	}
+}
+
+@media (max-width: 721px) {
+	.edit .post-date, .content .post-date {
+		width:100px;
+		height:80px;
+		position:relative;
+
+		.push-server-meta {
+			position:absolute;
+			bottom:0px;
+			left: 100px;
+		}
+
+		> a {
+			position:absolute;
+			bottom:0px;
+		}
+
+		li {
+			display:inline-block;
+		}
+
+		ul {
+			text-align:left;
+		}
+	}
+
+	.edit .post-meta, .content .post-meta {
+		float:none;
+		text-align:right;
+		display:inline;
+
+		.post-meta-tags li {
+			display: inline;
+			padding-left: 5px;
 		}
 	}
 }
