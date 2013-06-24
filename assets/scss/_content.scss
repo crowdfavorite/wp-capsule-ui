@@ -681,4 +681,10 @@ pre.static_code {
 			padding-left: 5px;
 		}
 	}
+
+	.edit .post-content, .content .post-content {
+		display: inline-block;
+		width: 90%;
+		margin-right: 74px;
+	}
 }
