@@ -8,6 +8,9 @@ define('CAPSULE_TAX_PREFIX_CODE', '`');
 show_admin_bar(false);
 remove_post_type_support('post', 'post-formats');
 
+include_once('lib/wp-taxonomy-filter/taxonomy-filter.php');
+include_once('lib/cf-gatekeeper/cf-gatekeeper.php');
+
 function is_capsule_server() {
 	return (defined('CAPSULE_SERVER') && CAPSULE_SERVER);
 }
@@ -22,20 +25,6 @@ function capsule_mode() {
 if (!is_capsule_server()) {
 	include('controller.php');
 }
-include_once('lib/wp-taxonomy-filter/taxonomy-filter.php');
-
-function capsule_gatekeeper() {
-	$keep_out = apply_filters('capsule_gatekeeper_enabled', true);
-	if ($keep_out && !current_user_can('read')) {
-		$login_page = wp_login_url();
-		is_ssl() ? $proto = 'https://' : $proto = 'http://';
-		$requested = $proto.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
-		if (substr($requested, 0, strlen($login_page)) != $login_page) {
-			auth_redirect();
-		}
-	}
-}
-add_action('init', 'capsule_gatekeeper', 9999);
 
 function capsule_login_duration() {
     return 2592000; // 30 * 24 * 60 * 60 = 30 days
