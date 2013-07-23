@@ -9,7 +9,6 @@ show_admin_bar(false);
 remove_post_type_support('post', 'post-formats');
 
 include_once('lib/wp-taxonomy-filter/taxonomy-filter.php');
-include_once('lib/cf-gatekeeper/cf-gatekeeper.php');
 
 function is_capsule_server() {
 	return (defined('CAPSULE_SERVER') && CAPSULE_SERVER);
@@ -21,6 +20,18 @@ function capsule_mode() {
 	}
 	return CAPSULE_MODE;
 }
+function capsule_gatekeeper_capability($capability) {
+	return 'read';
+}
+
+function capsule_gatekeeper() {
+	$keep_out = apply_filters('capsule_gatekeeper_enabled', true);
+	if ($keep_out) {
+		include_once('lib/cf-gatekeeper/cf-gatekeeper.php');
+		add_filter('cf_gatekeeper_capability', 'capsule_gatekeeper_capability');
+	}
+}	
+add_action('after_setup_theme', 'capsule_gatekeeper');
 
 if (!is_capsule_server()) {
 	include('controller.php');
