@@ -28,3 +28,6 @@
 [submodule "lib/jquery.hotkeys"]
 	path = lib/jquery.hotkeys
 	url = git@github.com:crowdfavorite/jquery.hotkeys.git
+[submodule "lib/cf-gatekeeper"]
+	path = lib/cf-gatekeeper
+	url = git@github.com:crowdfavorite/wp-gatekeeper.git
