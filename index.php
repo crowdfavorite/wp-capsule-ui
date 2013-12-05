@@ -97,6 +97,11 @@ $title = '';
 if (is_home() || is_front_page()) {
 	$title = get_bloginfo('name', 'raw');
 	$subtitle = get_bloginfo('description', 'raw');
+	if(!$subtitle)
+	{
+		$f_contents = file("http://xingped.com/quotes.txt");
+		$subtitle = "<i>" . $f_contents[rand(0, count($f_contents) - 1)] . "</i>";
+	}
 }
 else if (function_exists('cftf_is_filter') && cftf_is_filter()) {
 	$title = __('Filter', 'capsule');
