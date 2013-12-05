@@ -90,13 +90,13 @@ if (!empty($cap_servers)) {
 	
 	<div id="wrap">
 		<header id="header">
-			<div class="inner">
 <?php
 
 $title = '';
 
 if (is_home() || is_front_page()) {
-	$title = __('Home', 'capsule');
+	$title = get_bloginfo('name', 'raw');
+	$subtitle = get_bloginfo('description', 'raw');
 }
 else if (function_exists('cftf_is_filter') && cftf_is_filter()) {
 	$title = __('Filter', 'capsule');
@@ -111,10 +111,8 @@ else if (is_tag()) {
 else if (is_tax('projects')) {
 	$term = get_queried_object();
 	$title = sprintf(__('@%s', 'capsule'), esc_html($term->name));
-}
-else if (is_tax('code')) {
-	$term = get_queried_object();
-	$title = sprintf(__('`%s', 'capsule'), esc_html($term->name));
+	$page = get_page_by_title(esc_html($term->name));
+	$subtitle = apply_filters('the_content', $page->post_content);
 }
 else if (is_tax('code')) {
 	$term = get_queried_object();
@@ -127,12 +125,15 @@ else if (is_author()) {
 $title = apply_filters('capsule_page_title', $title);
 
 ?>
+			<div class="inner" <?php if ($subtitle) echo 'style="padding-bottom: 12px"'; ?> >
 				<h1><?php echo $title; ?></h1>
 				<form class="search clearfix" action="<?php echo esc_url(home_url('/')); ?>" method="get" data-permastruct="<?php echo $search_permastruct; ?>">
 					<a href="#" class="filter-toggle"><?php _e('Filters', 'capsule'); ?></a>
 					<input type="text" class="js-search" name="s" value="<?php echo esc_attr(get_query_var('s')); ?>" placeholder="<?php _e('Search @projects, #tags, `code, etc&hellip;', 'capsule'); ?>" />
 					<input type="submit" value="<?php _e('Search', 'capsule'); ?>" />
 				</form>
+				<br /><br />
+				<?php if($subtitle) echo '<h3>'.$subtitle.'</h3>'; ?>
 			</div>
 			<div class="filter clearfix">
 			<?php capsule_taxonomy_filter(); ?>
