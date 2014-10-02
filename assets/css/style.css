@@ -960,6 +960,9 @@ body {
   font-family: sans-serif;
   font-size: 13px; }
 
+#wrap {
+  min-width: 520px; }
+
 .container {
   min-height: 100%; }
 
@@ -1520,3 +1523,33 @@ pre.static_code {
     padding-left: 55px; }
     pre.static_code ol li {
       padding-right: 40px; }
+
+@media (max-width: 721px) {
+  .edit .post-date, .content .post-date {
+    width: 100px;
+    height: 80px;
+    position: relative; }
+    .edit .post-date .push-server-meta, .content .post-date .push-server-meta {
+      position: absolute;
+      bottom: 0px;
+      left: 100px; }
+    .edit .post-date > a, .content .post-date > a {
+      position: absolute;
+      bottom: 0px; }
+    .edit .post-date li, .content .post-date li {
+      display: inline-block; }
+    .edit .post-date ul, .content .post-date ul {
+      text-align: left; }
+
+  .edit .post-meta, .content .post-meta {
+    float: none;
+    text-align: right;
+    display: inline; }
+    .edit .post-meta .post-meta-tags li, .content .post-meta .post-meta-tags li {
+      display: inline;
+      padding-left: 5px; }
+
+  .edit .post-content, .content .post-content {
+    display: inline-block;
+    width: 90%;
+    margin-right: 74px; } }
