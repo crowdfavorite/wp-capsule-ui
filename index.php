@@ -63,6 +63,7 @@ $theme_url = trailingslashit(get_template_directory_uri());
 	<link rel="icon" href="<?php echo $theme_url; ?>ui/assets/icon/capsule-32.png" sizes="32x32">
 	<link rel="icon" href="<?php echo $theme_url; ?>ui/assets/icon/capsule-48.png" sizes="48x48">
 	<link rel="icon" href="<?php echo $theme_url; ?>ui/assets/icon/capsule-128.png" sizes="128x128">
+	<link rel="fluid-icon" href="<?php echo $theme_url; ?>ui/assets/icon/capsule.icns" title="<?php echo esc_attr( get_bloginfo('name') ); ?>">
 	
 <?php wp_head(); ?>
 </head>
