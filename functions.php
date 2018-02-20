@@ -571,7 +571,7 @@ function capsule_queue_run() {
 			)
 		);
 	}
-	if (count(queue) > 10) {
+	if ( count( $queue ) > 10 ) {
 		capsule_queue_start();
 	}
 	update_option('capsule_queue_lock', '');
