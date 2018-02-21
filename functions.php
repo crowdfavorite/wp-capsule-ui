@@ -70,7 +70,7 @@ if ( ! is_capsule_server() ) {
  * @return integer Login duration.
  */
 function capsule_login_duration() {
-	return 2592000; // 30 * 24 * 60 * 60 = 30 days
+	return 2592000; // 30 * 24 * 60 * 60 = 30 days.
 }
 add_filter( 'auth_cookie_expiration', 'capsule_login_duration' );
 
@@ -825,9 +825,10 @@ function capsule_wp_editor_warning() {
 <div class="capsule-editor-warning">
 	<h3><?php esc_html_e( 'Whoa Cowboy!', 'capsule' ); ?></h3>
 	<p>
-	<?php esc_html_e( '<b>Capsule is designed for front-end editing only.</b><br />Changes to projects, tags, etc. here will be overwritten when this post is edited on the front-end.', 'capsule' ); ?>
-	<br /><a href="<?php echo esc_url( home_url() ); ?>"><?php esc_html_e( 'Let\'s head back over there.</a>', 'capsule' ); ?></a>
-	<p class="bypass"><?php esc_html_e( 'Ok, ok - I get it. <a href="#">Let me in anyway</a>.', 'capsule' ); ?>
+		<?php esc_html_e( '<b>Capsule is designed for front-end editing only.</b><br />Changes to projects, tags, etc. here will be overwritten when this post is edited on the front-end.', 'capsule' ); ?>
+		<br /><a href="<?php echo esc_url( home_url() ); ?>"><?php esc_html_e( 'Let\'s head back over there.</a>', 'capsule' ); ?></a>
+	</p>
+	<p class="bypass"><?php esc_html_e( 'Ok, ok - I get it. <a href="#">Let me in anyway</a>.', 'capsule' ); ?></p>
 </div>
 <script type="text/javascript">
 jQuery(function( $) {
