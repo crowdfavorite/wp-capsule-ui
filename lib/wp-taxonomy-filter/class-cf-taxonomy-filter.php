@@ -44,8 +44,8 @@ class CF_Taxonomy_Filter {
 			foreach ( $this->options['taxonomies'] as $taxonomy => $args ) {
 				if ( is_array( $args ) ) {
 					self::tax_filter( $taxonomy, $args );
-				} // Just passed in taxonomy name with no options
-				else {
+				} else {
+					// Just passed in taxonomy name with no options.
 					self::tax_filter( $args );
 				}
 			}
@@ -68,7 +68,7 @@ class CF_Taxonomy_Filter {
 	}
 
 	/**
-	 * Echo a date range filter form element
+	 * Echo a date range filter form element.
 	 *
 	 * @param array $start_args Optional array of arguments for start range input. All options are attributes on the element.
 	 * @param array $end_args   Optional array of arguments for end range input. All options are attributes on the element.
@@ -258,8 +258,7 @@ class CF_Taxonomy_Filter {
 		// Used in js for URL cleanup.
 		$args = self::add_class( 'cftf-filter', $args );
 
-		echo '
-<form method="GET"' . wp_kses( self::build_attrib_string( $args ), array() ) . '>';
+		echo '<form method="GET"' . wp_kses( self::build_attrib_string( $args ), array() ) . '>';
 	}
 
 	/**
@@ -268,9 +267,8 @@ class CF_Taxonomy_Filter {
 	 * @return void
 	 **/
 	public static function end_form() {
-		echo '
-	<input type="hidden" name="cftf_action" value="filter" />
-</form>';
+		echo '<input type="hidden" name="cftf_action" value="filter" />
+			</form>';
 	}
 
 	/**
