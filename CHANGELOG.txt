@@ -1,3 +1,9 @@
+## Version 1.2
+
+- remove the git submodules structure
+- update libraries, code cleanup
+- fix various PHP notices
+
 ## Version 1.1.1
 
 - include jQuery Hotkeys in the optimized.js file

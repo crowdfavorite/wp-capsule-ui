@@ -1185,6 +1185,9 @@ article.edit header .post-close-link {
   .post-content a:active,
   .post-content a:hover {
     color: #333; }
+  .post-content strong {
+    font-family: "SourceSansProBold";
+    font-weight: normal; }
   .post-content table {
     border-bottom: 1px solid #ddd;
     border-collapse: collapse;
