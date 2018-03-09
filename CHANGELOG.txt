@@ -1,4 +1,4 @@
-## Version 1.1.2
+## Version 1.2
 
 - remove the git submodules structure
 - update libraries, code cleanup
