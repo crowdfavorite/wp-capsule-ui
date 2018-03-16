@@ -105,15 +105,15 @@ $title = apply_filters( 'capsule_page_title', $title );
 	<nav class="main-nav">
 		<ul>
 			<?php do_action( 'capsule_main_nav_before' ); ?>
-			<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="home icon">&#59392;</a></li>
-			<li><a href="<?php echo esc_url( admin_url( 'post-new.php' ) ); ?>" class="post-new-link icon">&#59396;</a></li>
-			<li><a href="#projects" class="projects">@</a></li>
-			<li><a href="#tags" class="tags icon">#</a></li>
+			<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="Home" class="home icon">&#59392;</a></li>
+			<li><a href="<?php echo esc_url( admin_url( 'post-new.php' ) ); ?>" title="New Post" class="post-new-link icon">&#59396;</a></li>
+			<li><a href="#projects" title="Projects" class="projects">@</a></li>
+			<li><a href="#tags" title="Tags" class="tags icon">#</a></li>
 			<?php if ( ! empty( $cap_servers ) ) : ?>
-			<li><a href="#servers" class="servers icon">&#59254;</a></li>
+			<li><a href="#servers" title="Servers" class="servers icon">&#59254;</a></li>
 			<?php endif; ?>
 
-			<li><a href="<?php echo esc_url( admin_url( 'admin.php?page=capsule' ) ); ?>" class="icon">&#59400;</a></li>
+			<li><a href="<?php echo esc_url( admin_url( 'admin.php?page=capsule' ) ); ?>" title="Settings" class="icon">&#59400;</a></li>
 			<?php do_action( 'capsule_main_nav_after' ); ?>
 			<li><span class="spacer"></span></li>
 		</ul>
