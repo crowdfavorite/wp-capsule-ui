@@ -2,13 +2,14 @@ define('cf/js/capsule', ['require', 'exports', 'module',
 		'jquery',
 		'ace/ace',
 		'ace/mode/text', 'ace/lib/dom', 'ace/tokenizer',
-		'cf/js/syntax/cf_php_highlight_rules', 'cf/js/syntax/cfmarkdown',
+		'cf/js/syntax/cf_php_highlight_rules', 'cf/js/syntax/cfmarkdown', 'cf/js/syntax/cfsh',
 		'cf/js/static_highlight', 'ace/theme/textmate'
 	],
 function(require, exports, module, $) {
 "use strict";
 	var ace = require('ace/ace');
 	var aceconfig = require('ace/config');
+
 	aceconfig.set('packaged', true);
 	aceconfig.set('basePath', requirejsL10n.ace + '/build/src-min');
 	window.editors = {},
@@ -434,7 +435,7 @@ function(require, exports, module, $) {
 					lang = "code";
 				}
 				if (lang === "code" || lang === "bash") {
-					requirelang = "sh";
+					requirelang = "cfsh";
 				}
 				else {
 					requirelang = lang;
@@ -455,10 +456,10 @@ function(require, exports, module, $) {
 							el.closest("pre").replaceWith(highlighted.html);
 						}
 					};
-
+					var namespacedLang = ('cfsh' === requirelang) ? 'cf/js/syntax/cfsh' : 'ace/mode/' + requirelang;
 					var requirements = [
 						'cf/js/static_highlight', 'ace/theme/textmate',
-						'ace/mode/' + requirelang, 'ace/lib/dom', 'ace/tokenizer',
+						namespacedLang, 'ace/lib/dom', 'ace/tokenizer',
 						'cf/js/syntax/cf_php_highlight_rules'
 					];
 					require(requirements,
