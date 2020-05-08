@@ -97,11 +97,7 @@ $title = apply_filters('capsule_page_title', $title);
 	<link rel="icon" href="<?php echo esc_url($theme_url); ?>ui/assets/icon/capsule-32.png" sizes="32x32">
 	<link rel="icon" href="<?php echo esc_url($theme_url); ?>ui/assets/icon/capsule-48.png" sizes="48x48">
 	<link rel="icon" href="<?php echo esc_url($theme_url); ?>ui/assets/icon/capsule-128.png" sizes="128x128">
-	<link
-		rel="fluid-icon"
-		href="<?php echo esc_url($theme_url); ?>ui/assets/icon/capsule.icns"
-		title="<?php echo esc_attr(get_bloginfo('name')); ?>"
-	>
+	<link rel="icon" href="<?php echo esc_url($theme_url); ?>ui/assets/icon/capsule-256.png" sizes="256x256">
 
 	<?php wp_head(); ?>
 </head>
