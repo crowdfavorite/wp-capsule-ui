@@ -615,6 +615,7 @@ function(require, exports, module, $) {
 			source: '#tags'
 		}).end().find('.servers').sidr({
 			name: 'sidr-servers',
+			renaming: false,
 			source: '#servers'
 		});
 		$(':not(.edit) .post-content').linkify();
