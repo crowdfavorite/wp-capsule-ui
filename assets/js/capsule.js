@@ -168,7 +168,8 @@ function(require, exports, module, $) {
 			$article.addClass('saving');
 		}
 		// strip code blocks before extracting projects and tags
-		var prose = content.replace(/^```([^]+?)^```/mg, '')
+		var prose = content.replace(/^```([\s\S]+)^```/mg, '')
+				.replace(/^\/\*([\s\S]+)^\*\//mg, '')
 				.replace(/<pre>([^]+?)<\/pre>/mg, '')
 				.replace(/<code>([^]+?)<\/code>/mg, ''),
 			projects = twttr.txt.extractMentions(prose),
