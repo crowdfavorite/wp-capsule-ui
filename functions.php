@@ -250,13 +250,6 @@ function capsule_resources_dev()
 		true
 	);
 	wp_enqueue_script(
-		'sidr',
-		$template_url . 'lib/sidr/dist/jquery.sidr.js',
-		array( 'jquery' ),
-		CAPSULE_URL_VERSION,
-		true
-	);
-	wp_enqueue_script(
 		'linkify',
 		$template_url . 'lib/linkify/1.0/jquery.linkify-1.0-min.js',
 		array( 'jquery' ),
@@ -264,6 +257,7 @@ function capsule_resources_dev()
 		true
 	);
 }
+
 if ('dev' === capsule_mode() || ( defined('SCRIPT_DEBUG') && SCRIPT_DEBUG )) {
 	add_action('wp_enqueue_scripts', 'capsule_resources_dev');
 } else {
@@ -568,58 +562,42 @@ function capsule_credits()
 	?>
 		<ul>
 			<li>
-				<a href="http://ajaxorg.github.io/ace/">Ace Code Editor</a>
+				<a href="https://ace.c9.io/">Ace Code Editor</a>
 				(<a href="https://github.com/ajaxorg/ace">GitHub</a>)
 			</li>
 			<li>
-				<a href="http://harvesthq.github.io/chosen/">Chosen</a>
+				<a href="https://harvesthq.github.io/chosen/">Chosen</a>
 				(<a href="https://github.com/harvesthq/chosen">GitHub</a>)
 			</li>
 			<li>
-				<a href="http://michelf.ca/projects/php-markdown/extra/">PHP Markdown Extra</a>
+				<a href="https://michelf.ca/projects/php-markdown/extra/">PHP Markdown Extra</a>
 				(<a href="https://github.com/michelf/php-markdown">GitHub</a>)
 			</li>
 			<li>Twitter Text JS (<a href="https://github.com/twitter/twitter-text-js">GitHub</a>)</li>
 			<li>jQuery .scrollintoview() (<a href="https://github.com/litera/jquery-scrollintoview">GitHub</a>)</li>
 			<li>JSON in JavaScript (<a href="https://github.com/douglascrockford/JSON-js">GitHub</a>)</li>
 			<li>
-				<a href="http://requirejs.org/">RequireJS</a>
+				<a href="https://requirejs.org/">RequireJS</a>
 				(<a href="https://github.com/jrburke/requirejs">GitHub</a>)
 			</li>
 			<li>
-				<a href="http://www.berriart.com/sidr/">Sidr</a>
+				<a href="https://www.berriart.com/sidr/">Sidr</a>
 				(<a href="https://github.com/artberri/sidr">GitHub</a>)
 			</li>
 			<li>Linkify (<a href="https://github.com/maranomynet/linkify">GitHub</a>)</li>
-			<li><a href="http://sass-lang.com/">Sass</a> (<a href="https://github.com/nex3/sass">GitHub</a>)</li>
-			<li>Capsule Icon by <a href="http://dribbble.com/matthewspiel">Matthew Spiel</a></li>
+			<li><a href="https://sass-lang.com/">Sass</a> (<a href="https://github.com/nex3/sass">GitHub</a>)</li>
 			<li>
-				<a href="http://www.google.com/fonts/specimen/Source+Sans+Pro">Source Sans Pro</a>
+				<a href="https://www.google.com/fonts/specimen/Source+Sans+Pro">Source Sans Pro</a>
 				(<a href="https://github.com/adobe/source-sans-pro">GitHub</a>)
 			</li>
 			<li>
-				<a href="http://www.google.com/fonts/specimen/Source+Code+Pro">Source Code Pro</a>
+				<a href="https://www.google.com/fonts/specimen/Source+Code+Pro">Source Code Pro</a>
 				(<a href="https://github.com/adobe/source-code-pro">GitHub</a>)
 			</li>
 			<li>
-				<a href="http://fontello.com">Fontello</a>
-				(<a href="https://github.com/fontello/fontello">GitHub</a>)
-				&amp; Fontelico (<a href="https://github.com/fontello/fontelico.font">GitHub</a>)
-			</li>
-			<li>
-				<a href="http://aristeides.com/">Elusive</a>
+				<a href="https://aristath.github.io/">Elusive</a>
 				(<a href="https://github.com/aristath/elusive-iconfont">GitHub</a>)
 			</li>
-			<li>
-				<a href="http://entypo.com/">Entypo</a>
-				(<a href="https://github.com/danielbruce/entypo">GitHub</a>)
-			</li>
-			<li>
-				<a href="http://somerandomdude.com/work/iconic/">Iconic</a>
-				(<a href="https://github.com/somerandomdude/Iconic">GitHub</a>)
-			</li>
-			<li>
-				<a href="http://www.justbenicestudio.com/studio/websymbols/">Web Symbols</a></li>
 		</ul>
 	<?php
 }
