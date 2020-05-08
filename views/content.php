@@ -28,7 +28,7 @@ if (! $is_capsule_server) {
 		<?php if (! empty($pushed)) : ?>
 		<div class="push-server-meta">
 			<span class="trigger capsule-icon-drive"></span>
-			<?php echo wp_kses_post( $pushed ); ?>
+			<?php echo wp_kses_post($pushed); ?>
 		</div>
 		<?php endif; ?>
 	</div>
@@ -53,21 +53,25 @@ if (! $is_capsule_server) {
 	<div class="post-content">
 		<?php the_content(); ?>
 		<nav class="post-menu">
-			<?php do_action( 'capsule_post_menu_before', get_the_ID() ); ?>
-			<a href="#" class="post-sticky-link capsule-icon-star-full" title="<?php esc_html_e( 'Star', 'capsule' ); ?>">
-				<span class="sr-only"><?php esc_html_e( 'Star', 'capsule' ); ?></span>
+			<?php do_action('capsule_post_menu_before', get_the_ID()); ?>
+			<a href="#" class="post-sticky-link capsule-icon-star-full" title="<?php esc_html_e('Star', 'capsule'); ?>">
+				<span class="sr-only"><?php esc_html_e('Star', 'capsule'); ?></span>
 			</a>
-			<a href="#" class="post-unsticky-link capsule-icon-star-empty" title="<?php esc_html_e( 'Un-Star', 'capsule' ); ?>">
-				<span class="sr-only"><?php esc_html_e( 'Un-Star', 'capsule' ); ?></span>
+			<a
+				href="#"
+				class="post-unsticky-link capsule-icon-star-empty"
+				title="<?php esc_html_e('Un-Star', 'capsule'); ?>"
+			>
+				<span class="sr-only"><?php esc_html_e('Un-Star', 'capsule'); ?></span>
 			</a>
-			<span class="post-sticky-loading capsule-icon-circle" title="<?php esc_html_e( 'Loading...', 'capsule' ); ?>">
-				<span class="sr-only"><?php esc_html_e( 'Loading...', 'capsule' ); ?></span>
+			<span class="post-sticky-loading capsule-icon-circle" title="<?php esc_html_e('Loading...', 'capsule'); ?>">
+				<span class="sr-only"><?php esc_html_e('Loading...', 'capsule'); ?></span>
 			</span>
-			<?php edit_post_link( '', '', '', 0, 'post-edit-link capsule-icon-edit' ); ?>
-			<a href="#" class="post-delete-link capsule-icon-trash" title="<?php esc_html_e( 'Trash', 'capsule' ); ?>">
-				<span class="sr-only"><?php esc_html_e( 'Trash', 'capsule' ); ?></span>
+			<?php edit_post_link('', '', '', 0, 'post-edit-link capsule-icon-edit'); ?>
+			<a href="#" class="post-delete-link capsule-icon-trash" title="<?php esc_html_e('Trash', 'capsule'); ?>">
+				<span class="sr-only"><?php esc_html_e('Trash', 'capsule'); ?></span>
 			</a>
-			<?php do_action( 'capsule_post_menu_after', get_the_ID() ); ?>
+			<?php do_action('capsule_post_menu_after', get_the_ID()); ?>
 		</nav>
 	</div>
 </article>
