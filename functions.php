@@ -821,78 +821,80 @@ function capsule_queue_post_to_server($post_id)
 	}
 }
 
-/**
- * Display warning.
- *
- * @return void
- */
 function capsule_wp_editor_warning()
 {
+	$screen = get_current_screen();
+	if (!$screen->is_block_editor) {
+		return;
+	}
 	?>
-<style type="text/css">
-.capsule-editor-warning {
-	background: #222;
-	color: #fff;
-	display: none;
-	font-size: 15px;
-	left: 1%;
-	line-height: 180%;
-	opacity: 0.8;
-	padding: 100px 50px 125px;
-	position: absolute;
-	text-align: center;
-	top: 20px;
-	width: 89%;
-	z-index: 99999999;
-}
-.capsule-editor-warning h3 {
-	font-size: 36px;
-}
-.capsule-editor-warning a,
-.capsule-editor-warning a:visited {
-	color: #eee;
-}
-.capsule-editor-warning a:active,
-.capsule-editor-warning a:hover {
-	color: #fff;
-}
-.capsule-editor-warning .bypass {
-	font-size: 13px;
-	padding-top: 30px;
-}
-#post {
-	position: relative;
-}
-</style>
-<div class="capsule-editor-warning">
-	<h3><?php esc_html_e('Whoa Cowboy!', 'capsule'); ?></h3>
-	<p>
-		<?php
-		esc_html_e(
-			'Capsule is designed for front-end editing only.
-			Changes to projects, tags, etc. here will be overwritten when this post is edited on the front-end.',
-			'capsule'
-		);
-		?>
-		<br>
-		<a href="<?php echo esc_url(home_url()); ?>">
-			<?php esc_html_e('Let\'s head back over there.</a>', 'capsule'); ?>
-		</a>
-	</p>
-	<p class="bypass"><?php esc_html_e('Ok, ok - I get it. <a href="#">Let me in anyway</a>.', 'capsule'); ?></p>
-</div>
-<script type="text/javascript">
-jQuery(function( $) {
-	var $warning = $( '.capsule-editor-warning' );
-	$warning.prependTo( $( '#post' ) ).fadeIn()
-		.find( '.bypass a' ).on( 'click', function() {
-		$warning.fadeOut();
+	<style type="text/css">
+		.capsule-editor-warning {
+			background: #222;
+			color: #fff;
+			left: 1%;
+			line-height: 180%;
+			opacity: 0.9;
+			padding: 100px 60px 300px;
+			position: absolute;
+			text-align: center;
+			top: 20px;
+			width: 89%;
+			z-index: 99999999;
+		}
+		.capsule-editor-warning h3 {
+			font-size: 28px;
+			color: #fff;
+
+		}
+		.capsule-editor-warning a,
+		.capsule-editor-warning a:visited {
+			color: #eee;
+		}
+		.capsule-editor-warning a:active,
+		.capsule-editor-warning a:hover {
+			color: #fff;
+		}
+		.capsule-editor-warning .bypass {
+			font-size: 13px;
+			padding-top: 30px;
+		}
+		#post {
+			position: relative;
+		}
+	</style>
+	<div class="capsule-editor-warning">
+		<h3><?php esc_html_e('Whoa Cowboy!', 'capsule'); ?></h3>
+		<p>
+			<b><?php esc_html_e('<b>Capsule is designed for front-end editing only.', 'capsule'); ?></b>
+			<br>
+			<?php
+			esc_html_e(
+				'Changes to projects, tags, etc. here will be overwritten when this post is edited on the front-end.',
+				'capsule'
+			);
+			?>
+			<br>
+			<a href="<?php echo esc_url(home_url()); ?>">
+				<?php esc_html_e('Let\'s head back over there.', 'capsule'); ?>
+			</a>
+		</p>
+		<p class="bypass">
+			<?php esc_html_e('Ok, ok - I get it.', 'capsule'); ?>
+			<a href="#"><?php esc_html_e('Let me in anyway.', 'capsule'); ?></a>
+		</p>
+	</div>
+	<script type="text/javascript">
+	jQuery(function( $) {
+		var $warning = $( '.capsule-editor-warning' );
+		$warning.find( '.bypass a' ).on( 'click', function() {
+			$warning.fadeOut();
+		});
 	});
-});
-</script>
+	</script>
 	<?php
 }
-add_action('edit_form_after_title', 'capsule_wp_editor_warning');
+add_action('in_admin_header', 'capsule_wp_editor_warning');
 
 /**
  * Display information about last push of the post.

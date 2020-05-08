@@ -54,12 +54,16 @@ if (! $is_capsule_server) {
 		<?php the_content(); ?>
 		<nav class="post-menu">
 			<?php do_action('capsule_post_menu_before', get_the_ID()); ?>
-			<a href="#" class="post-sticky-link capsule-icon-star-full" title="<?php esc_html_e('Star', 'capsule'); ?>">
+			<a
+				href="#"
+				class="post-sticky-link capsule-icon-star-empty"
+				title="<?php esc_html_e('Star', 'capsule'); ?>"
+			>
 				<span class="sr-only"><?php esc_html_e('Star', 'capsule'); ?></span>
 			</a>
 			<a
 				href="#"
-				class="post-unsticky-link capsule-icon-star-empty"
+				class="post-unsticky-link capsule-icon-star-full"
 				title="<?php esc_html_e('Un-Star', 'capsule'); ?>"
 			>
 				<span class="sr-only"><?php esc_html_e('Un-Star', 'capsule'); ?></span>
