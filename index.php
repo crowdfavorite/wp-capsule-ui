@@ -5,10 +5,10 @@
  * @package capsule
  *
  * This file is part of the Capsule Theme for WordPress
- * http://crowdfavorite.com/capsule/
+ * https://crowdfavorite.com/capsule/
  *
- * Copyright (c) 2012 Crowd Favorite, Ltd. All rights reserved.
- * http://crowdfavorite.com
+ * Copyright (c) 2020 Crowd Favorite, Ltd. All rights reserved.
+ * https://crowdfavorite.com
  *
  * **********************************************************************
  * This program is distributed in the hope that it will be useful, but
@@ -185,7 +185,7 @@ $title = apply_filters( 'capsule_page_title', $title );
 </div>
 
 <footer>
-	<p><a href="http://crowdfavorite.com/capsule/">Capsule</a> by <a href="http://crowdfavorite.com">Crowd Favorite</a> &middot; <?php wp_loginout( home_url() ); ?></p>
+	<p><a href="https://crowdfavorite.com/capsule/">Capsule</a> by <a href="https://crowdfavorite.com">Crowd Favorite</a> &middot; <?php wp_loginout( home_url() ); ?></p>
 </footer>
 
 <div id="projects">
